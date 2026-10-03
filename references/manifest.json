@@ -1,0 +1,119 @@
+{
+  "papers": [
+    {
+      "reference_id": "R1",
+      "title": "DoRA: Weight-Decomposed Low-Rank Adaptation",
+      "version": "2402.09353v6",
+      "versioned_url": "https://arxiv.org/abs/2402.09353v6",
+      "pages": 23,
+      "checked_on": "2026-10-02"
+    },
+    {
+      "reference_id": "R2",
+      "title": "PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models",
+      "version": "2404.02948v4",
+      "versioned_url": "https://arxiv.org/abs/2404.02948v4",
+      "pages": 34,
+      "checked_on": "2026-10-02"
+    },
+    {
+      "reference_id": "R3",
+      "title": "Dual Decomposition of Weights and Singular Value Low Rank Adaptation",
+      "version": "2505.14367v2",
+      "versioned_url": "https://arxiv.org/abs/2505.14367v2",
+      "pages": 12,
+      "checked_on": "2026-10-02"
+    },
+    {
+      "reference_id": "R4",
+      "title": "The Primacy of Magnitude in Low-Rank Adaptation",
+      "version": "2507.06558v2",
+      "versioned_url": "https://arxiv.org/abs/2507.06558v2",
+      "pages": 31,
+      "checked_on": "2026-10-02"
+    },
+    {
+      "reference_id": "R5",
+      "title": "Learning Rate Matters: Vanilla LoRA May Suffice for LLM Fine-tuning",
+      "version": "2602.04998v2",
+      "versioned_url": "https://arxiv.org/abs/2602.04998v2",
+      "pages": 49,
+      "checked_on": "2026-10-02"
+    },
+    {
+      "reference_id": "R6",
+      "title": "Geometry-Preserving Orthonormal Initialization for Low-Rank Adaptation in RLVR",
+      "version": "2606.31813v1",
+      "versioned_url": "https://arxiv.org/abs/2606.31813v1",
+      "pages": 30,
+      "checked_on": "2026-10-02"
+    },
+    {
+      "reference_id": "R7",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "version": "2106.09685v2",
+      "versioned_url": "https://arxiv.org/abs/2106.09685v2",
+      "pages": 26,
+      "checked_on": "2026-10-02"
+    },
+    {
+      "reference_id": "R8",
+      "title": "Qwen2.5 Technical Report",
+      "version": "2412.15115v2",
+      "versioned_url": "https://arxiv.org/abs/2412.15115v2",
+      "pages": 26,
+      "checked_on": "2026-10-02"
+    },
+    {
+      "reference_id": "R9",
+      "title": "Training Verifiers to Solve Math Word Problems",
+      "version": "2110.14168v2",
+      "versioned_url": "https://arxiv.org/abs/2110.14168v2",
+      "pages": 22,
+      "checked_on": "2026-10-02"
+    }
+  ],
+  "source_snapshots": [
+    {
+      "path": "metadata/qwen25_1_5b_config.json",
+      "download_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B/raw/main/config.json",
+      "retrieved_on": "2026-10-02",
+      "bytes": 684,
+      "sha256": "0e8c8aa86468aba09c9d32157ff4bc2301c7e6c50e4398960425b2ea71e66f77",
+      "revision_note": "Snapshot from a moving source URL; pin immutable experiment revisions separately."
+    },
+    {
+      "path": "metadata/qwen25_1_5b_model_card.md",
+      "download_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B/raw/main/README.md",
+      "retrieved_on": "2026-10-02",
+      "bytes": 3850,
+      "sha256": "84cc3bdbfd781149913126b70981cf1e341176fe4bc9d878601a83f18b035ddf",
+      "revision_note": "Snapshot from a moving source URL; pin immutable experiment revisions separately."
+    },
+    {
+      "path": "metadata/gsm8k_dataset_card.md",
+      "download_url": "https://huggingface.co/datasets/openai/gsm8k/raw/main/README.md",
+      "retrieved_on": "2026-10-02",
+      "bytes": 7935,
+      "sha256": "a17e882503578c9e324560630e31017617714ee025c87cf4fea6fd916895f3c1",
+      "revision_note": "Snapshot from a moving source URL; pin immutable experiment revisions separately."
+    },
+    {
+      "path": "metadata/peft_dora_source_snapshot.py",
+      "download_url": "https://raw.githubusercontent.com/huggingface/peft/main/src/peft/tuners/lora/dora.py",
+      "retrieved_on": "2026-10-02",
+      "bytes": 11792,
+      "sha256": "2ff9d222eeada2ec82d6414ad2e0e46b17c6ccb76fc2cc0923a20c079ccf974c",
+      "revision_note": "Snapshot from a moving source URL; pin immutable experiment revisions separately."
+    },
+    {
+      "path": "metadata/loram_neurips_2025.html",
+      "download_url": "https://papers.nips.cc/paper_files/paper/2025/hash/0010665e949927b74faf6e3ada6d7f72-Abstract-Conference.html",
+      "retrieved_on": "2026-10-02",
+      "bytes": 10076,
+      "sha256": "f919c2af0947e588359ed726baaa556071df108906ff04349bc582c9b621d41b",
+      "revision_note": "Snapshot from a moving source URL; pin immutable experiment revisions separately."
+    }
+  ],
+  "checked_on": "2026-10-02"
+}
