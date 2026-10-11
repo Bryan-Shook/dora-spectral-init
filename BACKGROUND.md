@@ -2,6 +2,8 @@
 
 This guide explains the ideas needed to read our [proposal](README.md) and [test plan](TEST_PLAN.md). It assumes basic familiarity with vectors, matrices, and gradients. Paper links point to specific versions and sections; the reference IDs match the test plan. Sources checked **2026-10-03**.
 
+**For a more gradual explanation:** read [Spectral initialization and DoRA, explained step by step](background-beginner.md). It follows all 11 sections with definitions, worked examples, SVD and gradient derivations, and six explanatory figures. Return here for the compact mathematical reference.
+
 **Our question:** after separately tuning learning rate and initialization scale, does spectral initialization help more under exact DoRA than under detached DoRA—or vice versa?
 
 The central idea is that **identical starting predictions do not imply identical learning behavior**. Two adapters can initially reconstruct the same pretrained weights while their trainable factors transform gradients differently. DoRA adds another choice: whether gradients pass through its normalization denominator.
@@ -102,7 +104,7 @@ A_{R,0}&=\sqrt{\gamma}\,\Sigma_r^{1/2}Q_R^T.
 \end{aligned}
 $$
 
-Here, S means spectral and R means random. Each factor has nonzero singular values $\sqrt{\gamma\sigma_i}$, and each initial product has singular values $\gamma\sigma_i$. The scaled factors themselves generally are not orthonormal.
+Here, S means spectral and R means random. Each factor has nonzero singular values $\sqrt{\gamma\sigma_i}$, and each initial product has singular values $\gamma\sigma_i$. After scaling, the columns of $B_0$ and rows of $A_0$ remain mutually perpendicular, but generally no longer have unit length. This describes the matrix factors, not the scalar $\gamma$.
 
 For **each** initialization, freeze its own correction:
 
