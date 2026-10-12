@@ -1,6 +1,6 @@
 # Research references
 
-Reference links for [TEST_PLAN.md](../TEST_PLAN.md), checked 2026-10-02. The papers are linked to their exact arXiv versions; no local paper PDFs are retained. [manifest.json](manifest.json) records paper URLs, versions, and page counts, plus metadata for the official source snapshots below.
+Reference links for [TEST_PLAN.md](../TEST_PLAN.md). The papers are linked to their exact arXiv versions; no local paper PDFs are retained. [manifest.json](manifest.json) records R1–R9 URLs, versions, and page counts, plus metadata for the official source snapshots retrieved on 2026-10-02. The [literature review](LITERATURE_REVIEW.md) records source-specific findings through 2026-10-11, with a separate [search record](LITERATURE_SEARCH_LOG.md).
 
 ## Papers
 
@@ -15,6 +15,7 @@ Reference links for [TEST_PLAN.md](../TEST_PLAN.md), checked 2026-10-02. The pap
 | R7 | [LoRA](https://arxiv.org/abs/2106.09685v2) | 2106.09685v2; 26 pages | Standard low-rank additive adaptation and zero-factor initialization |
 | R8 | [Qwen2.5 Technical Report](https://arxiv.org/abs/2412.15115v2) | 2412.15115v2; 26 pages | Model-family background; use the exact checkpoint configuration for implementation dimensions |
 | R9 | [GSM8K: Training Verifiers to Solve Math Word Problems](https://arxiv.org/abs/2110.14168v2) | 2110.14168v2; 22 pages | Dataset/task origin; the plan uses supervised fine-tuning and greedy evaluation, not the verifier-training method |
+| R14 | [EDoRA](https://arxiv.org/abs/2501.12067v1) | 2501.12067v1 | Sections 3–4 and Appendix A: frozen SVD factors, normalized adaptation, random/SVD ablation, and tuning documentation |
 
 ## Official source snapshots
 

@@ -1,8 +1,8 @@
 # Background: spectral initialization and DoRA
 
-This guide explains the ideas needed to read our [proposal](README.md) and [test plan](TEST_PLAN.md). It assumes basic familiarity with vectors, matrices, and gradients. Paper links point to specific versions and sections; the reference IDs match the test plan. Sources checked **2026-10-03**.
+This guide explains the ideas needed to read our [proposal](README.md) and [test plan](TEST_PLAN.md). It assumes basic familiarity with vectors, matrices, and gradients. Paper links point to specific versions and sections; the reference IDs match the test plan. Literature coverage is through **2026-10-11**; the [literature audit](references/LITERATURE_REVIEW.md) records the evidence and its limits.
 
-**Our question:** after separately tuning learning rate and initialization scale, does spectral initialization help more under exact DoRA than under detached DoRA—or vice versa?
+**Our primary question:** after separately tuning learning rate and initialization scale, does DoRA amplify, attenuate, or reverse the spectral benefit relative to additive adaptation? **Secondary:** does the answer depend on differentiating through the normalization denominator?
 
 The central idea is that **identical starting predictions do not imply identical learning behavior**. Two adapters can initially reconstruct the same pretrained weights while their trainable factors transform gradients differently. DoRA adds another choice: whether gradients pass through its normalization denominator.
 
@@ -235,7 +235,11 @@ For implementation context, the saved [PEFT source snapshot](references/metadata
 
 DuDe combines principal singular factors, a frozen residual, and a learned magnitude with normalized direction. Its gradient analysis also considers differentiation through the normalization. [R3, §§3.2–3.3](https://arxiv.org/html/2505.14367v2#S3.SS2)
 
-**Implication:** combining PiSSA-like initialization with DoRA is already represented in the literature. Our contribution would be evidence about the interaction between initialization and detachment under matched controls and separate tuning. This is a scoped research question, not an exhaustive novelty claim.
+**Implication:** combining PiSSA-like initialization with DoRA is already represented in the literature. PiSSA's own Appendix A also reports a hybrid comparison. Our contribution would be a controlled reassessment of additive-versus-DoRA spectral benefits after separate tuning, with detachment as a secondary optimization intervention. This is a scoped question, not an exhaustive novelty claim.
+
+### EDoRA: initialization under normalization has direct prior evidence
+
+EDoRA freezes SVD-derived outer factors and trains a small middle matrix and magnitude vector. Its Section 4.3 directly compares SVD and random initialization within that normalized architecture. This answers part of the broad compatibility question; its architecture and controls differ from our trainable-factor study. Treat it as substantive prior evidence, not merely another baseline name. [R14, §§3–4](https://arxiv.org/html/2501.12067v1)
 
 ### LoRAM: magnitude is a competing explanation
 
@@ -261,31 +265,32 @@ The paper studies **reinforcement learning with verifiable rewards (RLVR)**: mod
 
 ## 9. How these ideas become a testable hypothesis
 
-The four primary conditions cross two choices:
+The six controlled conditions cross initialization with three training rules:
 
 | | Spectral initialization | Matched random initialization |
 | --- | --- | --- |
-| Exact DoRA | E-S | E-R |
+| Additive adaptation | A-S | A-R |
 | Detached DoRA | D-S | D-R |
+| Exact DoRA | E-S | E-R |
 
-We also include additive spectral/random controls, A-S and A-R, and standard LoRA, L0. The additive pair helps assess behavior without normalization; L0 supplies a familiar practical baseline.
+The four primary cells are A-S/A-R/D-S/D-R. Exact DoRA adds E-S/E-R for the secondary detachment study. Ordinary zero-factor LoRA (L0) and detached DoRA (D0) supply practical references. The matched nonzero random arms are not these ordinary baselines.
 
 Let $a$ denote final test accuracy, expressed on a 0–100 scale. Define
 
 $$
-\Delta_E=a_{E,S}-a_{E,R},\qquad
-\Delta_D=a_{D,S}-a_{D,R},\qquad
-I=\Delta_E-\Delta_D.
+\Delta_A=a_{A,S}-a_{A,R},\quad
+\Delta_D=a_{D,S}-a_{D,R},\quad
+\Delta_E=a_{E,S}-a_{E,R}.
 $$
 
-$I$ is the **interaction**: how much the spectral advantage changes when the gradient rule changes.
+The **primary interaction** is $J=\Delta_D-\Delta_A$: how much standard DoRA changes the spectral advantage. The **secondary interaction** is $I=\Delta_E-\Delta_D$: how much detachment changes that advantage within the same forward parameterization.
 
-For example, hypothetical exact accuracies of 62% and 59% give a 3-percentage-point spectral advantage. Detached accuracies of 60% and 59% give a 1-point advantage. Then $I=2$ percentage points. If both advantages were 3 points, $I=0$, even though spectral initialization helped both variants.
+For example, hypothetical spectral gains of 3 points for additive, 1 for detached DoRA, and 2 for exact DoRA give $J=-2$ and $I=1$. Spectral initialization still helps detached DoRA, but less than additive adaptation; allowing exact gradients partly restores the benefit. These are illustrative numbers. A negative interaction does not by itself mean a harmful combination.
 
 The plan separates four hypotheses:
 
-- **H1, interaction:** detachment changes the spectral advantage after the specified tuning. Either sign is possible.
-- **H2, spectral value:** within a rule, spectral initialization retains an advantage after matching and tuning. This can hold even if H1 does not.
+- **H1, primary interaction:** DoRA changes the spectral advantage relative to additive adaptation after the specified tuning. Either sign is possible; report the within-DoRA gap too.
+- **H2, secondary detachment interaction:** exact versus detached gradients change the spectral advantage. Exact gradients are not presumed better.
 - **H3, mechanism:** the factors make detachment affect effective weight steps differently. A gradient difference alone is insufficient evidence for a task-performance effect.
 - **H4, cost:** any quality difference must be evaluated alongside initialization, search, training, and evaluation cost.
 
@@ -298,7 +303,7 @@ Track the correct notion of movement:
 | $\lVert W_{eff,t+1}-W_{eff,t}\rVert_F$ | Size of one effective weight step |
 | Angle between effective rows | Directional movement, complementing magnitude |
 
-Independently tuned conditions may select different $\gamma$ values. Their final comparison measures performance under our search protocol. Comparisons at shared $(\gamma,\eta)$ are also needed to explain mechanisms under matched hyperparameters.
+Independently tuned conditions may select different $\gamma$ values. Their final comparison measures best-over-scale performance under our search protocol, not equal selected magnitudes. Fixed-$\gamma$ comparisons with separately selected LRs address equal starting spectra; shared $(\gamma,\eta)$ probes address local mechanisms. Fresh-seed fixed-scale confirmation is separately budgeted. At $\gamma=1$, the spectral additive arm uses the PiSSA initialization construction; comparing those confirmed spectral arms to L0/D0 addresses the native-initialization practical question.
 
 Repeat every condition with fresh, paired seed blocks and report uncertainty. A wide interval containing zero is inconclusive. The plan's 2-percentage-point practical margin is a proposed decision threshold, not a published effect size or an observed result.
 
@@ -341,5 +346,6 @@ These are reading pointers, not claims that our protocol reproduces each paper. 
 | R7 | Hu et al. **LoRA: Low-Rank Adaptation of Large Language Models**. ICLR 2022. [2106.09685v2](https://arxiv.org/abs/2106.09685v2) | [§4.1](https://arxiv.org/html/2106.09685v2#S4.SS1): additive factorization, scaling, and zero-factor initialization |
 | R8 | Qwen Team. **Qwen2.5 Technical Report**. [2412.15115v2](https://arxiv.org/abs/2412.15115v2) | [§2](https://arxiv.org/html/2412.15115v2#S2): architecture/tokenizer; use the [base checkpoint](https://huggingface.co/Qwen/Qwen2.5-1.5B) for model-specific details |
 | R9 | Cobbe et al. **Training Verifiers to Solve Math Word Problems**. 2021. [2110.14168v2](https://arxiv.org/abs/2110.14168v2) | [§2](https://arxiv.org/html/2110.14168v2#S2): GSM8K; [§4](https://arxiv.org/html/2110.14168v2#S4): distinguish supervised training from verification |
+| R14 | Nasiri and Garraghan. **EDoRA: Efficient Weight-Decomposed Low-Rank Adaptation via Singular Value Decomposition**. 2025. [2501.12067v1](https://arxiv.org/abs/2501.12067v1) | §§3–4: frozen SVD factors, normalized adaptation, and the random/SVD ablation |
 
-The experiment's central uncertainty remains empirical: after these controls and tuning, does changing the gradient rule change the value of pretrained singular directions?
+The experiment's central uncertainty remains empirical: after per-condition tuning, does DoRA change the value of the spectral construction relative to additive adaptation, and does denominator detachment change that answer?

@@ -1,24 +1,26 @@
-# Test plan: spectral initialization and DoRA detachment
+# Test plan: spectral initialization × DoRA, with a detachment study
 
-Prepared 2026-10-02 from [README.md](README.md). Hardware confirmed by the project owner: **one NVIDIA H100 80 GB, with 100–200 total GPU-hours, including pilots, tuning, and evaluation**.
+This protocol defines the experiment described in the [proposal](README.md). Available hardware and budget: **one NVIDIA H100 80 GB, with 100–200 total GPU-hours, including pilots, tuning, and evaluation**.
 
-**Recommended starting point:** Qwen2.5-1.5B base, GSM8K supervised fine-tuning, rank 16 adapters on query and value projections, six controlled conditions plus a standard LoRA baseline. Complete the 100-hour study before adding breadth. Use additional resources to strengthen tuning and seed replication.
+The additive-versus-detached-DoRA interaction is primary; the exact-versus-detached interaction is secondary. The core includes six controlled conditions and two ordinary-initialization references. The [literature audit](references/LITERATURE_REVIEW.md) explains the prior evidence and limits of the novelty claim.
+
+**Pilot configuration:** Qwen2.5-1.5B base, GSM8K supervised fine-tuning, rank 16 adapters on query and value projections, six controlled conditions plus ordinary LoRA and ordinary detached DoRA. Complete the measured core before adding breadth. Prioritize confirmation precision, fixed-scale validation, and tuning stability with additional resources.
 
 This is a proposed protocol, not a record of completed experiments. Model suitability, memory, throughput, statistical sensitivity, and all runtime estimates remain to be measured. Numeric choices below are operational defaults selected for this budget unless explicitly attributed to a source. Freeze any pilot changes before the main search.
 
 ## 1. Research question and intended contribution
 
-**Does allowing gradients through DoRA's normalization denominator change the benefit of spectral initialization after each condition receives its own learning-rate and initialization-scale search?**
+**Does DoRA amplify, attenuate, or reverse the benefit of spectral initialization after per-condition tuning, and does the conclusion depend on denominator detachment?**
 
 There are three related questions:
 
-1. **Mechanism:** Does detachment change actual effective weight steps differently for spectral and random initialization?
-2. **Task performance:** Does that interaction survive separate hyperparameter tuning and repeated training?
-3. **Cost:** Is any observed benefit useful relative to initialization, tuning, training, and evaluation cost?
+1. **Primary task comparison:** Does the tuned spectral-minus-random gap change between additive adaptation and standard detached DoRA?
+2. **Secondary detachment comparison:** Does allowing gradients through the denominator change that gap within DoRA, and can shared-state effective steps help explain it?
+3. **Practical value:** How do the controlled arms compare with ordinary LoRA/DoRA, and are any benefits useful relative to total cost?
 
 DoRA derives different gradients with and without denominator detachment [R1]. PiSSA uses principal singular components and a frozen residual [R2]. DuDe already combines spectral initialization with weight decomposition [R3]. LoRAM motivates controlling magnitude [R4], and Learning Rate Matters motivates separate tuning [R5]. RLPO/RLMO provide related initialization analysis in reinforcement learning; their results do not establish the answer for this supervised setting [R6].
 
-The intended contribution is a controlled interaction study. Combining SVD and DoRA alone is already covered by related work. The cited papers motivate the experiment; this document does not establish an exhaustive novelty claim.
+PiSSA Appendix A already contains a hybrid comparison [R2], and EDoRA directly compares SVD and random initialization in a normalized frozen-subspace adapter [R14]. The intended contribution is a controlled reassessment of existing hybrid claims. Combining SVD and DoRA, or studying detachment alone, is not novel. The audit did not verify an independently tuned, spectrum-controlled interaction in the target setting; this is not proof of universal absence.
 
 ## 2. What to do, why, and how
 
@@ -27,9 +29,9 @@ The intended contribution is a controlled interaction study. Combining SVD and D
 | Validate the parameterization | An incorrect norm axis, residual, or gradient would invalidate the study | Analytic gradients, finite differences where appropriate, forward equality, and checkpoint round trips | Synthetic matrices, then a tiny randomly initialized transformer; correctness report |
 | Establish a viable task | The budget is useful only if the model learns and completes enough repeats | Short runs for all four DoRA conditions, then one complete run of the slowest condition | Qwen2.5-1.5B and the GSM8K pilot split; measured cost forecast |
 | Match starting conditions | Spectral direction should not be confounded with initial factor singular values or initial predictions | Balanced SVD factors versus random orthonormal directions with the same singular values; subtract initial products | Every adapted matrix; initialization audit |
-| Tune each condition | A shared learning rate can favor one parameterization | Equal numbers of candidates and training epochs, separate selection on development data | Six controlled cells and standard LoRA; complete search table |
-| Repeat every final condition | Selecting only promising cells creates an incomplete and potentially biased comparison | Three new, paired seed blocks for all seven conditions | Locked configuration files and 21 confirmation runs |
-| Test the interaction | Ranking methods does not answer whether detachment changes the spectral advantage | Difference of spectral-minus-random gaps, with uncertainty | Per-example predictions, paired seed estimates, interaction plot |
+| Tune each condition | A shared learning rate can favor one parameterization | Equal numbers of candidates and training epochs, separate selection on development data | Six controlled cells and two ordinary baselines; complete search table |
+| Repeat every final condition | Selecting only promising cells creates an incomplete and potentially biased comparison | Three new, paired seed blocks for all eight conditions; five if funded | Locked configuration files and 24 core confirmation runs |
+| Test the interactions | A winning hybrid need not show positive interaction | Primary additive/DoRA contrast J; secondary exact/detached contrast I, each with uncertainty | Per-example predictions, paired seed estimates, interaction plots |
 | Explain and cost the result | A gradient difference may disappear in effective weights or final accuracy | Counterfactual updates at the same state, effective movement, synchronized timing and peak memory | Small shared training batches; mechanism and cost tables |
 
 ## 3. Model, data, and training defaults
@@ -119,7 +121,9 @@ $$Z_t=W_{res}+B_tA_t.$$
 
 Then $Z_0=W_0$. An equivalent implementation is $Z_t=W_0+(B_tA_t-C_0)$; this can avoid rounding a residual into BF16. Keep the correction and recombination in FP32, and verify the resulting forward computation. Never recompute $C_0$ from the current trainable factors.
 
-This matches initial spectra, not future gradient norms or effective weight steps. Those subsequent differences are measurements, not properties assumed away. Also, independently tuned cells can select different $\gamma$ values: the primary result measures performance after this specified search. Use shared $(\gamma,\eta)$ comparisons for a stricter mechanism interpretation.
+This matches initial spectra, not future gradient norms or effective weight steps. Independently tuned cells can select different $\gamma$ values: the primary result measures best-over-scale performance under the specified search. Report development comparisons at each shared $\gamma$ with separately selected LRs, and label them exploratory. Fresh-seed fixed-scale confirmation is a separately budgeted extension (Section 11.2). Shared $(\gamma,\eta)$ probes answer a local mechanism question, not the tuned-performance question.
+
+Each initialization freezes a different $C_0$, creating a different translated rank-constrained family. Interpret S/R as a comparison of factor/residual constructions, not exclusively initial points in an identical feasible family. A zero-B comparison of pretrained versus random orthonormal A can be a later orientation-only control; it is not the PiSSA recipe.
 
 ### 4.2 Forward rule and detachment
 
@@ -135,37 +139,40 @@ The inspected PEFT implementation detaches both the low-rank product used in nor
 
 | ID | Forward/gradient rule | Initialization | Role |
 | --- | --- | --- | --- |
-| A-S | Additive | Principal SVD, matched nonzero factors | Additive spectral control |
-| A-R | Additive | Random directions, matched nonzero factors | Additive random control |
-| E-S | DoRA, exact denominator gradient | Principal SVD | Primary interaction cell |
-| E-R | DoRA, exact denominator gradient | Random directions | Primary interaction cell |
-| D-S | DoRA, detached denominator | Principal SVD | Primary interaction cell |
-| D-R | DoRA, detached denominator | Random directions | Primary interaction cell |
+| A-S | Additive | Principal SVD, matched nonzero factors | Primary J cell |
+| A-R | Additive | Random directions, matched nonzero factors | Primary J cell |
+| E-S | DoRA, exact denominator gradient | Principal SVD | Secondary I cell |
+| E-R | DoRA, exact denominator gradient | Random directions | Secondary I cell |
+| D-S | DoRA, detached denominator | Principal SVD | Primary J and secondary I cell |
+| D-R | DoRA, detached denominator | Random directions | Primary J and secondary I cell |
 | L0 | Standard additive LoRA | Kaiming-uniform A, zero B | Separately tuned practical reference [R7] |
+| D0 | Standard detached DoRA | Kaiming-uniform A, zero B | Separately tuned practical reference [R1] |
 
-A-S at $\gamma=1$ uses the PiSSA initialization construction; the spectral DoRA cells are related to DuDe. These are controlled adaptations, not reproductions of every published training recipe. A-R is not standard zero-factor LoRA. L0 is outside the interaction contrast.
+A-S at $\gamma=1$ uses the PiSSA initialization construction; D-S at that scale supplies its detached-DoRA hybrid. E-S also varies the gradient rule. These are controlled adaptations, not reproductions of every published training recipe. A-R is not L0, and D-R is not D0. L0/D0 have $C_0=0$; initialize D0 magnitudes from $W_0$. Pair their random A samples within seed blocks. Both baselines are outside J and I.
+
+A native-initialization four-cell comparison requires L0, D0, A-S at $\gamma=1$, and D-S at $\gamma=1$, each with its own LR selection and fresh confirmation. Do not substitute independently rescaled spectral winners and call this a native PiSSA comparison. Section 11.2 budgets the additional confirmations where these differ from core winners.
 
 Reuse the same random bases across A-R, E-R, and D-R within a seed block and across that block's scale candidates. Use separate random-number streams for initialization and data order so that adapter initialization does not accidentally change the batches seen by a condition.
 
 ## 5. Elaborated hypotheses and decision rules
 
-### H1 — Primary: detachment changes the tuned spectral advantage
+### H1 — Primary: DoRA changes the tuned spectral advantage
 
-Let $a_{g,i,k}$ be test accuracy in **percentage points**, for gradient rule $g$ (E or D), initialization $i$ (S or R), and confirmation seed block $k$. Each condition uses its own development-selected hyperparameters. Define
+Let $a_{g,i,k}$ be test accuracy in **percentage points**, for rule $g$ (A, D, or E), initialization $i$ (S or R), and confirmation seed block $k$. Each condition uses its own development-selected LR and scale. Define
 
 $$
-\Delta_E=\operatorname{mean}_k(a_{E,S,k}-a_{E,R,k}),\quad
+\Delta_A=\operatorname{mean}_k(a_{A,S,k}-a_{A,R,k}),\quad
 \Delta_D=\operatorname{mean}_k(a_{D,S,k}-a_{D,R,k}),\quad
-I=\Delta_E-\Delta_D.
+J=\Delta_D-\Delta_A.
 $$
 
-**Prediction:** the interaction $I$ may be practically meaningful. This is two-sided: there is insufficient evidence to precommit that exact or detached DoRA benefits more. For illustration only, spectral gains of 3 points under exact DoRA and 1 point under detached DoRA give $I=2$ points.
+**Prediction:** J may be practically meaningful, with either sign. Positive J means DoRA amplifies the spectral-minus-random gap; negative J means it reduces the gap. Report $\Delta_D$ too: $J<0$ with $\Delta_D>0$ is attenuation of a useful benefit, while $\Delta_D<0$ means the spectral construction harms DoRA relative to its matched random control. A winning hybrid alone does not establish positive interaction.
 
-**Rationale:** the gradient rule changes how a loss gradient reaches the low-rank factors. Their initial orientation can change the resulting effective movement. That is a plausible mechanism, not a theorem about final task accuracy.
+**Rationale:** DoRA changes how factor updates become effective weights. Spectral orientation and scale may interact with that parameterization. This is a plausible mechanism, not a theorem about final accuracy. Independent scale selection makes J a bounded practical tuning comparison, not an assertion that the selected arms have equal update magnitude.
 
 Use a proposed practical margin **$\delta=2$ percentage points**. This is a project decision threshold, not a published constant or a promised detectable effect; two points correspond to about 26 correct answers out of 1,319. Review whether this improvement would justify the extra work before the main search. Do not enlarge the margin because measured variance makes equivalence difficult.
 
-Interpret the primary 95% interval for $I$ as follows:
+Interpret the primary 95% interval for $J$ as follows:
 
 | Interval outcome | Interpretation |
 | --- | --- |
@@ -174,9 +181,11 @@ Interpret the primary 95% interval for $I$ as follows:
 | Excludes zero but overlaps a practical boundary | Detectable interaction; practical size remains uncertain |
 | Includes zero and extends outside the practical band | Inconclusive; it does not establish equivalence |
 
-### H2 — Secondary: spectral direction retains value after matching and tuning
+### H2 — Secondary: detachment changes that spectral advantage
 
-Estimate $\Delta_A$, $\Delta_E$, and $\Delta_D$ separately. A positive gap that remains meaningful with uncertainty supports a spectral advantage for that rule and search protocol. A well-resolved near-zero gap supports the view that the matched random alternative is sufficient here. A negative gap favors the random alternative. H1 can hold even if both gaps are negative; it concerns their difference.
+Define $\Delta_E=\operatorname{mean}_k(a_{E,S,k}-a_{E,R,k})$ and $I=\Delta_E-\Delta_D$. Estimate I using independently tuned exact and detached cells, with the same paired-seed interval and prespecified practical margin as H1. Exact and detached DoRA have the same forward function at identical parameters; changing the backward rule isolates an optimization intervention. Either sign is possible, and exact gradients are not presumed superior. The comparison to additive adaptation under exact DoRA is $\Delta_E-\Delta_A=J+I$; report it as secondary.
+
+Report all three within-rule spectral gaps. A positive gap supports value relative to the matched random construction under the search protocol. A narrow near-zero gap supports practical similarity; a wide interval is inconclusive. These contrasts do not by themselves isolate pretrained orientation from the frozen residual or certify equivalence to ordinary zero-factor adapters.
 
 LoRAM and Learning Rate Matters motivate this alternative explanation [R4, R5]. Neither proves that the advantage must disappear in this model, dataset, rank, and optimizer setting. Plot the searched performance surfaces as well as their selected points. This also reveals whether a claimed advantage depends on one scale or a search boundary.
 
@@ -193,7 +202,9 @@ At the same initialized model and batch, $z$, $m$, and the effective-weight loss
 
 Run four dedicated 100-step diagnostic trajectories (E-S, E-R, D-S, D-R) with seed block `40`, common $\gamma=1$ and $\eta=10^{-4}$. At steps 0, 50, and 100, clone each checkpoint and its optimizer state. On the same diagnostic batch, take one hypothetical exact step and one detached step; do not apply these steps to the training run. Compare the merged weight-step directions, their relative distance, and prediction change. Use the same magnitude-learning rule and optimizer state within each counterfactual pair. Also inspect final confirmation checkpoints if the diagnostic allocation permits.
 
-Report $d=\|\Delta W_E-\Delta W_D\|_F/(\|\Delta W_E\|_F+\|\Delta W_D\|_F+\epsilon)$ and the cosine between the steps, aggregated across layers. Explore whether S and R differ and whether those patterns accompany H1. These diagnostics support an explanation; a correlation across a few cells is not a validated predictor of final accuracy.
+Under the budget fallback that defers exact-arm training, run only the D-S/D-R diagnostic trajectories and compare exact/detached counterfactual steps from those states. Label the restricted state coverage; it cannot establish H2 after tuned exact training.
+
+Report $d=\|\Delta W_E-\Delta W_D\|_F/(\|\Delta W_E\|_F+\|\Delta W_D\|_F+\epsilon)$ and the cosine between the steps, aggregated across layers. Also compare probe loss/prediction changes after rescaling the candidate effective steps to an equal small norm, flagging zero-step cases. Explore whether S/R patterns accompany H2 and help interpret H1. These are local interventions, not matched training trajectories; a correlation across a few cells is not a validated predictor of final accuracy.
 
 ### H4 — Systems: any accuracy gain must be assessed with its cost
 
@@ -222,7 +233,7 @@ For BF16 validation, first measure drift from repeat execution and from switchin
 ## 7. Pilot and freeze gate: up to 10 GPU-hours including device checks
 
 1. Complete CPU checks; use the first device allocation for numerical checks, model loading, and the SVD cache.
-2. Run all four DoRA cells for 100 steps with pilot seed blocks `0, 1, 2`, initially at $\gamma=1$, $\eta=10^{-4}$. Also profile additive and standard LoRA. Use training examples for optimization and only pilot validation for learning decisions.
+2. Run all four controlled DoRA cells for 100 steps with pilot seed blocks `0, 1, 2`, initially at $\gamma=1$, $\eta=10^{-4}$. Also profile A-S/A-R and both ordinary baselines. Use training examples for optimization and only pilot validation for learning decisions.
 3. Run one complete three-epoch job for the slowest measured cell. Short-run extrapolation alone is insufficient because checkpoints, generation, and dataloading also cost time.
 4. Time generation on the complete pilot validation split, including loading/merging and answer parsing. Use the intended generation backend and batch sizes. Profile the cost of development scoring separately from training.
 5. Freeze the dataset partitions, model revision, adapter targets, rank, horizon, precision, search ranges, practical margin, parser, seed count, and analysis before the main search.
@@ -232,6 +243,8 @@ For BF16 validation, first measure drift from repeat execution and from switchin
 **Memory gate:** the longest supported batch in the slowest condition must fit with at least 10% of the device memory available as headroom. Record both allocated and reserved peaks. If it fails, reduce the common microbatch while preserving the effective batch, or enable checkpointing consistently, and measure throughput again.
 
 **Budget gate:** forecast all remaining jobs using measured times, including failures and evaluation, and keep the confirmation reserve intact. If the 100-hour track does not fit, first improve batching/measurement overhead consistently, then consider a common two-epoch horizon or the 0.5B fallback before freezing. Recheck the learning gate after a change. Do not keep a fast condition's three epochs while shortening a slower one, and do not remove a primary cell to fit the budget.
+
+If exact-gradient training would crowd out adequate primary confirmation, a fallback selected **before the main search** may defer E-S/E-R training and retain shared-state detachment diagnostics only. The six remaining arms A-S/A-R/D-S/D-R/L0/D0 still answer H1; they cannot answer the tuned H2. Publish the reduced scope and new ledger, and do not drop exact arms based on favorable/unfavorable results after the study starts.
 
 If the pilot cannot establish both learning and affordability within its allocation, document the failure and revised scope. Do not spend the remainder on a large, uninterpretable search.
 
@@ -247,20 +260,20 @@ For each of the six controlled cells, search:
 
 These ranges are starting proposals, informed by the broad rate sensitivity in [R5], not proven optima. Pilot behavior can justify shifting them for **all six cells** before freezing. Factor scale is tuned; the adapter multiplier, rank, batch size, weight decay, and magnitude-to-factor LR ratio are fixed.
 
-Give L0 twelve learning rates logarithmically spaced from `2e-6` through `2e-3`, inclusive, and the same total epoch allocation. Its zero-factor initialization remains standard. This gives it an equal candidate budget without inventing a spectral-scale parameter for it.
+Give each of L0 and D0 twelve learning rates logarithmically spaced from `2e-6` through `2e-3`, inclusive, and the same total epoch allocation. Their zero-factor initialization remains standard. This gives each an equal candidate budget without inventing a spectral-scale parameter.
 
 Use two stages:
 
-1. **Screen:** all 84 candidates train for one epoch. Score greedy final-answer accuracy on a fixed 256-example subset of development data; break ties by lower answer-token NLL on the full 500 development examples, then lower LR. Use the same subset for all candidates.
-2. **Promote:** in each controlled cell retain the best LR at each of the three scales, giving three candidates per cell. Retain L0's top three rates. Continue these 21 jobs for two additional epochs. Select one final configuration per cell using full-development accuracy, breaking ties by answer NLL and then lower LR/scale.
+1. **Screen:** all 96 candidates train for one epoch. Score greedy final-answer accuracy on a fixed 256-example subset of development data; break ties by lower answer-token NLL on the full 500 development examples, then lower LR. Use the same subset for all candidates.
+2. **Promote:** in each controlled cell retain the best LR at each of the three scales, giving three candidates per cell. Retain the top three rates for each ordinary baseline. Continue these 24 jobs for two additional epochs. Select one final configuration per cell using full-development accuracy, breaking ties by answer NLL and then lower LR/scale. Save each scale's LR winner separately for fixed-scale analyses.
 
 Every screened job uses the **three-epoch LR schedule from the beginning**. A promoted job resumes model, optimizer, scheduler, random-number generators, and dataloader state; restarting with a new schedule would change the comparison. Score the final three-epoch checkpoint, not whichever checkpoint happens to maximize development accuracy.
 
-This costs 84 one-epoch starts plus 42 continuation epochs: **126 epochs, or 42 complete three-epoch training equivalents**. It is a bounded search with early screening, not a guarantee of global optimality. Screening can discard slow starters. If an optimum is on a rate boundary, or neighboring rates are unstable, either finance an equal expansion for the compared cells from reserve before confirmation, or explicitly report that the tuning range limits the conclusion. An expansion is never free.
+This costs 96 one-epoch starts plus 48 continuation epochs: **144 epochs, or 48 complete three-epoch training equivalents**. It is a bounded search with early screening, not a guarantee of global optimality. Screening can discard slow starters. If an optimum is on a rate boundary, or neighboring rates are unstable, either finance an equal expansion for the compared cells from reserve before confirmation, or explicitly report that the tuning range limits the conclusion. An expansion is never free.
 
 ### 8.2 Confirmation
 
-Freeze selected configurations. Run **all seven conditions with fresh seed blocks `101, 202, 303`**, giving 21 complete runs. Do not reuse tuning runs as seed replicates. Within each block, pair example order and the random bases across the relevant cells. Keep all results, including disappointing cells.
+Freeze selected configurations. Run **all eight conditions with fresh seed blocks `101, 202, 303`**, giving 24 complete runs. Do not reuse tuning runs as seed replicates. Within each block, pair example order and the random bases across the relevant cells. Keep all results, including disappointing cells. Five-seed confirmation is preferred if the measured allocation permits (Section 11.2).
 
 The 100-hour result is conditional on a single tuning seed and a restricted search. The expanded track below repeats search finalists to assess selection stability. Failed numerical runs remain in the search/failure record; rerun infrastructure interruptions from checkpoint, and count both allocations. Do not repeatedly retry divergent configurations until a favorable seed appears.
 
@@ -274,9 +287,13 @@ Evaluate the untouched base model once on the locked test as context after the f
 
 For each seed block compute
 
+$$J_k=(a_{D,S,k}-a_{D,R,k})-(a_{A,S,k}-a_{A,R,k})$$
+
+and the secondary contrast
+
 $$I_k=(a_{E,S,k}-a_{E,R,k})-(a_{D,S,k}-a_{D,R,k}).$$
 
-Report the mean, every individual value, and the paired Student-t 95% interval across seed blocks. With three seeds, the multiplier is approximately 4.303 and the half-width is $4.303\,s_I/\sqrt{3}$. For example, seed SD 1.5 points would give a half-width about 3.7 points; three seeds cannot reliably establish a tiny effect. Pilot variability is only a rough guide because short trajectories may underestimate final variability.
+For each contrast and within-rule gap, report the mean, every individual value, and the paired Student-t 95% interval across seed blocks. For primary J with three seeds, the multiplier is approximately 4.303 and the half-width is $4.303\,s_J/\sqrt{3}$. For example, seed SD 1.5 points would give a half-width about 3.7 points; three seeds cannot reliably establish a tiny effect. Pilot variability is only a rough guide because short trajectories may underestimate final variability.
 
 This primary interval describes training randomness conditional on the locked test set and selected configurations. Also provide a paired question-bootstrap interval for item variability, resampling the same question IDs across all cells, plus an optional two-way seed/question bootstrap as a sensitivity analysis. Ten thousand resamples are inexpensive on CPU. With only three seeds, bootstrap precision does not create additional independent training evidence.
 
@@ -284,11 +301,13 @@ Use H1 as the sole primary inferential claim. Treat H2–H4 and per-layer correl
 
 Required figures/tables:
 
-- Seven-condition test table: selected LR/scale, accuracy mean/SD, seed values, answer NLL, failure count, peak memory, and measured time.
-- Interaction plot: $\Delta_E$, $\Delta_D$, and $I$ with intervals and the practical band.
+- Eight-condition test table: selected LR/scale, accuracy mean/SD, seed values, answer NLL, failure count, peak memory, and measured time.
+- Primary interaction plot: $\Delta_A$, $\Delta_D$, and J with intervals and the practical band; secondary plot adds $\Delta_E$ and I.
 - Search surfaces by LR and scale, marking promoted candidates and boundary selections.
 - Effective movement versus step and versus wall time, alongside task learning curves.
 - Cost table separating initialization, tuning, confirmation, generation, diagnostics, and retries.
+
+For confirmation learning curves, score a fixed 128-example development subset at the end of epochs 1 and 2; use the already budgeted full-development score at epoch 3, also reporting its same 128-example subset. Report accuracy versus optimizer steps and elapsed allocated GPU time, without selecting checkpoints from these curves. These extra generations are priced below. Accuracy-scale interactions can be compressed near a ceiling; include held-out answer NLL as a secondary outcome. A convergence advantage is distinct from final-checkpoint accuracy.
 
 ## 10. Measurements that distinguish scale from direction
 
@@ -321,22 +340,22 @@ One full training equivalent below means three epochs with training and routine 
 | Device correctness, initialization, profiling | CPU checks first; real-model checks and decomposition cache | 4.00 |
 | Pilot and freeze | Short paired pilots plus one full slow-cell pilot | 6.00 |
 | Six-cell search | 36 full training equivalents × 0.75 h | 27.00 |
-| Standard LoRA search | 6 full training equivalents × 0.75 h | 4.50 |
-| Confirmation | 7 conditions × 3 seeds × 0.75 h | 15.75 |
-| All scoring and associated I/O | Development and final-test generation/NLL, merges, load/save overhead | 18.00 |
+| Ordinary LoRA and DoRA searches | 12 full training equivalents × 0.75 h | 9.00 |
+| Confirmation | 8 conditions × 3 seeds × 0.75 h | 18.00 |
+| All scoring and associated I/O | Development curves and final-test generation/NLL, merges, load/save overhead | 20.00 |
 | Mechanism diagnostics | Short common-setting trajectories and shared-state counterfactuals | 4.00 |
-| Contingency | Boundary extensions, failures, slower jobs, additional scoring | 20.75 |
-| **Hard cap** | **63 full training equivalents for search + confirmation** | **100.00** |
+| Contingency | Boundary extensions, failures, slower jobs, additional scoring | 12.00 |
+| **Hard cap** | **72 full training equivalents for search + confirmation** | **100.00** |
 
-There are **84 search starts and 21 fresh confirmation starts**, with 21 search jobs continued. These are not 105 full training runs. Do not count continuation epochs twice.
+There are **96 search starts and 24 fresh confirmation starts**, with 24 search jobs continued. These are not 120 full training runs. Do not count continuation epochs twice.
 
-The default schedule generates about **70,203 completions** across search screening (84 × 256), promoted-candidate scoring (21 × 500), confirmation-development scoring (21 × 500), and confirmation testing (21 × 1,319). This excludes pilot/base-model scoring and repeats, which also need allowance. Token lengths and generation throughput determine the actual cost; short training alone does not establish affordability.
+The default schedule generates **86,376 completions** across search screening (96 × 256), promoted-candidate scoring (24 × 500), confirmation intermediate curves (24 × 2 × 128), confirmation-development scoring (24 × 500), and confirmation testing (24 × 1,319). This excludes pilot/base-model scoring and repeats, which also need allowance. Token lengths and generation throughput determine the actual cost; short training alone does not establish affordability. The 20-hour scoring allowance remains unmeasured.
 
 At average padded length 512, a full run processes approximately $3\times6473\times512=9.94$ million padded tokens. Fitting training into 0.75 hour requires about 3,682 padded tokens/second; at padded length 1,024 it requires about 7,365. These are **required rates calculated from the allowance**, not predictions. Replace them with measured length distributions and rates in the pilot.
 
 Maintain a ledger of reserved/actual GPU-hours for every job, including interrupted allocations. Charge GPU time while the accelerator is allocated, even during I/O; do preprocessing and CPU analysis outside a reserved GPU session when possible. At the freeze gate, require `spent pilot + forecast remaining training + forecast scoring/I/O + diagnostics + at least 10 h failure reserve <= 100 h`. Update the forecast before every job and keep unfinished confirmation/evaluation funded. The table's larger initial contingency can absorb measured differences, but it is not an extra budget beyond the cap.
 
-If the cap is 100 hours, do not start optional work until the seven-condition result can be completed. Never spend confirmation time chasing the best preliminary score. If the main study was frozen and later slows down, preserve complete paired seed blocks and report any reduction in precision explicitly; do not report a partial block as a completed interaction estimate. Fewer than three complete confirmation blocks means the planned confirmatory study is unfinished and any available estimates are exploratory.
+If the cap is 100 hours, do not start optional work until the eight-condition result (or the explicitly frozen fallback) can be completed. Never spend confirmation time chasing the best preliminary score. If the main study was frozen and later slows down, preserve complete paired seed blocks and report any reduction in precision explicitly; do not report a partial block as a completed interaction estimate. Fewer than three complete confirmation blocks means the planned confirmatory study is unfinished and any available estimates are exploratory.
 
 ### 11.2 Expansion toward 200 hours
 
@@ -344,23 +363,25 @@ Choose this track **before confirmation/test inspection** if the extra allocatio
 
 | Priority | Extra work | Additional allowance |
 | --- | --- | ---: |
-| 1 | Repeat the top two full-run candidates in each of the seven conditions on two new tuning seeds (`20, 30`): 28 full runs. Select by mean development accuracy over tuning seeds `10, 20, 30`, then mean NLL. Use these winners in the already budgeted confirmation runs. | 50 h including scoring and reserve |
-| 2 | Increase all seven conditions from three to five confirmation seeds by adding `404, 505`: 14 full runs plus scoring. | 20 h |
-| 3 | Replicate the four primary DoRA cells on Qwen2.5-0.5B/GSM8K, with its own pilot and tuning: 12 screened candidates/cell, three promotions/cell, and three fresh confirmation seeds/cell. This is 36 full training equivalents. Launch only if the measured total fits. | 30 h including pilot, scoring, and reserve |
+| 1 | Increase all eight conditions from three to five confirmation seeds by adding `404, 505`: 16 full runs plus scoring. Decide seed count before any confirmation/test inspection. | 25 h including scoring and reserve |
+| 2 | Confirm A-S/A-R/D-S/D-R at shared $\gamma=1$, using their separately selected LRs and the same five confirmation seeds: at most 20 additional full runs, fewer where configurations exactly match existing runs. This also completes the native-initialization L0/D0/PiSSA/hybrid comparison. | 30 h including scoring and reserve |
+| 3 | Repeat the top two full-run candidates in each of eight conditions on tuning seeds `20, 30`: 32 full runs. Select using mean development accuracy over seeds `10, 20, 30`, then mean NLL, before running confirmation. This priority is a funding order, not execution order. | 45 h including scoring and reserve |
 | **Additional cap** | Added to the completed core allocation | **100 h** |
 
-The replication model is cheaper and tests sensitivity to model size; it is not evidence across model families or tasks. Its 30-hour allowance needs training near 0.5 h per full equivalent with the remainder covering other costs. If it fails that gate, use remaining time for the primary study's uncertainty and search coverage, and omit the replication.
+Fixed-scale confirmation estimates $J(\gamma=1)$, conditional on equal initial spectra and separate LR selection; it still does not match later effective steps. The native-initialization contrast uses spectral-minus-ordinary gaps instead, so report it separately from J. Without this extension, native PiSSA and fixed-scale results are exploratory development evidence only unless the necessary configurations happen to coincide with all core confirmed winners. If finalist retuning is also funded, separately repeat the four fixed-$\gamma=1$ LR winners on seeds `20, 30` where not already included (up to eight extra tuning runs); finance this from the extension reserves and reforecast before launch. Do not present one-seed fixed-scale selection as equally stable as multi-seed core selection.
+
+A second model/task is deferred until these priorities are funded and complete. It requires its own explicit pilot, tuning, confirmation, and scoring budget. If an extension cannot fit, omit it before confirmation and narrow the corresponding claim.
 
 Repeated finalist tuning tests stability within the screened candidate set; it does not repair all possible early-screening bias. If slow-starter concerns dominate, use the expansion allocation to finish discarded candidates symmetrically and reforecast confirmation instead of claiming robust global tuning.
 
-If extra hours arrive only after confirmation, changing selected configurations requires new confirmation runs and a new budget. Existing results cannot be relabeled as confirmation of a different configuration. For an intermediate budget such as 150 hours, prioritize tuning stability and complete additional seed blocks over another model.
+If extra hours arrive only after confirmation, changing selected configurations requires new confirmation runs and a new budget. Existing results cannot be relabeled as confirmation of a different configuration. For an intermediate budget such as 150 hours, fund complete extra seed blocks first, then launch only complete extensions that fit the measured remainder. Any alternative allocation to tuning stability must be frozen and repriced before confirmation. Do not spend the remainder on a partial new-model comparison.
 
 ## 12. Work sequence and deliverables
 
 | Target window, 2026 | Work and completion evidence |
 | --- | --- |
-| Oct 2–9 | Implement parameterizations and checks; prepare splits, parser, and cached SVD; complete pilot and freeze a versioned protocol |
-| Oct 10–23 | Run equal-budget search; review the entire search table for boundaries, failures, and promotion bias |
+| Oct 11 onward, before search | Complete parameterizations and checks; prepare splits, parser, and cached SVD; pass pilot and freeze a versioned protocol. |
+| Through Oct 23, if gates pass | Run equal-budget search; review the entire search table for boundaries, failures, and promotion bias |
 | Oct 24–30 | Complete any funded search extension or repeated finalist tuning; lock winners and confirmation seeds |
 | Oct 31–Nov 13 | Run complete confirmation blocks, evaluate frozen final checkpoints, finish shared-state diagnostics |
 | Nov 14–27 | Analyze interaction and costs, perform CPU resampling, audit artifacts, write the report |
@@ -378,7 +399,7 @@ Suggested implementation artifacts, **to be created during execution**, are:
 
 Save residual/correction metadata with adapters: these nonzero-initialized adapters cannot be loaded correctly onto an untouched base weight by blindly applying a standard additive loader. Keep optimizer and RNG state for jobs that may resume. Keep the original model revision and initialization cache hashes so checkpoints can be reconstructed.
 
-Completion means passing the implementation gates, reporting all four primary cells and their interaction, retaining the additive controls and standard baseline, and accounting for total cost. A null or inconclusive result is acceptable. A general claim that spectral initialization is always useful/useless, or that exact DoRA is universally better/worse, is outside this experiment's scope.
+Core completion means passing implementation gates, reporting A-S/A-R/D-S/D-R and primary J, reporting E-S/E-R and secondary I unless the fallback was frozen, retaining L0/D0, and accounting for total cost. State whether fixed-scale/native-initialization confirmation was funded; do not imply it was completed from exploratory development curves. A null or inconclusive result is acceptable. General claims that spectral initialization is always useful/useless, or exact DoRA is universally better/worse, are outside this experiment's scope.
 
 ## 13. References and reading list
 
@@ -399,5 +420,6 @@ See [the reference index](references/README.md) for online paper links, exact ve
 | R11 | Official GSM8K [dataset card](https://huggingface.co/datasets/openai/gsm8k) and [repository](https://github.com/openai/grade-school-math) | Split sizes, format, calculator annotations |
 | R12 | Official [Qwen2.5-0.5B model card](https://huggingface.co/Qwen/Qwen2.5-0.5B) | Fallback/replication checkpoint |
 | R13 | Hugging Face PEFT, [DoRA implementation](https://github.com/huggingface/peft/blob/main/src/peft/tuners/lora/dora.py) | Norm axis, bias handling, and multiple detachment sites; archived source snapshot |
+| R14 | Nasiri and Garraghan, **EDoRA: Efficient Weight-Decomposed Low-Rank Adaptation via Singular Value Decomposition**, 2025. [Paper](https://arxiv.org/abs/2501.12067v1) | Direct SVD/random ablation within normalized frozen-subspace adaptation |
 
-Bibliographic clarification: the proposal's LoRAM entry uses 2026; the official proceedings identify **NeurIPS 2025**. This plan uses that record. The linked PiSSA paper is arXiv v4, which is a later revision than its original 2024 publication. Treat revision-specific results accordingly. References are motivation and implementation evidence; no published benchmark has been presented here as an H100 timing measurement for this proposed setup.
+LoRAM is cited as **NeurIPS 2025**. PiSSA results refer to arXiv v4; version-specific findings are attributed to that version. References are motivation and implementation evidence; no published benchmark has been presented here as an H100 timing measurement for this proposed setup.
