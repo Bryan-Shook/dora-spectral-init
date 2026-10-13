@@ -61,3 +61,9 @@ To register the environment as a kernel for an existing Jupyter installation:
 .venv/bin/python -m ipykernel install --user \
   --name dora-spectral --display-name "DoRA spectral"
 ```
+
+Select **DoRA spectral** in the notebook's kernel picker. Register it on the machine
+running Jupyter. Use `.venv/bin/python` explicitly if an activated shell still resolves
+`pip` to PACE's shared Anaconda installation.
+
+For model/data downloads and the GPU experiment workflow, see [experiments](EXPERIMENTS.md).

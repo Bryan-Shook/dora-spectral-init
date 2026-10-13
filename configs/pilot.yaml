@@ -1,0 +1,18 @@
+# One condition. Stop at 100 steps for a short pilot; schedule remains three epochs.
+condition: D-S
+seed: 0
+rank: 16
+gamma: 1.0
+learning_rate: 0.0001
+epochs: 3
+microbatch: 8
+accumulation: 4
+max_length: 1024
+max_new_tokens: 512
+warmup_ratio: 0.03
+gradient_clip: 1.0
+precision: bf16
+attention: sdpa
+gradient_checkpointing: false
+checkpoint_every: 25
+targets: [q_proj, v_proj]

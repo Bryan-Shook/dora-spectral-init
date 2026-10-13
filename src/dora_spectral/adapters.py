@@ -24,7 +24,7 @@ class ControlledLinear(nn.Module):
         bias: Tensor | None = None,
         *,
         rank: int = 16,
-        initialization: Initialization = "spectral",
+        initialization: Initialization | Literal["standard"] = "spectral",
         rule: Rule = "additive",
         gamma: float = 1.0,
         seed: int = 0,
@@ -46,16 +46,23 @@ class ControlledLinear(nn.Module):
         base = weight.detach().to(dtype).clone()
         self.register_buffer("base_weight", base)
         self.register_buffer("bias", None if bias is None else bias.detach().to(dtype).clone())
-        svd = decomposition if decomposition is not None else decompose(base, rank)
-        if (
-            svd.u.shape != (base.shape[0], rank)
-            or svd.vh.shape != (rank, base.shape[1])
-            or svd.singular_values.shape != (rank,)
-            or svd.u.device != base.device
-            or svd.u.dtype != base.dtype
-        ):
-            raise ValueError("decomposition must match weight shape, rank, device and dtype")
-        b, a = initialize_factors(svd, initialization, gamma, seed)
+        if initialization == "standard":
+            # Local generator keeps baseline initialization out of the data RNG stream.
+            generator = torch.Generator(device=base.device).manual_seed(seed)
+            a = torch.empty(rank, base.shape[1], device=base.device, dtype=dtype)
+            nn.init.kaiming_uniform_(a, a=math.sqrt(5), generator=generator)
+            b = torch.zeros(base.shape[0], rank, device=base.device, dtype=dtype)
+        else:
+            svd = decomposition if decomposition is not None else decompose(base, rank)
+            if (
+                svd.u.shape != (base.shape[0], rank)
+                or svd.vh.shape != (rank, base.shape[1])
+                or svd.singular_values.shape != (rank,)
+                or svd.u.device != base.device
+                or svd.u.dtype != base.dtype
+            ):
+                raise ValueError("decomposition must match weight shape, rank, device and dtype")
+            b, a = initialize_factors(svd, initialization, gamma, seed)
         self.B = nn.Parameter(b)
         self.A = nn.Parameter(a)
         self.register_buffer("initial_product", (b @ a).detach().clone())

@@ -12,6 +12,11 @@ uv sync --locked --extra cpu --extra models --group notebooks
 
 See [setup](docs/SETUP.md) for ICE jobs and the smoke test.
 
+See [experiment instructions](docs/EXPERIMENTS.md) to download pinned Qwen/GSM8K assets,
+check Qwen integration, run pilots, generate search/confirmation configurations, and
+evaluate checkpoints. The runner implements all eight conditions; the full-size GPU
+numerical and budget gates still need to be measured before the main search.
+
 ## 1. Problem Statement
 
 LoRA is usually initialized randomly, while spectral methods initialize from singular directions of the pretrained weight matrix. However, spectral initialization changes both the update direction and potentially its scale, while DoRA changes how those updates are trained. An observed improvement could therefore come from pretrained structure, update scale, or the gradient rule. We test whether spectral initialization remains advantageous after independently tuning scale and learning rate, and whether that advantage differs between additive adaptation and DoRA. Exact versus detached DoRA is a secondary comparison.
