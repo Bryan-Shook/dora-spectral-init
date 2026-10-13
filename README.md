@@ -2,6 +2,16 @@
 
 Adrian Adam Kalisz, Bryan Le Shook, Myeongsun Choi, Suraj Chandra Samudrala
 
+## Getting started
+
+```bash
+uv sync --locked --extra cpu --extra models --group notebooks
+.venv/bin/python -m pytest
+.venv/bin/jupyter lab
+```
+
+See [setup](docs/SETUP.md) for ICE jobs and the smoke test.
+
 ## 1. Problem Statement
 
 LoRA is usually initialized randomly, while spectral methods initialize from singular directions of the pretrained weight matrix. However, spectral initialization changes both the update direction and potentially its scale, while DoRA changes how those updates are trained. An observed improvement could therefore come from pretrained structure, update scale, or the gradient rule. We test whether spectral initialization remains advantageous after independently tuning scale and learning rate, and whether that advantage differs between additive adaptation and DoRA. Exact versus detached DoRA is a secondary comparison.

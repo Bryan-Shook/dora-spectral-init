@@ -99,3 +99,12 @@ htmlcov/
 
 # pyenv
 # .python-version
+
+# Experiment artifacts and local caches
+.cache/
+.ruff_cache/
+data/
+runs/
+logs/
+checkpoints/
+*.safetensors

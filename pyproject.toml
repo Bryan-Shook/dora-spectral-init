@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dora-spectral-init"
+version = "0.1.0"
+requires-python = "==3.11.*"
+dependencies = ["torch==2.6.0", "numpy", "pyyaml"]
+
+[project.optional-dependencies]
+models = [
+  "transformers",
+  "datasets",
+  "peft",
+  "accelerate",
+  "safetensors",
+  "huggingface-hub",
+]
+# Choose cpu or cuda when syncing.
+cpu = ["torch"]
+cuda = ["torch; sys_platform == 'linux'"]
+
+[dependency-groups]
+dev = ["pytest", "ruff"]
+notebooks = [
+  "jupyterlab", "ipykernel", "pandas", "scipy", "matplotlib",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dora_spectral"]
+
+[tool.uv]
+environments = ["sys_platform == 'darwin'", "sys_platform == 'linux'"]
+conflicts = [[{ extra = "cpu" }, { extra = "cuda" }]]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cpu", marker = "sys_platform == 'linux'", extra = "cpu" },
+  { index = "pytorch-cu126", marker = "sys_platform == 'linux'", extra = "cuda" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["references", ".cache"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
