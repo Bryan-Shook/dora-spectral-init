@@ -1,6 +1,6 @@
 # Research references
 
-Reference links for [TEST_PLAN.md](../TEST_PLAN.md). The papers are linked to their exact arXiv versions; no local paper PDFs are retained. [manifest.json](manifest.json) records R1–R9 URLs, versions, and page counts, plus metadata for the official source snapshots retrieved on 2026-10-02. The [literature review](LITERATURE_REVIEW.md) records source-specific findings through 2026-10-11, with a separate [search record](LITERATURE_SEARCH_LOG.md).
+Reference links for [TEST_PLAN.md](../docs/TEST_PLAN.md). The papers are linked to their exact arXiv versions; no local paper PDFs are retained. [manifest.json](manifest.json) records R1–R9 URLs, versions, and page counts, plus metadata for the official source snapshots retrieved on 2026-10-02. The [literature review](LITERATURE_REVIEW.md) records source-specific findings through 2026-10-11, with a separate [search record](LITERATURE_SEARCH_LOG.md).
 
 ## Papers
 

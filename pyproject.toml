@@ -12,7 +12,7 @@ dependencies = ["torch==2.6.0", "numpy", "pyyaml"]
 models = [
   "transformers",
   "datasets",
-  "peft",
+  "peft==0.18.1",
   "accelerate",
   "safetensors",
   "huggingface-hub",
@@ -23,9 +23,8 @@ cuda = ["torch; sys_platform == 'linux'"]
 
 [dependency-groups]
 dev = ["pytest", "ruff"]
-notebooks = [
-  "jupyterlab", "ipykernel", "pandas", "scipy", "matplotlib",
-]
+notebooks = ["jupyterlab", "ipykernel", "pandas"]
+
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/dora_spectral"]

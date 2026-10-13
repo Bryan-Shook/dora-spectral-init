@@ -1,0 +1,15 @@
+model: Qwen/Qwen2.5-1.5B
+model_revision: 8faed761d45a263340a0528343f099c05c9a4323
+dataset: openai/gsm8k
+dataset_revision: 740312add88f781978c0658806c59bc2815b9866
+rank: 16
+epochs: 3
+max_length: 1024
+max_new_tokens: 512
+batch_size: 32
+microbatch_size: 4
+evaluation_batch_size: 4
+validation_examples: 500
+warmup_fraction: 0.03
+gradient_checkpointing: false
+attention_backend: sdpa

@@ -26,7 +26,11 @@ def decompose(weight: Tensor, rank: int) -> Decomposition:
         raise ValueError("decompose in FP32, or FP64 for toy correctness checks")
     if not torch.isfinite(weight).all():
         raise ValueError("weight must be finite")
-    u, values, vh = torch.linalg.svd(weight, full_matrices=False)
+    # CUDA's default Jacobi driver can lose orthogonality on pretrained layers.
+    # The QR-based driver preserves the spectrum-matching correctness gate.
+    u, values, vh = torch.linalg.svd(
+        weight, full_matrices=False, driver="gesvd" if weight.is_cuda else None
+    )
     return Decomposition(u[:, :rank], values[:rank], vh[:rank])
 
 

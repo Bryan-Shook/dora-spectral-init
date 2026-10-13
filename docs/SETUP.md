@@ -35,12 +35,12 @@ Run all commands from the repository root.
 ## Install dependencies
 
 Choose one installation for your environment. Both commands create `.venv`
-and install the locked dependencies, development tools, and notebook packages.
+and install the locked dependencies and development tools.
 
 ### CPU
 
 ```bash
-uv sync --locked --extra cpu --extra models --group notebooks
+uv sync --locked --extra cpu --extra models
 ```
 
 ### NVIDIA GPU (Linux)
@@ -60,28 +60,21 @@ Run the tests:
 .venv/bin/python -m pytest
 ```
 
-Run the CPU smoke test:
+The tests exercise initialization, gradients, PEFT parity, BF16 starting outputs,
+checkpoint resume, masking, and scoring using small CPU models.
+See [the experiment guide](EXPERIMENT.md) for pinned data preparation and GPU runs.
+
+## Optional initialization notebook
+
+The [initialization notebook](../notebooks/01_initialization_checks.ipynb) explores
+matched spectra, preserved starting outputs, and exact versus detached gradients
+using the mathematical reference shared with the tests.
+
+Install the optional notebook group, choosing `cpu` or `cuda` to match your environment:
 
 ```bash
-.venv/bin/python -m dora_spectral.smoke --device cpu --output runs/local-smoke/smoke.json
-```
-
-For a GPU installation, run the GPU smoke test on a GPU node, inside a compute
-allocation when using PACE ICE:
-
-```bash
-.venv/bin/python -m dora_spectral.smoke --device cuda --output runs/gpu-smoke/smoke.json
-```
-
-## Open the notebook
-
-```bash
+uv sync --locked --extra cuda --extra models --group notebooks
 .venv/bin/jupyter lab notebooks/01_initialization_checks.ipynb
 ```
 
-To register the environment as a kernel for an existing Jupyter installation:
-
-```bash
-.venv/bin/python -m ipykernel install --user \
-  --name dora-spectral --display-name "DoRA spectral"
-```
+Notebook dependencies are not installed by the standard setup command.

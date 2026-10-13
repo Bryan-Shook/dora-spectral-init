@@ -1,6 +1,6 @@
 # Background: spectral initialization and DoRA
 
-This guide explains the ideas needed to read our [proposal](README.md) and [test plan](TEST_PLAN.md). It assumes basic familiarity with vectors, matrices, and gradients. Paper links point to specific versions and sections; the reference IDs match the test plan. Literature coverage is through **2026-10-11**; the [literature audit](references/LITERATURE_REVIEW.md) records the evidence and its limits.
+This guide explains the ideas needed to read our [proposal](../README.md) and [test plan](TEST_PLAN.md). It assumes basic familiarity with vectors, matrices, and gradients. Paper links point to specific versions and sections; the reference IDs match the test plan. Literature coverage is through **2026-10-11**; the [literature audit](../references/LITERATURE_REVIEW.md) records the evidence and its limits.
 
 **Our primary question:** after separately tuning learning rate and initialization scale, does DoRA amplify, attenuate, or reverse the spectral benefit relative to additive adaptation? **Secondary:** does the answer depend on differentiating through the normalization denominator?
 
@@ -227,7 +227,7 @@ A radial difference in a direct update to $z$ disappears to first order after no
 
 This makes the interaction plausible; it does not predict its sign or guarantee an accuracy benefit. “Exact” identifies the derivative of the normalized function, not an empirical performance ranking. Our diagnostics must compare actual effective weight steps and predictions.
 
-For implementation context, the saved [PEFT source snapshot](references/metadata/peft_dora_source_snapshot.py) detaches both the adapter contribution used to compute the norm and the final norm. Enabling `use_dora=True` alone therefore does not establish an exact variant. The detailed checks are in [TEST_PLAN.md, Sections 4 and 6](TEST_PLAN.md#4-exact-definitions-of-the-experimental-conditions).
+For implementation context, the saved [PEFT source snapshot](../references/metadata/peft_dora_source_snapshot.py) detaches both the adapter contribution used to compute the norm and the final norm. Enabling `use_dora=True` alone therefore does not establish an exact variant. The detailed checks are in [TEST_PLAN.md, Sections 4 and 6](TEST_PLAN.md#4-exact-definitions-of-the-experimental-conditions).
 
 ## 8. What the other reference papers contribute
 
@@ -333,7 +333,7 @@ There is no established reason that exactly 3% is optimal here. It is a provisio
 
 ## 11. References and where to verify the claims
 
-These are reading pointers, not claims that our protocol reproduces each paper. The pinned arXiv versions make the section references reproducible. Papers remain online links; additional source metadata is indexed in [references/README.md](references/README.md).
+These are reading pointers, not claims that our protocol reproduces each paper. The pinned arXiv versions make the section references reproducible. Papers remain online links; additional source metadata is indexed in [references/README.md](../references/README.md).
 
 | ID | Paper | Focused reading |
 | --- | --- | --- |

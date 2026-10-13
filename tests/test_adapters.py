@@ -2,10 +2,10 @@ import io
 
 import pytest
 import torch
+from reference import ControlledLinear
 from torch.func import functional_call
 from torch.nn import functional as F
 
-from dora_spectral import ControlledLinear
 from dora_spectral.initialization import decompose, initialize_factors
 
 

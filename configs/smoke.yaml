@@ -1,8 +1,0 @@
-# Small CPU or GPU check.
-seed: 0
-input_features: 12
-output_features: 8
-rank: 3
-gamma: 0.5
-steps: 10
-learning_rate: 0.001

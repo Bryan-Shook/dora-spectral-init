@@ -15,6 +15,6 @@ fi
 if [[ "$backend" == cuda ]]; then
   echo 'Selected CUDA 12.6 build. Verify driver compatibility in an allocated GPU session.'
 fi
-uv sync --locked --extra "$backend" --extra models --group notebooks
+uv sync --locked --extra "$backend" --extra models
 echo 'Environment ready. Run CPU checks in an appropriate CPU allocation:'
 echo '.venv/bin/python -m pytest'

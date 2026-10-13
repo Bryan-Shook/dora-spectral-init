@@ -1,12 +1,12 @@
 # Test plan: spectral initialization × DoRA, with a detachment study
 
-This protocol defines the experiment described in the [proposal](README.md). Available hardware and budget: **one NVIDIA H100 80 GB, with 100–200 total GPU-hours, including pilots, tuning, and evaluation**.
+This protocol defines the experiment described in the [proposal](../README.md). Available hardware and budget: **one NVIDIA H100 80 GB, with 100–200 total GPU-hours, including pilots, tuning, and evaluation**.
 
-The additive-versus-detached-DoRA interaction is primary; the exact-versus-detached interaction is secondary. The core includes six controlled conditions and two ordinary-initialization references. The [literature audit](references/LITERATURE_REVIEW.md) explains the prior evidence and limits of the novelty claim.
+The additive-versus-detached-DoRA interaction is primary; the exact-versus-detached interaction is secondary. The core includes six controlled conditions and two ordinary-initialization references. The [literature audit](../references/LITERATURE_REVIEW.md) explains the prior evidence and limits of the novelty claim.
 
 **Pilot configuration:** Qwen2.5-1.5B base, GSM8K supervised fine-tuning, rank 16 adapters on query and value projections, six controlled conditions plus ordinary LoRA and ordinary detached DoRA. Complete the measured core before adding breadth. Prioritize confirmation precision, fixed-scale validation, and tuning stability with additional resources.
 
-This is a proposed protocol, not a record of completed experiments. Model suitability, memory, throughput, statistical sensitivity, and all runtime estimates remain to be measured. Numeric choices below are operational defaults selected for this budget unless explicitly attributed to a source. Freeze any pilot changes before the main search.
+This is a proposed protocol; execution-specific measurements are recorded in [reports](../reports). Numeric choices below are operational defaults selected for this budget unless explicitly attributed to a source. Freeze any pilot changes before the main search.
 
 ## 1. Research question and intended contribution
 
@@ -80,7 +80,7 @@ Default maximum training length is 1,024 tokens, with dynamic padding and no exa
 | Optimizer | AdamW, betas `(0.9, 0.999)`, epsilon `1e-8`, weight decay `0`; decay would otherwise add another scale-dependent effect |
 | Learning rate | Independently selected per condition; DoRA magnitudes and factors use the same selected rate |
 | Schedule | 3% warmup followed by cosine decay over the full three-epoch horizon |
-| Batch | 32 examples per optimizer step; start with microbatch 8 and accumulation 4 |
+| Batch | 32 examples per optimizer step; initial planning choice is microbatch 8 and accumulation 4; freeze the common microbatch using the memory gate |
 | Dropout | Adapter and attention dropout disabled; any other model dropout also disabled |
 | Precision | BF16 transformer computation; FP32 adapter parameters, norm calculations, residual construction, and optimizer state |
 | Frozen parameters | Backbone, biases, embeddings, and language-model head; train only factors and DoRA magnitudes where applicable |
@@ -228,14 +228,14 @@ Start on CPU with rectangular synthetic matrices, including different input/outp
 | Loss and evaluation | Check masking, shifted labels, accumulation normalization, answer parser, and seed streams | Hand-computed toy cases agree; invalid/truncated generations are retained as wrong answers |
 | Small overfit | Train on 32 training examples | Clear loss reduction and ability to fit the subset; failure triggers debugging before a search |
 
-For BF16 validation, first measure drift from repeat execution and from switching between the reference and intended arithmetic paths on fixed prompts. Record maximum and relative RMS logit errors and next-token agreement. Set and justify the acceptance tolerance before comparing trained outcomes; do not silently excuse initialization differences as noise. If needed, retain target-layer computation in FP32 and reprofile every condition.
+For BF16 validation, first measure drift from repeat execution and from switching between the reference and intended arithmetic paths on fixed prompts. Record maximum and relative RMS logit errors and next-token agreement. Set and justify the acceptance tolerance before comparing trained outcomes; do not silently excuse initialization differences as noise. Use the common PEFT base-plus-adapter path; any further arithmetic change requires revalidation and reprofiling before freezing.
 
 ## 7. Pilot and freeze gate: up to 10 GPU-hours including device checks
 
 1. Complete CPU checks; use the first device allocation for numerical checks, model loading, and the SVD cache.
 2. Run all four controlled DoRA cells for 100 steps with pilot seed blocks `0, 1, 2`, initially at $\gamma=1$, $\eta=10^{-4}$. Also profile A-S/A-R and both ordinary baselines. Use training examples for optimization and only pilot validation for learning decisions.
 3. Run one complete three-epoch job for the slowest measured cell. Short-run extrapolation alone is insufficient because checkpoints, generation, and dataloading also cost time.
-4. Time generation on the complete pilot validation split, including loading/merging and answer parsing. Use the intended generation backend and batch sizes. Profile the cost of development scoring separately from training.
+4. Time generation on the complete pilot validation split, including loading, unmerged evaluation, and answer parsing. Use the intended generation backend and batch sizes. Profile the cost of development scoring separately from training.
 5. Freeze the dataset partitions, model revision, adapter targets, rank, horizon, precision, search ranges, practical margin, parser, seed count, and analysis before the main search.
 
 **Learning gate:** the small overfit check must pass, and the complete pilot run must reduce held-out answer loss and produce usable, non-saturated answer accuracy. Proposed diagnostic flags are below 5% or above 90% pilot accuracy, or more than 1% generations ending at the output limit; they are prompts for investigation, not reported scientific findings. First check masking, prompt, parsing, and optimization. If query/value adapters cannot learn, test all seven transformer projections during the pilot and reprice the complete design before choosing that placement for every cell.
@@ -279,7 +279,7 @@ The 100-hour result is conditional on a single tuning seed and a restricted sear
 
 ## 9. Evaluation and statistical analysis
 
-Use greedy decoding, one completion per question, no tools, no few-shot demonstrations, and a common default maximum of **512 new tokens**. Choose any increase to 1,024 from the pilot only, reprice evaluation, and apply it to all conditions. Merge a copy of each trained adapter into its effective weights for generation; verify merge correctness and do not overwrite training states. Use one pinned generation backend for all cells.
+Use greedy decoding, one completion per question, no tools, no few-shot demonstrations, and a common default maximum of **512 new tokens**. Choose any increase to 1,024 from the pilot only, reprice evaluation, and apply it to all conditions. Evaluate adapters unmerged using the same PEFT forward path as training, preserving the BF16 base projection and FP32 adapter branches. Use one pinned generation backend for all cells.
 
 The primary metric is **100 × correctly parsed numeric answers / all 1,319 test questions**. Extract the number after the last `####`, allow commas/sign/decimal formatting, and compare using an exact decimal/rational normalization rather than an arbitrary floating-point tolerance. Missing, malformed, or truncated answers count as incorrect. Save raw text, extracted answer, correctness, and truncation status for every question. A permissive last-number score may be reported only as a labeled secondary metric.
 
@@ -342,7 +342,7 @@ One full training equivalent below means three epochs with training and routine 
 | Six-cell search | 36 full training equivalents × 0.75 h | 27.00 |
 | Ordinary LoRA and DoRA searches | 12 full training equivalents × 0.75 h | 9.00 |
 | Confirmation | 8 conditions × 3 seeds × 0.75 h | 18.00 |
-| All scoring and associated I/O | Development curves and final-test generation/NLL, merges, load/save overhead | 20.00 |
+| All scoring and associated I/O | Development curves and final-test generation/NLL, unmerged evaluation, load/save overhead | 20.00 |
 | Mechanism diagnostics | Short common-setting trajectories and shared-state counterfactuals | 4.00 |
 | Contingency | Boundary extensions, failures, slower jobs, additional scoring | 12.00 |
 | **Hard cap** | **72 full training equivalents for search + confirmation** | **100.00** |
@@ -403,7 +403,9 @@ Core completion means passing implementation gates, reporting A-S/A-R/D-S/D-R an
 
 ## 13. References and reading list
 
-See [the reference index](references/README.md) for online paper links, exact versions, recommended sections, and relevance. [The manifest](references/manifest.json) records paper URLs, versions, and page counts, plus metadata for the retained official source snapshots. No local paper PDFs are retained.
+Implementation and execution commands are documented in [EXPERIMENT.md](EXPERIMENT.md).
+
+See [the reference index](../references/README.md) for online paper links, exact versions, recommended sections, and relevance. [The manifest](../references/manifest.json) records paper URLs, versions, and page counts, plus metadata for the retained official source snapshots. No local paper PDFs are retained.
 
 | ID | Reference and online source | Specific use in this plan |
 | --- | --- | --- |

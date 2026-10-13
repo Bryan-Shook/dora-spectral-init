@@ -5,12 +5,15 @@ Adrian Adam Kalisz, Bryan Le Shook, Myeongsun Choi, Suraj Chandra Samudrala
 ## Getting started
 
 ```bash
-uv sync --locked --extra cpu --extra models --group notebooks
+uv sync --locked --extra cpu --extra models
 .venv/bin/python -m pytest
-.venv/bin/jupyter lab
 ```
 
-See [setup](docs/SETUP.md) for ICE jobs and the smoke test.
+See [setup](docs/SETUP.md) for ICE installation and optional notebook dependencies,
+and [the experiment guide](docs/EXPERIMENT.md) for the PEFT implementation and commands.
+The [test plan](docs/TEST_PLAN.md) defines tuning and confirmation; the
+[background](docs/BACKGROUND.md) explains the mathematics. Execution-specific
+measurements are recorded in [reports](reports).
 
 ## 1. Problem Statement
 
@@ -35,10 +38,6 @@ LoRA is usually initialized randomly, while spectral methods initialize from sin
 **Experiments.** Start with Qwen2.5-1.5B base, GSM8K SFT, and rank-16 query/value adapters, subject to a measured pilot and budget gate. Tune each condition with equal search effort using development data, then confirm every prespecified condition on fresh paired seeds, including unfavorable outcomes. Report the best-over-scale comparison separately from fixed-scale comparisons. A funded extension confirms the $\gamma=1$ PiSSA-construction arms and matched random controls with their own LR selection; ordinary baselines alone do not turn rescaled spectral arms into a native PiSSA comparison.
 
 **Measurements.** Evaluation will cover held-out task performance with seed-level uncertainty, accuracy-versus-step curves, effective weight-update norms, angular movement, peak GPU memory usage, and runtime. Comparisons of exact and detached updates at shared states and batches, including equal-norm step diagnostics, will help explain any performance differences. Report $J$ as primary and $I$ as secondary.
-
-## 5. Timeline
-
-**Sep 16–Oct 09:** implement, validate, and pilot; finalize evaluation rules. **Oct 10–30:** run learning-rate searches. **Oct 31–Nov 13:** confirm with fresh seeds. **Nov 14–27:** analyze results and costs. **Nov 28–Final:** submit the report and release code.
 
 ## References
 

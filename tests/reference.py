@@ -7,7 +7,12 @@ import torch
 from torch import Tensor, nn
 from torch.nn import functional as F
 
-from .initialization import Decomposition, Initialization, decompose, initialize_factors
+from dora_spectral.initialization import (
+    Decomposition,
+    Initialization,
+    decompose,
+    initialize_factors,
+)
 
 Rule = Literal["additive", "detached", "exact"]
 

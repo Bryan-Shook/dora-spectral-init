@@ -1,6 +1,6 @@
 # Literature review: spectral initialization × DoRA
 
-Literature coverage: **2026-10-11**. This document assesses prior evidence and the research gap. [TEST_PLAN.md](../TEST_PLAN.md) specifies the experimental protocol. The repository contains no completed training results.
+Literature coverage: **2026-10-11**. This document assesses prior evidence and the research gap. [TEST_PLAN.md](../docs/TEST_PLAN.md) specifies the experimental protocol. Execution-specific findings are documented in [reports](../reports).
 
 **Verdict:** The broad question is partly answered, with direct positive evidence that spectral information can remain useful inside weight-normalized adaptation. Calling it simply “unanswered” is inaccurate. The reviewed sources do not establish a convincing, independently tuned, scale-controlled estimate of the interaction for trainable PiSSA-style factors and DoRA. That narrower gap is plausible, but neither guaranteed novel nor a large unexplored field. The defensible project is a controlled reassessment of existing hybrid claims.
 
