@@ -3,6 +3,11 @@
 > Historical report: the source used here is preserved in the local
 > `runs/legacy-pilot-source.tar.gz` archive. Current implementation and status:
 > [experiment guide](../docs/EXPERIMENT.md).
+>
+> Seed blocks 0, 1 and 2 were not independent here: per-matrix seeds were `seed + index`, so the
+> blocks shared almost all of their random bases. The timing, memory and learning conclusions do
+> not depend on that, and the pilot was not rerun. Its data orders are not reproducible under the
+> current stream derivation.
 
 The authorized five-hour pilot completed in approximately 30.1 minutes of accounted allocation time. All twelve 100-step DoRA runs (seeds 0/1/2), four additive/ordinary profiles, the overfit and longest-batch checks, one complete three-epoch run, and all 500 pilot-validation predictions finished. No main search, confirmation, or official-test scoring ran.
 
