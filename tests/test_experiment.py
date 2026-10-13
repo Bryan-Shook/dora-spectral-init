@@ -363,3 +363,43 @@ def test_paired_contrasts_and_bootstrap(tmp_path):
     assert result["contrasts"]["J"]["mean"] == 100
     assert result["contrasts"]["I"]["mean"] == 0
     assert result["question_bootstrap"]["J"]["95_interval"] == [100, 100]
+
+
+def test_spectrum_validation_uses_independent_float64_measurement(monkeypatch):
+    from dora_spectral.initialization import decompose, initialize_factors
+    from dora_spectral.model import factor_spectrum_errors
+
+    generator = torch.Generator().manual_seed(71)
+    weight = torch.randn(128, 96, generator=generator)
+    svd = decompose(weight, 16)
+    b, a = initialize_factors(svd, "spectral", 0.3, 0)
+    expected = (0.3 * svd.singular_values).sqrt()
+    original = torch.linalg.svdvals
+
+    def independent_svdvals(factor, **kwargs):
+        assert factor.device.type == "cpu"
+        assert factor.dtype == torch.float64
+        return original(factor, **kwargs)
+
+    monkeypatch.setattr(torch.linalg, "svdvals", independent_svdvals)
+    assert max(factor_spectrum_errors(b, a, expected)) < 1e-5
+    b[:, 0] *= 1.01
+    assert max(factor_spectrum_errors(b, a, expected)) > 1e-5
+
+
+def test_new_decomposition_cache_ignores_legacy_cache_and_rejects_bad_factors(tmp_path):
+    import hashlib
+
+    from dora_spectral.initialization import decompose
+
+    model = tiny_model()
+    weight = model.model.layers[0].self_attn.q_proj.weight.detach().float()
+    hash_ = hashlib.sha256(weight.numpy().tobytes()).hexdigest()
+    svd = decompose(weight, 2)
+    corrupt = {"u": svd.u * 1.01, "singular_values": svd.singular_values, "vh": svd.vh}
+    torch.save(corrupt, tmp_path / f"{hash_}-r2.pt")
+    insert_adapters(model, "A-S", 2, 1, 0, ["q_proj", "v_proj"], tmp_path)
+    assert (tmp_path / f"{hash_}-r2-lapack-v2.pt").exists()
+    torch.save(corrupt, tmp_path / f"{hash_}-r2-lapack-v2.pt")
+    with pytest.raises(ValueError, match=r"B_relative_error=.*measurement=cpu_float64"):
+        insert_adapters(tiny_model(), "A-S", 2, 1, 0, ["q_proj", "v_proj"], tmp_path)

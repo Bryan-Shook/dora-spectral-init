@@ -26,7 +26,10 @@ def decompose(weight: Tensor, rank: int) -> Decomposition:
         raise ValueError("decompose in FP32, or FP64 for toy correctness checks")
     if not torch.isfinite(weight).all():
         raise ValueError("weight must be finite")
-    u, values, vh = torch.linalg.svd(weight, full_matrices=False)
+    # cuSOLVER's default Jacobi driver trades some precision for speed. Use the
+    # QR-based driver for the study's strict spectrum/orthogonality checks.
+    kwargs = {"driver": "gesvd"} if weight.device.type == "cuda" else {}
+    u, values, vh = torch.linalg.svd(weight, full_matrices=False, **kwargs)
     return Decomposition(u[:, :rank], values[:rank], vh[:rank])
 
 

@@ -36,6 +36,17 @@ class ModelLinear(ControlledLinear):
         return output.to(inputs.dtype)
 
 
+@torch.no_grad()
+def factor_spectrum_errors(b, a, expected):
+    """Measure actual FP32 factors independently of CUDA's SVD measurement path."""
+    reference = expected.detach().to(device="cpu", dtype=torch.float64)
+    errors = []
+    for factor in (b, a):
+        values = torch.linalg.svdvals(factor.detach().to(device="cpu", dtype=torch.float64))
+        errors.append(float(((values - reference).abs() / reference.clamp_min(1e-12)).max()))
+    return errors
+
+
 def insert_adapters(
     model,
     condition: str,
@@ -61,7 +72,11 @@ def insert_adapters(
         weight_hash = hashlib.sha256(weight.cpu().numpy().tobytes()).hexdigest()
         svd = None
         if initialization != "standard":
-            cache = None if cache_dir is None else cache_dir / f"{weight_hash}-r{rank}.pt"
+            # Never reuse decompositions made by the old CUDA default driver.
+            method = "gesvd" if weight.device.type == "cuda" else "lapack"
+            cache = (
+                None if cache_dir is None else cache_dir / f"{weight_hash}-r{rank}-{method}-v2.pt"
+            )
             if cache is not None and cache.exists():
                 saved = torch.load(cache, map_location=weight.device, weights_only=True)
                 svd = Decomposition(**saved)
@@ -107,18 +122,17 @@ def insert_adapters(
         if svd is not None:
             with torch.no_grad():
                 expected = (gamma * svd.singular_values).sqrt()
-                factor_errors = [
-                    float(
-                        (
-                            (torch.linalg.svdvals(factor) - expected).abs()
-                            / expected.clamp_min(1e-12)
-                        ).max()
-                    )
-                    for factor in (adapted.B, adapted.A)
-                ]
+                factor_errors = factor_spectrum_errors(adapted.B, adapted.A, expected)
             if max(factor_errors) > 1e-5:
-                raise ValueError(f"factor spectrum mismatch: {name}")
+                raise ValueError(
+                    f"factor spectrum mismatch: {name}; condition={condition}; "
+                    f"B_relative_error={factor_errors[0]:.6g}; "
+                    f"A_relative_error={factor_errors[1]:.6g}; tolerance=1e-5; "
+                    f"measurement=cpu_float64; decomposition={method}"
+                )
             metadata[name]["factor_spectrum_relative_errors"] = factor_errors
+            metadata[name]["spectrum_measurement"] = "cpu_float64"
+            metadata[name]["svd_method"] = method
     for layer in model.modules():
         if isinstance(layer, nn.Dropout):
             layer.p = 0.0

@@ -71,6 +71,12 @@ errors and next-token agreement. By default it reports evidence without declarin
 acceptance. Set and justify a common `--max-logit-tolerance` from the baseline evidence,
 then repeat the check before training. A failed acceptance exits nonzero.
 
+CUDA initialization uses the accuracy-oriented `gesvd` driver. Factor spectra are measured
+independently on CPU in float64 after construction, retaining the `1e-5` relative-error
+threshold. Versioned cache filenames prevent reusing decompositions made by the old
+default CUDA driver. A spectrum failure prints condition, A/B errors and measurement
+method; it must be investigated rather than bypassed by widening the tolerance.
+
 ## 4. Short pilot, full pilot, and 32-example overfit
 
 Inside a GPU allocation:
