@@ -104,7 +104,17 @@ htmlcov/
 .cache/
 .ruff_cache/
 data/
-runs/
+# Track experiment results and configuration/metadata, but not binary checkpoints.
+# Re-include directories so Git can discover permitted files at any depth.
+runs/**
+!runs/**/
+!runs/**/*.json
+!runs/**/*.jsonl
+!runs/**/*.yaml
+!runs/**/*.yml
+!runs/**/*.csv
+!runs/**/*.tsv
+!runs/**/*.md
 logs/
 checkpoints/
 *.safetensors
