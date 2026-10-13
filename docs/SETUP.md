@@ -1,5 +1,29 @@
 # Setup
 
+## PACE (VS-Code Version)
+
+Navigate to [PACE-ICE](https://ondemand-ice.pace.gatech.edu/pun/sys/dashboard). **You must be on GT VPN in order to connect to PACE**. After navigating to the dashboard, click on "Microsoft VS Code" to launch an interactive VS Code session. 
+
+Settings: (as of 10/12/2026)
+- **VS Code Version**: 1.99.2
+- **Environment Setup**: Default Modules
+- **Quality of Service**: Default or COC-ICE
+- **Node Type**: 
+  - First Available with CUDA 12 or 13 (Random Testing)
+  - H100 (Experiments)
+- **Number of Cores (CPUs)**: 8
+- **Number of GPUs**: 1
+- **Memory (GB)**: 128
+- **Number of Hours**: Use-case
+
+Press **Launch** and wait for your turn in queue. After the session says "Running", click on the "Connect" button. 
+
+You will start in /home/hice1/GTID. We will use the scratch directory which has extra memory.
+```bash
+cd scratch/
+git clone https://github.com/Bryan-Shook/dora-spectral-init.git
+```
+
 ## Prerequisites
 
 - Python 3.11
