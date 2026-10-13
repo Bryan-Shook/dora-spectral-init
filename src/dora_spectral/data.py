@@ -15,12 +15,17 @@ def digest(text: str) -> str:
 
 
 def read_jsonl(path: Path) -> list[dict]:
-    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+    # str.splitlines() also splits valid JSON string content such as U+2028/U+0085.
+    # File iteration splits physical newline-delimited records only.
+    with path.open(encoding="utf-8") as source:
+        return [json.loads(line) for line in source if line.strip()]
 
 
 def write_jsonl(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows))
+    path.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows), encoding="utf-8"
+    )
 
 
 def split_gsm8k(train: list[dict], test: list[dict], holdout: int = 500) -> dict:

@@ -13,6 +13,7 @@ from dora_spectral.data import (
     collate,
     digest,
     encode_example,
+    read_jsonl,
     split_gsm8k,
     write_jsonl,
 )
@@ -32,6 +33,17 @@ class ToyTokenizer:
 
     def encode(self, text, add_special_tokens=False):
         return [ord(char) % 8 for char in text]
+
+
+@pytest.mark.parametrize("separator", ["\u0085", "\u2028", "\u2029"])
+def test_jsonl_preserves_unicode_line_separators(tmp_path, separator):
+    path = tmp_path / "unicode.jsonl"
+    rows = [
+        {"question": separator + "A math problem", "answer": "work\n#### 1"},
+        {"question": "another" + separator + "question", "answer": "#### 2"},
+    ]
+    write_jsonl(path, rows)
+    assert read_jsonl(path) == rows
 
 
 def test_answer_mask_padding_and_no_silent_truncation():
