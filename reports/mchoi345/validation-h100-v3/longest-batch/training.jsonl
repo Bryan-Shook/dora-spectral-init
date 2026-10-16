@@ -1,0 +1,1 @@
+{"step": 1, "answer_nll": 1.4385771453380585, "lr": 0.0001, "gradient_norm": 7.5232038497924805, "clipped": true, "active_tokens": 11907, "padded_tokens": 12876, "elapsed_seconds": 0.9866612999467179}
