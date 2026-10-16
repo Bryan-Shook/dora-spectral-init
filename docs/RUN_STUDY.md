@@ -4,16 +4,8 @@ Use the checkboxes below as a template; record completion with each study's repo
 Keep this shared guide unchecked. See the [test plan](TEST_PLAN.md) for experiment details.
 Core: rank 16, eight conditions, three confirmation seeds.
 
-Run from the repository root. Set these in **each new terminal**; `study` is a shortcut for the runner:
-
-```bash
-export DORA_DATA=runs/data
-export DORA_VALIDATION=runs/validation-h100
-export DORA_STUDY=runs/study-main
-study() {
-  .venv/bin/python -m dora_spectral.study --directory "$DORA_STUDY" "$@"
-}
-```
+Run from the repository root. Commands use explicit example paths; edit them for your study.
+No environment-variable setup or shell shortcut is required.
 
 Keep code, dependencies, and data fixed. For GPU work, set time caps below the remaining allocation.
 Repeat a stage command to resume; finished jobs are skipped. Finish each stage before the next.
@@ -31,7 +23,7 @@ bash scripts/setup_pace.sh cuda
 ## 2. Prepare data
 
 ```bash
-.venv/bin/python -m dora_spectral.experiment prepare --data "$DORA_DATA"
+.venv/bin/python -m dora_spectral.experiment prepare --data runs/data
 ```
 
 - [ ] Create or verify the pinned training/pilot/development splits (`prepared.json`).
@@ -42,7 +34,7 @@ Official-test data stays unopened.
 
 ```bash
 .venv/bin/python -m dora_spectral.validation \
-  --data "$DORA_DATA" --directory "$DORA_VALIDATION" --seconds 7200
+  --data runs/data --directory runs/validation-h100 --seconds 7200
 ```
 
 - [ ] Pass initialization, gradient, overfit, memory, and resume gates (`validation.json`: `passed: true`).
@@ -53,18 +45,21 @@ Otherwise validate in a fresh directory; compatible prepared data/SVD caches can
 ## 4. Initialize the study
 
 ```bash
-study init --data "$DORA_DATA" --validation "$DORA_VALIDATION" \
+.venv/bin/python -m dora_spectral.study --directory runs/study-main init \
+  --data runs/data --validation runs/validation-h100 \
   --budget-hours 100 --previous-hours 1
 ```
 
 - [ ] Save the configuration, grid, budget, and seeds in a fresh study directory (`study.json`).
 
 **Replace `1` with actual earlier allocated GPU hours**, including idle time; exclude the selected validation, counted automatically.
+Point `--validation` to the validation directory that passed for this study.
 
 ## 5. Run the measured pilot
 
 ```bash
-study pilot --wall-hours 3 --job-seconds 3600
+.venv/bin/python -m dora_spectral.study --directory runs/study-main pilot \
+  --wall-hours 3 --job-seconds 3600
 ```
 
 - [ ] Finish short profiles and the slowest condition's three-epoch pilot (`pilot.json`: `passed: true`).
@@ -75,8 +70,9 @@ Require improved NLL, usable accuracy, and ≤1% truncation.
 ## 6. Account for idle time and freeze
 
 ```bash
-study account --hours 0.25 --note "additional allocated setup/idle time"
-study freeze
+.venv/bin/python -m dora_spectral.study --directory runs/study-main account \
+  --hours 0.25 --note "additional allocated setup/idle time"
+.venv/bin/python -m dora_spectral.study --directory runs/study-main freeze
 ```
 
 Replace `0.25` with additional uncounted allocated hours; skip `account` if none.
@@ -87,7 +83,8 @@ Repeat accounting after later allocations as needed. `freeze` checks pilot/budge
 ## 7. Run mechanism diagnostics
 
 ```bash
-study diagnose --wall-hours 1 --job-seconds 1800
+.venv/bin/python -m dora_spectral.study --directory runs/study-main diagnose \
+  --wall-hours 1 --job-seconds 1800
 ```
 
 - [ ] Finish four DoRA runs comparing exact/detached updates at steps 0/50/100 (`counterfactuals.jsonl`).
@@ -95,8 +92,10 @@ study diagnose --wall-hours 1 --job-seconds 1800
 ## 8. Screen, then promote
 
 ```bash
-study screen --wall-hours 3 --job-seconds 3600
-study promote --wall-hours 3 --job-seconds 3600
+.venv/bin/python -m dora_spectral.study --directory runs/study-main screen \
+  --wall-hours 3 --job-seconds 3600
+.venv/bin/python -m dora_spectral.study --directory runs/study-main promote \
+  --wall-hours 3 --job-seconds 3600
 ```
 
 - [ ] `screen`: finish 96 one-epoch candidates, scoring 256 development questions (`search/`).
@@ -107,8 +106,9 @@ Retain numerical failures; require a usable finalist for every condition.
 ## 9. Select, then confirm
 
 ```bash
-study select
-study confirm --wall-hours 3 --job-seconds 3600
+.venv/bin/python -m dora_spectral.study --directory runs/study-main select
+.venv/bin/python -m dora_spectral.study --directory runs/study-main confirm \
+  --wall-hours 3 --job-seconds 3600
 ```
 
 - [ ] `select`: lock eight winning configurations (`selection.json`, `selection-lock.json`).
@@ -117,7 +117,8 @@ study confirm --wall-hours 3 --job-seconds 3600
 ## 10. Evaluate the official test
 
 ```bash
-study test --wall-hours 3 --job-seconds 3600
+.venv/bin/python -m dora_spectral.study --directory runs/study-main test \
+  --wall-hours 3 --job-seconds 3600
 ```
 
 - [ ] After all confirmations finish, score the base and final replicas on all 1,319 questions (`test/`).
@@ -127,7 +128,8 @@ Keep settings, scoring rules, and seeds unchanged after opening the test.
 ## 11. Analyze on CPU
 
 ```bash
-study analyze --resamples 10000 --two-way
+.venv/bin/python -m dora_spectral.study --directory runs/study-main analyze \
+  --resamples 10000 --two-way
 ```
 
 - [ ] Verify paired predictions and inspect statistics, CSV tables, and PNG figures (`analysis/` in the report folder).
@@ -148,8 +150,8 @@ Replace the placeholders with the original execution username and study name.
 ## Status and saving
 
 ```bash
-study status
-.venv/bin/python -m dora_spectral.reporting --runs "$DORA_STUDY"
+.venv/bin/python -m dora_spectral.study --directory runs/study-main status
+.venv/bin/python -m dora_spectral.reporting --runs runs/study-main
 ```
 
 `status` shows accounted hours and lock state. Evidence copies automatically to `reports/<execution-user>/`;
