@@ -1,5 +1,7 @@
 # Running the fixed-rank LR × gamma study
 
+Use the [progress checklist](PROGRESS.md) to see completed milestones and the next step.
+
 Run these commands from the repository root, using the same Git revision throughout a study.
 This implements the eight-condition, rank-16 core of [TEST_PLAN.md](TEST_PLAN.md): six controlled
 conditions plus ordinary LoRA and DoRA. The optional 200-hour fixed-scale/finalist-retuning

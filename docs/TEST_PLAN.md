@@ -8,6 +8,9 @@ The additive-versus-detached-DoRA interaction is primary; the exact-versus-detac
 
 This is a proposed protocol; execution-specific measurements are recorded in [reports](../reports). Numeric choices below are operational defaults selected for this budget unless explicitly attributed to a source. Freeze any pilot changes before the main search.
 
+Track completed execution milestones in the [progress checklist](PROGRESS.md); the
+[run guide](RUN_STUDY.md) explains the commands for each stage.
+
 ## 1. Research question and intended contribution
 
 **Does DoRA amplify, attenuate, or reverse the benefit of spectral initialization after per-condition tuning, and does the conclusion depend on denominator detachment?**
