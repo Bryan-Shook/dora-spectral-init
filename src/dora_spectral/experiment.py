@@ -6,6 +6,7 @@ import importlib.metadata
 import json
 import math
 import signal
+import sys
 from pathlib import Path
 
 import torch
@@ -13,6 +14,7 @@ import yaml
 
 from .data import encode_example, parse_answer, split_examples
 from .model import CONDITIONS, attach
+from .reporting import environment, export_run, utc_now
 from .training import Budget, BudgetExpired, answer_nll, evaluate, load_model, train, write_json
 
 
@@ -128,6 +130,16 @@ def run(args, config):
         raise ValueError("run directory already belongs to a different experiment")
     write_json(metadata_path, metadata)
     budget = Budget(args.seconds)
+    invocation = {
+        "started_at": utc_now(),
+        "status": "running",
+        "target_steps": steps,
+        "split": args.split,
+        "evaluation_count": args.evaluation_count,
+        "environment": environment(),
+    }
+    write_json(args.directory / "status.json", invocation)
+    status = "failed"
 
     def stop(signum, frame):
         # Stop at a safe accumulation boundary, never halfway through optimizer.step().
@@ -157,13 +169,24 @@ def run(args, config):
         status = "complete"
     except BudgetExpired:
         status = "interrupted"
+    except BaseException as error:
+        invocation["error"] = {"type": type(error).__name__, "message": str(error)}
+        raise
     finally:
         # Each invocation's cost is retained, including interrupted/resumed jobs.
+        invocation.update(status=status, seconds=budget.elapsed, finished_at=utc_now())
         with (args.directory / "invocations.jsonl").open("a") as handle:
-            handle.write(
-                json.dumps({"seconds": budget.elapsed, "status": locals().get("status", "failed")})
-                + "\n"
-            )
+            handle.write(json.dumps(invocation) + "\n")
+        write_json(args.directory / "status.json", invocation)
+        try:
+            destination = export_run(args.directory, args.reports)
+            print(f"Experiment evidence: {destination}", flush=True)
+        except (OSError, ValueError) as error:
+            if status == "failed":
+                # Preserve the training exception if copying evidence also fails.
+                print(f"Evidence export failed: {error}", file=sys.stderr, flush=True)
+            else:
+                raise
     return 0 if status == "complete" else 1
 
 
@@ -176,6 +199,9 @@ def main():
     cell = commands.add_parser("run")
     cell.add_argument("--data", type=Path, default=Path("runs/data"))
     cell.add_argument("--directory", type=Path, required=True)
+    cell.add_argument(
+        "--reports", type=Path, default=Path("reports"), help="small-result report root"
+    )
     cell.add_argument("--condition", choices=CONDITIONS, required=True)
     cell.add_argument("--seed", type=int, required=True)
     cell.add_argument("--lr", type=float, required=True)

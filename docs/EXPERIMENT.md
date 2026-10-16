@@ -138,7 +138,40 @@ Each candidate saves `run.json` (provenance), `initialization.json`, `checkpoint
 store adapters, frozen corrections, optimizer state, RNG state, and step count; the base-model
 weights are reconstructed from the pinned revision.
 
-Execution-specific measurements and findings belong in [reports](../reports), including the [PEFT
-validation report](../reports/peft-validation.md). Raw artifacts in `runs/` are gitignored and must
-be transferred separately when reproducing or publishing results. Notebook dependencies are an
-optional installation group; see SETUP.md for the launch command.
+After each completed, interrupted, or failed invocation, the runner automatically copies JSON,
+JSONL, log, and XML evidence into `reports/<user>/`, preserving the path below `runs/`. For example,
+`runs/h100-check/A-S-s0` run by `mchoi345` is copied to `reports/mchoi345/h100-check/A-S-s0/`.
+The OS username is recorded with each invocation. This includes configuration,
+source hashes, initialization checks, training logs, predictions, and metrics. No narrative summary
+is generated. `status.json` and `invocations.jsonl` also retain the execution-time Git revision,
+package versions, GPU details, target steps, elapsed time, and any exception. Invocation time
+excludes idle GPU allocation and evidence copying, so it is not a complete allocation-time ledger.
+
+Use `run --reports PATH` to choose a different destination root. Run directories outside `runs/`
+are placed under `reports/<user>/external/<name>-<path-hash>/` to avoid name collisions. Original files
+stay in `runs/` so checkpoint resumes continue to work. Checkpoints, model weights, prepared
+examples, and SVD caches are not copied; back those up separately when resumability is needed.
+
+Copy already completed cluster runs without retraining, model dependencies, or a GPU:
+
+```bash
+.venv/bin/python -m dora_spectral.reporting --runs runs/h100-check
+```
+
+The report path uses the latest recorded execution user, falling back to the current OS username
+for older results. To label an older run explicitly, or when exporting on another person's behalf,
+add `--user mchoi345`. The override changes only the destination path, preserving original metadata.
+Existing exports without a username directory are left in place; the command creates the new path.
+
+The command accepts one candidate directory or a campaign root containing multiple `run.json`
+files. Repeating it updates the copied evidence and retains older evaluation directories. It
+preserves original metadata; it cannot recover execution-time Git/GPU information for older runs.
+Use the same command on partial results if a process was killed before its cleanup could run.
+Commit and push the copied `reports/` files to share results through Git. Nothing is committed or
+pushed automatically. If copying fails, the runner reports the failure and leaves raw files intact.
+
+Keep implementation source fixed between screening and promotion: the existing resume provenance
+checks still apply. Copying old results does not require resuming their checkpoints.
+
+The historical [pilot report](../reports/pilot.md) describes the earlier implementation.
+Notebook dependencies are an optional installation group; see SETUP.md for the launch command.
