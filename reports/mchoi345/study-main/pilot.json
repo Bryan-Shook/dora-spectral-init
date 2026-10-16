@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "full_job": {
+    "condition": "A-S",
+    "seed": 0,
+    "learning_rate": 0.0001,
+    "gamma": 1,
+    "steps": 609,
+    "count": 500,
+    "directory": "pilot/A-S-s0",
+    "split": "pilot",
+    "from_steps": 20,
+    "kind": "train",
+    "counterfactuals": false
+  },
+  "metrics": {
+    "count": 500,
+    "accuracy": 72.8,
+    "truncation_rate": 0.006,
+    "seconds": 498.659006927046,
+    "answer_nll": 0.42960048746899765
+  },
+  "baseline_nll": 0.8900562387652102
+}

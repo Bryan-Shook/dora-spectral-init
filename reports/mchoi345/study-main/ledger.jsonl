@@ -1,0 +1,17 @@
+{"phase": "pilot", "directory": "pilot/A-S-s0", "seconds": 63.40717792103533, "exit_code": 0, "finished_at": "2026-10-16T18:29:22.065513+00:00"}
+{"phase": "pilot", "directory": "pilot/A-R-s0", "seconds": 49.27863419800997, "exit_code": 0, "finished_at": "2026-10-16T18:30:11.428440+00:00"}
+{"phase": "pilot", "directory": "pilot/D-S-s0", "seconds": 111.87420312396716, "exit_code": 0, "finished_at": "2026-10-16T18:32:03.371053+00:00"}
+{"phase": "pilot", "directory": "pilot/D-S-s1", "seconds": 112.1130049660569, "exit_code": 0, "finished_at": "2026-10-16T18:33:55.599479+00:00"}
+{"phase": "pilot", "directory": "pilot/D-S-s2", "seconds": 111.62882023002021, "exit_code": 0, "finished_at": "2026-10-16T18:35:47.326103+00:00"}
+{"phase": "pilot", "directory": "pilot/D-R-s0", "seconds": 116.77993661700748, "exit_code": 0, "finished_at": "2026-10-16T18:37:44.254729+00:00"}
+{"phase": "pilot", "directory": "pilot/D-R-s1", "seconds": 113.41140375903342, "exit_code": 0, "finished_at": "2026-10-16T18:39:37.773392+00:00"}
+{"phase": "pilot", "directory": "pilot/D-R-s2", "seconds": 116.01497073797509, "exit_code": 0, "finished_at": "2026-10-16T18:41:33.874443+00:00"}
+{"phase": "pilot", "directory": "pilot/E-S-s0", "seconds": 121.20990160398651, "exit_code": 0, "finished_at": "2026-10-16T18:43:35.145970+00:00"}
+{"phase": "pilot", "directory": "pilot/E-S-s1", "seconds": 117.0724653849611, "exit_code": 0, "finished_at": "2026-10-16T18:45:32.291703+00:00"}
+{"phase": "pilot", "directory": "pilot/E-S-s2", "seconds": 118.67110474698711, "exit_code": 0, "finished_at": "2026-10-16T18:47:31.015620+00:00"}
+{"phase": "pilot", "directory": "pilot/E-R-s0", "seconds": 120.42813797108829, "exit_code": 0, "finished_at": "2026-10-16T18:49:31.499721+00:00"}
+{"phase": "pilot", "directory": "pilot/E-R-s1", "seconds": 120.78694726096, "exit_code": 0, "finished_at": "2026-10-16T18:51:32.456533+00:00"}
+{"phase": "pilot", "directory": "pilot/E-R-s2", "seconds": 118.49765628599562, "exit_code": 0, "finished_at": "2026-10-16T18:53:31.093151+00:00"}
+{"phase": "pilot", "directory": "pilot/L0-s0", "seconds": 74.68084115011152, "exit_code": 0, "finished_at": "2026-10-16T18:54:45.896979+00:00"}
+{"phase": "pilot", "directory": "pilot/D0-s0", "seconds": 104.60621336905751, "exit_code": 0, "finished_at": "2026-10-16T18:56:30.644755+00:00"}
+{"phase": "pilot-full", "directory": "pilot/A-S-s0", "seconds": 893.5932261160342, "exit_code": 0, "finished_at": "2026-10-16T19:11:24.758894+00:00"}

@@ -1,0 +1,22 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+D0-s0: step 1/20, NLL 0.8953
+D0-s0: step 2/20, NLL 1.0194
+D0-s0: step 3/20, NLL 0.8930
+D0-s0: step 4/20, NLL 1.0333
+D0-s0: step 5/20, NLL 0.8826
+D0-s0: step 6/20, NLL 0.8800
+D0-s0: step 7/20, NLL 0.8473
+D0-s0: step 8/20, NLL 0.7913
+D0-s0: step 9/20, NLL 0.8276
+D0-s0: step 10/20, NLL 0.8256
+D0-s0: step 11/20, NLL 0.8220
+D0-s0: step 12/20, NLL 0.8809
+D0-s0: step 13/20, NLL 0.7582
+D0-s0: step 14/20, NLL 0.8364
+D0-s0: step 15/20, NLL 0.7935
+D0-s0: step 16/20, NLL 0.6499
+D0-s0: step 17/20, NLL 0.7397
+D0-s0: step 18/20, NLL 0.6681
+D0-s0: step 19/20, NLL 0.6733
+D0-s0: step 20/20, NLL 0.6341
+Experiment evidence: /storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/reports/mchoi345/study-main/pilot/D0-s0

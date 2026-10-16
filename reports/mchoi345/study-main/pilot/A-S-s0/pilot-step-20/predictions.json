@@ -1,0 +1,162 @@
+[
+  {
+    "id": 3504,
+    "question_sha256": "9720d7482bc8982d99db55b2747755fe8bbc137ea570a133265b4d1833d7e251",
+    "reference_answer": "1800",
+    "text": " The wall initially had 3 courses of bricks, so it had 3 * 400 = 1200 bricks.\nThey added 2 more courses, so the wall now has 3 + 2 = 5 courses.\nEach course has 400 bricks, so the wall now has 5 * 400 = 2000 bricks.\nThey took out half of the bricks in the last course, so they removed 400 / 2 = 200 bricks.\nTherefore, the wall now has 2000 - 200 = 1800 bricks.\n#### 1800",
+    "parsed": "1800",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 138
+  },
+  {
+    "id": 807,
+    "question_sha256": "edb17a221c56dd3a122818c51b436f99e856fb1adda17d1f6ac626a2867bdbbf",
+    "reference_answer": "7",
+    "text": " Let's denote David's age as D. According to the information given:\n\n1. Yuan is 7 years older than David, so Yuan's age is D + 7.\n2. Yuan is also twice David's age, so Yuan's age is 2D.\n\nSince both expressions represent Yuan's age, we can set them equal to each other:\n\nD + 7 = 2D\n\nNow, we can solve for D:\n\n2D - D = 7\nD = 7\n\nSo, David is 7 years old.",
+    "parsed": null,
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 111
+  },
+  {
+    "id": 7398,
+    "question_sha256": "4d2131eaf5b9b3baff1d7e13e14abe189668f2ad4f2ba6c0a86f0e60e44b7e11",
+    "reference_answer": "20",
+    "text": " The boy squirrel brings 6 walnuts to the burrow, but drops 1 on the way, so he adds 6 - 1 = 5 walnuts.\nThe burrow already had 12 walnuts, so after the boy squirrel adds his walnuts, there are 12 + 5 = 17 walnuts in the burrow.\nThe girl squirrel brings 5 more walnuts to the burrow, so there are now 17 + 5 = 22 walnuts in the burrow.\nThe girl squirrel eats 2 walnuts, so there are 22 - 2 = 20 walnuts left in the burrow.\n#### 20",
+    "parsed": "20",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 144
+  },
+  {
+    "id": 1003,
+    "question_sha256": "e27ec7fd7970b73090fe398bfe6c40ac7bc3e7285a547afe300aeb2bbf94c7ea",
+    "reference_answer": "1440",
+    "text": " The monthly cell phone expenses are $800 + $400 = $1200.\nThe cost of the golf tournament is 20% more than $1200, which is $1200 * 20/100 = $240.\nTherefore, Cheryl pays $1200 + $240 = $1440 upon signing up for the golf tournament.\n#### 1440",
+    "parsed": "1440",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 96
+  },
+  {
+    "id": 1736,
+    "question_sha256": "a046f134c6728d1512d29621a27c3337745095bd19a87602e222290a6500a521",
+    "reference_answer": "8",
+    "text": " The box contains 12 bars, and they are shared equally between 3 people, so each person gets 12/3 = 4 bars.\nMike and Rita get 4 bars each, so together they get 4+4 = 8 bars.\n#### 8",
+    "parsed": "8",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 57
+  },
+  {
+    "id": 5018,
+    "question_sha256": "82bcf7086ef8771a25cb0e2ab8a7aa98048039d6448268587bcbc5d0f92ae2cc",
+    "reference_answer": "1",
+    "text": " There are 12 x 10 = 120 packs of cheese cookies in a dozen cartons.\nSo, there are 120 x 12 = 1440 packs of cheese cookies in a carton.\nTherefore, the price of a pack of cheese cookies is $1440/1440 = $1.\n#### 1",
+    "parsed": "1",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 79
+  },
+  {
+    "id": 6722,
+    "question_sha256": "9dff14915bc1d76fdd227e3eb9949225b92ea465166a08398d72639dc1eb0de2",
+    "reference_answer": "40",
+    "text": " Vincent bought 15 + 10 = 25 packs of stickers today.\nAltogether, Vincent has 15 + 25 = 40 packs of stickers.\n#### 40",
+    "parsed": "40",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 43
+  },
+  {
+    "id": 7362,
+    "question_sha256": "bd9cd4cecbba609ef877ddd728e95310d4550970cf07a2b45169d6608a5aeefb",
+    "reference_answer": "9",
+    "text": " Let's denote the age of the two boys who are the same age as x. The third boy is 11 years old. According to the problem, the sum of their ages is 29. So we can write the equation:\n\nx + x + 11 = 29\n\nCombining like terms, we get:\n\n2x + 11 = 29\n\nSubtracting 11 from both sides, we get:\n\n2x = 29 - 11\n2x = 18\n\nDividing both sides by 2, we get:\n\nx = 18 / 2\nx = 9\n\nSo, the two boys who are the same age are each 9 years old.",
+    "parsed": null,
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 153
+  },
+  {
+    "id": 414,
+    "question_sha256": "6ea1b4ce99aefb63e878629a7ca4ecb1d2bc4c25b1bddbf4673406e14b7808da",
+    "reference_answer": "750",
+    "text": " The first drink is 250/12=20.833333 grams of caffeine per ounce\nSo the second drink is 20.833333*3=62.5 grams of caffeine per ounce\nSo the second drink is 62.5*2=125 grams of caffeine\nSo in total he drank 250+125=375 grams of caffeine\nThe pill has as much caffeine as his 2 drinks combined so he drank 375+375=750 grams of caffeine\n#### 750",
+    "parsed": "750",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 132
+  },
+  {
+    "id": 4227,
+    "question_sha256": "3e7cc794c4c5388ababd804336cfb1f37a2aab9c1e32250771e2ea535b0e1709",
+    "reference_answer": "380",
+    "text": " Each fence panel is made of 3 metal sheets, and 2 metal beams, so each panel is made of 3 + 2 = 5 metal rods.\nThe fence is made of 10 fence panels, so the community needs 10 * 5 = 50 metal rods for the panels.\nEach sheet is made of 10 metal rods, so the community needs 10 * 10 = 100 metal rods for the sheets.\nEach metal beam is made of 4 metal rods, so the community needs 2 * 4 = 8 metal rods for the beams.\nIn total, the community needs 50 + 100 + 8 = 158 metal rods for the fence.\n#### 158",
+    "parsed": "158",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 160
+  },
+  {
+    "id": 3024,
+    "question_sha256": "dd9ffdd40f6f9d5f9c0b7af99c1922c3a60aa8c642a7116a5a77167812dea876",
+    "reference_answer": "34",
+    "text": " The sum of Christine's two cats' weights is 7 + 10 = 17 pounds.\nIf her dog's weight is twice the sum of her two cats' weights, then her dog's weight is 2 * 17 = 34 pounds.\n#### 34",
+    "parsed": "34",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 60
+  },
+  {
+    "id": 327,
+    "question_sha256": "2da1342a27a14de978ddff0a4b48ca1c68efc37223cc1e2197a4dd0da5663612",
+    "reference_answer": "7",
+    "text": " First, we need to determine the total number of minks Andy has after the babies are born. Andy buys 30 minks and each mink has 6 babies, so the total number of babies is 30 * 6 = 180. Adding the original minks, the total number of minks is 30 + 180 = 210.\n\nNext, we need to account for the minks that are set free. Half of the total minks are set free, so the number of minks set free is 210 / 2 = 105.\n\nFinally, to find out how many coats Andy can make, we divide the number of minks that are not set free by the number of minks required per coat. Therefore, the number of coats he can make is 210 - 105 // 15 = 10.\n\nThe answer is 10.",
+    "parsed": null,
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 198
+  },
+  {
+    "id": 5044,
+    "question_sha256": "66bde307d21c18e08ba377ad71dcff6b23e2d7be7890be41c2f3d3b1e6cb3711",
+    "reference_answer": "60",
+    "text": " 25% of 80 students is 0.25 * 80 = 20 students.\nSo, there are 20 half-day students and 80 - 20 = 60 full-day students.\n#### 60",
+    "parsed": "60",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 55
+  },
+  {
+    "id": 5907,
+    "question_sha256": "1bdeaa589554cb570693c16199fd6995fc8117a936fe8114457ca932ac1969b9",
+    "reference_answer": "50",
+    "text": " First, we need to determine the total number of cookies brought in by Jenny and Marcus. Jenny brought in 40 peanut butter cookies and 50 chocolate chip cookies, so the total number of cookies she brought in is 40 + 50 = 90. Marcus brought in 30 peanut butter cookies and 20 lemon cookies, so the total number of cookies he brought in is 30 + 20 = 50. Therefore, the total number of cookies is 90 + 50 = 140. The probability that Renee will have an allergic reaction is the sum of the peanut butter cookies and lemon cookies divided by the total number of cookies, which is (40 + 20) / 140 = 0.428571. To express this probability as a percentage, we multiply by 100, giving us 0.428571 * 100 = 42.857143%. The answer is 42.857143%.",
+    "parsed": null,
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 229
+  },
+  {
+    "id": 4114,
+    "question_sha256": "0aac5307361f9d8d9e69a6c91b5610bd7d8eb81f4c5b9eac22c99425ab560165",
+    "reference_answer": "8",
+    "text": " Kristin runs 12 laps around the adult football field, which is 12 laps * 3 = 36 laps around the children's football field.\nSarith runs at the same time around the children's football field, so she runs 36 laps.\nThe children's football field is half the distance of the adult football field, so Sarith runs 36 laps * 2 = 72 laps around the children's football field.\n#### 72",
+    "parsed": "72",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 98
+  },
+  {
+    "id": 4578,
+    "question_sha256": "64b6181a9f924315ae80a96e2a4d2897be3d6363f5d947f78a147041cb969891",
+    "reference_answer": "6",
+    "text": " Grace earns 300 dollars every 2 weeks, so in one week, she earns 300/2 = 150 dollars.\nTo get 1800 dollars, Grace will need 1800/150 = 12 weeks.\n#### 12",
+    "parsed": "12",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 63
+  }
+]

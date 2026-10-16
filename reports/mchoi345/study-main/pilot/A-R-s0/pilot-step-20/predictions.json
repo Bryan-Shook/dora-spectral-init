@@ -1,0 +1,162 @@
+[
+  {
+    "id": 3504,
+    "question_sha256": "9720d7482bc8982d99db55b2747755fe8bbc137ea570a133265b4d1833d7e251",
+    "reference_answer": "1800",
+    "text": " The wall originally had 3 courses of bricks, so it had 3 * 400 = 1200 bricks.\nThey added 2 more courses, so the wall now has 3 + 2 = 5 courses.\nEach course has 400 bricks, so the wall now has 5 * 400 = 2000 bricks.\nThey took out half of the bricks in the last course, so they removed 400 / 2 = 200 bricks.\nTherefore, the total number of bricks the wall has is 2000 - 200 = 1800 bricks.\n#### 1800",
+    "parsed": "1800",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 143
+  },
+  {
+    "id": 807,
+    "question_sha256": "edb17a221c56dd3a122818c51b436f99e856fb1adda17d1f6ac626a2867bdbbf",
+    "reference_answer": "7",
+    "text": " Let's denote David's age as D. According to the information given, Yuan is 7 years older than David, so we can write the equation:\n\nYuan's age = D + 7\n\nWe are also told that Yuan is twice David's age, so we can write another equation:\n\nYuan's age = 2 * D\n\nNow we have two equations with two variables:\n\n1) D + 7 = 2 * D\n2) D + 7 = 2D\n\nLet's solve the first equation for D:\n\nD + 7 = 2D\n7 = 2D - D\n7 = D\n\nSo, David is 7 years old.",
+    "parsed": null,
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 141
+  },
+  {
+    "id": 7398,
+    "question_sha256": "4d2131eaf5b9b3baff1d7e13e14abe189668f2ad4f2ba6c0a86f0e60e44b7e11",
+    "reference_answer": "20",
+    "text": " The boy squirrel brings 6 walnuts to the burrow, but drops 1 on the way, so he adds 6 - 1 = 5 walnuts to the burrow.\nThe burrow already had 12 walnuts, so there are now 12 + 5 = 17 walnuts in the burrow.\nThe girl squirrel brings 5 more walnuts to the burrow, so there are now 17 + 5 = 22 walnuts in the burrow.\nThe girl squirrel eats 2 walnuts, so there are now 22 - 2 = 20 walnuts left in the burrow.\n#### 20",
+    "parsed": "20",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 141
+  },
+  {
+    "id": 1003,
+    "question_sha256": "e27ec7fd7970b73090fe398bfe6c40ac7bc3e7285a547afe300aeb2bbf94c7ea",
+    "reference_answer": "1440",
+    "text": " To calculate the total amount Cheryl pays upon signing up for the golf tournament, we need to follow these steps:\n\n1. Determine Cheryl's monthly cell phone expenses.\n2. Calculate the cost of entering the golf tournament.\n3. Sum up the costs to get the total amount.\n\nLet's break it down:\n\n1. Cheryl's monthly cell phone expenses are $400 more than her electricity bill, which costs $800. So, her monthly cell phone expenses are $800 + $400 = $1200.\n2. The cost to enter the golf tournament is 20% more than her monthly cell phone expenses. So, the cost to enter the golf tournament is $1200 + (20% of $1200) = $1200 + (0.20 * $1200) = $1200 + $240 = $1440.\n3. The total amount Cheryl pays upon signing up for the golf tournament is the cost of entering the tournament, which is $1440.\n\nLet's write the Python code to confirm this calculation.\n```python\n# Given data\nelectricity_bill = 800\nadditional_cell_phone_expenses = 400\ngolf_tournament_percentage_increase = 0.20\n\n# Calculate monthly cell phone expenses\ncell_phone_expenses = electricity_bill + additional_cell_phone_expenses\n\n# Calculate the cost to enter the golf tournament\ngolf_tournament_cost = cell_phone_expenses * (1 + golf_tournament_percentage_increase)\n\n# Calculate the total amount paid upon signing up for the golf tournament\ntotal_amount_paid = golf_tournament_cost\n\nprint(total_amount_paid)\n```\n```output\n1440.0\n```\nThe total amount Cheryl pays upon signing up for the golf tournament is \\(\\boxed{1440}\\).",
+    "parsed": null,
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 394
+  },
+  {
+    "id": 1736,
+    "question_sha256": "a046f134c6728d1512d29621a27c3337745095bd19a87602e222290a6500a521",
+    "reference_answer": "8",
+    "text": " The box contains 12 bars, and they are shared equally between 3 people, so each person gets 12/3 = 4 bars.\nMike and Rita get 4 bars each, so combined they get 4+4 = 8 bars.\n#### 8",
+    "parsed": "8",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 57
+  },
+  {
+    "id": 5018,
+    "question_sha256": "82bcf7086ef8771a25cb0e2ab8a7aa98048039d6448268587bcbc5d0f92ae2cc",
+    "reference_answer": "1",
+    "text": " If a carton contains 12 boxes, then a dozen cartons contain 12 x 12 = 144 boxes.\nIf each box has 10 packs of cheese cookies, then 144 boxes contain 144 x 10 = 1440 packs of cheese cookies.\nIf a dozen cartons cost $1440, then the price of a pack of cheese cookies is $1440 / 1440 = $1.\n#### 1",
+    "parsed": "1",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 108
+  },
+  {
+    "id": 6722,
+    "question_sha256": "9dff14915bc1d76fdd227e3eb9949225b92ea465166a08398d72639dc1eb0de2",
+    "reference_answer": "40",
+    "text": " Today, Vincent bought 15 + 10 = 25 packs of stickers.\nAltogether, Vincent has 15 + 25 = 40 packs of stickers.\n#### 40",
+    "parsed": "40",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 44
+  },
+  {
+    "id": 7362,
+    "question_sha256": "bd9cd4cecbba609ef877ddd728e95310d4550970cf07a2b45169d6608a5aeefb",
+    "reference_answer": "9",
+    "text": " The sum of the ages of the three boys is 29. If two of the boys are the same age, let's call this age x. The third boy is 11 years old. So, the equation to represent the sum of their ages is:\n\nx + x + 11 = 29\n\nCombining like terms, we get:\n\n2x + 11 = 29\n\nSubtracting 11 from both sides, we get:\n\n2x = 29 - 11\n2x = 18\n\nDividing both sides by 2, we get:\n\nx = 18 / 2\nx = 9\n\nSo, the two boys who are the same age are each 9 years old.",
+    "parsed": null,
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 158
+  },
+  {
+    "id": 414,
+    "question_sha256": "6ea1b4ce99aefb63e878629a7ca4ecb1d2bc4c25b1bddbf4673406e14b7808da",
+    "reference_answer": "750",
+    "text": " The first drink is 250/12 = 20.83 grams of caffeine per ounce.\nThe second drink is 20.83*3 = 62.5 grams of caffeine per ounce.\nSo the second drink is 62.5*2 = 125 grams of caffeine.\nSo the total amount of caffeine in the drinks is 250+125 = 375 grams.\nThe pill has as much caffeine as the drinks combined, so it has 375 grams of caffeine.\nTherefore, John consumed a total of 375+375 = 750 grams of caffeine.\n#### 750",
+    "parsed": "750",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 145
+  },
+  {
+    "id": 4227,
+    "question_sha256": "3e7cc794c4c5388ababd804336cfb1f37a2aab9c1e32250771e2ea535b0e1709",
+    "reference_answer": "380",
+    "text": " Each fence panel is made of 3 metal sheets, and 2 metal beams, so each panel is made of 3 + 2 = 5 metal rods.\nThe fence is made of 10 fence panels, so the community needs 10 * 5 = 50 metal rods for the panels.\nEach sheet is made of 10 metal rods, so the community needs 10 * 10 = 100 metal rods for the sheets.\nEach metal beam is made of 4 metal rods, so the community needs 2 * 4 = 8 metal rods for the beams.\nIn total, the community needs 50 + 100 + 8 = 158 metal rods for the fence.\n#### 158",
+    "parsed": "158",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 160
+  },
+  {
+    "id": 3024,
+    "question_sha256": "dd9ffdd40f6f9d5f9c0b7af99c1922c3a60aa8c642a7116a5a77167812dea876",
+    "reference_answer": "34",
+    "text": " The sum of Christine's two cats' weights is 7 + 10 = 17 pounds.\nIf her dog's weight is twice the sum of her two cats' weights, then her dog's weight is 2 * 17 = 34 pounds.\n#### 34",
+    "parsed": "34",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 60
+  },
+  {
+    "id": 327,
+    "question_sha256": "2da1342a27a14de978ddff0a4b48ca1c68efc37223cc1e2197a4dd0da5663612",
+    "reference_answer": "7",
+    "text": " Andy buys 30 minks and each mink has 6 babies, so he has 30 + (30 * 6) = 30 + 180 = 210 minks.\nHowever, half of the minks are set free, so he is left with 210 / 2 = 105 minks.\nIt takes 15 mink skins to make a coat, so Andy can make 105 / 15 = 7 coats.\n#### 7",
+    "parsed": "7",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 111
+  },
+  {
+    "id": 5044,
+    "question_sha256": "66bde307d21c18e08ba377ad71dcff6b23e2d7be7890be41c2f3d3b1e6cb3711",
+    "reference_answer": "60",
+    "text": " 25% of 80 students is 0.25 * 80 = 20 students.\nSo, there are 80 - 20 = 60 full-day students.\n#### 60",
+    "parsed": "60",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 48
+  },
+  {
+    "id": 5907,
+    "question_sha256": "1bdeaa589554cb570693c16199fd6995fc8117a936fe8114457ca932ac1969b9",
+    "reference_answer": "50",
+    "text": " The total number of cookies is 40 + 50 + 30 + 20 = 140\nThe number of cookies that are not peanut butter is 140 - 40 - 30 = 70\nThe chance of Renee picking a peanut butter cookie is 40/140 = 2/7\nThe chance of Renee picking a peanut butter cookie is 2/7 = 0.2857\nThe chance of Renee picking a peanut butter cookie is 0.2857 * 100 = 28.57%\n#### 28.57",
+    "parsed": "2857/100",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 140
+  },
+  {
+    "id": 4114,
+    "question_sha256": "0aac5307361f9d8d9e69a6c91b5610bd7d8eb81f4c5b9eac22c99425ab560165",
+    "reference_answer": "8",
+    "text": " Kristin runs 12 laps around the adult football field, which is 12 laps * 3 = 36 laps around the children's football field.\nSarith runs at the same time around the children's football field, which is 36/2 = 18 laps.\n#### 18",
+    "parsed": "18",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 65
+  },
+  {
+    "id": 4578,
+    "question_sha256": "64b6181a9f924315ae80a96e2a4d2897be3d6363f5d947f78a147041cb969891",
+    "reference_answer": "6",
+    "text": " Grace charges 300 dollars every week. Since her client pays every 2 weeks, Grace will receive 300/2 = 150 dollars every 2 weeks.\nTo get 1800 dollars, Grace will need 1800/150 = 12 sets of 2 weeks.\nTherefore, it will take Grace 12 * 2 = 24 weeks to get 1800 dollars.\n#### 24",
+    "parsed": "24",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 100
+  }
+]
