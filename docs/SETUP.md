@@ -40,7 +40,7 @@ and install the locked dependencies and development tools.
 ### CPU
 
 ```bash
-uv sync --locked --extra cpu --extra models
+uv sync --locked --extra cpu --extra models --extra analysis
 ```
 
 ### NVIDIA GPU (Linux)
@@ -63,6 +63,7 @@ Run the tests:
 The tests exercise initialization, gradients, PEFT parity, BF16 starting outputs,
 checkpoint resume, masking, and scoring using small CPU models.
 See [the experiment guide](EXPERIMENT.md) for pinned data preparation and GPU runs.
+Follow [RUN_STUDY.md](RUN_STUDY.md) for the complete command sequence and an explanation of each step.
 
 ## Optional initialization notebook
 
@@ -73,7 +74,7 @@ using the mathematical reference shared with the tests.
 Install the optional notebook group, choosing `cpu` or `cuda` to match your environment:
 
 ```bash
-uv sync --locked --extra cuda --extra models --group notebooks
+uv sync --locked --extra cuda --extra models --extra analysis --group notebooks
 .venv/bin/jupyter lab notebooks/01_initialization_checks.ipynb
 ```
 

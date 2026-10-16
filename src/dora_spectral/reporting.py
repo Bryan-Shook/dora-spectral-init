@@ -12,7 +12,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-EVIDENCE_SUFFIXES = {".json", ".jsonl", ".log", ".xml"}
+EVIDENCE_SUFFIXES = {".json", ".jsonl", ".log", ".xml", ".yaml", ".yml"}
 
 
 def utc_now():
@@ -69,7 +69,7 @@ def report_directory(directory, reports=Path("reports"), user=None):
 
 
 def _recorded_user(directory):
-    for name in ("status.json", "invocations.jsonl"):
+    for name in ("status.json", "invocations.jsonl", "run.json"):
         path = directory / name
         if not path.exists():
             continue

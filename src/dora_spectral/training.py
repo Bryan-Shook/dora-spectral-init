@@ -9,7 +9,8 @@ from pathlib import Path
 import torch
 from torch.nn import functional as F
 
-from .data import collate, parse_answer, prompt, score_answer
+from .data import collate, digest, parse_answer, prompt, score_answer
+from .diagnostics import MovementRecorder, counterfactual
 from .model import adapter_state, load_adapter_state
 
 
@@ -38,6 +39,30 @@ def write_json(path: Path, value):
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(json.dumps(value, indent=2) + "\n")
     temporary.replace(path)
+
+
+def training_records(path, repair=False):
+    """Recover only an incomplete final log line; retain it as explicit recovery evidence."""
+    if not path.exists():
+        return []
+    lines = path.read_text().splitlines()
+    records = []
+    for index, line in enumerate(lines):
+        try:
+            records.append(json.loads(line))
+        except json.JSONDecodeError:
+            if index != len(lines) - 1:
+                raise ValueError(f"corrupt training log before final line: {path}") from None
+            if repair:
+                with (path.parent / "training-log-recovery.jsonl").open("a") as handle:
+                    handle.write(
+                        json.dumps({"discarded_partial_line": line, "line_number": index + 1})
+                        + "\n"
+                    )
+                temporary = path.with_suffix(".repair.tmp")
+                temporary.write_text("".join(json.dumps(row) + "\n" for row in records))
+                temporary.replace(path)
+    return records
 
 
 def target_loss(logits, labels):
@@ -133,22 +158,59 @@ def train(
     history = []
     log_path = directory / "training.jsonl"
     previous_seconds = 0
-    if start_step and log_path.exists():
-        previous_records = [json.loads(line) for line in log_path.read_text().splitlines()]
+    if log_path.exists():
+        previous_records = training_records(log_path, repair=True)
         previous_seconds = max((row["elapsed_seconds"] for row in previous_records), default=0)
     model.config.use_cache = False
     model.train()
+    recorder = (
+        MovementRecorder(
+            model, directory, horizon, config.get("diagnostic_steps", (0, 1, 10, 50, 100))
+        )
+        if config.get("diagnostics", False)
+        else None
+    )
+    if recorder and start_step == 0:
+        recorder.record(0)
+    probe_steps = {0, 50, 100} if config.get("counterfactuals", False) else set()
+    probe_batch = collate(rows[:2], config["pad_id"], device) if probe_steps else None
+
+    def probe(step):
+        if step in probe_steps:
+            budget.check(reserve=60)
+            previous_rates = [group["lr"] for group in optimizer.param_groups]
+            for group in optimizer.param_groups:
+                group["lr"] = config["learning_rate"] * schedule_multiplier(
+                    step, horizon, config["warmup_fraction"]
+                )
+            try:
+                result = counterfactual(
+                    model,
+                    optimizer,
+                    probe_batch,
+                    lambda logits, labels: target_loss(logits, labels) / token_count(probe_batch),
+                )
+            finally:
+                for group, rate in zip(optimizer.param_groups, previous_rates, strict=True):
+                    group["lr"] = rate
+            with (directory / "counterfactuals.jsonl").open("a") as handle:
+                handle.write(json.dumps({"step": step, **result}) + "\n")
+
     if device == "cuda":
         torch.cuda.reset_peak_memory_stats()
         torch.cuda.synchronize()
     began = time.monotonic()
     try:
+        if start_step == 0:
+            probe(0)
         for step, window in enumerate(windows):
             if step < start_step:
                 continue
             if step >= steps:
                 break
             budget.check(reserve=60)
+            if recorder:
+                recorder.before(step)
             optimizer.zero_grad(set_to_none=True)
             lr = config["learning_rate"] * schedule_multiplier(
                 step, horizon, config["warmup_fraction"]
@@ -176,6 +238,9 @@ def train(
                 padded += batch["input_ids"].numel()
             norm = torch.nn.utils.clip_grad_norm_(parameters, 1.0, error_if_nonfinite=True)
             optimizer.step()
+            if recorder:
+                recorder.record(step + 1)
+            probe(step + 1)
             if device == "cuda":
                 torch.cuda.synchronize()
             record = {
@@ -205,15 +270,20 @@ def train(
     result = {
         "completed_steps": completed,
         "seconds": previous_seconds + time.monotonic() - began,
-        "initial_nll": history[0]["answer_nll"] if history else None,
-        "final_nll": history[-1]["answer_nll"] if history else None,
+        "initial_nll": None,
+        "final_nll": None,
         "peak_allocated_bytes": torch.cuda.max_memory_allocated() if device == "cuda" else 0,
         "peak_reserved_bytes": torch.cuda.max_memory_reserved() if device == "cuda" else 0,
     }
-    records = [json.loads(line) for line in log_path.read_text().splitlines()]
+    records = training_records(log_path)
     # Deduplicate records in case an infrastructure interruption rolled back a checkpoint.
     records = list({row["step"]: row for row in records}.values())
+    records = sorted(
+        (row for row in records if row["step"] <= completed), key=lambda row: row["step"]
+    )
     result.update(
+        initial_nll=records[0]["answer_nll"] if records else None,
+        final_nll=records[-1]["answer_nll"] if records else None,
         active_tokens_per_second=sum(row["active_tokens"] for row in records) / result["seconds"],
         padded_tokens_per_second=sum(row["padded_tokens"] for row in records) / result["seconds"],
         clipping_fraction=sum(row["clipped"] for row in records) / len(records),
@@ -266,10 +336,13 @@ def evaluate(model, tokenizer, rows, config, directory, budget, device="cuda"):
             predictions.append(
                 {
                     "id": row["id"],
+                    "question_sha256": digest(row["question"]),
+                    "reference_answer": str(parse_answer(row["answer"])),
                     "text": text,
                     "parsed": str(parsed) if parsed is not None else None,
                     "correct": score_answer(text, row["answer"], truncated),
                     "truncated": truncated,
+                    "generated_tokens": len(tokens),
                 }
             )
         write_json(directory / "predictions.json", predictions)

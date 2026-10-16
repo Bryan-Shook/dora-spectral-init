@@ -17,6 +17,7 @@ models = [
   "safetensors",
   "huggingface-hub",
 ]
+analysis = ["scipy", "matplotlib"]
 # Choose cpu or cuda when syncing.
 cpu = ["torch"]
 cuda = ["torch; sys_platform == 'linux'"]

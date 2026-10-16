@@ -4,6 +4,8 @@ This guide describes the implementation and execution workflow for comparing spe
 spectrum-matched random initialization under additive adaptation, detached DoRA, and attached DoRA.
 [TEST_PLAN.md](TEST_PLAN.md) defines the research hypotheses, tuning allocation, confirmation
 design, and statistical analysis. [SETUP.md](SETUP.md) covers installation and cluster setup.
+The [step-by-step study instructions](RUN_STUDY.md) explain validation, pilot, staged search,
+confirmation, locked testing, and CPU analysis commands.
 
 ## Conditions
 
@@ -61,7 +63,14 @@ arithmetic, while adapter branches and norm calculations use FP32.
   evaluation using the same unmerged arithmetic as training.
 - [experiment.py](../src/dora_spectral/experiment.py) prepares data and executes
   one selected candidate. Its evaluation splits are `pilot` and `development`;
-  it has no sweep, winner-selection, official-test, or statistical-analysis command.
+  `score-test` evaluates locked confirmation checkpoints after the study's test-access gate.
+- [validation.py](../src/dora_spectral/validation.py) implements the real-model validation gates.
+- [diagnostics.py](../src/dora_spectral/diagnostics.py) measures effective weights and reversible
+  exact/detached AdamW counterfactuals.
+- [study.py](../src/dora_spectral/study.py) implements pilot, freeze, screening, promotion,
+  selection, fresh-seed confirmation, accounting, and official-test orchestration.
+- [analysis.py](../src/dora_spectral/analysis.py) validates paired test evidence and writes
+  statistics, CSV tables, and scientific figures when explicitly requested through `analyze`.
 - [tests/reference.py](../tests/reference.py) contains the dense mathematical
   reference used by tests and the [initialization notebook](../notebooks/01_initialization_checks.ipynb).
 
@@ -139,7 +148,7 @@ store adapters, frozen corrections, optimizer state, RNG state, and step count; 
 weights are reconstructed from the pinned revision.
 
 After each completed, interrupted, or failed invocation, the runner automatically copies JSON,
-JSONL, log, and XML evidence into `reports/<user>/`, preserving the path below `runs/`. For example,
+JSONL, YAML, log, and XML evidence into `reports/<user>/`, preserving the path below `runs/`. For example,
 `runs/h100-check/A-S-s0` run by `mchoi345` is copied to `reports/mchoi345/h100-check/A-S-s0/`.
 The OS username is recorded with each invocation. This includes configuration,
 source hashes, initialization checks, training logs, predictions, and metrics. No narrative summary

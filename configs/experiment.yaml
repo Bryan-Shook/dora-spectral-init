@@ -13,3 +13,5 @@ validation_examples: 500
 warmup_fraction: 0.03
 gradient_checkpointing: false
 attention_backend: sdpa
+diagnostics: true
+diagnostic_steps: [0, 1, 10, 50, 100]

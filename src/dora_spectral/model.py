@@ -129,8 +129,10 @@ def attach(
             with torch.no_grad():
                 adapter.lora_A["default"].weight.copy_(a)
                 adapter.lora_B["default"].weight.copy_(b)
-            adapter.register_buffer("initial_A", a.detach().clone())
-            adapter.register_buffer("initial_B", b.detach().clone())
+            # SVD/QR factors may be column-major. Preserve the actual parameter layout
+            # so the cancelling forwards use identical GEMM layouts at initialization.
+            adapter.register_buffer("initial_A", adapter.lora_A["default"].weight.detach().clone())
+            adapter.register_buffer("initial_B", adapter.lora_B["default"].weight.detach().clone())
             adapter.lora_variant["default"] = ControlledVariant(rule)
             expected = (gamma * svd.singular_values).sort().values
             errors = [
