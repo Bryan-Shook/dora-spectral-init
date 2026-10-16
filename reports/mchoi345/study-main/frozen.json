@@ -1,0 +1,19 @@
+{
+  "study_sha256": "6425d3cee5f61a1a08066ed04c9977cfd72b87150bed6f45eec5f19297d9021a",
+  "rates": {
+    "step_seconds": 0.8576867011503783,
+    "question_seconds": 4.646680748563085,
+    "overhead_seconds": 60.0
+  },
+  "runtime_accounting_at_freeze": {
+    "measured_runtime_hours": 0.7652173035423039,
+    "allocated_gpu_hours": null,
+    "scope": "Selected validation and recorded child-job wall time. Earlier runs, idle allocation, and unrecorded terminations are excluded; total allocation is unknown."
+  },
+  "remaining_forecast_hours": 127.49971582379156,
+  "projected_runtime_hours": 128.26493312733388,
+  "planning_target_hours": 100.0,
+  "target_exceeded": true,
+  "runtime_target_enforced": false,
+  "scope": "core eight-condition study; optional extensions require a separate protocol"
+}
