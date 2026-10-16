@@ -155,3 +155,36 @@ Replace the placeholders with the original execution username and study name.
 `status` shows recorded runtime and lock state. Evidence copies automatically to `reports/<execution-user>/`;
 `reporting` copies it manually after a hard interruption. Commit the report folder when ready.
 Back up checkpoints in `runs/` separately for resume. Check a milestone only after all required jobs finish.
+
+## Different rank
+
+**Current limitation:** the automated runner requires rank 16. Before another full study, update
+the rank check in [study.py](../src/dora_spectral/study.py) to accept positive integer ranks,
+keep the three-epoch/diagnostics requirements, and rerun the CPU tests. Validation and individual
+training commands already support other ranks.
+
+Example for rank 8:
+
+1. Copy the configuration, then change `rank: 16` to `rank: 8` in the copy.
+
+   ```bash
+   cp configs/experiment.yaml configs/rank8.yaml
+   ```
+
+2. Validate that rank on H100 using a fresh directory.
+
+   ```bash
+   .venv/bin/python -m dora_spectral.validation --config configs/rank8.yaml \
+     --data runs/data --directory runs/validation-r8 --seconds 7200
+   ```
+
+3. After enabling other ranks in the runner and passing validation, initialize a separate study.
+
+   ```bash
+   .venv/bin/python -m dora_spectral.study --directory runs/study-r8 init \
+     --config configs/rank8.yaml --data runs/data --validation runs/validation-r8
+   ```
+
+Repeat steps 5–11 with `runs/study-r8`, independently tuning LR × gamma for that rank.
+Reuse prepared data; SVD caches are separated by rank. Alpha automatically equals rank.
+Choose the ranks to compare before official-test inspection, and keep each rank's results separate.
