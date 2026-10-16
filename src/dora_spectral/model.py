@@ -8,6 +8,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from .initialization import Decomposition, decompose, initialize_factors
+from .streams import STREAM_VERSION, initialization_stream, reference_factor_seed
 
 CONDITIONS = {
     "A-S": ("additive", "spectral"),
@@ -97,10 +98,17 @@ def attach(
     ]
     if not layers:
         raise ValueError("no target projections found")
-    audit = {"condition": condition, "backend": "peft", "layers": []}
-    for index, (name, layer) in enumerate(layers):
-        adapter = make_adapter(layer, rule, rank, seed + index)
-        entry = {"name": name}
+    audit = {
+        "condition": condition,
+        "backend": "peft",
+        "stream_version": STREAM_VERSION,
+        "seed_block": seed,
+        "layers": [],
+    }
+    for name, layer in layers:
+        factor_seed = reference_factor_seed(seed, name)
+        adapter = make_adapter(layer, rule, rank, factor_seed)
+        entry = {"name": name, "reference_factor_seed": factor_seed}
         if initialization != "ordinary":
             weight = layer.weight.detach().float()
             path = cache_dir / f"{name}.pt" if cache_dir else None
@@ -125,7 +133,9 @@ def attach(
                         temporary,
                     )
                     temporary.replace(path)
-            b, a = initialize_factors(svd, initialization, gamma, seed + index)
+            direction_seed = initialization_stream(seed, name)
+            b, a = initialize_factors(svd, initialization, gamma, direction_seed)
+            entry["initialization_seed"] = direction_seed
             with torch.no_grad():
                 adapter.lora_A["default"].weight.copy_(a)
                 adapter.lora_B["default"].weight.copy_(b)

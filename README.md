@@ -5,7 +5,7 @@ Adrian Adam Kalisz, Bryan Le Shook, Myeongsun Choi, Suraj Chandra Samudrala
 ## Getting started
 
 ```bash
-uv sync --locked --extra cpu --extra models
+uv sync --locked --extra cpu --extra models --extra analysis
 .venv/bin/python -m pytest
 ```
 

@@ -3,15 +3,17 @@
 Last reviewed: **2026-10-16**, using the results available in this repository.
 Unchecked items have no completion evidence recorded here yet; cluster work may be ahead.
 
-**Current position: H100 validation passed. Next: initialize the study, then run the measured pilot.**
+**Current position: named streams integrated. Next: rerun H100 validation for this implementation
+in `runs/validation-h100-v3`, then initialize the study and run the measured pilot.**
 
 The [test plan](TEST_PLAN.md) defines the protocol. The [run guide](RUN_STUDY.md) explains every
 command and its outputs. This checklist tracks completion of the rank-16, eight-condition core.
 
 ## Completed preparation
 
-- [x] Implement the study workflow and verify CPU checks: 92 tests passed in the locked
-  PyTorch 2.6 environment during implementation. Save subsequent test results using run-guide step 1.
+- [x] Implement the study workflow and verify CPU checks: **107 tests passed** in the locked
+  PyTorch 2.6 environment locally after stream integration and the code review.
+  Save subsequent cluster test results using run-guide step 1.
 - [x] Prepare the pinned training-derived partitions. The successful validation records their
   [data checksum and shared configuration](../reports/mchoi345/validation-h100-v2/validation.json).
 - [x] Complete the earlier eight-condition, 100-step smoke check:
@@ -21,6 +23,21 @@ command and its outputs. This checklist tracks completion of the rank-16, eight-
   [validation gates](../reports/mchoi345/validation-h100-v2/validation.json) and
   [execution status](../reports/mchoi345/validation-h100-v2/status.json).
   Initialization/gradients, overfit/frozen weights, memory, and checkpoint resume all passed.
+  This is historical evidence for the offset-based implementation; the new stream code requires
+  the fresh validation below.
+- [x] Integrate named initialization, reference-factor, and data-order streams. Targeted checks
+  verify pairing, stable matrix-name keys, RNG isolation, and interruption/resume correctness.
+- [x] Review pairing, schedules, checkpoint resume, selection/test gates, and evidence handling.
+  Fix diagnostic-budget interruption after an optimizer update: the saved checkpoint now retains
+  the completed step number, and resume retries an unfinished probe without repeating the update.
+  Correct the README setup command to install the analysis dependencies used by the full test suite.
+
+## Required before the pilot
+
+- [ ] **Validate the current stream implementation on H100** — run-guide step 3 with
+  `DORA_VALIDATION=runs/validation-h100-v3`. Require all gates to pass for the current source hashes.
+  Evidence: `reports/<execution-user>/validation-h100-v3/validation.json` and `status.json`.
+  Preserve the v2 results and reuse the prepared data/SVD cache.
 
 ## Study milestones
 

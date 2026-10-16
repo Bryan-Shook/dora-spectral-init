@@ -13,7 +13,14 @@ from dora_spectral.diagnostics import (
     effective_weight,
 )
 from dora_spectral.model import adapter_state, attach
-from dora_spectral.training import Budget, target_loss, token_count, train, training_records
+from dora_spectral.training import (
+    Budget,
+    BudgetExpired,
+    target_loss,
+    token_count,
+    train,
+    training_records,
+)
 from dora_spectral.validation import gradient_checks
 
 
@@ -170,3 +177,51 @@ def test_resume_recovers_partial_final_log_and_retains_evidence(tmp_path):
     (tmp_path / "corrupt.jsonl").write_text('{"step":\n{"step": 2}\n')
     with pytest.raises(ValueError, match="before final line"):
         training_records(tmp_path / "corrupt.jsonl", repair=True)
+
+
+def test_budget_interruption_at_post_update_probe_resumes_without_repeating_update(
+    tmp_path, monkeypatch
+):
+    import dora_spectral.training as training
+
+    expected = model()
+    interrupted = copy.deepcopy(expected)
+    rows = [{"input_ids": [1, 2, 3, 4], "labels": [-100, -100, 3, 4]}]
+    config = {
+        "learning_rate": 0.01,
+        "batch_size": 1,
+        "microbatch_size": 1,
+        "epochs": 51,
+        "warmup_fraction": 0.03,
+        "pad_id": 0,
+        "counterfactuals": True,
+    }
+    train(expected, rows, config, 101, 51, tmp_path / "full", Budget(1000), {}, device="cpu")
+    original_probe = training.counterfactual
+
+    def expire_at_step_50(*args, **kwargs):
+        # Step 0 runs before any moments exist; step 50 has completed real updates.
+        optimizer = args[1]
+        if optimizer.state:
+            assert all(int(value["step"]) == 50 for value in optimizer.state.values())
+            raise BudgetExpired("injected post-update diagnostic timeout")
+        return original_probe(*args, **kwargs)
+
+    monkeypatch.setattr(training, "counterfactual", expire_at_step_50)
+    path = tmp_path / "interrupted"
+    with pytest.raises(BudgetExpired):
+        train(interrupted, rows, config, 101, 51, path, Budget(1000), {}, device="cpu")
+    saved = torch.load(path / "checkpoint.pt", weights_only=False)
+    assert saved["step"] == 50
+    assert all(int(value["step"]) == 50 for value in saved["optimizer"]["state"].values())
+    assert training_records(path / "training.jsonl")[-1]["step"] == 50
+    monkeypatch.setattr(training, "counterfactual", original_probe)
+    restored = model()
+    train(restored, rows, config, 101, 51, path, Budget(1000), {}, device="cpu")
+    assert_nested_equal(adapter_state(expected), adapter_state(restored))
+    expected_checkpoint = torch.load(tmp_path / "full/checkpoint.pt", weights_only=False)
+    actual_checkpoint = torch.load(path / "checkpoint.pt", weights_only=False)
+    assert_nested_equal(expected_checkpoint["optimizer"], actual_checkpoint["optimizer"])
+    probe_lines = (path / "counterfactuals.jsonl").read_text().splitlines()
+    probes = [json.loads(line) for line in probe_lines]
+    assert [row["step"] for row in probes] == [0, 50]

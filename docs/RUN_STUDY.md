@@ -28,14 +28,21 @@ Set working paths at the start of each shell session:
 
 ```bash
 export DORA_DATA=runs/data
-export DORA_VALIDATION=runs/validation-h100-v2
+export DORA_VALIDATION=runs/validation-h100-v3
 export DORA_STUDY=runs/study-main
 ```
 
 Use fresh validation/study directory names if these already exist. The earlier `h100-check` runs
-remain useful smoke-test evidence. New diagnostics change implementation hashes, so the new study
-does not resume those older checkpoints. The existing pinned tokenized data and SVD cache can be
-reused when their checksums/revisions match.
+remain useful smoke-test evidence, and `validation-h100-v2` passed for its recorded implementation.
+The named-stream implementation changes random draws and source hashes, so rerun validation in
+`validation-h100-v3` before study initialization. The new study does not resume older offset-seed
+checkpoints. The existing pinned tokenized data and SVD cache can be reused when their
+checksums/revisions match.
+
+Randomness uses stable, versioned hashes of seed block, purpose, and matrix name. This pairs
+controlled random directions across A-R/D-R/E-R and gamma/LR candidates, pairs ordinary L0/D0
+factors, and keeps data ordering separate. `run.json` records the stream version and shuffle seed;
+`initialization.json` records per-matrix seeds. Layer registration order cannot change these keys.
 
 ## 2. Prepare the training-derived partitions
 

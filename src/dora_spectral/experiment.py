@@ -17,6 +17,7 @@ import yaml
 from .data import encode_example, parse_answer, split_examples
 from .model import CONDITIONS, attach
 from .reporting import environment, export_run, utc_now
+from .streams import STREAM_VERSION, data_order_stream
 from .training import Budget, BudgetExpired, answer_nll, evaluate, load_model, train, write_json
 
 
@@ -115,6 +116,10 @@ def run_metadata(config, condition, seed, prepared):
         "config": config.copy(),
         "condition": condition,
         "seed": seed,
+        "random_streams": {
+            "version": STREAM_VERSION,
+            "data_order_seed": data_order_stream(seed),
+        },
         "data_sha256": prepared["examples_sha256"],
         "source_sha256": source_hashes(),
         "versions": runtime_versions(),

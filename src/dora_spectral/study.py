@@ -14,6 +14,7 @@ from pathlib import Path
 import yaml
 
 from .reporting import environment, export_run, utc_now
+from .streams import STREAM_VERSION
 
 CONDITIONS = ("A-S", "A-R", "D-S", "D-R", "E-S", "E-R", "L0", "D0")
 CONTROLLED = CONDITIONS[:6]
@@ -104,6 +105,7 @@ def initialize(args):
     epoch = math.ceil(len(examples["train"]) / config["batch_size"])
     manifest = {
         "schema_version": 1,
+        "random_streams_version": STREAM_VERSION,
         "created_at": utc_now(),
         "config": config,
         "data": str(args.data.resolve()),

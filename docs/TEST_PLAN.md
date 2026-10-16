@@ -157,6 +157,12 @@ A native-initialization four-cell comparison requires L0, D0, A-S at $\gamma=1$,
 
 Reuse the same random bases across A-R, E-R, and D-R within a seed block and across that block's scale candidates. Use separate random-number streams for initialization and data order so that adapter initialization does not accidentally change the batches seen by a condition.
 
+The implementation uses versioned SHA-256 seed derivation in `streams.py`: key initialization by
+seed block, purpose, and full target-matrix name, and key data ordering by seed block and purpose.
+Keep conditions, LR, and gamma out of these keys to preserve pairing. Use the separate reference-factor
+stream for L0/D0 and advance one local data-order generator across epochs. Record the version and
+derived seeds with the run evidence; do not mix old offset-based runs into the new study.
+
 ## 5. Elaborated hypotheses and decision rules
 
 ### H1 — Primary: DoRA changes the tuned spectral advantage

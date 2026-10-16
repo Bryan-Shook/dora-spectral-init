@@ -12,6 +12,7 @@ from torch.nn import functional as F
 from .data import collate, digest, parse_answer, prompt, score_answer
 from .diagnostics import MovementRecorder, counterfactual
 from .model import adapter_state, load_adapter_state
+from .streams import data_order_stream
 
 
 class BudgetExpired(RuntimeError):
@@ -80,9 +81,10 @@ def token_count(batch):
 
 
 def epoch_windows(rows, seed, batch_size, epochs):
-    for epoch in range(epochs):
+    generator = random.Random(data_order_stream(seed))
+    for _ in range(epochs):
         order = list(range(len(rows)))
-        random.Random(seed + 10000 + epoch).shuffle(order)
+        generator.shuffle(order)
         for offset in range(0, len(order), batch_size):
             yield [rows[i] for i in order[offset : offset + batch_size]]
 
@@ -201,8 +203,9 @@ def train(
         torch.cuda.synchronize()
     began = time.monotonic()
     try:
-        if start_step == 0:
-            probe(0)
+        # An interruption may have committed an update before its probe could finish.
+        # Revisit a probe at the restored state; repeated records retain retry evidence.
+        probe(start_step)
         for step, window in enumerate(windows):
             if step < start_step:
                 continue
@@ -240,7 +243,6 @@ def train(
             optimizer.step()
             if recorder:
                 recorder.record(step + 1)
-            probe(step + 1)
             if device == "cuda":
                 torch.cuda.synchronize()
             record = {
@@ -260,6 +262,9 @@ def train(
             if (step + 1) % 25 == 0:
                 save_checkpoint(path, model, optimizer, step + 1, metadata)
             print(f"{directory.name}: step {step + 1}/{steps}, NLL {loss_value:.4f}", flush=True)
+            # Commit the step/log/checkpoint before budget checks in optional probes.
+            # Otherwise a post-update interruption would label updated weights step-1.
+            probe(step + 1)
     except BudgetExpired:
         # Discard a partial accumulation window; preserve the last completed update.
         completed = history[-1]["step"] if history else start_step

@@ -55,6 +55,10 @@ arithmetic, while adapter branches and norm calculations use FP32.
 - [initialization.py](../src/dora_spectral/initialization.py) computes exact SVD
   (`gesvd` on CUDA), balanced spectral factors, and spectrum-matched random
   factors. SVD caches are shared by model revision and rank.
+- [streams.py](../src/dora_spectral/streams.py) derives stable 64-bit seeds from
+  SHA-256 of the version, seed block, purpose, and target-matrix name. Controlled random
+  directions use `init`; ordinary reference factors use `ref-factor`; shuffling uses
+  `data-order`. Conditions, LR, and gamma are excluded so paired runs share the intended draws.
 - [data.py](../src/dora_spectral/data.py) provides deterministic grouped splits,
   answer-only masking, and exact numeric scoring. Calculator annotations are
   removed from training answers, EOS is appended, and examples are not packed.
@@ -77,6 +81,13 @@ arithmetic, while adapter branches and norm calculations use FP32.
 Controlled checkpoints contain frozen corrections as well as trainable adapters. Load them with the
 repository's checkpoint utilities and the pinned base model. Standard PEFT export/merge does not
 reconstruct the controlled correction.
+
+Each named projection receives the same initialization regardless of module registration order.
+The local data-order generator advances continuously across epochs and is reconstructed on resume;
+initialization and global RNG consumption cannot change its permutations. `run.json` records the
+stream version and data-order seed; `initialization.json` records the per-projection seeds.
+Checkpoints commit completed updates before optional diagnostic probes. If a probe is interrupted,
+resume retries the probe at that completed state; repeated probe records retain retry evidence.
 
 ## Study workflow
 
