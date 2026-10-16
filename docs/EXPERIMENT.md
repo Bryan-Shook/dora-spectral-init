@@ -73,6 +73,9 @@ arithmetic, while adapter branches and norm calculations use FP32.
   exact/detached AdamW counterfactuals.
 - [study.py](../src/dora_spectral/study.py) implements pilot, freeze, screening, promotion,
   selection, fresh-seed confirmation, automatic runtime tracking, and official-test orchestration.
+- [scripts/run_study.py](../scripts/run_study.py) adds an NLL/generation phase message,
+  completed-answer counts, and evidence-export messages to the terminal and each run's console log.
+  It observes saved files while delegating to the original launcher, preserving frozen study sources.
 - [analysis.py](../src/dora_spectral/analysis.py) validates paired test evidence and writes
   statistics, CSV tables, and scientific figures when explicitly requested through `analyze`.
 - [tests/reference.py](../tests/reference.py) contains the dense mathematical

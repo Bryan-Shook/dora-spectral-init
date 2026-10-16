@@ -11,6 +11,8 @@ Keep code, dependencies, and data fixed. For GPU work, set time caps below the r
 Repeat a stage command to resume; finished jobs are skipped. Finish each stage before the next.
 Choose fresh validation/study directories for new runs, or point to compatible existing evidence.
 Runtime is recorded automatically. Unknown allocated GPU-hours and idle time are omitted.
+GPU stages use `scripts/run_study.py` to show evaluation counts and evidence-copy progress.
+It calls the existing runner unchanged, preserving study/checkpoint compatibility.
 
 ## 1. Install and check
 
@@ -52,7 +54,7 @@ Otherwise validate in a fresh directory; compatible prepared data/SVD caches can
   --target-hours 100
 ```
 
-- [ ] Save the configuration, grid, runtime estimate, and seeds in a fresh study directory (`study.json`).
+- [x] Save the configuration, grid, runtime estimate, and seeds in a fresh study directory (`study.json`).
 
 Point `--validation` to the validation directory that passed for this study.
 100 hours is a planning estimate, not a limit: exceeding it never blocks jobs or shortens training.
@@ -61,11 +63,11 @@ Each option uses the specified epochs; per-job/allocation time limits allow chec
 ## 5. Run the measured pilot
 
 ```bash
-.venv/bin/python -m dora_spectral.study --directory runs/study-main pilot \
+.venv/bin/python scripts/run_study.py --directory runs/study-main pilot \
   --wall-hours 3 --job-seconds 3600
 ```
 
-- [ ] Finish short profiles and the slowest condition's three-epoch pilot (`pilot.json`: `passed: true`).
+- [x] Finish short profiles and the slowest condition's three-epoch pilot (`pilot.json`: `passed: true`).
 
 Require improved NLL, usable accuracy, and ≤1% truncation.
 `--wall-hours` caps this stage invocation; `--job-seconds` caps each child run.
@@ -81,7 +83,7 @@ Require improved NLL, usable accuracy, and ≤1% truncation.
 ## 7. Run mechanism diagnostics
 
 ```bash
-.venv/bin/python -m dora_spectral.study --directory runs/study-main diagnose \
+.venv/bin/python scripts/run_study.py --directory runs/study-main diagnose \
   --wall-hours 1 --job-seconds 1800
 ```
 
@@ -90,9 +92,9 @@ Require improved NLL, usable accuracy, and ≤1% truncation.
 ## 8. Screen, then promote
 
 ```bash
-.venv/bin/python -m dora_spectral.study --directory runs/study-main screen \
+.venv/bin/python scripts/run_study.py --directory runs/study-main screen \
   --wall-hours 3 --job-seconds 3600
-.venv/bin/python -m dora_spectral.study --directory runs/study-main promote \
+.venv/bin/python scripts/run_study.py --directory runs/study-main promote \
   --wall-hours 3 --job-seconds 3600
 ```
 
@@ -105,7 +107,7 @@ Retain numerical failures; require a usable finalist for every condition.
 
 ```bash
 .venv/bin/python -m dora_spectral.study --directory runs/study-main select
-.venv/bin/python -m dora_spectral.study --directory runs/study-main confirm \
+.venv/bin/python scripts/run_study.py --directory runs/study-main confirm \
   --wall-hours 3 --job-seconds 3600
 ```
 
@@ -115,7 +117,7 @@ Retain numerical failures; require a usable finalist for every condition.
 ## 10. Evaluate the official test
 
 ```bash
-.venv/bin/python -m dora_spectral.study --directory runs/study-main test \
+.venv/bin/python scripts/run_study.py --directory runs/study-main test \
   --wall-hours 3 --job-seconds 3600
 ```
 
