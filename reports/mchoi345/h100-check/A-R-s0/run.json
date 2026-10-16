@@ -1,0 +1,40 @@
+{
+  "backend": "peft-controlled-v1",
+  "config": {
+    "model": "Qwen/Qwen2.5-1.5B",
+    "model_revision": "8faed761d45a263340a0528343f099c05c9a4323",
+    "dataset": "openai/gsm8k",
+    "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+    "rank": 16,
+    "epochs": 3,
+    "max_length": 1024,
+    "max_new_tokens": 512,
+    "batch_size": 32,
+    "microbatch_size": 4,
+    "evaluation_batch_size": 4,
+    "validation_examples": 500,
+    "warmup_fraction": 0.03,
+    "gradient_checkpointing": false,
+    "attention_backend": "sdpa",
+    "learning_rate": 0.0001,
+    "gamma": 1.0
+  },
+  "condition": "A-R",
+  "seed": 0,
+  "data_sha256": "5d19160f955a48581dc3a3a988c9e37bd764bdae5ccf7b996d3d37f87f499097",
+  "source_sha256": {
+    "__init__.py": "50c9f5110e9865018ccb22179aa30fa0bc5661c294e37ef28129570e9649d23f",
+    "data.py": "705ab1e037c04c468364274915a0a5ad0a7d73777db710adc7ab8c1d3cd4df93",
+    "experiment.py": "fae8cd49e625058bd1f774b813cd025407408d311e512f54d827d0b6869a45a6",
+    "initialization.py": "9f102774d4a4990aa66d7c62450ee7c314b6e9d84e72aed7e790d448cf9ba56b",
+    "model.py": "7fbc6e79be1e922f65c0c5e5c02f3369aa9df4b332b4f3847d7c0695d0b1cd5f",
+    "numerics.py": "4155ad86d519a804ded0cb591c3b5b239190019dc7ce0ec6b076cdd419bafd4c",
+    "training.py": "e11315a639879770508e61bfcc7e6773bece00f40319dbb5bccd9710742cf06c"
+  },
+  "versions": {
+    "torch": "2.6.0+cu126",
+    "transformers": "4.57.6",
+    "peft": "0.18.1",
+    "datasets": "3.6.0"
+  }
+}

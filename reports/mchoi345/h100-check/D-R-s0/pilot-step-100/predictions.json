@@ -1,0 +1,226 @@
+[
+  {
+    "id": 3504,
+    "text": " The wall initially had 3 courses of bricks, so it had 3*400 = 1200 bricks.\nThey added 2 more courses, so the wall now has 3+2 = 5 courses.\nThe wall now has 5*400 = 2000 bricks.\nThey took out half of the bricks in the last course, so the last course now has 400/2 = 200 bricks.\nThe wall now has 2000-200 = 1800 bricks.\n#### 1800",
+    "parsed": "1800",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 807,
+    "text": " Let David's age be x. Then Yuan's age is x+7.\nWe are told that Yuan's age is twice David's age, so x+7=2x.\nSolving for x, we subtract x from both sides to get 7=x.\nTherefore, David is 7 years old.\n#### 7",
+    "parsed": "7",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 7398,
+    "text": " The boy squirrel brings 6 walnuts to the burrow, but drops 1 on the way, so there are 6-1 = 5 walnuts left.\nThe burrow already had 12 walnuts, so there are 5+12 = 17 walnuts in the burrow.\nThe girl squirrel brings 5 more walnuts to the burrow, but eats 2, so there are 5-2 = 3 walnuts left.\nIn total, there are 17+3 = 20 walnuts in the burrow.\n#### 20",
+    "parsed": "20",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 1003,
+    "text": " The monthly cell phone expenses cost $800 + $400 = $1200.\nThe cost of the golf tournament is 20/100*$1200 = $240 more than $1200 = $1440.\nThe answer is 1440",
+    "parsed": null,
+    "correct": false,
+    "truncated": false
+  },
+  {
+    "id": 1736,
+    "text": " The box of chocolate bars was shared between 3 people, so each person got 12/3 = 4 bars\nMike and Rita got 4+4 = 8 bars\n#### 8",
+    "parsed": "8",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 5018,
+    "text": " If a carton contains 12 boxes, then a dozen cartons contain 12*12 = 144 boxes.\nIf each box has 10 packs of cheese cookies, then 144 boxes contain 144*10 = 1440 packs of cheese cookies.\nIf a dozen cartons cost $1440, then the price of a pack of cheese cookies is $1440/1440 = $1.\n#### 1",
+    "parsed": "1",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 6722,
+    "text": " Today, Vincent bought 15 + 10 = 25 packs of stickers.\nTherefore, Vincent has 15 + 25 = 40 packs of stickers altogether.\n#### 40",
+    "parsed": "40",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 7362,
+    "text": " The sum of the ages of the other two boys is 29 - 11 = 18\nSince the other two boys are the same age, they are each 18 / 2 = 9 years old\n#### 9",
+    "parsed": "9",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 414,
+    "text": " The first drink is 250/12=.2083 ounces per ounce\nSo the second drink is 2*.2083=0.4166 ounces per ounce\nSo the second drink has 0.4166*3=1.25 times the caffeine\nSo it has 1.25*250=312.5 grams of caffeine\nSo the first drink has 250-312.5=-62.5 grams of caffeine\nSo he drinks 62.5+312.5=375 grams of caffeine\nThe pill has as much caffeine as his drinks combined so he drinks 375+375=750 grams of caffeine\n#### 750",
+    "parsed": "750",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 4227,
+    "text": " Each fence panel is made of 3 metal sheets, and 2 metal beams, so there are 3 + 2 = 5 metal pieces per panel.\nThe fence is made of 10 fence panels, so there are 10 * 5 = 50 metal pieces in the fence.\nEach metal sheet is made of 10 metal rods, so there are 3 * 10 = 30 metal rods per panel.\nThe fence has 50 metal pieces, so there are 50 / 5 = 10 panels.\nEach metal beam is made of 4 metal rods, so there are 2 * 4 = 8 metal rods per panel.\nThe fence has 10 panels, so there are 10 * 8 = 80 metal rods.\n#### 80",
+    "parsed": "80",
+    "correct": false,
+    "truncated": false
+  },
+  {
+    "id": 3024,
+    "text": " The sum of Christine's two cats' weights is 7 + 10 = 17 pounds.\nIf her dog's weight is twice the sum of her two cats' weights, then her dog weighs 17 x 2 = 34 pounds.\n#### 34",
+    "parsed": "34",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 327,
+    "text": " He has 30*6=180 baby minks\nSo he has 30+180=210 minks\nBut half are set free so he has 210/2=105 minks\nSo he can make 105/15=7 coats\n#### 7",
+    "parsed": "7",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 5044,
+    "text": " There are 80 x 25/100 = 20 half-day students.\nSo, there are 80 - 20 = 60 full-day students.\n#### 60",
+    "parsed": "60",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 5907,
+    "text": " The total number of cookies is 40+50+30+20=140\nThe chance of Renee picking a peanut butter cookie is 40/140=0.2857\nThe chance of Renee picking a lemon cookie is 20/140=0.1429\nThe chance of Renee picking a chocolate chip cookie is 50/140=0.3571\nThe chance of Renee picking a peanut butter cookie is 0.2857\nThe chance of Renee picking a lemon cookie is 0.1429\nThe chance of Renee picking a chocolate chip cookie is 0.3571\nThe chance of Renee having an allergic reaction is 0.2857+0.1429=0.4286\nThe chance of Renee having an allergic reaction is 0.4286*100=42.86%\n#### 42.86",
+    "parsed": "2143/50",
+    "correct": false,
+    "truncated": false
+  },
+  {
+    "id": 4114,
+    "text": " Kristin runs 12 laps around the adult football field in 12/3 = 4 hours.\nSarith runs at the same time around the children's football field that is half the distance as the other field, so she runs 1/2*12 = 6 laps around the children's football field.\n#### 6",
+    "parsed": "6",
+    "correct": false,
+    "truncated": false
+  },
+  {
+    "id": 4578,
+    "text": " Grace earns 300*2=600 dollars every 2 weeks.\nIt will take 1800/600=3 weeks for Grace to get 1800 dollars.\n#### 3",
+    "parsed": "3",
+    "correct": false,
+    "truncated": false
+  },
+  {
+    "id": 6917,
+    "text": " The total rainfall is 3.79 + 4.5 + 3.95 + 3.09 + 4.67 = 20 inches\nThe average rainfall is 20 inches / 5 months = 4 inches per month\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 2523,
+    "text": " He buys the ring for $10,000 and sells it for $10,000/2=$5,000\nSo he is out of pocket $10,000-$5,000=$5,000\nHe buys the ring for $10,000 and pays $10,000 for the wife's ring for a total of $10,000+$10,000=$20,000\nSo he is out of pocket $20,000-$5,000=$15,000\n#### 15000",
+    "parsed": "15000",
+    "correct": false,
+    "truncated": false
+  },
+  {
+    "id": 7017,
+    "text": " Mrs. Oaklyn buys the rugs at $40 each and sells them at $60 each, so her profit per rug is $60 - $40 = $20.\nIf she bought 20 rugs, her total profit will be 20 rugs * $20 per rug = $400.\n#### 400",
+    "parsed": "400",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 6281,
+    "text": " Let's say Bill's eel is x inches long.\nJenna's eel is 1/3 * x = x/3 inches long.\nThe combined length of their eels is x + x/3 = 64 inches.\nCombining like terms, we get 4x/3 = 64.\nMultiplying both sides by 3/4, we get x = 48.\nTherefore, Jenna's eel is x/3 = 48/3 = 16 inches long.\n#### 16",
+    "parsed": "16",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 6537,
+    "text": " Bob paid 6000*9=54000 for his acorns.\nAlice paid 54000/3600=$15 for each acorn.\n#### 15",
+    "parsed": "15",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 4786,
+    "text": " For 9 cheesecakes, 9 x 8 = 72 eggs are needed.\nFor 5 chocolate cakes, 5 x 3 = 15 eggs are needed.\nThus, 72 - 15 = 57 more eggs are needed for 9 cheesecakes than for 5 chocolate cakes.\n#### 57",
+    "parsed": "57",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 384,
+    "text": " On Monday, Nico read 20 pages.\nOn Tuesday, he read 12 pages.\nSo far, he has read 20 + 12 = 32 pages.\nHe has read a total of 51 pages from Monday to Wednesday.\nTherefore, on Wednesday, he read 51 - 32 = 19 pages.\n#### 19",
+    "parsed": "19",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 1748,
+    "text": " Let x be the number of trucks.\nJeff has 2x cars.\nx + 2x = 60\n3x = 60\nx = 20\nHe has 20 trucks.\n#### 20",
+    "parsed": "20",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 5832,
+    "text": " He sold 25 - 12 = 13 steaks.\nHe sold 13 + 4 = 17 steaks in all.\n#### 17",
+    "parsed": "17",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 5913,
+    "text": " Each cake takes 12 minutes to mix and 12+9=21 minutes to bake.\nEach cake takes 21+6=27 minutes to cool and decorate.\nIt takes 12+21+27=60 minutes to make one cake.\nIt takes 60/60=1 hour to make one cake.\nIt will take 60*6=360 minutes to make 6 cakes.\nIt will take 360/60=6 hours to make 6 cakes.\n#### 6",
+    "parsed": "6",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 7111,
+    "text": " Jerry finds 6 hawk feathers and 17 times as many eagle feathers, so he finds 6*17 = 102 eagle feathers.\nIn total, Jerry finds 6+102 = 108 feathers.\nAfter giving 10 feathers to his sister, Jerry has 108-10 = 98 feathers.\nIf he sells half the remaining feathers, he sells 98/2 = 49 feathers.\nAfter selling, Jerry has 98-49 = 49 feathers left.\n#### 49",
+    "parsed": "49",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 691,
+    "text": " He arrived in cape town on Tuesday at 10:00 a.m ET, 18 hours after he arrived in New York, which is 10:00 a.m ET on Monday.\nSo the flight took 12-10 = 2 hours\n#### 2",
+    "parsed": "2",
+    "correct": false,
+    "truncated": false
+  },
+  {
+    "id": 804,
+    "text": " There are 16/2 = 8 panda couples.\nThere are 8 * 25% = 2 babies born.\n#### 2",
+    "parsed": "2",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 1976,
+    "text": " 20% of 30 boats are 30*.20=6 boats\nMadison shoots 2 boats, so 6-2=4 boats are left\n#### 4",
+    "parsed": "4",
+    "correct": false,
+    "truncated": false
+  },
+  {
+    "id": 2041,
+    "text": " First find the volume of the sandbox: 2 feet * 4 feet * 5 feet = 40 cubic feet\nThen find the weight of the sand by multiplying the volume by the weight per cubic foot: 40 cubic feet * 3 pounds/cubic foot = 120 pounds\nThen divide the weight of the sand by the weight the bucket can hold to find the number of trips he needs to make: 120 pounds / 2 pounds/trip = 60 trips\nThen divide the number of trips by 4 to find how many times he drinks water: 60 trips / 4 trips = 15 times\nThen multiply the number of times he drinks water by the amount of water he drinks to find the total amount of water he drinks: 15 times * 3 ounces/time = 45 ounces\nThen divide the total amount of water he drinks by the amount of water in a bottle to find how many bottles he needs to buy: 45 ounces / 15 ounces/bottle = 3 bottles\nThen multiply the number of bottles by the cost per bottle to find the total cost: 3 bottles * $2/bottle = $6\nThen subtract the total cost of the water from the amount of money Tony has to find the change he will have: $10 - $6 = $4\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false
+  },
+  {
+    "id": 5822,
+    "text": " During breakfast, lunch, and dinner, the restaurant had 73 + 127 + 87 = 287 customers.\nIf they predict they'll get twice the amount of customers on Saturday as they had on Friday, they predict they will get 287 * 2 = 574 customers.\n#### 574",
+    "parsed": "574",
+    "correct": true,
+    "truncated": false
+  }
+]
