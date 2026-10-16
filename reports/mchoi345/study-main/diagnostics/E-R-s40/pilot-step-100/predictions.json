@@ -1,0 +1,162 @@
+[
+  {
+    "id": 3504,
+    "question_sha256": "9720d7482bc8982d99db55b2747755fe8bbc137ea570a133265b4d1833d7e251",
+    "reference_answer": "1800",
+    "text": " The wall initially had 3 courses of bricks, so it had 3*400 = 1200 bricks.\nThey added 2 more courses, so the wall now has 3+2 = 5 courses.\nThe total number of bricks in the wall is 5*400 = 2000 bricks.\nThey took out half of the bricks in the last course, which is 400/2 = 200 bricks.\nSo the total number of bricks in the wall is 2000-200 = 1800 bricks.\n#### 1800",
+    "parsed": "1800",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 131
+  },
+  {
+    "id": 807,
+    "question_sha256": "edb17a221c56dd3a122818c51b436f99e856fb1adda17d1f6ac626a2867bdbbf",
+    "reference_answer": "7",
+    "text": " Let's say David's age is x.\nYuan is 7 years older than David, so Yuan's age is x + 7.\nYuan is also twice David's age, so x + 7 = 2x.\nSubtracting x from both sides, we get 7 = x.\nTherefore, David is 7 years old.\n#### 7",
+    "parsed": "7",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 75
+  },
+  {
+    "id": 7398,
+    "question_sha256": "4d2131eaf5b9b3baff1d7e13e14abe189668f2ad4f2ba6c0a86f0e60e44b7e11",
+    "reference_answer": "20",
+    "text": " The boy squirrel brings 6 walnuts to the burrow, but drops 1 on the way, so there are 6 - 1 = 5 walnuts left.\nThe girl squirrel brings 5 more walnuts to the burrow, so there are 5 + 5 = 10 walnuts in total.\nThe girl squirrel eats 2 walnuts, so there are 10 - 2 = 8 walnuts left.\n#### 8",
+    "parsed": "8",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 95
+  },
+  {
+    "id": 1003,
+    "question_sha256": "e27ec7fd7970b73090fe398bfe6c40ac7bc3e7285a547afe300aeb2bbf94c7ea",
+    "reference_answer": "1440",
+    "text": " The monthly cell phone expenses are $800 + $400 = $1200.\nThe cost of the golf tournament is 20/100*$1200 = $240 more than $1200.\nThe cost of the golf tournament is $1200+$240 = $1440.\n#### 1440",
+    "parsed": "1440",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 83
+  },
+  {
+    "id": 1736,
+    "question_sha256": "a046f134c6728d1512d29621a27c3337745095bd19a87602e222290a6500a521",
+    "reference_answer": "8",
+    "text": " The box of chocolate bars was shared equally between 3 people, so each person got 12/3 = 4 bars\nMike and Rita got 4+4 = 8 bars\n#### 8",
+    "parsed": "8",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 43
+  },
+  {
+    "id": 5018,
+    "question_sha256": "82bcf7086ef8771a25cb0e2ab8a7aa98048039d6448268587bcbc5d0f92ae2cc",
+    "reference_answer": "1",
+    "text": " If a carton contains 12 boxes, then a dozen cartons contain 12*12 = 144 boxes.\nIf each box has 10 packs of cheese cookies, then 144 boxes contain 144*10 = 1440 packs of cheese cookies.\nIf a dozen cartons cost $1440, then the price of a pack of cheese cookies is $1440/1440 = $1.\n#### 1",
+    "parsed": "1",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 105
+  },
+  {
+    "id": 6722,
+    "question_sha256": "9dff14915bc1d76fdd227e3eb9949225b92ea465166a08398d72639dc1eb0de2",
+    "reference_answer": "40",
+    "text": " Today, Vincent bought 15 + 10 = 25 packs of stickers.\nTherefore, Vincent has 15 + 25 = 40 packs of stickers altogether.\n#### 40",
+    "parsed": "40",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 43
+  },
+  {
+    "id": 7362,
+    "question_sha256": "bd9cd4cecbba609ef877ddd728e95310d4550970cf07a2b45169d6608a5aeefb",
+    "reference_answer": "9",
+    "text": " The sum of the ages of the other two boys is 29 - 11 = 18.\nSince the other two boys are the same age, they are each 18 / 2 = 9 years old.\n#### 9",
+    "parsed": "9",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 51
+  },
+  {
+    "id": 414,
+    "question_sha256": "6ea1b4ce99aefb63e878629a7ca4ecb1d2bc4c25b1bddbf4673406e14b7808da",
+    "reference_answer": "750",
+    "text": " The second drink is 2/12=1/6 the size of the first drink\nSo it is 1/6*3=1/2 as caffeinated\nThat means it has 1/2*250=125 grams of caffeine\nSo his two drinks have 125+250=375 grams of caffeine\nSo the pill has 375 grams of caffeine\nSo he consumed 375+375=750 grams of caffeine\n#### 750",
+    "parsed": "750",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 114
+  },
+  {
+    "id": 4227,
+    "question_sha256": "3e7cc794c4c5388ababd804336cfb1f37a2aab9c1e32250771e2ea535b0e1709",
+    "reference_answer": "380",
+    "text": " Each fence panel is made of 3 metal sheets, and 2 metal beams, so there are 3 + 2 = 5 metal rods per fence panel.\nThe fence is made of 10 fence panels, so there are 10 * 5 = 50 metal rods per fence panel.\nEach metal beam is made of 4 metal rods, so there are 4 * 2 = 8 metal rods per fence panel.\nThe community needs 50 + 8 = 58 metal rods for the fence.\n#### 58",
+    "parsed": "58",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 115
+  },
+  {
+    "id": 3024,
+    "question_sha256": "dd9ffdd40f6f9d5f9c0b7af99c1922c3a60aa8c642a7116a5a77167812dea876",
+    "reference_answer": "34",
+    "text": " The sum of Christine's two cats' weights is 7 + 10 = 17 pounds.\nIf her dog's weight is twice the sum of her two cats' weights, then her dog weighs 17 x 2 = 34 pounds.\n#### 34",
+    "parsed": "34",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 58
+  },
+  {
+    "id": 327,
+    "question_sha256": "2da1342a27a14de978ddff0a4b48ca1c68efc37223cc1e2197a4dd0da5663612",
+    "reference_answer": "7",
+    "text": " Andy has 30 minks and each mink has 6 babies, so he has 30*6 = 180 baby minks.\nIn total, Andy has 30+180 = 210 minks.\nHalf of the minks are set free, so he is left with 210/2 = 105 minks.\nIt takes 15 minks to make a coat, so Andy can make 105/15 = 7 coats.\n#### 7",
+    "parsed": "7",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 112
+  },
+  {
+    "id": 5044,
+    "question_sha256": "66bde307d21c18e08ba377ad71dcff6b23e2d7be7890be41c2f3d3b1e6cb3711",
+    "reference_answer": "60",
+    "text": " There are 80 x 25/100 = 20 half-day students.\nSo, there are 80 - 20 = 60 full-day students.\n#### 60",
+    "parsed": "60",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 44
+  },
+  {
+    "id": 5907,
+    "question_sha256": "1bdeaa589554cb570693c16199fd6995fc8117a936fe8114457ca932ac1969b9",
+    "reference_answer": "50",
+    "text": " The total number of cookies is 40+50+30+20 = 140\nThe chance of Renee picking a peanut butter cookie is 40/140 = 1/3.5\nThe chance of Renee picking a lemon cookie is 20/140 = 1/7\nThe chance of Renee picking a chocolate chip cookie is 50/140 = 5/14\nThe chance of Renee picking a peanut butter cookie is 1/3.5 = 2/7\nThe chance of Renee picking a lemon cookie is 1/7\nThe chance of Renee picking a chocolate chip cookie is 5/14\nThe chance of Renee having an allergic reaction is 2/7 + 1/7 + 5/14 = 11/14\nThe chance of Renee having an allergic reaction is 11/14 * 100% = 78.57%\n#### 78.57",
+    "parsed": "7857/100",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 223
+  },
+  {
+    "id": 4114,
+    "question_sha256": "0aac5307361f9d8d9e69a6c91b5610bd7d8eb81f4c5b9eac22c99425ab560165",
+    "reference_answer": "8",
+    "text": " Kristin runs 12 laps around the adult football field in 12 laps * 3 = 36 minutes.\nSarith runs at the same time around the children's football field that is half the distance as the other field, so she runs 12 laps / 2 = 6 laps around the children's football field.\n#### 6",
+    "parsed": "6",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 73
+  },
+  {
+    "id": 4578,
+    "question_sha256": "64b6181a9f924315ae80a96e2a4d2897be3d6363f5d947f78a147041cb969891",
+    "reference_answer": "6",
+    "text": " Grace will get 300*2=600 dollars every 2 weeks.\nIt will take 1800/600=3 weeks for Grace to get 1800 dollars.\n#### 3",
+    "parsed": "3",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 48
+  }
+]

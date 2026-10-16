@@ -15,3 +15,7 @@
 {"phase": "pilot", "directory": "pilot/L0-s0", "seconds": 74.68084115011152, "exit_code": 0, "finished_at": "2026-10-16T18:54:45.896979+00:00"}
 {"phase": "pilot", "directory": "pilot/D0-s0", "seconds": 104.60621336905751, "exit_code": 0, "finished_at": "2026-10-16T18:56:30.644755+00:00"}
 {"phase": "pilot-full", "directory": "pilot/A-S-s0", "seconds": 893.5932261160342, "exit_code": 0, "finished_at": "2026-10-16T19:11:24.758894+00:00"}
+{"phase": "diagnose", "directory": "diagnostics/E-S-s40", "seconds": 334.4998942069942, "exit_code": 0, "finished_at": "2026-10-16T19:37:00.231479+00:00"}
+{"phase": "diagnose", "directory": "diagnostics/E-R-s40", "seconds": 119.56408585095778, "exit_code": 0, "finished_at": "2026-10-16T19:38:59.879283+00:00"}
+{"phase": "diagnose", "directory": "diagnostics/D-S-s40", "seconds": 109.64105814695358, "exit_code": 0, "finished_at": "2026-10-16T19:40:49.611926+00:00"}
+{"phase": "diagnose", "directory": "diagnostics/D-R-s40", "seconds": 111.09340091107879, "exit_code": 0, "finished_at": "2026-10-16T19:42:40.783152+00:00"}
