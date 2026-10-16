@@ -14,7 +14,7 @@ and [the experiment guide](docs/EXPERIMENT.md) for the PEFT implementation and c
 The [test plan](docs/TEST_PLAN.md) defines tuning and confirmation; the
 [background](docs/BACKGROUND.md) explains the mathematics. Execution-specific
 measurements are recorded in [reports](reports).
-The [progress checklist](docs/PROGRESS.md) tracks completed milestones and the next step.
+Use the [study guide and checklist](docs/RUN_STUDY.md) for execution and milestones.
 
 ## 1. Problem Statement
 

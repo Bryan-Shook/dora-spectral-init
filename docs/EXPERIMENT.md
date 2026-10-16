@@ -160,7 +160,7 @@ weights are reconstructed from the pinned revision.
 
 After each completed, interrupted, or failed invocation, the runner automatically copies JSON,
 JSONL, YAML, log, and XML evidence into `reports/<user>/`, preserving the path below `runs/`. For example,
-`runs/h100-check/A-S-s0` run by `mchoi345` is copied to `reports/mchoi345/h100-check/A-S-s0/`.
+`runs/<study>/A-S-s0` is copied to `reports/<execution-user>/<study>/A-S-s0/`.
 The OS username is recorded with each invocation. This includes configuration,
 source hashes, initialization checks, training logs, predictions, and metrics. No narrative summary
 is generated. `status.json` and `invocations.jsonl` also retain the execution-time Git revision,
@@ -175,12 +175,12 @@ examples, and SVD caches are not copied; back those up separately when resumabil
 Copy already completed cluster runs without retraining, model dependencies, or a GPU:
 
 ```bash
-.venv/bin/python -m dora_spectral.reporting --runs runs/h100-check
+.venv/bin/python -m dora_spectral.reporting --runs runs/study-main
 ```
 
 The report path uses the latest recorded execution user, falling back to the current OS username
 for older results. To label an older run explicitly, or when exporting on another person's behalf,
-add `--user mchoi345`. The override changes only the destination path, preserving original metadata.
+add `--user USERNAME`. The override changes only the destination path, preserving original metadata.
 Existing exports without a username directory are left in place; the command creates the new path.
 
 The command accepts one candidate directory or a campaign root containing multiple `run.json`
@@ -193,5 +193,4 @@ pushed automatically. If copying fails, the runner reports the failure and leave
 Keep implementation source fixed between screening and promotion: the existing resume provenance
 checks still apply. Copying old results does not require resuming their checkpoints.
 
-The historical [pilot report](../reports/pilot.md) describes the earlier implementation.
 Notebook dependencies are an optional installation group; see SETUP.md for the launch command.
