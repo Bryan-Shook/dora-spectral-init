@@ -1,0 +1,17 @@
+{
+  "repeat_noise": {
+    "positions": 279,
+    "max_error": 0.0,
+    "relative_rms": 0.0,
+    "next_token_agreement": 1.0
+  },
+  "criteria": {
+    "max_logit_error": 0.0001,
+    "relative_logit_rms": 1e-05,
+    "effective_weight_relative_error": 1e-05,
+    "minimum_token_agreement": 1.0,
+    "overfit_max_final_initial_ratio": 0.2,
+    "overfit_max_final_nll": 0.1,
+    "minimum_memory_headroom_fraction": 0.1
+  }
+}
