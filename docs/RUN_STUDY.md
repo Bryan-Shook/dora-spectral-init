@@ -10,6 +10,7 @@ No environment-variable setup or shell shortcut is required.
 Keep code, dependencies, and data fixed. For GPU work, set time caps below the remaining allocation.
 Repeat a stage command to resume; finished jobs are skipped. Finish each stage before the next.
 Choose fresh validation/study directories for new runs, or point to compatible existing evidence.
+Runtime is recorded automatically. Unknown allocated GPU-hours and idle time are omitted.
 
 ## 1. Install and check
 
@@ -18,7 +19,7 @@ bash scripts/setup_pace.sh cuda
 .venv/bin/python -m pytest -q --junitxml="reports/$USER/unit-tests.xml"
 ```
 
-- [ ] Install locked dependencies, pass CPU tests, and save their JUnit results.
+- [x] Install locked dependencies, pass CPU tests, and save their JUnit results.
 
 ## 2. Prepare data
 
@@ -26,7 +27,7 @@ bash scripts/setup_pace.sh cuda
 .venv/bin/python -m dora_spectral.experiment prepare --data runs/data
 ```
 
-- [ ] Create or verify the pinned training/pilot/development splits (`prepared.json`).
+- [x] Create or verify the pinned training/pilot/development splits (`prepared.json`).
 
 Official-test data stays unopened.
 
@@ -37,9 +38,10 @@ Official-test data stays unopened.
   --data runs/data --directory runs/validation-h100 --seconds 7200
 ```
 
-- [ ] Pass initialization, gradient, overfit, memory, and resume gates (`validation.json`: `passed: true`).
+- [x] Pass initialization, gradient, overfit, memory, and resume gates (`validation.json`: `passed: true`).
 
-Reuse a passed validation only when its code, configuration, data, and package versions match.
+Reuse a passed validation only when its runtime code, configuration, data, and package versions match.
+Orchestration/analysis-only edits do not require another GPU validation.
 Otherwise validate in a fresh directory; compatible prepared data/SVD caches can be reused.
 
 ## 4. Initialize the study
@@ -47,13 +49,14 @@ Otherwise validate in a fresh directory; compatible prepared data/SVD caches can
 ```bash
 .venv/bin/python -m dora_spectral.study --directory runs/study-main init \
   --data runs/data --validation runs/validation-h100 \
-  --budget-hours 100 --previous-hours 1
+  --target-hours 100
 ```
 
-- [ ] Save the configuration, grid, budget, and seeds in a fresh study directory (`study.json`).
+- [ ] Save the configuration, grid, runtime estimate, and seeds in a fresh study directory (`study.json`).
 
-**Replace `1` with actual earlier allocated GPU hours**, including idle time; exclude the selected validation, counted automatically.
 Point `--validation` to the validation directory that passed for this study.
+100 hours is a planning estimate, not a limit: exceeding it never blocks jobs or shortens training.
+Each option uses the specified epochs; per-job/allocation time limits allow checkpoint resume.
 
 ## 5. Run the measured pilot
 
@@ -67,18 +70,13 @@ Point `--validation` to the validation directory that passed for this study.
 Require improved NLL, usable accuracy, and ≤1% truncation.
 `--wall-hours` caps this stage invocation; `--job-seconds` caps each child run.
 
-## 6. Account for idle time and freeze
+## 6. Freeze the study
 
 ```bash
-.venv/bin/python -m dora_spectral.study --directory runs/study-main account \
-  --hours 0.25 --note "additional allocated setup/idle time"
 .venv/bin/python -m dora_spectral.study --directory runs/study-main freeze
 ```
 
-Replace `0.25` with additional uncounted allocated hours; skip `account` if none.
-Repeat accounting after later allocations as needed. `freeze` checks pilot/budget feasibility and preserves a ten-hour failure reserve.
-
-- [ ] Record uncounted allocation time and pass the budget gate (`ledger.jsonl`, `frozen.json`).
+- [ ] Pass the pilot, save a runtime forecast, and freeze the protocol (`frozen.json`).
 
 ## 7. Run mechanism diagnostics
 
@@ -154,6 +152,6 @@ Replace the placeholders with the original execution username and study name.
 .venv/bin/python -m dora_spectral.reporting --runs runs/study-main
 ```
 
-`status` shows accounted hours and lock state. Evidence copies automatically to `reports/<execution-user>/`;
+`status` shows recorded runtime and lock state. Evidence copies automatically to `reports/<execution-user>/`;
 `reporting` copies it manually after a hard interruption. Commit the report folder when ready.
 Back up checkpoints in `runs/` separately for resume. Check a milestone only after all required jobs finish.

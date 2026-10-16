@@ -40,6 +40,13 @@ def sources():
     return {p.name: sha(p) for p in sorted(Path(__file__).parent.glob("*.py"))}
 
 
+def validation_sources(hashes):
+    """GPU correctness evidence excludes orchestration and offline-analysis-only changes."""
+    return {
+        name: value for name, value in hashes.items() if name not in {"study.py", "analysis.py"}
+    }
+
+
 def versions():
     return {
         name: importlib.metadata.version(name)
@@ -85,26 +92,15 @@ def initialize(args):
     seeds = args.seeds
     if len(seeds) not in (3, 5) or len(set(seeds)) != len(seeds) or set(seeds) & {0, 1, 2, 10, 40}:
         raise ValueError("choose three or five distinct fresh confirmation seeds")
-    if (
-        not 0 <= args.previous_hours < args.budget_hours - args.reserve_hours
-        or args.reserve_hours < 10
-    ):
-        raise ValueError(
-            "invalid hours; reserve at least 10 hours and account for previous allocations"
-        )
-    if (
-        not all(
-            math.isfinite(value)
-            for value in (args.budget_hours, args.reserve_hours, args.previous_hours, args.margin)
-        )
-        or args.margin <= 0
-    ):
-        raise ValueError("budget values and the positive practical margin must be finite")
+    if not math.isfinite(args.target_hours) or args.target_hours <= 0:
+        raise ValueError("planning target must be finite and positive")
+    if not math.isfinite(args.margin) or args.margin <= 0:
+        raise ValueError("practical margin must be finite and positive")
     if args.directory.exists():
         raise ValueError("use a new study directory")
     epoch = math.ceil(len(examples["train"]) / config["batch_size"])
     manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "random_streams_version": STREAM_VERSION,
         "created_at": utc_now(),
         "config": config,
@@ -123,9 +119,9 @@ def initialize(args):
         "learning_rates": [2e-5, 1e-4, 5e-4, 2e-3],
         "baseline_learning_rates": [2e-6 * 1000 ** (i / 11) for i in range(12)],
         "practical_margin_pp": args.margin,
-        "budget_hours": args.budget_hours,
-        "reserve_hours": args.reserve_hours,
-        "previous_hours": args.previous_hours,
+        "target_hours": args.target_hours,
+        "runtime_target_enforced": False,
+        "cost_basis": "recorded_process_wall_time",
         "pilot_ids": [row["id"] for row in examples["pilot"]],
         "development_ids": [row["id"] for row in examples["development"]],
         "environment": environment(),
@@ -135,7 +131,8 @@ def initialize(args):
     validation = read_json(args.validation / "validation.json")
     if (
         not validation["passed"]
-        or validation["source_sha256"] != manifest["source_sha256"]
+        or validation_sources(validation["source_sha256"])
+        != validation_sources(manifest["source_sha256"])
         or validation["data_sha256"] != manifest["data_sha256"]
         or validation["versions"] != manifest["versions"]
     ):
@@ -471,13 +468,29 @@ def ledger(directory):
     return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
 
 
-def spent_hours(directory, manifest):
-    validation = read_json(directory / "validation-evidence.json")
-    return (
-        manifest["previous_hours"]
-        + validation["seconds"] / 3600
-        + sum(row["seconds"] for row in ledger(directory)) / 3600
-    )
+def runtime_by_stage(directory):
+    """Sum recorded timers only; old manual charges are not measured runtime."""
+    def checked(seconds):
+        if not math.isfinite(seconds) or seconds < 0:
+            raise ValueError("recorded runtime must be finite and nonnegative")
+        return seconds
+
+    costs = {"validation": checked(read_json(directory / "validation-evidence.json")["seconds"])}
+    for row in ledger(directory):
+        if "directory" in row:
+            costs[row["phase"]] = costs.get(row["phase"], 0) + checked(row["seconds"])
+    return costs
+
+
+def runtime_accounting(directory):
+    return {
+        "measured_runtime_hours": sum(runtime_by_stage(directory).values()) / 3600,
+        "allocated_gpu_hours": None,
+        "scope": (
+            "Selected validation and recorded child-job wall time. Earlier runs, idle "
+            "allocation, and unrecorded terminations are excluded; total allocation is unknown."
+        ),
+    }
 
 
 def measured_rates(directory, manifest):
@@ -592,17 +605,18 @@ def freeze(directory, manifest):
         raise ValueError("validation and complete pilot must pass before freezing")
     rates = measured_rates(directory, manifest)
     forecast = remaining_seconds(directory, manifest, rates) / 3600
-    spent = spent_hours(directory, manifest)
-    if spent + forecast + manifest["reserve_hours"] > manifest["budget_hours"]:
-        raise ValueError(
-            f"budget gate failed: {spent:.2f} spent + {forecast:.2f} forecast + reserve exceeds cap"
-        )
+    accounting = runtime_accounting(directory)
+    spent = accounting["measured_runtime_hours"]
     value = {
         "study_sha256": sha(directory / "study.json"),
         "rates": rates,
-        "spent_hours_at_freeze": spent,
+        "runtime_accounting_at_freeze": accounting,
         "remaining_forecast_hours": forecast,
-        "scope": "core eight-condition study; no optional 200-hour extensions",
+        "projected_runtime_hours": spent + forecast,
+        "planning_target_hours": manifest["target_hours"],
+        "target_exceeded": spent + forecast > manifest["target_hours"],
+        "runtime_target_enforced": False,
+        "scope": "core eight-condition study; optional extensions require a separate protocol",
     }
     immutable_json(directory / "frozen.json", value)
     return value
@@ -641,23 +655,6 @@ def run_jobs(args, manifest, jobs, phase):
         seconds = min(args.job_seconds, int(remaining))
         if seconds <= 120:
             raise RuntimeError("allocation time limit reached; repeat the same stage to resume")
-        if (args.directory / "frozen.json").exists():
-            rates = measured_rates(args.directory, manifest)
-            if (
-                spent_hours(args.directory, manifest)
-                + remaining_seconds(args.directory, manifest, rates) / 3600
-                + manifest["reserve_hours"]
-                > manifest["budget_hours"]
-            ):
-                raise RuntimeError(
-                    "updated forecast exceeds cap while preserving confirmation/reserve; "
-                    "stop and review scope"
-                )
-        elif (
-            spent_hours(args.directory, manifest) + seconds / 3600 + manifest["reserve_hours"]
-            > manifest["budget_hours"]
-        ):
-            raise RuntimeError("pilot allocation would consume the study reserve")
         path = args.directory / specification["directory"]
         command = [
             sys.executable,
@@ -805,9 +802,12 @@ def main():
     init.add_argument("--data", type=Path, default=Path("runs/data"))
     init.add_argument("--validation", type=Path, default=Path("runs/validation-h100"))
     init.add_argument("--seeds", type=int, nargs="+", default=[101, 202, 303])
-    init.add_argument("--budget-hours", type=float, default=100)
-    init.add_argument("--reserve-hours", type=float, default=10)
-    init.add_argument("--previous-hours", type=float, default=0)
+    init.add_argument(
+        "--target-hours",
+        type=float,
+        default=100,
+        help="planning/reporting estimate only; exceeding it never stops jobs",
+    )
     init.add_argument("--margin", type=float, default=2)
     for name in ("pilot", "screen", "promote", "confirm", "test", "diagnose"):
         stage = commands.add_parser(name)
@@ -820,11 +820,6 @@ def main():
         if name == "analyze":
             stage.add_argument("--resamples", type=int, default=10000)
             stage.add_argument("--two-way", action="store_true")
-    account = commands.add_parser(
-        "account", help="charge additional idle/setup GPU allocation hours"
-    )
-    account.add_argument("--hours", type=float, required=True)
-    account.add_argument("--note", required=True)
     args = parser.parse_args()
     args.stage_began = time.monotonic()
     if hasattr(args, "wall_hours") and (
@@ -867,27 +862,14 @@ def main():
                     )
                     jobs = test_jobs(args.directory, manifest)
                 run_jobs(args, manifest, jobs, args.command)
-        elif args.command == "account":
-            if not math.isfinite(args.hours) or args.hours < 0:
-                raise ValueError("hours must be finite and nonnegative")
-            with (args.directory / "ledger.jsonl").open("a") as handle:
-                handle.write(
-                    json.dumps(
-                        {
-                            "phase": "extra-allocation",
-                            "seconds": args.hours * 3600,
-                            "note": args.note,
-                            "finished_at": utc_now(),
-                        }
-                    )
-                    + "\n"
-                )
         elif args.command == "status":
             print(
                 json.dumps(
                     {
                         "conditions": manifest["conditions"],
-                        "spent_accounted_hours": spent_hours(args.directory, manifest),
+                        **runtime_accounting(args.directory),
+                        "planning_target_hours": manifest.get("target_hours"),
+                        "runtime_target_enforced": manifest.get("runtime_target_enforced"),
                         "frozen": (args.directory / "frozen.json").exists(),
                         "selected": (args.directory / "selection.json").exists(),
                         "test_opened": (args.directory / "test-opened.json").exists(),

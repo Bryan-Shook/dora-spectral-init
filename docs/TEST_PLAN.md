@@ -1,6 +1,6 @@
 # Test plan: spectral initialization × DoRA, with a detachment study
 
-This protocol defines the experiment described in the [proposal](../README.md). Available hardware and budget: **one NVIDIA H100 80 GB, with 100–200 total GPU-hours, including pilots, tuning, and evaluation**.
+This protocol defines the experiment described in the [proposal](../README.md). Hardware: **one NVIDIA H100 80 GB**. The initial **100–200 GPU-hour range is a rough planning estimate**, including pilots, tuning, and evaluation; it is not an execution limit.
 
 The additive-versus-detached-DoRA interaction is primary; the exact-versus-detached interaction is secondary. The core includes six controlled conditions and two ordinary-initialization references. The [literature audit](../references/LITERATURE_REVIEW.md) explains the prior evidence and limits of the novelty claim.
 
@@ -46,7 +46,7 @@ This size leaves room for repeated tuning and confirmation on one H100. A base m
 
 The default adapter placement is `q_proj` and `v_proj` in all 28 layers. At rank 16, the saved dimensions imply **2,179,072 trainable factor parameters**; DoRA adds **50,176 magnitude parameters**. These are calculated counts to check against the implementation. Additive versus DoRA therefore also differs in parameterization and parameter count; the exact-versus-detached comparison has equal trainable parameters.
 
-Use `Qwen/Qwen2.5-0.5B` as a throughput fallback only if the main model cannot pass the budget gate and the smaller model passes the learning gate. Switch the entire experiment before the main search, not individual conditions. The 0.5B model is also an optional replication model in the 200-hour track [R12]. A 7B model is unnecessary for the initial question and would reduce the resources available for controls and repeats.
+Use `Qwen/Qwen2.5-0.5B` as a throughput fallback only if profiling makes the main model impractical and the smaller model passes the learning gate. Exceeding the initial runtime estimate alone does not require a fallback. Switch the entire experiment before the main search, not individual conditions. The 0.5B model is also an optional replication model in the expanded track [R12]. A 7B model is unnecessary for the initial question and would reduce the resources available for controls and repeats.
 
 ### 3.2 Dataset and split
 
@@ -218,7 +218,7 @@ Report $d=\|\Delta W_E-\Delta W_D\|_F/(\|\Delta W_E\|_F+\|\Delta W_D\|_F+\epsilo
 
 Measure peak GPU memory, training tokens/second, initialization time, complete search cost, and end-to-end run time. Detachment's savings reported in DoRA were measured in other settings [R1]; measure them again here. A supported outcome can be that accuracy is similar while one implementation is cheaper.
 
-Use equal training exposure for scientific comparisons. Separately show quality against total measured GPU-hours. Report SVD cost once for this cached experimental campaign and again as a cold-start cost for a new model; include SVD cost for the matched random control, which also needs the singular values. Do not claim that this controlled random method avoids SVD.
+Use equal training exposure for scientific comparisons. Separately show quality against measured single-GPU run wall time. Report SVD cost once for this cached experimental campaign and again as a cold-start cost for a new model; include SVD cost for the matched random control, which also needs the singular values. Do not claim that this controlled random method avoids SVD.
 
 ## 6. Correctness checks before spending the main budget
 
@@ -238,7 +238,7 @@ Start on CPU with rectangular synthetic matrices, including different input/outp
 
 For BF16 validation, first measure drift from repeat execution and from switching between the reference and intended arithmetic paths on fixed prompts. Record maximum and relative RMS logit errors and next-token agreement. Set and justify the acceptance tolerance before comparing trained outcomes; do not silently excuse initialization differences as noise. Use the common PEFT base-plus-adapter path; any further arithmetic change requires revalidation and reprofiling before freezing.
 
-## 7. Pilot and freeze gate: up to 10 GPU-hours including device checks
+## 7. Pilot and freeze gate: initially estimate 10 hours including device checks
 
 1. Complete CPU checks; use the first device allocation for numerical checks, model loading, and the SVD cache.
 2. Run all four controlled DoRA cells for 100 steps with pilot seed blocks `0, 1, 2`, initially at $\gamma=1$, $\eta=10^{-4}$. Also profile A-S/A-R and both ordinary baselines. Use training examples for optimization and only pilot validation for learning decisions.
@@ -250,11 +250,11 @@ For BF16 validation, first measure drift from repeat execution and from switchin
 
 **Memory gate:** the longest supported batch in the slowest condition must fit with at least 10% of the device memory available as headroom. Record both allocated and reserved peaks. If it fails, reduce the common microbatch while preserving the effective batch, or enable checkpointing consistently, and measure throughput again.
 
-**Budget gate:** forecast all remaining jobs using measured times, including failures and evaluation, and keep the confirmation reserve intact. If the 100-hour track does not fit, first improve batching/measurement overhead consistently, then consider a common two-epoch horizon or the 0.5B fallback before freezing. Recheck the learning gate after a change. Do not keep a fast condition's three epochs while shortening a slower one, and do not remove a primary cell to fit the budget.
+**Runtime forecast:** estimate remaining jobs from measured times, including failures and evaluation. This is reporting/planning only: exceeding 100 hours does not block jobs, shorten epochs, or remove conditions. If practical resource limits require a different setup, change it consistently before freezing and recheck the learning gate. Keep the full confirmation and evaluation scope intact.
 
 If exact-gradient training would crowd out adequate primary confirmation, a fallback selected **before the main search** may defer E-S/E-R training and retain shared-state detachment diagnostics only. The six remaining arms A-S/A-R/D-S/D-R/L0/D0 still answer H1; they cannot answer the tuned H2. Publish the reduced scope and new ledger, and do not drop exact arms based on favorable/unfavorable results after the study starts.
 
-If the pilot cannot establish both learning and affordability within its allocation, document the failure and revised scope. Do not spend the remainder on a large, uninterpretable search.
+If the pilot cannot establish learning or a usable runtime forecast, investigate before launching a large search. A longer-than-estimated pilot can continue across allocations; each allocation's time limit still applies.
 
 ## 8. Search and confirmation protocol
 
@@ -283,7 +283,7 @@ This costs 96 one-epoch starts plus 48 continuation epochs: **144 epochs, or 48 
 
 Freeze selected configurations. Run **all eight conditions with fresh seed blocks `101, 202, 303`**, giving 24 complete runs. Do not reuse tuning runs as seed replicates. Within each block, pair example order and the random bases across the relevant cells. Keep all results, including disappointing cells. Five-seed confirmation is preferred if the measured allocation permits (Section 11.2).
 
-The 100-hour result is conditional on a single tuning seed and a restricted search. The expanded track below repeats search finalists to assess selection stability. Failed numerical runs remain in the search/failure record; rerun infrastructure interruptions from checkpoint, and count both allocations. Do not repeatedly retry divergent configurations until a favorable seed appears.
+The core result is conditional on a single tuning seed and a restricted search. The expanded track below repeats search finalists to assess selection stability. Failed numerical runs remain in the search/failure record; rerun infrastructure interruptions from checkpoint, and retain both recorded invocation durations. Do not repeatedly retry divergent configurations until a favorable seed appears.
 
 ## 9. Evaluation and statistical analysis
 
@@ -315,7 +315,7 @@ Required figures/tables:
 - Effective movement versus step and versus wall time, alongside task learning curves.
 - Cost table separating initialization, tuning, confirmation, generation, diagnostics, and retries.
 
-For confirmation learning curves, score a fixed 128-example development subset at the end of epochs 1 and 2; use the already budgeted full-development score at epoch 3, also reporting its same 128-example subset. Report accuracy versus optimizer steps and elapsed allocated GPU time, without selecting checkpoints from these curves. These extra generations are priced below. Accuracy-scale interactions can be compressed near a ceiling; include held-out answer NLL as a secondary outcome. A convergence advantage is distinct from final-checkpoint accuracy.
+For confirmation learning curves, score a fixed 128-example development subset at the end of epochs 1 and 2; use the already budgeted full-development score at epoch 3, also reporting its same 128-example subset. Report accuracy versus optimizer steps and recorded training wall time, without selecting checkpoints from these curves. These extra generations are priced below. Accuracy-scale interactions can be compressed near a ceiling; include held-out answer NLL as a secondary outcome. A convergence advantage is distinct from final-checkpoint accuracy.
 
 ## 10. Measurements that distinguish scale from direction
 
@@ -337,9 +337,9 @@ For nonzero initialization, $\|BA\|$ is not the net model update: even a large i
 
 Measure elapsed GPU work with synchronization at timing boundaries, warm up before reporting steady-state throughput, and reset peak allocated/reserved memory statistics per run. Report active-token and padded-token throughput separately. Include time spent on loading, SVD/QR, validation, merging, and checkpoint I/O in end-to-end costs. Match diagnostic frequency across conditions and include its overhead.
 
-## 11. GPU-hour budget and stop rules
+## 11. Runtime estimates and work priorities
 
-### 11.1 A complete study capped at 100 hours
+### 11.1 Rough 100-hour estimate for the core study
 
 One full training equivalent below means three epochs with training and routine logging, excluding generation and one-time initialization. **The assumed 0.75 hour per equivalent is an engineering allowance to validate, not measured H100 performance.** Actual times differ across cells; use the slowest measured cell for a conservative forecast and record per-cell costs.
 
@@ -353,7 +353,7 @@ One full training equivalent below means three epochs with training and routine 
 | All scoring and associated I/O | Development curves and final-test generation/NLL, unmerged evaluation, load/save overhead | 20.00 |
 | Mechanism diagnostics | Short common-setting trajectories and shared-state counterfactuals | 4.00 |
 | Contingency | Boundary extensions, failures, slower jobs, additional scoring | 12.00 |
-| **Hard cap** | **72 full training equivalents for search + confirmation** | **100.00** |
+| **Initial estimate** | **72 full training equivalents for search + confirmation** | **100.00** |
 
 There are **96 search starts and 24 fresh confirmation starts**, with 24 search jobs continued. These are not 120 full training runs. Do not count continuation epochs twice.
 
@@ -361,20 +361,20 @@ The default schedule generates **86,376 completions** across search screening (9
 
 At average padded length 512, a full run processes approximately $3\times6473\times512=9.94$ million padded tokens. Fitting training into 0.75 hour requires about 3,682 padded tokens/second; at padded length 1,024 it requires about 7,365. These are **required rates calculated from the allowance**, not predictions. Replace them with measured length distributions and rates in the pilot.
 
-Maintain a ledger of reserved/actual GPU-hours for every job, including interrupted allocations. Charge GPU time while the accelerator is allocated, even during I/O; do preprocessing and CPU analysis outside a reserved GPU session when possible. At the freeze gate, require `spent pilot + forecast remaining training + forecast scoring/I/O + diagnostics + at least 10 h failure reserve <= 100 h`. Update the forecast before every job and keep unfinished confirmation/evaluation funded. The table's larger initial contingency can absorb measured differences, but it is not an extra budget beyond the cap.
+Automatically record the selected validation and every child-job invocation, including failed/interrupted attempts. Earlier experiments, allocated idle time, and unrecorded terminations are not inferred; omit unknown allocation hours instead of entering manual estimates. Save a measured-runtime forecast when freezing the protocol. The 100-hour target is advisory and does not stop launches or certify scheduler-allocated GPU-hours. Per-option exposure is determined by the prescribed epochs; per-job and allocation time limits pause work for checkpoint resume.
 
-If the cap is 100 hours, do not start optional work until the eight-condition result (or the explicitly frozen fallback) can be completed. Never spend confirmation time chasing the best preliminary score. If the main study was frozen and later slows down, preserve complete paired seed blocks and report any reduction in precision explicitly; do not report a partial block as a completed interaction estimate. Fewer than three complete confirmation blocks means the planned confirmatory study is unfinished and any available estimates are exploratory.
+Finish the eight-condition core before optional work. Additional time can be used to complete the same prespecified runs beyond the initial estimate; it does not automatically expand the search or seed count. Preserve complete paired seed blocks and never chase favorable preliminary scores. Fewer than three complete confirmation blocks means the planned confirmatory study is unfinished and any available estimates are exploratory.
 
 ### 11.2 Expansion toward 200 hours
 
-Choose this track **before confirmation/test inspection** if the extra allocation is available. Up to 100 additional hours are reserved as follows:
+Choose this track **before confirmation/test inspection** if additional resources are available. The following allowances are estimates, not enforced limits:
 
 | Priority | Extra work | Additional allowance |
 | --- | --- | ---: |
 | 1 | Increase all eight conditions from three to five confirmation seeds by adding `404, 505`: 16 full runs plus scoring. Decide seed count before any confirmation/test inspection. | 25 h including scoring and reserve |
 | 2 | Confirm A-S/A-R/D-S/D-R at shared $\gamma=1$, using their separately selected LRs and the same five confirmation seeds: at most 20 additional full runs, fewer where configurations exactly match existing runs. This also completes the native-initialization L0/D0/PiSSA/hybrid comparison. | 30 h including scoring and reserve |
 | 3 | Repeat the top two full-run candidates in each of eight conditions on tuning seeds `20, 30`: 32 full runs. Select using mean development accuracy over seeds `10, 20, 30`, then mean NLL, before running confirmation. This priority is a funding order, not execution order. | 45 h including scoring and reserve |
-| **Additional cap** | Added to the completed core allocation | **100 h** |
+| **Additional estimate** | Added to the completed core work | **100 h** |
 
 Fixed-scale confirmation estimates $J(\gamma=1)$, conditional on equal initial spectra and separate LR selection; it still does not match later effective steps. The native-initialization contrast uses spectral-minus-ordinary gaps instead, so report it separately from J. Without this extension, native PiSSA and fixed-scale results are exploratory development evidence only unless the necessary configurations happen to coincide with all core confirmed winners. If finalist retuning is also funded, separately repeat the four fixed-$\gamma=1$ LR winners on seeds `20, 30` where not already included (up to eight extra tuning runs); finance this from the extension reserves and reforecast before launch. Do not present one-seed fixed-scale selection as equally stable as multi-seed core selection.
 
@@ -407,7 +407,7 @@ Suggested implementation artifacts, **to be created during execution**, are:
 
 Save residual/correction metadata with adapters: these nonzero-initialized adapters cannot be loaded correctly onto an untouched base weight by blindly applying a standard additive loader. Keep optimizer and RNG state for jobs that may resume. Keep the original model revision and initialization cache hashes so checkpoints can be reconstructed.
 
-Core completion means passing implementation gates, reporting A-S/A-R/D-S/D-R and primary J, reporting E-S/E-R and secondary I unless the fallback was frozen, retaining L0/D0, and accounting for total cost. State whether fixed-scale/native-initialization confirmation was funded; do not imply it was completed from exploratory development curves. A null or inconclusive result is acceptable. General claims that spectral initialization is always useful/useless, or exact DoRA is universally better/worse, are outside this experiment's scope.
+Core completion means passing implementation gates, reporting A-S/A-R/D-S/D-R and primary J, reporting E-S/E-R and secondary I unless the fallback was frozen, retaining L0/D0, and reporting measured costs and their coverage limits. State whether fixed-scale/native-initialization confirmation was funded; do not imply it was completed from exploratory development curves. A null or inconclusive result is acceptable. General claims that spectral initialization is always useful/useless, or exact DoRA is universally better/worse, are outside this experiment's scope.
 
 ## 13. References and reading list
 

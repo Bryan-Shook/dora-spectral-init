@@ -72,7 +72,7 @@ arithmetic, while adapter branches and norm calculations use FP32.
 - [diagnostics.py](../src/dora_spectral/diagnostics.py) measures effective weights and reversible
   exact/detached AdamW counterfactuals.
 - [study.py](../src/dora_spectral/study.py) implements pilot, freeze, screening, promotion,
-  selection, fresh-seed confirmation, accounting, and official-test orchestration.
+  selection, fresh-seed confirmation, automatic runtime tracking, and official-test orchestration.
 - [analysis.py](../src/dora_spectral/analysis.py) validates paired test evidence and writes
   statistics, CSV tables, and scientific figures when explicitly requested through `analyze`.
 - [tests/reference.py](../tests/reference.py) contains the dense mathematical
@@ -94,7 +94,7 @@ resume retries the probe at that completed state; repeated probe records retain 
 1. **Validate and freeze.** Check factor spectra, preserved starting outputs,
    forward/gradient behavior, checkpoint reloads, learning, and memory headroom.
    Record measured costs and freeze the model/data revisions, shared settings,
-   search ranges, practical margins, condition scope, and study budget.
+   search ranges, practical margins, condition scope, and runtime estimate.
 2. **Tune each condition independently.** Give A-S/A-R/D-S/D-R/E-S/E-R equal search
    effort over learning rate and initialization scale. Give L0/D0 equal candidate
    effort over learning rate. Use the same development data and paired example
@@ -165,7 +165,12 @@ The OS username is recorded with each invocation. This includes configuration,
 source hashes, initialization checks, training logs, predictions, and metrics. No narrative summary
 is generated. `status.json` and `invocations.jsonl` also retain the execution-time Git revision,
 package versions, GPU details, target steps, elapsed time, and any exception. Invocation time
-excludes idle GPU allocation and evidence copying, so it is not a complete allocation-time ledger.
+excludes idle GPU allocation and evidence copying. Study cost reports automatically sum the selected
+validation and recorded child-job runtimes, including failed/interrupted attempts. Earlier runs,
+idle allocation, and unrecorded terminations are omitted; total allocated GPU-hours remain unknown.
+The planning forecast uses these measured durations and requires no manual hour entries.
+The total-hour target is advisory: it never blocks jobs or changes per-option epochs.
+Per-job and allocation time limits still pause work for checkpoint resume.
 
 Use `run --reports PATH` to choose a different destination root. Run directories outside `runs/`
 are placed under `reports/<user>/external/<name>-<path-hash>/` to avoid name collisions. Original files

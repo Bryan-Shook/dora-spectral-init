@@ -15,8 +15,9 @@ from .study import (
     CONDITIONS,
     CONTROLLED,
     complete,
-    ledger,
     read_json,
+    runtime_accounting,
+    runtime_by_stage,
     sha,
     sources,
     test_jobs,
@@ -443,6 +444,8 @@ def analyze(directory, manifest, resamples=10000, two_way=False):
         },
         "scope": selected["scope"],
         "search_boundaries": selected["boundaries"],
+        "runtime_accounting": runtime_accounting(directory),
+        "planning_target_hours": manifest.get("target_hours"),
         "interval_scope": (
             "Seed intervals condition on this test set and selected configurations; "
             "item bootstrap conditions on trained models. Only J is primary."
@@ -487,14 +490,12 @@ def analyze(directory, manifest, resamples=10000, two_way=False):
             for name, row in contrasts.items()
         ],
     )
-    costs = {}
-    for row in ledger(directory):
-        costs[row["phase"]] = costs.get(row["phase"], 0) + row["seconds"]
-    costs["earlier-allocations"] = manifest["previous_hours"] * 3600
-    costs["validation"] = read_json(directory / "validation-evidence.json")["seconds"]
     write_csv(
         output / "cost-by-stage.csv",
-        [{"stage": name, "accounted_hours": seconds / 3600} for name, seconds in costs.items()],
+        [
+            {"stage": name, "measured_runtime_hours": seconds / 3600}
+            for name, seconds in runtime_by_stage(directory).items()
+        ],
     )
     components = {}
     for path in directory.rglob("invocations.jsonl"):

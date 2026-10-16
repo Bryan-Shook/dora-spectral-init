@@ -1,3 +1,4 @@
+import csv
 import hashlib
 import json
 from pathlib import Path
@@ -57,9 +58,7 @@ def campaign(tmp_path, monkeypatch):
         data=data,
         validation=validation,
         seeds=[101, 202, 303],
-        budget_hours=100,
-        reserve_hours=10,
-        previous_hours=0,
+        target_hours=100,
         margin=2,
         wall_hours=4,
         job_seconds=3600,
@@ -241,6 +240,67 @@ def test_validation_must_match_the_study_environment(campaign):
     assert not args.directory.exists()
 
 
+def test_validation_can_be_reused_after_orchestration_and_analysis_changes(campaign):
+    args, _, _, _ = campaign
+    validation = study.read_json(args.validation / "validation.json")
+    validation["source_sha256"].update(
+        {"study.py": "older driver", "analysis.py": "older analysis"}
+    )
+    study.write_json(args.validation / "validation.json", validation)
+    args.directory = args.directory.parent / "new-study"
+    manifest = study.initialize(args)
+    assert manifest["source_sha256"] == study.sources()
+    assert manifest["validation_sha256"] == study.sha(args.validation / "validation.json")
+
+
+@pytest.mark.parametrize("module", ["model.py", "training.py", "streams.py", "validation.py"])
+def test_validation_cannot_be_reused_after_runtime_changes(campaign, module):
+    args, _, _, _ = campaign
+    validation = study.read_json(args.validation / "validation.json")
+    validation["source_sha256"][module] = "different runtime"
+    study.write_json(args.validation / "validation.json", validation)
+    args.directory = args.directory.parent / "new-study"
+    with pytest.raises(ValueError, match="validation did not pass"):
+        study.initialize(args)
+    assert not args.directory.exists()
+
+
+def test_runtime_accounting_is_automatic_and_ignores_unmeasured_manual_entries(campaign):
+    args, manifest, _, _ = campaign
+    assert manifest["cost_basis"] == "recorded_process_wall_time"
+    assert "previous_hours" not in manifest
+    rows = [
+        {"phase": "screen", "directory": "search/candidate", "seconds": 900, "exit_code": 1},
+        {"phase": "screen", "directory": "search/candidate", "seconds": 1800, "exit_code": 0},
+        {"phase": "confirm", "directory": "confirmation/replica", "seconds": 300},
+        {"phase": "extra-allocation", "seconds": 7200, "note": "old manual estimate"},
+    ]
+    (args.directory / "ledger.jsonl").write_text(
+        "".join(json.dumps(row) + "\n" for row in rows)
+    )
+    assert study.runtime_by_stage(args.directory) == {
+        "validation": 10,
+        "screen": 2700,
+        "confirm": 300,
+    }
+    accounting = study.runtime_accounting(args.directory)
+    assert accounting["measured_runtime_hours"] == pytest.approx(3010 / 3600)
+    assert accounting["allocated_gpu_hours"] is None
+
+
+@pytest.mark.parametrize("seconds", [-1, float("nan"), float("inf")])
+def test_runtime_accounting_rejects_invalid_timers(campaign, seconds):
+    args, _, _, _ = campaign
+    (args.directory / "ledger.jsonl").write_text(
+        json.dumps({"phase": "screen", "directory": "search/a", "seconds": 10})
+        + "\n"
+        + json.dumps({"phase": "screen", "directory": "search/b", "seconds": seconds})
+        + "\n"
+    )
+    with pytest.raises(ValueError, match="finite and nonnegative"):
+        study.runtime_accounting(args.directory)
+
+
 def test_incomplete_search_and_changed_selection_are_rejected(campaign):
     args, manifest, finish, _ = campaign
     with pytest.raises(ValueError, match="unfinished"):
@@ -286,13 +346,55 @@ def test_complete_staged_workflow_and_analysis(campaign):
     assert (output / "statistics.json").exists()
     assert len(list((output / "figures").glob("*.png"))) == 7
     assert (output / "seed-results.csv").exists()
+    assert result["runtime_accounting"]["allocated_gpu_hours"] is None
+    assert result["runtime_accounting"]["measured_runtime_hours"] > 0
+    assert result["planning_target_hours"] == 100
+    with (output / "cost-by-stage.csv").open() as handle:
+        costs = list(csv.DictReader(handle))
+    assert set(costs[0]) == {"stage", "measured_runtime_hours"}
+    assert not any(row["stage"] in ("earlier-allocations", "extra-allocation") for row in costs)
 
 
-def test_freeze_preserves_reserve_and_complete_binds_shared_config(campaign):
-    args, manifest, finish, _ = campaign
+def test_planning_target_never_blocks_pilot_freeze_or_training(campaign):
+    args, _, _, calls = campaign
+    args.directory = args.directory.parent / "beyond-target"
+    args.target_hours = 0.0001  # Even the selected validation already exceeds this target.
+    manifest = study.initialize(args)
+    assert not manifest["runtime_target_enforced"]
     study.pilot(args, manifest)
-    with pytest.raises(ValueError, match="budget gate failed"):
-        study.freeze(args.directory, dict(manifest, budget_hours=10.1))
+    frozen = study.freeze(args.directory, manifest)
+    assert frozen["target_exceeded"]
+    assert frozen["projected_runtime_hours"] > frozen["planning_target_hours"]
+    assert not frozen["runtime_target_enforced"]
+    candidate = study.search_jobs(manifest)[0]
+    before = len(calls)
+    study.run_jobs(args, manifest, [candidate], "screen")
+    assert len(calls) == before + 1
+    command = calls[-1]
+    assert int(command[command.index("--steps") + 1]) == manifest["epoch_steps"]
+    assert study.complete(args.directory, manifest, candidate)
+
+
+def test_allocation_time_limit_still_stops_launches(campaign):
+    args, manifest, _, calls = campaign
+    args.wall_hours = 0.01
+    with pytest.raises(RuntimeError, match="allocation time limit reached"):
+        study.run_jobs(args, manifest, [study.search_jobs(manifest)[0]], "screen")
+    assert not calls
+
+
+@pytest.mark.parametrize("target", [0, -1, float("nan"), float("inf")])
+def test_planning_target_must_be_finite_and_positive(campaign, target):
+    args, _, _, _ = campaign
+    args.directory = args.directory.parent / "invalid-target"
+    args.target_hours = target
+    with pytest.raises(ValueError, match="planning target must be finite and positive"):
+        study.initialize(args)
+    assert not args.directory.exists()
+
+
+def test_complete_binds_shared_config(campaign):
+    args, manifest, finish, _ = campaign
     specification = study.search_jobs(manifest)[0]
     finish(specification)
     path = args.directory / specification["directory"] / "run.json"
