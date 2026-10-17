@@ -7,7 +7,8 @@ Core: rank 16, eight conditions, three confirmation seeds.
 Run from the repository root. Commands use explicit example paths; edit them for your study.
 No environment-variable setup or shell shortcut is required.
 
-Keep code, dependencies, and data fixed. For GPU work, set time caps below the remaining allocation.
+Keep code, dependencies, and data fixed. GPU stage commands use a 16-hour cap;
+reduce it if the remaining allocation is shorter.
 Repeat a stage command to resume; finished jobs are skipped. Finish each stage before the next.
 Choose fresh validation/study directories for new runs, or point to compatible existing evidence.
 Runtime is recorded automatically. Unknown allocated GPU-hours and idle time are omitted.
@@ -64,13 +65,15 @@ Each option uses the specified epochs; per-job/allocation time limits allow chec
 
 ```bash
 .venv/bin/python scripts/run_study.py --directory runs/study-main pilot \
-  --wall-hours 3 --job-seconds 3600
+  --wall-hours 16 --job-seconds 3600
 ```
 
 - [x] Finish short profiles and the slowest condition's three-epoch pilot (`pilot.json`: `passed: true`).
 
 Require improved NLL, usable accuracy, and ≤1% truncation.
-`--wall-hours` caps this stage invocation; `--job-seconds` caps each child run.
+`--wall-hours` caps this stage invocation; `--job-seconds` caps each child attempt, including evaluation.
+Training resumes from checkpoints; unfinished evaluation restarts. Increase `--job-seconds`
+if evaluation alone cannot finish within that limit.
 
 ## 6. Freeze the study
 
@@ -78,24 +81,24 @@ Require improved NLL, usable accuracy, and ≤1% truncation.
 .venv/bin/python -m dora_spectral.study --directory runs/study-main freeze
 ```
 
-- [ ] Pass the pilot, save a runtime forecast, and freeze the protocol (`frozen.json`).
+- [x] Pass the pilot, save a runtime forecast, and freeze the protocol (`frozen.json`).
 
 ## 7. Run mechanism diagnostics
 
 ```bash
 .venv/bin/python scripts/run_study.py --directory runs/study-main diagnose \
-  --wall-hours 1 --job-seconds 1800
+  --wall-hours 16 --job-seconds 1800
 ```
 
-- [ ] Finish four DoRA runs comparing exact/detached updates at steps 0/50/100 (`counterfactuals.jsonl`).
+- [x] Finish four DoRA runs comparing exact/detached updates at steps 0/50/100 (`counterfactuals.jsonl`).
 
 ## 8. Screen, then promote
 
 ```bash
 .venv/bin/python scripts/run_study.py --directory runs/study-main screen \
-  --wall-hours 3 --job-seconds 3600
+  --wall-hours 16 --job-seconds 3600
 .venv/bin/python scripts/run_study.py --directory runs/study-main promote \
-  --wall-hours 3 --job-seconds 3600
+  --wall-hours 16 --job-seconds 3600
 ```
 
 - [ ] `screen`: finish 96 one-epoch candidates, scoring 256 development questions (`search/`).
@@ -108,7 +111,7 @@ Retain numerical failures; require a usable finalist for every condition.
 ```bash
 .venv/bin/python -m dora_spectral.study --directory runs/study-main select
 .venv/bin/python scripts/run_study.py --directory runs/study-main confirm \
-  --wall-hours 3 --job-seconds 3600
+  --wall-hours 16 --job-seconds 3600
 ```
 
 - [ ] `select`: lock eight winning configurations (`selection.json`, `selection-lock.json`).
@@ -118,7 +121,7 @@ Retain numerical failures; require a usable finalist for every condition.
 
 ```bash
 .venv/bin/python scripts/run_study.py --directory runs/study-main test \
-  --wall-hours 3 --job-seconds 3600
+  --wall-hours 16 --job-seconds 3600
 ```
 
 - [ ] After all confirmations finish, score the base and final replicas on all 1,319 questions (`test/`).
