@@ -50,7 +50,7 @@ Otherwise validate in a fresh directory; compatible prepared data/SVD caches can
 ## 4. Initialize the study
 
 ```bash
-.venv/bin/python -m dora_spectral.study --directory runs/study-main init \
+.venv/bin/python scripts/run_study.py --directory runs/study-main init \
   --data runs/data --validation runs/validation-h100 \
   --target-hours 100
 ```
@@ -78,7 +78,7 @@ if evaluation alone cannot finish within that limit.
 ## 6. Freeze the study
 
 ```bash
-.venv/bin/python -m dora_spectral.study --directory runs/study-main freeze
+.venv/bin/python scripts/run_study.py --directory runs/study-main freeze
 ```
 
 - [x] Pass the pilot, save a runtime forecast, and freeze the protocol (`frozen.json`).
@@ -109,7 +109,7 @@ Retain numerical failures; require a usable finalist for every condition.
 ## 9. Select, then confirm
 
 ```bash
-.venv/bin/python -m dora_spectral.study --directory runs/study-main select
+.venv/bin/python scripts/run_study.py --directory runs/study-main select
 .venv/bin/python scripts/run_study.py --directory runs/study-main confirm \
   --wall-hours 16 --job-seconds 3600
 ```
@@ -131,7 +131,7 @@ Keep settings, scoring rules, and seeds unchanged after opening the test.
 ## 11. Analyze on CPU
 
 ```bash
-.venv/bin/python -m dora_spectral.study --directory runs/study-main analyze \
+.venv/bin/python scripts/run_study.py --directory runs/study-main analyze \
   --resamples 10000 --two-way
 ```
 
@@ -142,7 +142,7 @@ Keep settings, scoring rules, and seeds unchanged after opening the test.
 
 ```bash
 uv sync --locked --extra cpu --extra models --extra analysis
-.venv/bin/python -m dora_spectral.study \
+.venv/bin/python scripts/run_study.py \
   --directory "reports/<execution-user>/<study>" analyze --resamples 10000 --two-way
 ```
 
@@ -160,6 +160,32 @@ Replace the placeholders with the original execution username and study name.
 `status` shows recorded runtime and lock state. Evidence copies automatically to `reports/<execution-user>/`;
 `reporting` copies it manually after a hard interruption. Commit the report folder when ready.
 Back up checkpoints in `runs/` separately for resume. Check a milestone only after all required jobs finish.
+
+## Telegram alerts (optional)
+
+Create a bot with [@BotFather](https://t.me/BotFather), then open your bot and press **Start**.
+Get your chat ID from `message.chat.id` in the bot's
+[getUpdates response](https://core.telegram.org/bots/api#getupdates).
+
+```bash
+cp configs/telegram.example.json configs/telegram.local.json
+chmod 600 configs/telegram.local.json
+```
+
+This creates a Git-ignored credentials file readable only by your account. Edit its `bot_token`
+and `chat_id`, then send a test alert from the cluster:
+
+```bash
+.venv/bin/python scripts/run_study.py --telegram-test
+```
+
+Run the study commands above normally. Each invocation from `init` through `analyze` sends one
+completion or stop alert with its stage, study path, execution user/host, and elapsed time.
+`screen` and `promote` each send their own alert. Installation, preparation, and validation run separately.
+Telegram failures do not change experiment outcomes. Forced termination or node loss may prevent alerts.
+Alerts apply when a command is next launched or resumed; already-running processes keep their old code.
+Remove the local credentials file to disable alerts; no environment variables are required.
+These launcher-only changes preserve existing studies and checkpoints.
 
 ## Different rank
 
@@ -186,7 +212,7 @@ Example for rank 8:
 3. After enabling other ranks in the runner and passing validation, initialize a separate study.
 
    ```bash
-   .venv/bin/python -m dora_spectral.study --directory runs/study-r8 init \
+   .venv/bin/python scripts/run_study.py --directory runs/study-r8 init \
      --config configs/rank8.yaml --data runs/data --validation runs/validation-r8
    ```
 

@@ -1,10 +1,96 @@
-"""Run the unchanged study CLI with progress from its saved evaluation files."""
+"""Run the unchanged study CLI with evaluation progress and optional Telegram alerts."""
 
+import argparse
+import getpass
 import json
+import re
+import socket
+import sys
 import threading
+import time
 from pathlib import Path
+from urllib.request import Request, urlopen
 
 from dora_spectral import study
+
+TELEGRAM_CONFIG = Path("configs/telegram.local.json")
+NOTIFIED_STAGES = {
+    "init",
+    "pilot",
+    "freeze",
+    "diagnose",
+    "screen",
+    "promote",
+    "select",
+    "confirm",
+    "test",
+    "analyze",
+}
+
+
+def telegram_settings():
+    """An absent local config disables alerts; invalid credentials never stop a study."""
+    try:
+        settings = json.loads(TELEGRAM_CONFIG.read_text())
+        token, chat_id = settings["bot_token"], settings["chat_id"]
+        if not isinstance(token, str) or not re.fullmatch(r"[0-9]+:[A-Za-z0-9_-]+", token):
+            raise ValueError("invalid bot token")
+        if type(chat_id) not in (str, int) or not str(chat_id).strip():
+            raise ValueError("invalid chat ID")
+        return token, chat_id
+    except FileNotFoundError:
+        return None
+    except Exception:
+        # Exception messages can include credentials or file contents. Never log them.
+        print("[telegram] Cannot read valid credentials; alerts disabled.", file=sys.stderr)
+        return None
+
+
+def send_telegram(settings, message):
+    """Best-effort delivery with a short timeout; never expose a token in an error log."""
+    token, chat_id = settings
+    try:
+        request = Request(
+            f"https://api.telegram.org/bot{token}/sendMessage",
+            data=json.dumps({"chat_id": chat_id, "text": message}).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urlopen(request, timeout=10) as response:
+            result = json.load(response)
+        if not isinstance(result, dict) or result.get("ok") is not True:
+            raise ValueError("Telegram rejected the message")
+    except Exception:
+        print("[telegram] Alert delivery failed; study result unchanged.", file=sys.stderr)
+        return False
+    print("[telegram] Alert sent.", flush=True)
+    return True
+
+
+def stage_context(arguments):
+    if "--help" in arguments or "-h" in arguments:
+        return None
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("--directory", type=Path, default=Path("runs/study-main"))
+    parser.add_argument("command", nargs="?")
+    args, _ = parser.parse_known_args(arguments)
+    return (args.command, args.directory) if args.command in NOTIFIED_STAGES else None
+
+
+def notify_stage(settings, context, outcome, seconds, detail):
+    try:
+        stage, directory = context
+        message = (
+            f"DoRA study: {outcome}\n"
+            f"Stage: {stage}\n"
+            f"Study: {str(directory)[:1000]}\n"
+            f"Worker: {getpass.getuser()}@{socket.gethostname()}\n"
+            f"Elapsed: {seconds / 3600:.2f} hours\n"
+            f"{detail}"
+        )
+        send_telegram(settings, message)
+    except Exception:
+        print("[telegram] Alert delivery failed; study result unchanged.", file=sys.stderr)
 
 
 class EvaluationProgress:
@@ -110,6 +196,16 @@ def launch_with_progress(command, output, launch):
 
 
 def main():
+    if sys.argv[1:] == ["--telegram-test"]:
+        settings = telegram_settings()
+        if settings is None:
+            print("[telegram] Configure configs/telegram.local.json first.", file=sys.stderr)
+            return 1
+        return 0 if send_telegram(settings, "DoRA study: Telegram test alert.") else 1
+    context = stage_context(sys.argv[1:])
+    settings = telegram_settings() if context else None
+    began = time.monotonic()
+    outcome, detail = "stopped", "Inspect the console log before resuming."
     original_launch = study.launch
 
     def monitored(command, output):
@@ -117,9 +213,17 @@ def main():
 
     study.launch = monitored
     try:
-        return study.main()
+        result = study.main()
+        outcome = "completed" if result in (0, None) else "stopped"
+        detail = f"Exit code: {result if result is not None else 0}"
+        return result
+    except BaseException as error:
+        detail = f"Reason: {type(error).__name__}. Inspect the console log before resuming."
+        raise
     finally:
         study.launch = original_launch
+        if settings:
+            notify_stage(settings, context, outcome, time.monotonic() - began, detail)
 
 
 if __name__ == "__main__":

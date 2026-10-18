@@ -75,6 +75,8 @@ arithmetic, while adapter branches and norm calculations use FP32.
   selection, fresh-seed confirmation, automatic runtime tracking, and official-test orchestration.
 - [scripts/run_study.py](../scripts/run_study.py) adds an NLL/generation phase message,
   completed-answer counts, and evidence-export messages to the terminal and each run's console log.
+  An optional Git-ignored Telegram configuration enables one completion/stop alert per stage invocation;
+  notification failures leave study results and exit status intact.
   It observes saved files while delegating to the original launcher, preserving frozen study sources.
 - [analysis.py](../src/dora_spectral/analysis.py) validates paired test evidence and writes
   statistics, CSV tables, and scientific figures when explicitly requested through `analyze`.
