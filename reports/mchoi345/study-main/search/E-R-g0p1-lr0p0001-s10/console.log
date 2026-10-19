@@ -1,0 +1,808 @@
+[evaluation] E-R-g0p1-lr0p0001-s10: evaluation will generate 256 answers after training.
+`torch_dtype` is deprecated! Use `dtype` instead!
+E-R-g0p1-lr0p0001-s10: step 1/203, NLL 0.7608
+E-R-g0p1-lr0p0001-s10: step 2/203, NLL 0.9354
+E-R-g0p1-lr0p0001-s10: step 3/203, NLL 0.8855
+E-R-g0p1-lr0p0001-s10: step 4/203, NLL 1.0079
+E-R-g0p1-lr0p0001-s10: step 5/203, NLL 0.8645
+E-R-g0p1-lr0p0001-s10: step 6/203, NLL 0.9411
+E-R-g0p1-lr0p0001-s10: step 7/203, NLL 0.7882
+E-R-g0p1-lr0p0001-s10: step 8/203, NLL 0.8737
+E-R-g0p1-lr0p0001-s10: step 9/203, NLL 0.8200
+E-R-g0p1-lr0p0001-s10: step 10/203, NLL 0.8036
+E-R-g0p1-lr0p0001-s10: step 11/203, NLL 0.7456
+E-R-g0p1-lr0p0001-s10: step 12/203, NLL 0.7576
+E-R-g0p1-lr0p0001-s10: step 13/203, NLL 0.6951
+E-R-g0p1-lr0p0001-s10: step 14/203, NLL 0.5646
+E-R-g0p1-lr0p0001-s10: step 15/203, NLL 0.6639
+E-R-g0p1-lr0p0001-s10: step 16/203, NLL 0.6814
+E-R-g0p1-lr0p0001-s10: step 17/203, NLL 0.5756
+E-R-g0p1-lr0p0001-s10: step 18/203, NLL 0.5645
+E-R-g0p1-lr0p0001-s10: step 19/203, NLL 0.5873
+E-R-g0p1-lr0p0001-s10: step 20/203, NLL 0.6399
+E-R-g0p1-lr0p0001-s10: step 21/203, NLL 0.4829
+E-R-g0p1-lr0p0001-s10: step 22/203, NLL 0.5840
+E-R-g0p1-lr0p0001-s10: step 23/203, NLL 0.5507
+E-R-g0p1-lr0p0001-s10: step 24/203, NLL 0.5073
+E-R-g0p1-lr0p0001-s10: step 25/203, NLL 0.4895
+E-R-g0p1-lr0p0001-s10: step 26/203, NLL 0.5086
+E-R-g0p1-lr0p0001-s10: step 27/203, NLL 0.4833
+E-R-g0p1-lr0p0001-s10: step 28/203, NLL 0.4846
+E-R-g0p1-lr0p0001-s10: step 29/203, NLL 0.4442
+E-R-g0p1-lr0p0001-s10: step 30/203, NLL 0.4175
+E-R-g0p1-lr0p0001-s10: step 31/203, NLL 0.5704
+E-R-g0p1-lr0p0001-s10: step 32/203, NLL 0.4871
+E-R-g0p1-lr0p0001-s10: step 33/203, NLL 0.4470
+E-R-g0p1-lr0p0001-s10: step 34/203, NLL 0.4878
+E-R-g0p1-lr0p0001-s10: step 35/203, NLL 0.4988
+E-R-g0p1-lr0p0001-s10: step 36/203, NLL 0.4820
+E-R-g0p1-lr0p0001-s10: step 37/203, NLL 0.4826
+E-R-g0p1-lr0p0001-s10: step 38/203, NLL 0.4922
+E-R-g0p1-lr0p0001-s10: step 39/203, NLL 0.4590
+E-R-g0p1-lr0p0001-s10: step 40/203, NLL 0.4082
+E-R-g0p1-lr0p0001-s10: step 41/203, NLL 0.4769
+E-R-g0p1-lr0p0001-s10: step 42/203, NLL 0.5601
+E-R-g0p1-lr0p0001-s10: step 43/203, NLL 0.4437
+E-R-g0p1-lr0p0001-s10: step 44/203, NLL 0.5072
+E-R-g0p1-lr0p0001-s10: step 45/203, NLL 0.4170
+E-R-g0p1-lr0p0001-s10: step 46/203, NLL 0.4082
+E-R-g0p1-lr0p0001-s10: step 47/203, NLL 0.4456
+E-R-g0p1-lr0p0001-s10: step 48/203, NLL 0.4313
+E-R-g0p1-lr0p0001-s10: step 49/203, NLL 0.5205
+E-R-g0p1-lr0p0001-s10: step 50/203, NLL 0.4697
+E-R-g0p1-lr0p0001-s10: step 51/203, NLL 0.4118
+E-R-g0p1-lr0p0001-s10: step 52/203, NLL 0.4937
+E-R-g0p1-lr0p0001-s10: step 53/203, NLL 0.3976
+E-R-g0p1-lr0p0001-s10: step 54/203, NLL 0.4016
+E-R-g0p1-lr0p0001-s10: step 55/203, NLL 0.4997
+E-R-g0p1-lr0p0001-s10: step 56/203, NLL 0.4856
+E-R-g0p1-lr0p0001-s10: step 57/203, NLL 0.4809
+E-R-g0p1-lr0p0001-s10: step 58/203, NLL 0.4578
+E-R-g0p1-lr0p0001-s10: step 59/203, NLL 0.4167
+E-R-g0p1-lr0p0001-s10: step 60/203, NLL 0.4459
+E-R-g0p1-lr0p0001-s10: step 61/203, NLL 0.4229
+E-R-g0p1-lr0p0001-s10: step 62/203, NLL 0.4149
+E-R-g0p1-lr0p0001-s10: step 63/203, NLL 0.5412
+E-R-g0p1-lr0p0001-s10: step 64/203, NLL 0.4020
+E-R-g0p1-lr0p0001-s10: step 65/203, NLL 0.4523
+E-R-g0p1-lr0p0001-s10: step 66/203, NLL 0.4302
+E-R-g0p1-lr0p0001-s10: step 67/203, NLL 0.3784
+E-R-g0p1-lr0p0001-s10: step 68/203, NLL 0.4808
+E-R-g0p1-lr0p0001-s10: step 69/203, NLL 0.5002
+E-R-g0p1-lr0p0001-s10: step 70/203, NLL 0.4595
+E-R-g0p1-lr0p0001-s10: step 71/203, NLL 0.4013
+E-R-g0p1-lr0p0001-s10: step 72/203, NLL 0.4746
+E-R-g0p1-lr0p0001-s10: step 73/203, NLL 0.4119
+E-R-g0p1-lr0p0001-s10: step 74/203, NLL 0.4042
+E-R-g0p1-lr0p0001-s10: step 75/203, NLL 0.4696
+E-R-g0p1-lr0p0001-s10: step 76/203, NLL 0.4780
+E-R-g0p1-lr0p0001-s10: step 77/203, NLL 0.5321
+E-R-g0p1-lr0p0001-s10: step 78/203, NLL 0.4930
+E-R-g0p1-lr0p0001-s10: step 79/203, NLL 0.3896
+E-R-g0p1-lr0p0001-s10: step 80/203, NLL 0.3909
+E-R-g0p1-lr0p0001-s10: step 81/203, NLL 0.4958
+E-R-g0p1-lr0p0001-s10: step 82/203, NLL 0.4326
+E-R-g0p1-lr0p0001-s10: step 83/203, NLL 0.4917
+E-R-g0p1-lr0p0001-s10: step 84/203, NLL 0.5011
+E-R-g0p1-lr0p0001-s10: step 85/203, NLL 0.4480
+E-R-g0p1-lr0p0001-s10: step 86/203, NLL 0.3971
+E-R-g0p1-lr0p0001-s10: step 87/203, NLL 0.4916
+E-R-g0p1-lr0p0001-s10: step 88/203, NLL 0.4915
+E-R-g0p1-lr0p0001-s10: step 89/203, NLL 0.4213
+E-R-g0p1-lr0p0001-s10: step 90/203, NLL 0.4387
+E-R-g0p1-lr0p0001-s10: step 91/203, NLL 0.3798
+E-R-g0p1-lr0p0001-s10: step 92/203, NLL 0.4297
+E-R-g0p1-lr0p0001-s10: step 93/203, NLL 0.3762
+E-R-g0p1-lr0p0001-s10: step 94/203, NLL 0.4873
+E-R-g0p1-lr0p0001-s10: step 95/203, NLL 0.4070
+E-R-g0p1-lr0p0001-s10: step 96/203, NLL 0.3931
+E-R-g0p1-lr0p0001-s10: step 97/203, NLL 0.4570
+E-R-g0p1-lr0p0001-s10: step 98/203, NLL 0.4784
+E-R-g0p1-lr0p0001-s10: step 99/203, NLL 0.4134
+E-R-g0p1-lr0p0001-s10: step 100/203, NLL 0.4499
+E-R-g0p1-lr0p0001-s10: step 101/203, NLL 0.3915
+E-R-g0p1-lr0p0001-s10: step 102/203, NLL 0.3836
+E-R-g0p1-lr0p0001-s10: step 103/203, NLL 0.3800
+E-R-g0p1-lr0p0001-s10: step 104/203, NLL 0.4646
+E-R-g0p1-lr0p0001-s10: step 105/203, NLL 0.4449
+E-R-g0p1-lr0p0001-s10: step 106/203, NLL 0.3993
+E-R-g0p1-lr0p0001-s10: step 107/203, NLL 0.4654
+E-R-g0p1-lr0p0001-s10: step 108/203, NLL 0.4851
+E-R-g0p1-lr0p0001-s10: step 109/203, NLL 0.4490
+E-R-g0p1-lr0p0001-s10: step 110/203, NLL 0.4619
+E-R-g0p1-lr0p0001-s10: step 111/203, NLL 0.4838
+E-R-g0p1-lr0p0001-s10: step 112/203, NLL 0.4233
+E-R-g0p1-lr0p0001-s10: step 113/203, NLL 0.4171
+E-R-g0p1-lr0p0001-s10: step 114/203, NLL 0.4482
+E-R-g0p1-lr0p0001-s10: step 115/203, NLL 0.4499
+E-R-g0p1-lr0p0001-s10: step 116/203, NLL 0.4415
+E-R-g0p1-lr0p0001-s10: step 117/203, NLL 0.3621
+E-R-g0p1-lr0p0001-s10: step 118/203, NLL 0.4286
+E-R-g0p1-lr0p0001-s10: step 119/203, NLL 0.4538
+E-R-g0p1-lr0p0001-s10: step 120/203, NLL 0.4602
+E-R-g0p1-lr0p0001-s10: step 121/203, NLL 0.3974
+E-R-g0p1-lr0p0001-s10: step 122/203, NLL 0.4756
+E-R-g0p1-lr0p0001-s10: step 123/203, NLL 0.4359
+E-R-g0p1-lr0p0001-s10: step 124/203, NLL 0.4421
+E-R-g0p1-lr0p0001-s10: step 125/203, NLL 0.4005
+E-R-g0p1-lr0p0001-s10: step 126/203, NLL 0.4718
+E-R-g0p1-lr0p0001-s10: step 127/203, NLL 0.4220
+E-R-g0p1-lr0p0001-s10: step 128/203, NLL 0.4533
+E-R-g0p1-lr0p0001-s10: step 129/203, NLL 0.4703
+E-R-g0p1-lr0p0001-s10: step 130/203, NLL 0.4598
+E-R-g0p1-lr0p0001-s10: step 131/203, NLL 0.4190
+E-R-g0p1-lr0p0001-s10: step 132/203, NLL 0.4641
+E-R-g0p1-lr0p0001-s10: step 133/203, NLL 0.4118
+E-R-g0p1-lr0p0001-s10: step 134/203, NLL 0.4295
+E-R-g0p1-lr0p0001-s10: step 135/203, NLL 0.5003
+E-R-g0p1-lr0p0001-s10: step 136/203, NLL 0.5222
+E-R-g0p1-lr0p0001-s10: step 137/203, NLL 0.5457
+E-R-g0p1-lr0p0001-s10: step 138/203, NLL 0.4736
+E-R-g0p1-lr0p0001-s10: step 139/203, NLL 0.4891
+E-R-g0p1-lr0p0001-s10: step 140/203, NLL 0.4914
+E-R-g0p1-lr0p0001-s10: step 141/203, NLL 0.4170
+E-R-g0p1-lr0p0001-s10: step 142/203, NLL 0.4774
+E-R-g0p1-lr0p0001-s10: step 143/203, NLL 0.5023
+E-R-g0p1-lr0p0001-s10: step 144/203, NLL 0.4487
+E-R-g0p1-lr0p0001-s10: step 145/203, NLL 0.4179
+E-R-g0p1-lr0p0001-s10: step 146/203, NLL 0.4039
+E-R-g0p1-lr0p0001-s10: step 147/203, NLL 0.4236
+E-R-g0p1-lr0p0001-s10: step 148/203, NLL 0.4647
+E-R-g0p1-lr0p0001-s10: step 149/203, NLL 0.3666
+E-R-g0p1-lr0p0001-s10: step 150/203, NLL 0.4228
+E-R-g0p1-lr0p0001-s10: step 151/203, NLL 0.4268
+E-R-g0p1-lr0p0001-s10: step 152/203, NLL 0.4148
+E-R-g0p1-lr0p0001-s10: step 153/203, NLL 0.4461
+E-R-g0p1-lr0p0001-s10: step 154/203, NLL 0.4255
+E-R-g0p1-lr0p0001-s10: step 155/203, NLL 0.4455
+E-R-g0p1-lr0p0001-s10: step 156/203, NLL 0.4493
+E-R-g0p1-lr0p0001-s10: step 157/203, NLL 0.4188
+E-R-g0p1-lr0p0001-s10: step 158/203, NLL 0.4080
+E-R-g0p1-lr0p0001-s10: step 159/203, NLL 0.4163
+E-R-g0p1-lr0p0001-s10: step 160/203, NLL 0.4548
+E-R-g0p1-lr0p0001-s10: step 161/203, NLL 0.4418
+E-R-g0p1-lr0p0001-s10: step 162/203, NLL 0.4548
+E-R-g0p1-lr0p0001-s10: step 163/203, NLL 0.4710
+E-R-g0p1-lr0p0001-s10: step 164/203, NLL 0.3599
+E-R-g0p1-lr0p0001-s10: step 165/203, NLL 0.4580
+E-R-g0p1-lr0p0001-s10: step 166/203, NLL 0.3529
+E-R-g0p1-lr0p0001-s10: step 167/203, NLL 0.4201
+E-R-g0p1-lr0p0001-s10: step 168/203, NLL 0.3780
+E-R-g0p1-lr0p0001-s10: step 169/203, NLL 0.4815
+E-R-g0p1-lr0p0001-s10: step 170/203, NLL 0.4330
+E-R-g0p1-lr0p0001-s10: step 171/203, NLL 0.3506
+E-R-g0p1-lr0p0001-s10: step 172/203, NLL 0.4662
+E-R-g0p1-lr0p0001-s10: step 173/203, NLL 0.4387
+E-R-g0p1-lr0p0001-s10: step 174/203, NLL 0.3972
+E-R-g0p1-lr0p0001-s10: step 175/203, NLL 0.4241
+E-R-g0p1-lr0p0001-s10: step 176/203, NLL 0.3825
+E-R-g0p1-lr0p0001-s10: step 177/203, NLL 0.3841
+E-R-g0p1-lr0p0001-s10: step 178/203, NLL 0.3828
+E-R-g0p1-lr0p0001-s10: step 179/203, NLL 0.4674
+E-R-g0p1-lr0p0001-s10: step 180/203, NLL 0.4429
+E-R-g0p1-lr0p0001-s10: step 181/203, NLL 0.4774
+E-R-g0p1-lr0p0001-s10: step 182/203, NLL 0.4163
+E-R-g0p1-lr0p0001-s10: step 183/203, NLL 0.3827
+E-R-g0p1-lr0p0001-s10: step 184/203, NLL 0.4582
+E-R-g0p1-lr0p0001-s10: step 185/203, NLL 0.4445
+E-R-g0p1-lr0p0001-s10: step 186/203, NLL 0.3598
+E-R-g0p1-lr0p0001-s10: step 187/203, NLL 0.4372
+E-R-g0p1-lr0p0001-s10: step 188/203, NLL 0.3982
+E-R-g0p1-lr0p0001-s10: step 189/203, NLL 0.4554
+E-R-g0p1-lr0p0001-s10: step 190/203, NLL 0.4301
+E-R-g0p1-lr0p0001-s10: step 191/203, NLL 0.3824
+E-R-g0p1-lr0p0001-s10: step 192/203, NLL 0.4151
+E-R-g0p1-lr0p0001-s10: step 193/203, NLL 0.3629
+E-R-g0p1-lr0p0001-s10: step 194/203, NLL 0.4286
+E-R-g0p1-lr0p0001-s10: step 195/203, NLL 0.4955
+E-R-g0p1-lr0p0001-s10: step 196/203, NLL 0.4678
+E-R-g0p1-lr0p0001-s10: step 197/203, NLL 0.4360
+E-R-g0p1-lr0p0001-s10: step 198/203, NLL 0.4064
+E-R-g0p1-lr0p0001-s10: step 199/203, NLL 0.4289
+E-R-g0p1-lr0p0001-s10: step 200/203, NLL 0.4290
+E-R-g0p1-lr0p0001-s10: step 201/203, NLL 0.5071
+E-R-g0p1-lr0p0001-s10: step 202/203, NLL 0.4317
+E-R-g0p1-lr0p0001-s10: step 203/203, NLL 0.4548
+[evaluation] E-R-g0p1-lr0p0001-s10: training/checkpoint saved; evaluating answer NLL, then generating answers.
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 4/256 answers (1.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 8/256 answers (3.1%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 12/256 answers (4.7%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 16/256 answers (6.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 20/256 answers (7.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 24/256 answers (9.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 28/256 answers (10.9%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 32/256 answers (12.5%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 36/256 answers (14.1%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 40/256 answers (15.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 44/256 answers (17.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 48/256 answers (18.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 52/256 answers (20.3%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 56/256 answers (21.9%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 60/256 answers (23.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 64/256 answers (25.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 68/256 answers (26.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 72/256 answers (28.1%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 76/256 answers (29.7%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 80/256 answers (31.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 84/256 answers (32.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 88/256 answers (34.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 92/256 answers (35.9%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 96/256 answers (37.5%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 100/256 answers (39.1%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 104/256 answers (40.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 108/256 answers (42.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 112/256 answers (43.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 116/256 answers (45.3%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 120/256 answers (46.9%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 124/256 answers (48.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 128/256 answers (50.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 132/256 answers (51.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 136/256 answers (53.1%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 140/256 answers (54.7%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 144/256 answers (56.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 148/256 answers (57.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 152/256 answers (59.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 156/256 answers (60.9%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 160/256 answers (62.5%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 164/256 answers (64.1%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 168/256 answers (65.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 172/256 answers (67.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 176/256 answers (68.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 180/256 answers (70.3%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 184/256 answers (71.9%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 188/256 answers (73.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 192/256 answers (75.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 196/256 answers (76.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 200/256 answers (78.1%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 204/256 answers (79.7%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 208/256 answers (81.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 212/256 answers (82.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 216/256 answers (84.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 220/256 answers (85.9%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 224/256 answers (87.5%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 228/256 answers (89.1%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 232/256 answers (90.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 236/256 answers (92.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 240/256 answers (93.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 244/256 answers (95.3%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 248/256 answers (96.9%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 252/256 answers (98.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 256/256 answers (100.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: evaluation saved; exporting evidence...
+Experiment evidence: /storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/reports/mchoi345/study-main/search/E-R-g0p1-lr0p0001-s10
+[evaluation] E-R-g0p1-lr0p0001-s10: evaluation will generate 500 answers after training.
+`torch_dtype` is deprecated! Use `dtype` instead!
+E-R-g0p1-lr0p0001-s10: step 204/609, NLL 0.4732
+E-R-g0p1-lr0p0001-s10: step 205/609, NLL 0.4298
+E-R-g0p1-lr0p0001-s10: step 206/609, NLL 0.5005
+E-R-g0p1-lr0p0001-s10: step 207/609, NLL 0.4727
+E-R-g0p1-lr0p0001-s10: step 208/609, NLL 0.3118
+E-R-g0p1-lr0p0001-s10: step 209/609, NLL 0.4541
+E-R-g0p1-lr0p0001-s10: step 210/609, NLL 0.4119
+E-R-g0p1-lr0p0001-s10: step 211/609, NLL 0.5225
+E-R-g0p1-lr0p0001-s10: step 212/609, NLL 0.3946
+E-R-g0p1-lr0p0001-s10: step 213/609, NLL 0.3995
+E-R-g0p1-lr0p0001-s10: step 214/609, NLL 0.3430
+E-R-g0p1-lr0p0001-s10: step 215/609, NLL 0.4845
+E-R-g0p1-lr0p0001-s10: step 216/609, NLL 0.3737
+E-R-g0p1-lr0p0001-s10: step 217/609, NLL 0.4589
+E-R-g0p1-lr0p0001-s10: step 218/609, NLL 0.3829
+E-R-g0p1-lr0p0001-s10: step 219/609, NLL 0.4673
+E-R-g0p1-lr0p0001-s10: step 220/609, NLL 0.3889
+E-R-g0p1-lr0p0001-s10: step 221/609, NLL 0.4103
+E-R-g0p1-lr0p0001-s10: step 222/609, NLL 0.4157
+E-R-g0p1-lr0p0001-s10: step 223/609, NLL 0.3898
+E-R-g0p1-lr0p0001-s10: step 224/609, NLL 0.3378
+E-R-g0p1-lr0p0001-s10: step 225/609, NLL 0.4130
+E-R-g0p1-lr0p0001-s10: step 226/609, NLL 0.4522
+E-R-g0p1-lr0p0001-s10: step 227/609, NLL 0.4245
+E-R-g0p1-lr0p0001-s10: step 228/609, NLL 0.3733
+E-R-g0p1-lr0p0001-s10: step 229/609, NLL 0.4185
+E-R-g0p1-lr0p0001-s10: step 230/609, NLL 0.4190
+E-R-g0p1-lr0p0001-s10: step 231/609, NLL 0.4649
+E-R-g0p1-lr0p0001-s10: step 232/609, NLL 0.3960
+E-R-g0p1-lr0p0001-s10: step 233/609, NLL 0.3711
+E-R-g0p1-lr0p0001-s10: step 234/609, NLL 0.4914
+E-R-g0p1-lr0p0001-s10: step 235/609, NLL 0.4068
+E-R-g0p1-lr0p0001-s10: step 236/609, NLL 0.4821
+E-R-g0p1-lr0p0001-s10: step 237/609, NLL 0.4298
+E-R-g0p1-lr0p0001-s10: step 238/609, NLL 0.3774
+E-R-g0p1-lr0p0001-s10: step 239/609, NLL 0.4399
+E-R-g0p1-lr0p0001-s10: step 240/609, NLL 0.4303
+E-R-g0p1-lr0p0001-s10: step 241/609, NLL 0.4592
+E-R-g0p1-lr0p0001-s10: step 242/609, NLL 0.4183
+E-R-g0p1-lr0p0001-s10: step 243/609, NLL 0.4788
+E-R-g0p1-lr0p0001-s10: step 244/609, NLL 0.4739
+E-R-g0p1-lr0p0001-s10: step 245/609, NLL 0.3590
+E-R-g0p1-lr0p0001-s10: step 246/609, NLL 0.4080
+E-R-g0p1-lr0p0001-s10: step 247/609, NLL 0.4572
+E-R-g0p1-lr0p0001-s10: step 248/609, NLL 0.4171
+E-R-g0p1-lr0p0001-s10: step 249/609, NLL 0.4037
+E-R-g0p1-lr0p0001-s10: step 250/609, NLL 0.4537
+E-R-g0p1-lr0p0001-s10: step 251/609, NLL 0.3883
+E-R-g0p1-lr0p0001-s10: step 252/609, NLL 0.4413
+E-R-g0p1-lr0p0001-s10: step 253/609, NLL 0.4101
+E-R-g0p1-lr0p0001-s10: step 254/609, NLL 0.4051
+E-R-g0p1-lr0p0001-s10: step 255/609, NLL 0.4239
+E-R-g0p1-lr0p0001-s10: step 256/609, NLL 0.4114
+E-R-g0p1-lr0p0001-s10: step 257/609, NLL 0.4359
+E-R-g0p1-lr0p0001-s10: step 258/609, NLL 0.4164
+E-R-g0p1-lr0p0001-s10: step 259/609, NLL 0.4280
+E-R-g0p1-lr0p0001-s10: step 260/609, NLL 0.4063
+E-R-g0p1-lr0p0001-s10: step 261/609, NLL 0.3920
+E-R-g0p1-lr0p0001-s10: step 262/609, NLL 0.4076
+E-R-g0p1-lr0p0001-s10: step 263/609, NLL 0.4674
+E-R-g0p1-lr0p0001-s10: step 264/609, NLL 0.4098
+E-R-g0p1-lr0p0001-s10: step 265/609, NLL 0.5050
+E-R-g0p1-lr0p0001-s10: step 266/609, NLL 0.4637
+E-R-g0p1-lr0p0001-s10: step 267/609, NLL 0.4363
+E-R-g0p1-lr0p0001-s10: step 268/609, NLL 0.4036
+E-R-g0p1-lr0p0001-s10: step 269/609, NLL 0.4867
+E-R-g0p1-lr0p0001-s10: step 270/609, NLL 0.3814
+E-R-g0p1-lr0p0001-s10: step 271/609, NLL 0.4299
+E-R-g0p1-lr0p0001-s10: step 272/609, NLL 0.3712
+E-R-g0p1-lr0p0001-s10: step 273/609, NLL 0.4234
+E-R-g0p1-lr0p0001-s10: step 274/609, NLL 0.3654
+E-R-g0p1-lr0p0001-s10: step 275/609, NLL 0.5341
+E-R-g0p1-lr0p0001-s10: step 276/609, NLL 0.4463
+E-R-g0p1-lr0p0001-s10: step 277/609, NLL 0.4189
+E-R-g0p1-lr0p0001-s10: step 278/609, NLL 0.4481
+E-R-g0p1-lr0p0001-s10: step 279/609, NLL 0.4223
+E-R-g0p1-lr0p0001-s10: step 280/609, NLL 0.4245
+E-R-g0p1-lr0p0001-s10: step 281/609, NLL 0.4341
+E-R-g0p1-lr0p0001-s10: step 282/609, NLL 0.4122
+E-R-g0p1-lr0p0001-s10: step 283/609, NLL 0.4467
+E-R-g0p1-lr0p0001-s10: step 284/609, NLL 0.4361
+E-R-g0p1-lr0p0001-s10: step 285/609, NLL 0.4528
+E-R-g0p1-lr0p0001-s10: step 286/609, NLL 0.4479
+E-R-g0p1-lr0p0001-s10: step 287/609, NLL 0.3936
+E-R-g0p1-lr0p0001-s10: step 288/609, NLL 0.3937
+E-R-g0p1-lr0p0001-s10: step 289/609, NLL 0.4040
+E-R-g0p1-lr0p0001-s10: step 290/609, NLL 0.5069
+E-R-g0p1-lr0p0001-s10: step 291/609, NLL 0.4011
+E-R-g0p1-lr0p0001-s10: step 292/609, NLL 0.4837
+E-R-g0p1-lr0p0001-s10: step 293/609, NLL 0.3913
+E-R-g0p1-lr0p0001-s10: step 294/609, NLL 0.4351
+E-R-g0p1-lr0p0001-s10: step 295/609, NLL 0.4490
+E-R-g0p1-lr0p0001-s10: step 296/609, NLL 0.3868
+E-R-g0p1-lr0p0001-s10: step 297/609, NLL 0.4253
+E-R-g0p1-lr0p0001-s10: step 298/609, NLL 0.4224
+E-R-g0p1-lr0p0001-s10: step 299/609, NLL 0.4410
+E-R-g0p1-lr0p0001-s10: step 300/609, NLL 0.4366
+E-R-g0p1-lr0p0001-s10: step 301/609, NLL 0.5751
+E-R-g0p1-lr0p0001-s10: step 302/609, NLL 0.4040
+E-R-g0p1-lr0p0001-s10: step 303/609, NLL 0.3900
+E-R-g0p1-lr0p0001-s10: step 304/609, NLL 0.5298
+E-R-g0p1-lr0p0001-s10: step 305/609, NLL 0.3704
+E-R-g0p1-lr0p0001-s10: step 306/609, NLL 0.4838
+E-R-g0p1-lr0p0001-s10: step 307/609, NLL 0.4831
+E-R-g0p1-lr0p0001-s10: step 308/609, NLL 0.4426
+E-R-g0p1-lr0p0001-s10: step 309/609, NLL 0.3868
+E-R-g0p1-lr0p0001-s10: step 310/609, NLL 0.4517
+E-R-g0p1-lr0p0001-s10: step 311/609, NLL 0.3952
+E-R-g0p1-lr0p0001-s10: step 312/609, NLL 0.3649
+E-R-g0p1-lr0p0001-s10: step 313/609, NLL 0.4845
+E-R-g0p1-lr0p0001-s10: step 314/609, NLL 0.4031
+E-R-g0p1-lr0p0001-s10: step 315/609, NLL 0.4427
+E-R-g0p1-lr0p0001-s10: step 316/609, NLL 0.4995
+E-R-g0p1-lr0p0001-s10: step 317/609, NLL 0.5090
+E-R-g0p1-lr0p0001-s10: step 318/609, NLL 0.4218
+E-R-g0p1-lr0p0001-s10: step 319/609, NLL 0.4507
+E-R-g0p1-lr0p0001-s10: step 320/609, NLL 0.4365
+E-R-g0p1-lr0p0001-s10: step 321/609, NLL 0.3879
+E-R-g0p1-lr0p0001-s10: step 322/609, NLL 0.3941
+E-R-g0p1-lr0p0001-s10: step 323/609, NLL 0.4400
+E-R-g0p1-lr0p0001-s10: step 324/609, NLL 0.3625
+E-R-g0p1-lr0p0001-s10: step 325/609, NLL 0.3601
+E-R-g0p1-lr0p0001-s10: step 326/609, NLL 0.4461
+E-R-g0p1-lr0p0001-s10: step 327/609, NLL 0.3742
+E-R-g0p1-lr0p0001-s10: step 328/609, NLL 0.3902
+E-R-g0p1-lr0p0001-s10: step 329/609, NLL 0.4727
+E-R-g0p1-lr0p0001-s10: step 330/609, NLL 0.4761
+E-R-g0p1-lr0p0001-s10: step 331/609, NLL 0.4639
+E-R-g0p1-lr0p0001-s10: step 332/609, NLL 0.4696
+E-R-g0p1-lr0p0001-s10: step 333/609, NLL 0.3929
+E-R-g0p1-lr0p0001-s10: step 334/609, NLL 0.4829
+E-R-g0p1-lr0p0001-s10: step 335/609, NLL 0.4367
+E-R-g0p1-lr0p0001-s10: step 336/609, NLL 0.4743
+E-R-g0p1-lr0p0001-s10: step 337/609, NLL 0.4644
+E-R-g0p1-lr0p0001-s10: step 338/609, NLL 0.4323
+E-R-g0p1-lr0p0001-s10: step 339/609, NLL 0.4568
+E-R-g0p1-lr0p0001-s10: step 340/609, NLL 0.4105
+E-R-g0p1-lr0p0001-s10: step 341/609, NLL 0.4449
+E-R-g0p1-lr0p0001-s10: step 342/609, NLL 0.4832
+E-R-g0p1-lr0p0001-s10: step 343/609, NLL 0.3937
+E-R-g0p1-lr0p0001-s10: step 344/609, NLL 0.4307
+E-R-g0p1-lr0p0001-s10: step 345/609, NLL 0.3934
+E-R-g0p1-lr0p0001-s10: step 346/609, NLL 0.3790
+E-R-g0p1-lr0p0001-s10: step 347/609, NLL 0.4268
+E-R-g0p1-lr0p0001-s10: step 348/609, NLL 0.4617
+E-R-g0p1-lr0p0001-s10: step 349/609, NLL 0.4172
+E-R-g0p1-lr0p0001-s10: step 350/609, NLL 0.3477
+E-R-g0p1-lr0p0001-s10: step 351/609, NLL 0.4603
+E-R-g0p1-lr0p0001-s10: step 352/609, NLL 0.4685
+E-R-g0p1-lr0p0001-s10: step 353/609, NLL 0.4494
+E-R-g0p1-lr0p0001-s10: step 354/609, NLL 0.4092
+E-R-g0p1-lr0p0001-s10: step 355/609, NLL 0.4644
+E-R-g0p1-lr0p0001-s10: step 356/609, NLL 0.4498
+E-R-g0p1-lr0p0001-s10: step 357/609, NLL 0.3851
+E-R-g0p1-lr0p0001-s10: step 358/609, NLL 0.4518
+E-R-g0p1-lr0p0001-s10: step 359/609, NLL 0.4436
+E-R-g0p1-lr0p0001-s10: step 360/609, NLL 0.4225
+E-R-g0p1-lr0p0001-s10: step 361/609, NLL 0.3856
+E-R-g0p1-lr0p0001-s10: step 362/609, NLL 0.4848
+E-R-g0p1-lr0p0001-s10: step 363/609, NLL 0.4505
+E-R-g0p1-lr0p0001-s10: step 364/609, NLL 0.3648
+E-R-g0p1-lr0p0001-s10: step 365/609, NLL 0.4601
+E-R-g0p1-lr0p0001-s10: step 366/609, NLL 0.4705
+E-R-g0p1-lr0p0001-s10: step 367/609, NLL 0.4312
+E-R-g0p1-lr0p0001-s10: step 368/609, NLL 0.4150
+E-R-g0p1-lr0p0001-s10: step 369/609, NLL 0.3480
+E-R-g0p1-lr0p0001-s10: step 370/609, NLL 0.4050
+E-R-g0p1-lr0p0001-s10: step 371/609, NLL 0.4584
+E-R-g0p1-lr0p0001-s10: step 372/609, NLL 0.4370
+E-R-g0p1-lr0p0001-s10: step 373/609, NLL 0.4130
+E-R-g0p1-lr0p0001-s10: step 374/609, NLL 0.3901
+E-R-g0p1-lr0p0001-s10: step 375/609, NLL 0.4181
+E-R-g0p1-lr0p0001-s10: step 376/609, NLL 0.4334
+E-R-g0p1-lr0p0001-s10: step 377/609, NLL 0.4193
+E-R-g0p1-lr0p0001-s10: step 378/609, NLL 0.4395
+E-R-g0p1-lr0p0001-s10: step 379/609, NLL 0.4236
+E-R-g0p1-lr0p0001-s10: step 380/609, NLL 0.3945
+E-R-g0p1-lr0p0001-s10: step 381/609, NLL 0.4179
+E-R-g0p1-lr0p0001-s10: step 382/609, NLL 0.4191
+E-R-g0p1-lr0p0001-s10: step 383/609, NLL 0.4049
+E-R-g0p1-lr0p0001-s10: step 384/609, NLL 0.4342
+E-R-g0p1-lr0p0001-s10: step 385/609, NLL 0.4113
+E-R-g0p1-lr0p0001-s10: step 386/609, NLL 0.3820
+E-R-g0p1-lr0p0001-s10: step 387/609, NLL 0.4351
+E-R-g0p1-lr0p0001-s10: step 388/609, NLL 0.4742
+E-R-g0p1-lr0p0001-s10: step 389/609, NLL 0.4464
+E-R-g0p1-lr0p0001-s10: step 390/609, NLL 0.4356
+E-R-g0p1-lr0p0001-s10: step 391/609, NLL 0.5347
+E-R-g0p1-lr0p0001-s10: step 392/609, NLL 0.4618
+E-R-g0p1-lr0p0001-s10: step 393/609, NLL 0.5079
+E-R-g0p1-lr0p0001-s10: step 394/609, NLL 0.4118
+E-R-g0p1-lr0p0001-s10: step 395/609, NLL 0.4306
+E-R-g0p1-lr0p0001-s10: step 396/609, NLL 0.5036
+E-R-g0p1-lr0p0001-s10: step 397/609, NLL 0.4359
+E-R-g0p1-lr0p0001-s10: step 398/609, NLL 0.3682
+E-R-g0p1-lr0p0001-s10: step 399/609, NLL 0.4328
+E-R-g0p1-lr0p0001-s10: step 400/609, NLL 0.3719
+E-R-g0p1-lr0p0001-s10: step 401/609, NLL 0.4327
+E-R-g0p1-lr0p0001-s10: step 402/609, NLL 0.3873
+E-R-g0p1-lr0p0001-s10: step 403/609, NLL 0.4183
+E-R-g0p1-lr0p0001-s10: step 404/609, NLL 0.4034
+E-R-g0p1-lr0p0001-s10: step 405/609, NLL 0.4209
+E-R-g0p1-lr0p0001-s10: step 406/609, NLL 0.5564
+E-R-g0p1-lr0p0001-s10: step 407/609, NLL 0.4651
+E-R-g0p1-lr0p0001-s10: step 408/609, NLL 0.4336
+E-R-g0p1-lr0p0001-s10: step 409/609, NLL 0.4023
+E-R-g0p1-lr0p0001-s10: step 410/609, NLL 0.4531
+E-R-g0p1-lr0p0001-s10: step 411/609, NLL 0.4107
+E-R-g0p1-lr0p0001-s10: step 412/609, NLL 0.4362
+E-R-g0p1-lr0p0001-s10: step 413/609, NLL 0.3723
+E-R-g0p1-lr0p0001-s10: step 414/609, NLL 0.4670
+E-R-g0p1-lr0p0001-s10: step 415/609, NLL 0.4374
+E-R-g0p1-lr0p0001-s10: step 416/609, NLL 0.4269
+E-R-g0p1-lr0p0001-s10: step 417/609, NLL 0.4180
+E-R-g0p1-lr0p0001-s10: step 418/609, NLL 0.4012
+E-R-g0p1-lr0p0001-s10: step 419/609, NLL 0.4409
+E-R-g0p1-lr0p0001-s10: step 420/609, NLL 0.3680
+E-R-g0p1-lr0p0001-s10: step 421/609, NLL 0.4079
+E-R-g0p1-lr0p0001-s10: step 422/609, NLL 0.4052
+E-R-g0p1-lr0p0001-s10: step 423/609, NLL 0.4631
+E-R-g0p1-lr0p0001-s10: step 424/609, NLL 0.3980
+E-R-g0p1-lr0p0001-s10: step 425/609, NLL 0.4587
+E-R-g0p1-lr0p0001-s10: step 426/609, NLL 0.4108
+E-R-g0p1-lr0p0001-s10: step 427/609, NLL 0.4579
+E-R-g0p1-lr0p0001-s10: step 428/609, NLL 0.4341
+E-R-g0p1-lr0p0001-s10: step 429/609, NLL 0.4782
+E-R-g0p1-lr0p0001-s10: step 430/609, NLL 0.4350
+E-R-g0p1-lr0p0001-s10: step 431/609, NLL 0.3616
+E-R-g0p1-lr0p0001-s10: step 432/609, NLL 0.3804
+E-R-g0p1-lr0p0001-s10: step 433/609, NLL 0.3916
+E-R-g0p1-lr0p0001-s10: step 434/609, NLL 0.3926
+E-R-g0p1-lr0p0001-s10: step 435/609, NLL 0.3823
+E-R-g0p1-lr0p0001-s10: step 436/609, NLL 0.4439
+E-R-g0p1-lr0p0001-s10: step 437/609, NLL 0.4651
+E-R-g0p1-lr0p0001-s10: step 438/609, NLL 0.4211
+E-R-g0p1-lr0p0001-s10: step 439/609, NLL 0.4456
+E-R-g0p1-lr0p0001-s10: step 440/609, NLL 0.3600
+E-R-g0p1-lr0p0001-s10: step 441/609, NLL 0.4513
+E-R-g0p1-lr0p0001-s10: step 442/609, NLL 0.4800
+E-R-g0p1-lr0p0001-s10: step 443/609, NLL 0.4953
+E-R-g0p1-lr0p0001-s10: step 444/609, NLL 0.3672
+E-R-g0p1-lr0p0001-s10: step 445/609, NLL 0.4553
+E-R-g0p1-lr0p0001-s10: step 446/609, NLL 0.3314
+E-R-g0p1-lr0p0001-s10: step 447/609, NLL 0.4624
+E-R-g0p1-lr0p0001-s10: step 448/609, NLL 0.3681
+E-R-g0p1-lr0p0001-s10: step 449/609, NLL 0.4416
+E-R-g0p1-lr0p0001-s10: step 450/609, NLL 0.4244
+E-R-g0p1-lr0p0001-s10: step 451/609, NLL 0.4410
+E-R-g0p1-lr0p0001-s10: step 452/609, NLL 0.3934
+E-R-g0p1-lr0p0001-s10: step 453/609, NLL 0.4024
+E-R-g0p1-lr0p0001-s10: step 454/609, NLL 0.4371
+E-R-g0p1-lr0p0001-s10: step 455/609, NLL 0.4115
+E-R-g0p1-lr0p0001-s10: step 456/609, NLL 0.4187
+E-R-g0p1-lr0p0001-s10: step 457/609, NLL 0.3523
+E-R-g0p1-lr0p0001-s10: step 458/609, NLL 0.4618
+E-R-g0p1-lr0p0001-s10: step 459/609, NLL 0.4759
+E-R-g0p1-lr0p0001-s10: step 460/609, NLL 0.3984
+E-R-g0p1-lr0p0001-s10: step 461/609, NLL 0.4129
+E-R-g0p1-lr0p0001-s10: step 462/609, NLL 0.4195
+E-R-g0p1-lr0p0001-s10: step 463/609, NLL 0.3933
+E-R-g0p1-lr0p0001-s10: step 464/609, NLL 0.4120
+E-R-g0p1-lr0p0001-s10: step 465/609, NLL 0.3775
+E-R-g0p1-lr0p0001-s10: step 466/609, NLL 0.4104
+E-R-g0p1-lr0p0001-s10: step 467/609, NLL 0.3959
+E-R-g0p1-lr0p0001-s10: step 468/609, NLL 0.4531
+E-R-g0p1-lr0p0001-s10: step 469/609, NLL 0.4047
+E-R-g0p1-lr0p0001-s10: step 470/609, NLL 0.3956
+E-R-g0p1-lr0p0001-s10: step 471/609, NLL 0.4204
+E-R-g0p1-lr0p0001-s10: step 472/609, NLL 0.3475
+E-R-g0p1-lr0p0001-s10: step 473/609, NLL 0.4755
+E-R-g0p1-lr0p0001-s10: step 474/609, NLL 0.4007
+E-R-g0p1-lr0p0001-s10: step 475/609, NLL 0.4110
+E-R-g0p1-lr0p0001-s10: step 476/609, NLL 0.5047
+E-R-g0p1-lr0p0001-s10: step 477/609, NLL 0.4381
+E-R-g0p1-lr0p0001-s10: step 478/609, NLL 0.4359
+E-R-g0p1-lr0p0001-s10: step 479/609, NLL 0.3809
+E-R-g0p1-lr0p0001-s10: step 480/609, NLL 0.3963
+E-R-g0p1-lr0p0001-s10: step 481/609, NLL 0.4275
+E-R-g0p1-lr0p0001-s10: step 482/609, NLL 0.4748
+E-R-g0p1-lr0p0001-s10: step 483/609, NLL 0.4434
+E-R-g0p1-lr0p0001-s10: step 484/609, NLL 0.4403
+E-R-g0p1-lr0p0001-s10: step 485/609, NLL 0.4420
+E-R-g0p1-lr0p0001-s10: step 486/609, NLL 0.4651
+E-R-g0p1-lr0p0001-s10: step 487/609, NLL 0.3970
+E-R-g0p1-lr0p0001-s10: step 488/609, NLL 0.3906
+E-R-g0p1-lr0p0001-s10: step 489/609, NLL 0.4136
+E-R-g0p1-lr0p0001-s10: step 490/609, NLL 0.4258
+E-R-g0p1-lr0p0001-s10: step 491/609, NLL 0.4038
+E-R-g0p1-lr0p0001-s10: step 492/609, NLL 0.3857
+E-R-g0p1-lr0p0001-s10: step 493/609, NLL 0.4448
+E-R-g0p1-lr0p0001-s10: step 494/609, NLL 0.4154
+E-R-g0p1-lr0p0001-s10: step 495/609, NLL 0.3982
+E-R-g0p1-lr0p0001-s10: step 496/609, NLL 0.4033
+E-R-g0p1-lr0p0001-s10: step 497/609, NLL 0.3805
+E-R-g0p1-lr0p0001-s10: step 498/609, NLL 0.4166
+E-R-g0p1-lr0p0001-s10: step 499/609, NLL 0.4622
+E-R-g0p1-lr0p0001-s10: step 500/609, NLL 0.4563
+E-R-g0p1-lr0p0001-s10: step 501/609, NLL 0.4050
+E-R-g0p1-lr0p0001-s10: step 502/609, NLL 0.4761
+E-R-g0p1-lr0p0001-s10: step 503/609, NLL 0.4852
+E-R-g0p1-lr0p0001-s10: step 504/609, NLL 0.3994
+E-R-g0p1-lr0p0001-s10: step 505/609, NLL 0.4517
+E-R-g0p1-lr0p0001-s10: step 506/609, NLL 0.4871
+E-R-g0p1-lr0p0001-s10: step 507/609, NLL 0.4702
+E-R-g0p1-lr0p0001-s10: step 508/609, NLL 0.4570
+E-R-g0p1-lr0p0001-s10: step 509/609, NLL 0.4341
+E-R-g0p1-lr0p0001-s10: step 510/609, NLL 0.4467
+E-R-g0p1-lr0p0001-s10: step 511/609, NLL 0.4027
+E-R-g0p1-lr0p0001-s10: step 512/609, NLL 0.4557
+E-R-g0p1-lr0p0001-s10: step 513/609, NLL 0.4631
+E-R-g0p1-lr0p0001-s10: step 514/609, NLL 0.3943
+E-R-g0p1-lr0p0001-s10: step 515/609, NLL 0.4176
+E-R-g0p1-lr0p0001-s10: step 516/609, NLL 0.4310
+E-R-g0p1-lr0p0001-s10: step 517/609, NLL 0.4116
+E-R-g0p1-lr0p0001-s10: step 518/609, NLL 0.3948
+E-R-g0p1-lr0p0001-s10: step 519/609, NLL 0.4148
+E-R-g0p1-lr0p0001-s10: step 520/609, NLL 0.3798
+E-R-g0p1-lr0p0001-s10: step 521/609, NLL 0.4604
+E-R-g0p1-lr0p0001-s10: step 522/609, NLL 0.4358
+E-R-g0p1-lr0p0001-s10: step 523/609, NLL 0.4631
+E-R-g0p1-lr0p0001-s10: step 524/609, NLL 0.3783
+E-R-g0p1-lr0p0001-s10: step 525/609, NLL 0.3839
+E-R-g0p1-lr0p0001-s10: step 526/609, NLL 0.3702
+E-R-g0p1-lr0p0001-s10: step 527/609, NLL 0.3963
+E-R-g0p1-lr0p0001-s10: step 528/609, NLL 0.4554
+E-R-g0p1-lr0p0001-s10: step 529/609, NLL 0.4380
+E-R-g0p1-lr0p0001-s10: step 530/609, NLL 0.3983
+E-R-g0p1-lr0p0001-s10: step 531/609, NLL 0.3986
+E-R-g0p1-lr0p0001-s10: step 532/609, NLL 0.4397
+E-R-g0p1-lr0p0001-s10: step 533/609, NLL 0.4344
+E-R-g0p1-lr0p0001-s10: step 534/609, NLL 0.4489
+E-R-g0p1-lr0p0001-s10: step 535/609, NLL 0.4458
+E-R-g0p1-lr0p0001-s10: step 536/609, NLL 0.3600
+E-R-g0p1-lr0p0001-s10: step 537/609, NLL 0.5058
+E-R-g0p1-lr0p0001-s10: step 538/609, NLL 0.4689
+E-R-g0p1-lr0p0001-s10: step 539/609, NLL 0.4798
+E-R-g0p1-lr0p0001-s10: step 540/609, NLL 0.4144
+E-R-g0p1-lr0p0001-s10: step 541/609, NLL 0.4067
+E-R-g0p1-lr0p0001-s10: step 542/609, NLL 0.3787
+E-R-g0p1-lr0p0001-s10: step 543/609, NLL 0.4085
+E-R-g0p1-lr0p0001-s10: step 544/609, NLL 0.4056
+E-R-g0p1-lr0p0001-s10: step 545/609, NLL 0.4032
+E-R-g0p1-lr0p0001-s10: step 546/609, NLL 0.4228
+E-R-g0p1-lr0p0001-s10: step 547/609, NLL 0.4457
+E-R-g0p1-lr0p0001-s10: step 548/609, NLL 0.3385
+E-R-g0p1-lr0p0001-s10: step 549/609, NLL 0.4494
+E-R-g0p1-lr0p0001-s10: step 550/609, NLL 0.4038
+E-R-g0p1-lr0p0001-s10: step 551/609, NLL 0.4712
+E-R-g0p1-lr0p0001-s10: step 552/609, NLL 0.4157
+E-R-g0p1-lr0p0001-s10: step 553/609, NLL 0.4314
+E-R-g0p1-lr0p0001-s10: step 554/609, NLL 0.4884
+E-R-g0p1-lr0p0001-s10: step 555/609, NLL 0.4578
+E-R-g0p1-lr0p0001-s10: step 556/609, NLL 0.4490
+E-R-g0p1-lr0p0001-s10: step 557/609, NLL 0.4181
+E-R-g0p1-lr0p0001-s10: step 558/609, NLL 0.3734
+E-R-g0p1-lr0p0001-s10: step 559/609, NLL 0.3652
+E-R-g0p1-lr0p0001-s10: step 560/609, NLL 0.4552
+E-R-g0p1-lr0p0001-s10: step 561/609, NLL 0.3565
+E-R-g0p1-lr0p0001-s10: step 562/609, NLL 0.4858
+E-R-g0p1-lr0p0001-s10: step 563/609, NLL 0.4368
+E-R-g0p1-lr0p0001-s10: step 564/609, NLL 0.3847
+E-R-g0p1-lr0p0001-s10: step 565/609, NLL 0.4761
+E-R-g0p1-lr0p0001-s10: step 566/609, NLL 0.4460
+E-R-g0p1-lr0p0001-s10: step 567/609, NLL 0.4249
+E-R-g0p1-lr0p0001-s10: step 568/609, NLL 0.3743
+E-R-g0p1-lr0p0001-s10: step 569/609, NLL 0.4440
+E-R-g0p1-lr0p0001-s10: step 570/609, NLL 0.4533
+E-R-g0p1-lr0p0001-s10: step 571/609, NLL 0.4149
+E-R-g0p1-lr0p0001-s10: step 572/609, NLL 0.4048
+E-R-g0p1-lr0p0001-s10: step 573/609, NLL 0.3743
+E-R-g0p1-lr0p0001-s10: step 574/609, NLL 0.4451
+E-R-g0p1-lr0p0001-s10: step 575/609, NLL 0.4946
+E-R-g0p1-lr0p0001-s10: step 576/609, NLL 0.3989
+E-R-g0p1-lr0p0001-s10: step 577/609, NLL 0.4414
+E-R-g0p1-lr0p0001-s10: step 578/609, NLL 0.4362
+E-R-g0p1-lr0p0001-s10: step 579/609, NLL 0.3686
+E-R-g0p1-lr0p0001-s10: step 580/609, NLL 0.4727
+E-R-g0p1-lr0p0001-s10: step 581/609, NLL 0.3761
+E-R-g0p1-lr0p0001-s10: step 582/609, NLL 0.4809
+E-R-g0p1-lr0p0001-s10: step 583/609, NLL 0.3853
+E-R-g0p1-lr0p0001-s10: step 584/609, NLL 0.4921
+E-R-g0p1-lr0p0001-s10: step 585/609, NLL 0.4329
+E-R-g0p1-lr0p0001-s10: step 586/609, NLL 0.4252
+E-R-g0p1-lr0p0001-s10: step 587/609, NLL 0.4895
+E-R-g0p1-lr0p0001-s10: step 588/609, NLL 0.4613
+E-R-g0p1-lr0p0001-s10: step 589/609, NLL 0.4180
+E-R-g0p1-lr0p0001-s10: step 590/609, NLL 0.4149
+E-R-g0p1-lr0p0001-s10: step 591/609, NLL 0.4525
+E-R-g0p1-lr0p0001-s10: step 592/609, NLL 0.4323
+E-R-g0p1-lr0p0001-s10: step 593/609, NLL 0.5062
+E-R-g0p1-lr0p0001-s10: step 594/609, NLL 0.4488
+E-R-g0p1-lr0p0001-s10: step 595/609, NLL 0.4353
+E-R-g0p1-lr0p0001-s10: step 596/609, NLL 0.3602
+E-R-g0p1-lr0p0001-s10: step 597/609, NLL 0.3797
+E-R-g0p1-lr0p0001-s10: step 598/609, NLL 0.3918
+E-R-g0p1-lr0p0001-s10: step 599/609, NLL 0.4132
+E-R-g0p1-lr0p0001-s10: step 600/609, NLL 0.4099
+E-R-g0p1-lr0p0001-s10: step 601/609, NLL 0.4289
+E-R-g0p1-lr0p0001-s10: step 602/609, NLL 0.3675
+E-R-g0p1-lr0p0001-s10: step 603/609, NLL 0.4437
+E-R-g0p1-lr0p0001-s10: step 604/609, NLL 0.4268
+E-R-g0p1-lr0p0001-s10: step 605/609, NLL 0.3320
+E-R-g0p1-lr0p0001-s10: step 606/609, NLL 0.4283
+E-R-g0p1-lr0p0001-s10: step 607/609, NLL 0.4072
+E-R-g0p1-lr0p0001-s10: step 608/609, NLL 0.3648
+E-R-g0p1-lr0p0001-s10: step 609/609, NLL 0.4450
+[evaluation] E-R-g0p1-lr0p0001-s10: training/checkpoint saved; evaluating answer NLL, then generating answers.
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 4/500 answers (0.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 8/500 answers (1.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 12/500 answers (2.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 16/500 answers (3.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 20/500 answers (4.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 24/500 answers (4.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 28/500 answers (5.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 32/500 answers (6.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 36/500 answers (7.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 40/500 answers (8.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 44/500 answers (8.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 48/500 answers (9.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 52/500 answers (10.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 56/500 answers (11.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 60/500 answers (12.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 64/500 answers (12.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 68/500 answers (13.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 72/500 answers (14.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 76/500 answers (15.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 80/500 answers (16.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 84/500 answers (16.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 88/500 answers (17.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 92/500 answers (18.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 96/500 answers (19.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 100/500 answers (20.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 104/500 answers (20.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 108/500 answers (21.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 112/500 answers (22.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 116/500 answers (23.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 120/500 answers (24.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 124/500 answers (24.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 128/500 answers (25.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 132/500 answers (26.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 136/500 answers (27.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 140/500 answers (28.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 144/500 answers (28.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 148/500 answers (29.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 152/500 answers (30.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 156/500 answers (31.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 160/500 answers (32.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 164/500 answers (32.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 168/500 answers (33.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 172/500 answers (34.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 176/500 answers (35.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 180/500 answers (36.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 184/500 answers (36.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 188/500 answers (37.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 192/500 answers (38.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 196/500 answers (39.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 200/500 answers (40.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 204/500 answers (40.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 208/500 answers (41.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 212/500 answers (42.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 216/500 answers (43.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 220/500 answers (44.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 224/500 answers (44.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 228/500 answers (45.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 232/500 answers (46.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 236/500 answers (47.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 240/500 answers (48.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 244/500 answers (48.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 248/500 answers (49.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 252/500 answers (50.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 256/500 answers (51.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 260/500 answers (52.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 264/500 answers (52.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 268/500 answers (53.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 272/500 answers (54.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 276/500 answers (55.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 280/500 answers (56.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 284/500 answers (56.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 288/500 answers (57.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 292/500 answers (58.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 296/500 answers (59.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 300/500 answers (60.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 304/500 answers (60.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 308/500 answers (61.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 312/500 answers (62.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 316/500 answers (63.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 320/500 answers (64.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 324/500 answers (64.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 328/500 answers (65.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 332/500 answers (66.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 336/500 answers (67.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 340/500 answers (68.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 344/500 answers (68.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 348/500 answers (69.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 352/500 answers (70.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 356/500 answers (71.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 360/500 answers (72.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 364/500 answers (72.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 368/500 answers (73.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 372/500 answers (74.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 376/500 answers (75.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 380/500 answers (76.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 384/500 answers (76.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 388/500 answers (77.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 392/500 answers (78.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 396/500 answers (79.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 400/500 answers (80.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 404/500 answers (80.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 408/500 answers (81.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 412/500 answers (82.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 416/500 answers (83.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 420/500 answers (84.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 424/500 answers (84.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 428/500 answers (85.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 432/500 answers (86.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 436/500 answers (87.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 440/500 answers (88.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 444/500 answers (88.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 448/500 answers (89.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 452/500 answers (90.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 456/500 answers (91.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 460/500 answers (92.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 464/500 answers (92.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 468/500 answers (93.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 472/500 answers (94.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 476/500 answers (95.2%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 480/500 answers (96.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 484/500 answers (96.8%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 488/500 answers (97.6%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 492/500 answers (98.4%).
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 496/500 answers (99.2%).
+Experiment evidence: /storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/reports/mchoi345/study-main/search/E-R-g0p1-lr0p0001-s10
+[evaluation] E-R-g0p1-lr0p0001-s10: generated 500/500 answers (100.0%).
+[evaluation] E-R-g0p1-lr0p0001-s10: evaluation saved; exporting evidence...

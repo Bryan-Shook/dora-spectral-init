@@ -1,0 +1,7 @@
+{
+  "count": 256,
+  "accuracy": 73.4375,
+  "truncation_rate": 0.0,
+  "seconds": 292.51583923900034,
+  "answer_nll": 0.4219228212055617
+}

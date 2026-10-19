@@ -1,0 +1,11 @@
+{
+  "completed_steps": 203,
+  "seconds": 129.81208303698804,
+  "initial_nll": 0.7608027458190918,
+  "final_nll": 0.5386408194899559,
+  "peak_allocated_bytes": 11576207360,
+  "peak_reserved_bytes": 24041750528,
+  "active_tokens_per_second": 7712.602529571349,
+  "padded_tokens_per_second": 10711.167770135966,
+  "clipping_fraction": 0.014778325123152709
+}

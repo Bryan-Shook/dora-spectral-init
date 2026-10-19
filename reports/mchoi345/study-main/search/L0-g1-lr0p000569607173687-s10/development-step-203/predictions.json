@@ -1,0 +1,2562 @@
+[
+  {
+    "id": 3300,
+    "question_sha256": "bc203bc190b76ad87bad2e5f091404bf55c69bfc6c4300426f54e582cfa26a8d",
+    "reference_answer": "24",
+    "text": " If Josh has 8 riddles, Ivory got 8+4 = 12 riddles.\nTaso got 12*2 = 24 riddles.\n#### 24",
+    "parsed": "24",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 40
+  },
+  {
+    "id": 1268,
+    "question_sha256": "89885c3d190ade17b33b3ae352ff01cb495c0b0d39e062fcada727ca06a1ba73",
+    "reference_answer": "5",
+    "text": " Anne's dad uses 3 grams x 3 times a day = 9 grams per day.\nAnne's mom uses 2 grams x 3 times a day = 6 grams per day.\nAnne and her brother use 1 gram x 3 times a day = 3 grams per day.\nSo, the family uses 9 + 6 + 3 = 18 grams per day.\nThe toothpaste will last 105 grams / 18 grams per day = 5.83 days.\n#### 6",
+    "parsed": "6",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 110
+  },
+  {
+    "id": 6820,
+    "question_sha256": "df4c23836eacfd966630d283170997e69bedb92da06a81cadd15d1825cfe3b2b",
+    "reference_answer": "42",
+    "text": " Jade drove 8 hours per day for 3 days, so she drove 8*3 = 24 hours.\nKrista drove 6 hours per day for 3 days, so she drove 6*3 = 18 hours.\nAltogether, they drove 24+18 = 42 hours.\n#### 42",
+    "parsed": "42",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 73
+  },
+  {
+    "id": 7318,
+    "question_sha256": "c3ffed7b32453472d0f234a4a64268f8724157d4a0b5faaf13faa27c89a9b078",
+    "reference_answer": "890",
+    "text": " Mirella read 5 purple books x 230 pages = 1150 purple pages.\nMirella read 4 orange books x 510 pages = 2040 orange pages.\nMirella read 2040 orange pages - 1150 purple pages = 890 more orange pages than purple pages.\n#### 890",
+    "parsed": "890",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 82
+  },
+  {
+    "id": 3590,
+    "question_sha256": "9e0d4b3440e4922e1e3ec12d76d8a8b98c385d381c581377842463bb6c501d14",
+    "reference_answer": "29",
+    "text": " On the second day, she read 63 x 2 = 126 pages.\nOn the third day, she read 126 + 10 = 136 pages.\nShe read 63 + 126 + 136 = 325 pages in the first three days.\nShe read 354 - 325 = 29 pages on the fourth day.\n#### 29",
+    "parsed": "29",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 94
+  },
+  {
+    "id": 2807,
+    "question_sha256": "db1899cf6457b1e028532ff0deff1f6733fdc872243d54356bd54c957e70a764",
+    "reference_answer": "2",
+    "text": " He has gotten dressed in 2+4+3+4 = 13 minutes for the first 4 days\nHe needs to get dressed in 15 minutes for the week to tie his old method\nHe has already gotten dressed in 13 minutes so he has 2 minutes left to get dressed on Friday\n#### 2",
+    "parsed": "2",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 70
+  },
+  {
+    "id": 3701,
+    "question_sha256": "8b6790620e57c411a3b43fb888dd86fe4bd07843452c066e33f793ac9bf6a23e",
+    "reference_answer": "40",
+    "text": " He sneezes 60/3=20 times per minute\nSo he sneezes 20*2=40 times\n#### 40",
+    "parsed": "40",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 35
+  },
+  {
+    "id": 3484,
+    "question_sha256": "daafaa3979d6bbafc2c22e6c7ca56fd0b4e268b7ee40daae4f3ccc823d943e99",
+    "reference_answer": "12",
+    "text": " The red light bulb comes on every 2 seconds, the green one every 3 seconds and the blue one every 4 seconds.\nThe least common multiple of 2, 3, and 4 is 12.\nThe three bulbs will be on at the same time after 12 seconds.\n#### 12",
+    "parsed": "12",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 66
+  },
+  {
+    "id": 4530,
+    "question_sha256": "d43048697c7c8607dc5812ae562573e0055dce7b52c93f3e63bff36c99afc36f",
+    "reference_answer": "24",
+    "text": " Ella got 40-4=36 correct answers.\nHalf of Ella's score is 36/2=18.\nMarion got 18+6=24 correct answers.\n#### 24",
+    "parsed": "24",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 46
+  },
+  {
+    "id": 62,
+    "question_sha256": "e57af762e52f0eaae7314cae0fb518e7eae79a729b3d31832ab358036d74841b",
+    "reference_answer": "15",
+    "text": " There are 10 cans holding 8 liters each, so 10 x 8 = 80 liters of oil are in those cans.\nThere are 24 cans in total, so there are 24 - 10 = 14 cans remaining.\nThere are 290 liters of oil in 24 cans, so there are 290 - 80 = 210 liters of oil in the remaining cans.\nThere are 14 cans remaining, so each of the remaining cans is holding 210 / 14 = 15 liters of oil.\n#### 15",
+    "parsed": "15",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 132
+  },
+  {
+    "id": 6177,
+    "question_sha256": "dd60b8e08277ca5c4268eb2cc080c467d27fe20a672350f1fd417f3c19ceb442",
+    "reference_answer": "5",
+    "text": " The children ate 16 brownies x 25% = 4 brownies.\nSo there were 16 brownies - 4 brownies = 12 brownies left.\nThe family ate 12 brownies x 50% = 6 brownies.\nSo there were 12 brownies - 6 brownies = 6 brownies left.\nAfter Lorraine ate 1 more brownie, there were 6 brownies - 1 brownie = 5 brownies left.\n#### 5",
+    "parsed": "5",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 110
+  },
+  {
+    "id": 2443,
+    "question_sha256": "d9343b3445e1d1ef6a8a0931609a18537208fa893f215040f70fb362eedf686a",
+    "reference_answer": "15",
+    "text": " Mary's ticket costs $2 x 1 = $2.\nHer 3 children's tickets cost $1 x 3 = $3.\nThe total cost of the tickets is $2 + $3 = $5.\nMary will receive $20 - $5 = $15 in change.\n#### 15",
+    "parsed": "15",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 65
+  },
+  {
+    "id": 4213,
+    "question_sha256": "c980b7c245475f89c8b47fe2aa95324ffb99188aa271ce2773d421a067981a33",
+    "reference_answer": "9",
+    "text": " The first square is 8*5=40 square feet.\nThe second square is 10*7=70 square feet.\nThe third square is 5*5=25 square feet.\nAll three squares are 40+70+25=135 square feet.\nThe flag is 15 feet long, so it must be 135/15=9 feet tall.\n#### 9",
+    "parsed": "9",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 91
+  },
+  {
+    "id": 539,
+    "question_sha256": "4d58e157821739ee1c6197288eb9cfae5d07385d9f7eae85bde7b4b968e1a4f8",
+    "reference_answer": "1500",
+    "text": " The company chopped down 200 trees in the first half of the year and 300 more trees in the second half of the year for a total of 200+300 = 500 trees\nFor every tree they chop down, they want to plant 3 more so they need to plant 500*3 = 1500 trees\n#### 1500",
+    "parsed": "1500",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 88
+  },
+  {
+    "id": 2719,
+    "question_sha256": "fb906f9bcaaae79ef30a03f7651da1963eea6624f62289744e1f94264be44c8e",
+    "reference_answer": "20",
+    "text": " First figure out how long it takes to rise 4 balls of dough: 3 hours/ball * 4 balls = 12 hours\nThen figure out how long it takes to bake 4 balls of dough: 2 hours/ball * 4 balls = 8 hours\nThen add the time it takes to rise and bake: 12 hours + 8 hours = 20 hours\n#### 20",
+    "parsed": "20",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 88
+  },
+  {
+    "id": 2155,
+    "question_sha256": "c63eedb18d998063b255d9b2143f8ee7177cc7c9ec7115e8e73df33ebed60a54",
+    "reference_answer": "7",
+    "text": " Tilly needs to make $300 in profit, so she needs to sell the bags for $10 x 100 = $1000.\nShe needs to make $1000 - $300 = $700 in total.\nSo, she bought each bag for $700 / 100 = $7.\n#### 7",
+    "parsed": "7",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 80
+  },
+  {
+    "id": 1584,
+    "question_sha256": "7326c832a1c39c09c280264f1db751a1c312847b1377ab10c3371479ec8c9f31",
+    "reference_answer": "90",
+    "text": " The third segment is half as long as the second, so the second segment is 10*2=20 minutes long.\nThe first segment is twice as long as the other two combined, so the first segment is 2*(10+20)=60 minutes long.\nThe entire show is 60+20+10=90 minutes long.\n#### 90",
+    "parsed": "90",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 82
+  },
+  {
+    "id": 6630,
+    "question_sha256": "2c9d32e0cd05605c0883acc7c608a22f94fbc5b0825750eca1ab7eb77be32075",
+    "reference_answer": "30",
+    "text": " The amount of money that goes to the community pantry project is 240*1/3=80\nThe amount of money that goes to the local crisis fund is 240*1/2=120\nThe total amount of money that goes to the community pantry project and the local crisis fund is 80+120=200\nThe amount of money that goes to the livelihood project funds is 240-200=40\nThe amount of money that goes to the contingency fund is 40*1/4=10\n#### 10",
+    "parsed": "10",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 129
+  },
+  {
+    "id": 2085,
+    "question_sha256": "20a07927657421948af882b6e81824d59cde7982c2bb132b2f45637adc67df1b",
+    "reference_answer": "160",
+    "text": " He got $150*80%= $120 for his SNES\nHe gave $80 and got $10 change, so he spent $80-$10 = $70\nHe bought a game for $30, so he spent $70-$30 = $40\nThe NES cost $120-$40 = $80\n#### 80",
+    "parsed": "80",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 87
+  },
+  {
+    "id": 4180,
+    "question_sha256": "ab331670c55863783059c9ade7623bc3e0a97e6ab6dccb2f2e24cfe8b62befbc",
+    "reference_answer": "48",
+    "text": " She needs 6 bars of soap for the year because 12 / 2 = 6\nShe will spend $64 on soap because 6 x 8 = 48\n#### 48",
+    "parsed": "48",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 44
+  },
+  {
+    "id": 7198,
+    "question_sha256": "2cd492121c274b8cc0679b436dddc403608cd8ac0f17e0a3a36f076c7e19d8eb",
+    "reference_answer": "56",
+    "text": " If Betty gave Stuart 40% of her marble collection, she gave him 40/100*60 = 24 marbles.\nIf the number of marbles in Stuart's collection increased to 80 after Betty gave him 24 marbles, then he initially had 80-24 = 56 marbles.\n#### 56",
+    "parsed": "56",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 79
+  },
+  {
+    "id": 3823,
+    "question_sha256": "50e07b384776caf286e62cedfba619ef89d3eaf3605c5c732cf49844b49e58b8",
+    "reference_answer": "900",
+    "text": " During the first week, 200 kg * 3 days = 600 kg of garbage is accumulated.\nDuring the second week, 200 kg / 2 = 100 kg of garbage is accumulated.\nIn total, 600 kg + 100 kg = 700 kg of garbage has accumulated in Daniel's neighborhood during the 2 weeks.\n#### 700",
+    "parsed": "700",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 88
+  },
+  {
+    "id": 370,
+    "question_sha256": "10b207e528269210ea66b9a986b88f437376168f3d3f6271a204ceb584c61cdc",
+    "reference_answer": "64",
+    "text": " One-third of 12 patients is 12/3 = 4 patients with special dietary requirements.\nThe remaining 12-4 = 8 patients have standard care.\nIt takes 5 minutes to serve each standard care patient, so it takes 8*5 = 40 minutes to serve the standard care patients.\nThe patients with special dietary requirements take 20% longer, which is 20/100 * 5 = 1 minute longer.\nSo it takes 5+1 = 6 minutes to serve each patient with special dietary requirements.\nIt takes 6 minutes to serve each patient with special dietary requirements, so it takes 4*6 = 24 minutes to serve the patients with special dietary requirements.\nIn total, it takes 40+24 = 64 minutes to serve dinner to all of Missy's patients.\n#### 64",
+    "parsed": "64",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 185
+  },
+  {
+    "id": 1572,
+    "question_sha256": "d0f5024623dcbd16b9a1083932fb212451171b4bf7e7cdb3a38defa8c9c3ae48",
+    "reference_answer": "114",
+    "text": " Barbara removed 3 bundles x 2 sheets/bundle = 6 sheets of colored paper.\nShe removed 2 bunches x 4 sheets/bunch = 8 sheets of white paper.\nShe removed 5 heaps x 20 sheets/heap = 100 sheets of scrap paper.\nIn total, Barbara removed 6 + 8 + 100 = 114 sheets of paper.\n#### 114",
+    "parsed": "114",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 90
+  },
+  {
+    "id": 4920,
+    "question_sha256": "5ae3b681d3a7fe866a94db733ca54499947d5aecc5e1db9fefc4684037b670b5",
+    "reference_answer": "11",
+    "text": " Let x be the number of damaged books.\nErin removes 6x - 8 obsolete books.\nShe removes 6x - 8 + x = 7x - 8 books total.\n7x - 8 = 69\n7x = 77\nx = 11\n#### 11",
+    "parsed": "11",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 68
+  },
+  {
+    "id": 5849,
+    "question_sha256": "188e895187f23c9a5ba9819efc00b50e0026603ff05215b20624643af5c473f4",
+    "reference_answer": "2",
+    "text": " He watches 5 * 30 = 150 minutes of the show.\nHe watches 150 / 60 = 2.5 hours of the show.\n#### 2.5",
+    "parsed": "5/2",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 43
+  },
+  {
+    "id": 2883,
+    "question_sha256": "14039cef2af6104b4fdfe230c2977220d54d29717bc45f566aeecfc4e678506f",
+    "reference_answer": "4",
+    "text": " There were 3 x 8 = 24 slices of pizza.\nSo, each person ate 24/6 = 4 slices.\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 33
+  },
+  {
+    "id": 4959,
+    "question_sha256": "403ebb2b0d6d1caf8793b361a69fafe8894b18aeb7a8fd28ca5fdd055d08e723",
+    "reference_answer": "31",
+    "text": " Meryll has already written 2/5 x 35 = 14 multiple-choice questions.\nShe has also written 1/3 x 15 = 5 problem-solving questions.\nThus, she still needs to write 35 - 14 = 21 multiple-choice questions.\nAnd she still needs to write 15 - 5 = 10 problem-solving questions.\nTherefore, Meryll needs to write a total of 21 + 10 = 31 questions.\n#### 31",
+    "parsed": "31",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 111
+  },
+  {
+    "id": 3783,
+    "question_sha256": "4bdaf578dbbd1eff9e3335f75a3ed19aa82de2c2519a6cc76879363b2715e5a3",
+    "reference_answer": "35",
+    "text": " The cost of the chocolate doughnuts is 10 * $2 = $20.\nThe cost of the glazed doughnuts is 15 * $1 = $15.\nThe total cost for doughnuts is $20 + $15 = $35.\n#### 35",
+    "parsed": "35",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 61
+  },
+  {
+    "id": 5421,
+    "question_sha256": "c69cc60feb0977fe06feffe6a8a47ea58f76933aac10842f13b124ee105dcd61",
+    "reference_answer": "14",
+    "text": " Let x be the cost of the dessert.\nThe entree costs x + $5.\nThe total cost is x + (x + $5) = $23.\n2x + $5 = $23.\n2x = $18.\nx = $9.\nThe entree costs $9 + $5 = $14.\n#### 14",
+    "parsed": "14",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 75
+  },
+  {
+    "id": 7180,
+    "question_sha256": "5dd85867623d09c3a9062268df7e1734607bde54d7e28df5fb8d2c814386a215",
+    "reference_answer": "15",
+    "text": " He was inviting 15 people and every guest would drink 2 sodas so 15*2 = 30 sodas\nThe store had a deal on sodas that week.  Every 6 pack of canned sodas was on sale for $3.00 and he needed 30 sodas so he would need 30/6 = 5 6 packs\nThe 6 packs of sodas would cost $3.00 each and he needed 5 so 3*5 = $15.00\n#### 15",
+    "parsed": "15",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 119
+  },
+  {
+    "id": 6070,
+    "question_sha256": "a194bc880732a5f9a089a15109342502aecf0362e8078f63c41a6342d584a05e",
+    "reference_answer": "4",
+    "text": " Luigi bought 4 pizzas for $80, so each pizza cost $80/4 = $20\nEach pizza was cut into 5 pieces, so each piece of pizza cost $20/5 = $4\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 51
+  },
+  {
+    "id": 4840,
+    "question_sha256": "5d0a0d8fb9772ab035b3878bcf2504b6c600980db5214ca0e187771958490f94",
+    "reference_answer": "2",
+    "text": " First find the total number of donuts Noel bakes: 4 dozen * 12 donuts/dozen = 48 donuts\nThen find 80% of the class: 30 students * 0.8 = 24 students\nThen divide the number of donuts by the number of students to find the number of donuts each student gets: 48 donuts / 24 students = 2 donuts/student\n#### 2",
+    "parsed": "2",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 98
+  },
+  {
+    "id": 5147,
+    "question_sha256": "3979cfdab4ae77d232f1e0cec2838b1fe4060f395ac2fbc516a2a66553dabb96",
+    "reference_answer": "37",
+    "text": " She made 20*1.25=$25.00 in tips\nSo she made 12+25=$37.00\n#### 37",
+    "parsed": "37",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 39
+  },
+  {
+    "id": 6203,
+    "question_sha256": "170fc503990baee6fba8949ba92152ce3f116a8ccd94592769b0dfeeb31c8d5d",
+    "reference_answer": "15",
+    "text": " The cost of 1 spoon is $21/7 = $3\nThe cost of 5 spoons is $3 x 5 = $15\n#### 15",
+    "parsed": "15",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 38
+  },
+  {
+    "id": 4330,
+    "question_sha256": "56604d619bf0d8aeda4c5e942cb6e577c99d8f2d75fcf30f598825c6597ceaa9",
+    "reference_answer": "72",
+    "text": " Bruce has 20 more than Kent, or 40+20=60 legos.\nSimon has 20% more than Bruce, or .20*60=12 more legos.\nSo Simon has 60+12=72 legos.\n#### 72",
+    "parsed": "72",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 65
+  },
+  {
+    "id": 4226,
+    "question_sha256": "f5d52a9f6ed928d0e09699fcf69b3a90514db9285a6623568481f5fe4e794e6c",
+    "reference_answer": "9",
+    "text": " If there are 8 slices in a large pizza, then 2 large pizzas will have 8*2 = 16 slices.\nIf Mary eats 7 slices, then there will be 16-7 = 9 slices remaining.\n#### 9",
+    "parsed": "9",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 53
+  },
+  {
+    "id": 2302,
+    "question_sha256": "ca88a25f4f88b80735f292509ecf6f588ec61be44e66f8e32da1384231d11e9c",
+    "reference_answer": "1670",
+    "text": " The price in 2009 was $1950 - $35 * 8 = $1950 - $280 = $1670\n#### 1670",
+    "parsed": "1670",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 45
+  },
+  {
+    "id": 4533,
+    "question_sha256": "3d566d9f170f586e4235e5e784807391b77a49b18fb867b45a32a60bb47e23f1",
+    "reference_answer": "6000",
+    "text": " He bought the land for 200*70=$14000\nHe sold half of the acreage for 100*200=$20000\nSo he made a profit of 20000-14000=$6000\n#### 6000",
+    "parsed": "6000",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 72
+  },
+  {
+    "id": 2297,
+    "question_sha256": "3636d5e947d63dbe414fb093f9027b9099b906abbec8f052378dcada8bbb0fea",
+    "reference_answer": "900",
+    "text": " Nine members of the crafts club are making 2 necklaces each, so they are making a total of 9 * 2 = 18 necklaces.\nIt takes 50 beads to make each necklace, so they will need a total of 18 * 50 = 900 beads.\n#### 900",
+    "parsed": "900",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 70
+  },
+  {
+    "id": 3418,
+    "question_sha256": "5ca6cae2b391bad2cd72330e5bf5d71a5e4d1923e7d6ef19ea6c46ac28f6de74",
+    "reference_answer": "3500",
+    "text": " The first 10 pages have 10 x 5 x 30 = 1500 stamps.\nThe remaining 40 pages have 40 x 50 = 2000 stamps.\nSo, Stella's album has 1500 + 2000 = 3500 stamps.\n#### 3500",
+    "parsed": "3500",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 78
+  },
+  {
+    "id": 871,
+    "question_sha256": "b9cb2096989c74651b3e3a0512fc08e0de37e6c0e59f6f117630fc40ef122449",
+    "reference_answer": "1979",
+    "text": " Peter is 37+3=40 years old in 2021.\nJulia is 40+2=42 years old in 2021.\nJulia was born in 2021-42=1979.\n#### 1979",
+    "parsed": "1979",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 64
+  },
+  {
+    "id": 6477,
+    "question_sha256": "5d6cf27d846a9a828abbda939b719b749772ca0fcdeee5835854b5083284dde2",
+    "reference_answer": "88",
+    "text": " Jackson has 5 days to raise $1000 for the week, so he needs to raise $1000 / 5 = $200 per day.\nHe has already raised $300 + $40 = $340 on Monday and Tuesday.\nHe still needs to raise $200 - $340 = -$140, which means he has already exceeded his goal by $140.\nSince he has already exceeded his goal, he doesn't need to visit any more houses on the remaining days of the week.\n#### 0",
+    "parsed": "0",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 121
+  },
+  {
+    "id": 814,
+    "question_sha256": "e83c6439b9093d670aac2ebb54cf9b3a61562e731aaaf2b2043bd4530e066bb9",
+    "reference_answer": "21",
+    "text": " Sean buys 1 almond croissant for $4.50 and 1 salami and cheese croissant for $4.50 so 2 croissants are 2*4.50 = $9.00\nHe also buys a plain croissant for $3.00 and a loaf of focaccia for $4.00 so those 2 items are 3+4 = $7.00\nHe buys 2 lattes for $2.50 each so 2 lattes are 2*2.50 = $5.00\nAll total, Sean spends 9+7+5 = $21.00\n#### 21",
+    "parsed": "21",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 150
+  },
+  {
+    "id": 7019,
+    "question_sha256": "71ee9bc971a75a04aa32c39f1f3ac0bdfe9bdb2a7d1a8dd66972f4e782da5f85",
+    "reference_answer": "25",
+    "text": " The productivity has increased by 1.5*10 = 15 trees daily.\nThe Albaszu machine is now cutting 10+15 = 25 trees daily.\n#### 25",
+    "parsed": "25",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 44
+  },
+  {
+    "id": 4853,
+    "question_sha256": "68040bd7d399e6845fa9913c5edaef8fcb06d20f6f20a1e51563df6885781efe",
+    "reference_answer": "2160",
+    "text": " If there are 60 trucks in each lane, the total number of trucks in all the lanes is 60*4 = 240\nThe number of cars in each lane is twice the number of trucks in all the lanes, a total of 2*240 = 480 cars\nThe total number of vehicles in all the lanes is 480+240 = 720\n#### 720",
+    "parsed": "720",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 95
+  },
+  {
+    "id": 2222,
+    "question_sha256": "a61b468ca33c65050dcf9fdca9e6c4074000012fa18b52cca10912a29db9a831",
+    "reference_answer": "24",
+    "text": " Let x be the number of miles Selena ran.\nJosh ran 1/2*x miles.\nx + 1/2*x = 36\n1.5*x = 36\nx = 24\nSelena ran 24 miles.\n#### 24",
+    "parsed": "24",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 59
+  },
+  {
+    "id": 1999,
+    "question_sha256": "11d473971b51eaf6f292929d7decf99568bbebc11e744558df599d7c7be0bcf6",
+    "reference_answer": "5",
+    "text": " Let x be the depth of Sarah\u2019s pool.\n2x + 5 = 15\n2x = 10\nx = 5\n#### 5",
+    "parsed": "5",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 35
+  },
+  {
+    "id": 5536,
+    "question_sha256": "0c156943b10969d9d72496daa035fc1dc7138a4dd0ad5befe31f350c3794417b",
+    "reference_answer": "136",
+    "text": " The sales of the carrots is twice as much as the sales of broccoli, which is 2 * $57 = $114.\nHalf of the sales of carrots is $114 / 2 = $57.\nThe sales of the spinach is $16 more than half of the sales of carrots, which is $57 + $16 = $73.\nThe total sales of the broccoli, carrots, and spinach is $57 + $114 + $73 = $244.\nThe total sales of the cauliflower and the other vegetables is $380 - $244 = $136.\nThe sales of the cauliflower is $136.\n#### 136",
+    "parsed": "136",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 152
+  },
+  {
+    "id": 1770,
+    "question_sha256": "91436c7aa4cc59beb42f6d4bbd994e729d1a862c39f4a9b22f7f9dfb67183456",
+    "reference_answer": "800",
+    "text": " The conclusion is triple the length of the introduction, so it is 450 * 3 = 1350 words.\nThe introduction and conclusion together are 450 + 1350 = 1800 words.\nThe remaining 5000 - 1800 = 3200 words are in the body sections.\nEach body section is 3200 / 4 = 800 words.\n#### 800",
+    "parsed": "800",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 102
+  },
+  {
+    "id": 1845,
+    "question_sha256": "94d9ce7dc56b89237e290d3bc4e6ba73ddcc221c818d7fed1c51e8c92469a44f",
+    "reference_answer": "25",
+    "text": " Julia wants to buy 4 rock and roll CDs, so she will spend 4 * $5 = $20 on rock and roll CDs.\nShe also wants to buy 4 pop CDs, so she will spend 4 * $10 = $40 on pop CDs.\nShe wants to buy 4 dance CDs, so she will spend 4 * $3 = $12 on dance CDs.\nAnd she wants to buy 4 country CDs, so she will spend 4 * $7 = $28 on country CDs.\nIn total, Julia will spend $20 + $40 + $12 + $28 = $100 on all the CDs.\nJulia only has $75, so she is short $100 - $75 = $25.\n#### 25",
+    "parsed": "25",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 171
+  },
+  {
+    "id": 3212,
+    "question_sha256": "93908975521690f8394baed0735ab41d3cac34d8befdcbda1a3e36207ae76929",
+    "reference_answer": "256",
+    "text": " There are 23 - 2 = 21 regular floors.\nSo, there are 21 * 12 = 252 regular units.\nTherefore, the condo has 252 + 2 * 2 = 256 units in total.\n#### 256",
+    "parsed": "256",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 63
+  },
+  {
+    "id": 5651,
+    "question_sha256": "657b7bbde3a1f1f2cb27ab6f67d5d904592fb9fb5b089a518214cd388a04d4b5",
+    "reference_answer": "83",
+    "text": " Nathan had 6 x 8 = 48 bananas in the six bunches.\nHe also had 5 x 7 = 35 bananas in the five bunches.\nTherefore, Nathan had 48 + 35 = 83 bananas.\n#### 83",
+    "parsed": "83",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 58
+  },
+  {
+    "id": 5478,
+    "question_sha256": "072759ef789b26cbbf4b0c8a202a863b76f394e89ff0f4eed4847b501aaeb259",
+    "reference_answer": "25",
+    "text": " The tank is 2/5*100=40 liters filled at the beginning of the rainy season.\nOn the first day, the tank collected 15 liters of water.\nOn the second day, the tank collected 15+5=20 liters of water.\nThe total amount of water collected in the first two days is 15+20=35 liters.\nThe tank can hold 100 liters of water, and it was already filled with 40+35=75 liters of water.\nTherefore, 100-75=25 liters of water were collected on the third day.\n#### 25",
+    "parsed": "25",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 139
+  },
+  {
+    "id": 2627,
+    "question_sha256": "b224d82c1d54978ef68d7bdbe398e1119f3eb7e70aee8f1387e2d96e8b67dff4",
+    "reference_answer": "25",
+    "text": " In the second row, he has 9 - 2 = 7 blocks.\nIn the third row, he has 7 - 2 = 5 blocks.\nIn the fourth row, he has 5 - 2 = 3 blocks.\nIn the fifth row, he has 3 - 2 = 1 block.\nHe used 9 + 7 + 5 + 3 + 1 = 25 blocks in all.\n#### 25",
+    "parsed": "25",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 96
+  },
+  {
+    "id": 3258,
+    "question_sha256": "de065aba3a90d91f9dc072bb2a946640d54a82d7227d2f0a9365e2b89269cded",
+    "reference_answer": "45",
+    "text": " On Monday, Mr Castiel ate 2/5 x 600 = 240 sausages.\nSo, he had 600 - 240 = 360 sausages remaining.\nOn Tuesday, he ate 1/2 x 360 = 180 sausages.\nSo, he had 360 - 180 = 180 sausages remaining.\nOn Friday, he ate 3/4 x 180 = 135 sausages.\nSo, he had 180 - 135 = 45 sausages remaining.\n#### 45",
+    "parsed": "45",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 143
+  },
+  {
+    "id": 4424,
+    "question_sha256": "1550147fd4f00e6818ddf233ed26891360d341a142e76b2c5354aa70607a2ebc",
+    "reference_answer": "136",
+    "text": " There are 200 guests at the party, and 40% of them are women, so there are 200 * 0.40 = 80 women at the party.\n80 women are wearing rabbit ears, so there are 80 * 0.80 = 64 women wearing rabbit ears.\nThe remaining 200 - 80 = 120 guests are men.\n60% of the men are wearing rabbit ears, so there are 120 * 0.60 = 72 men wearing rabbit ears.\nIn total, there are 64 + 72 = 136 people wearing rabbit ears.\n#### 136",
+    "parsed": "136",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 151
+  },
+  {
+    "id": 3327,
+    "question_sha256": "6c5e401388f4b0fae681ed8dd1d8d79995671b0bb20c35eee9aae3cfb8199144",
+    "reference_answer": "30000",
+    "text": " He spent 250*100=25000 gems\nHe got 25000*.2=5000 more gems\nSo he got 25000+5000=30000 gems\n#### 30000",
+    "parsed": "30000",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 65
+  },
+  {
+    "id": 2551,
+    "question_sha256": "8ae3e11bc49a602415a0c932fdc403fbea6fcc0db3b56d2e9e0e29f197eed70c",
+    "reference_answer": "1",
+    "text": " Duke scored 17 points to tie the record, and he broke the record by 5 points, so he scored 17 + 5 = 22 points in the final game.\nHe made 5 free throws, which is 5 * 1 = 5 points.\nHe also made 4 regular baskets, which is 4 * 2 = 8 points.\nSo far, he has scored 5 + 8 = 13 points from free throws and regular baskets.\nHe scored 22 points in total, so he made 22 - 13 = 9 points from three-pointers.\nHe normally scores 2 three-pointers a game, so he scored 2 + 9 = 11 three-pointers in the final game.\nHe scored 11 - 2 = 9 more three-pointers in the final game compared to his normal amount.\n#### 9",
+    "parsed": "9",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 189
+  },
+  {
+    "id": 1459,
+    "question_sha256": "5b71816ad47bb3d56fd583c29826f4dec79ad9c9cd426c4e65abaf96310eca8f",
+    "reference_answer": "35",
+    "text": " There are 3+1=4 people in the house\nSo they drink 4*2=8 cups of coffee a day\nThat means they use 8*.5=4 ounces of coffee a day\nSo they use 4*7=28 ounces of coffee a week\nThat means they spend 28*1.25=$35 on coffee a week\n#### 35",
+    "parsed": "35",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 84
+  },
+  {
+    "id": 5199,
+    "question_sha256": "82085324960b6eee415f70a11aca60464059ee9b4a2f2e026f125853020606cf",
+    "reference_answer": "100",
+    "text": " 20% of the vets recommend Puppy Kibble, so 20/100 * 1000 = 200 vets recommend Puppy Kibble.\n30% of the vets recommend Yummy Dog Kibble, so 30/100 * 1000 = 300 vets recommend Yummy Dog Kibble.\nTo find out how many more vets recommend Yummy Dog Kibble than Puppy Kibble, we subtract the number of vets who recommend Puppy Kibble from the number of vets who recommend Yummy Dog Kibble: 300 - 200 = 100.\n#### 100",
+    "parsed": "100",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 139
+  },
+  {
+    "id": 3785,
+    "question_sha256": "f5ca4fad0d67bb22426b19b362a4abce744f3766317632b8e4c1077c2783325f",
+    "reference_answer": "95",
+    "text": " First find the total number of tests Kat has taken: 2 tests + 1 final test = 3 tests\nThen multiply that number by her desired average to find the total number of points she needs: 90% average * 3 tests = 270%\nThen subtract the number of points she already has to find out how many points she needs on the third test: 270 points - 95 points - 80 points = 95 points\n#### 95",
+    "parsed": "95",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 104
+  },
+  {
+    "id": 1027,
+    "question_sha256": "7bdf0fc99f1054abeacc2092427153eae5e99e12f8fe1774303154671c60f279",
+    "reference_answer": "240",
+    "text": " The cost of the drawing is 160*1.5=$240\n#### 240",
+    "parsed": "240",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 24
+  },
+  {
+    "id": 6953,
+    "question_sha256": "b8a700e7260818d1fcf40964c0d84fd1b26d06666b50256f489b41c39224bee9",
+    "reference_answer": "3",
+    "text": " First find the total amount of wax in the 20 oz candles: 20 oz/candle * 5 candles = 100 oz\nThen find the total amount of wax in the 5 oz candles: 5 oz/candle * 5 candles = 25 oz\nThen find the total amount of wax in the 1 oz candles: 1 oz/candle * 25 candles = 25 oz\nThen add the amount of wax from each type of candle to find the total amount of wax: 100 oz + 25 oz + 25 oz = 150 oz\nThen divide the total amount of wax by the amount of wax in each new candle to find the number of candles she can make: 150 oz / 5 oz/candle = 30 candles\n#### 30",
+    "parsed": "30",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 179
+  },
+  {
+    "id": 2144,
+    "question_sha256": "41b57eff1e24b096c79bd1741783cefa7a37a8b99b5234483d10ede27e18c816",
+    "reference_answer": "32",
+    "text": " She will need 3*40 = 120 coffee pods\nThat will cost 120/30 = 4 boxes of coffee pods\nSo she will spend 4*8 = $32.00\n#### 32",
+    "parsed": "32",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 54
+  },
+  {
+    "id": 4653,
+    "question_sha256": "65460b5efd12ad19b4440224de077a5073fbea861fadb166d67e787fde751b12",
+    "reference_answer": "100",
+    "text": " Jaydon brought in 5+2(5)=15 cans\nMark brought in 4(15)=60 cans\nJaydon brought in 15 cans\n#### 60",
+    "parsed": "60",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 41
+  },
+  {
+    "id": 2345,
+    "question_sha256": "4c67e42078047c74e4575c77a76970a25813c34fc9f924995d7bf2f43fbd531d",
+    "reference_answer": "40",
+    "text": " Previously, the curry house bought enough peppers for 30 very spicy curries, 30 spicy curries, and 10 mild curries, so they bought 30 x 3 = 90 peppers for very spicy curries.\nThey also bought 30 x 2 = 60 peppers for spicy curries.\nAnd they bought 10 x 1 = 10 peppers for mild curries.\nSo, the curry house was buying a total of 90 + 60 + 10 = 160 peppers.\nNow, they buy enough peppers for 15 spicy curries and 90 mild curries, so they buy 15 x 2 = 30 peppers for spicy curries.\nAnd they buy 90 x 1 = 90 peppers for mild curries.\nSo, the curry house now buys a total of 30 + 90 = 120 peppers.\nTherefore, the curry house now buys 160 - 120 = 40 fewer peppers.\n#### 40",
+    "parsed": "40",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 228
+  },
+  {
+    "id": 3248,
+    "question_sha256": "bd3e130ded69d7195426b511f631e8f7eb8042ed4f53f33fb09cfc09efdc6de3",
+    "reference_answer": "70",
+    "text": " 1/4 of 180 students is 180 * 1/4 = 45 students.\nSo, 180 - 45 = 135 students are left.\n1/3 of 135 students is 135 * 1/3 = 45 students.\nSo, 135 - 45 = 90 students are left.\n20 students got less than a D, so 90 - 20 = 70 students passed their finals.\n#### 70",
+    "parsed": "70",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 118
+  },
+  {
+    "id": 4217,
+    "question_sha256": "8abf3b77c7c9bc207f7d4d45ed4d67c531eb231f00754377417404b6ed5b2ad3",
+    "reference_answer": "16",
+    "text": " 30 tourists - 2 tourists = 28 tourists\n28 tourists / 2 = 14 tourists\n14 tourists * 1/7 = 2 tourists\n2 tourists + 2 tourists = 4 tourists\n#### 4",
+    "parsed": "4",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 53
+  },
+  {
+    "id": 5117,
+    "question_sha256": "fb2028e015745ddda098b179ab1a516d98190a902685d46d765f5a9950ab6c2a",
+    "reference_answer": "34",
+    "text": " The first floor has 2 apartment units.\nThe second, third, and fourth floors have 5 apartment units each, so that's 5 x 3 = 15 apartment units.\nIn total, Mr. Resty has 2 + 15 = 17 apartment units.\n#### 17",
+    "parsed": "17",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 64
+  },
+  {
+    "id": 5518,
+    "question_sha256": "6c08ac41be1d41244b2a7eae6ecce86734445bbbe2793781afd743c8d00c4cee",
+    "reference_answer": "4",
+    "text": " Let's say the number of Aaron's brothers is x.\nTwice the number of Aaron's brothers is 2x.\nThe number of Bennett's brothers is two less than twice the number of Aaron's brothers, so it is 2x - 2.\nWe know that Bennett has 6 brothers, so we can write the equation 2x - 2 = 6.\nAdding 2 to both sides of the equation, we get 2x = 8.\nDividing both sides of the equation by 2, we get x = 4.\nTherefore, Aaron has 4 brothers.\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 126
+  },
+  {
+    "id": 3683,
+    "question_sha256": "b822f099bdba1d1c39b1bfe590ef177e0bec7b65a3af8f064422882148558991",
+    "reference_answer": "35",
+    "text": " There are 50 x 30/100 = 15 boys at the party.\nSo, there are 50 - 15 = 35 girls at the party.\n#### 35",
+    "parsed": "35",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 46
+  },
+  {
+    "id": 6151,
+    "question_sha256": "ff75849b3e649e3f3bf917e1086ded667f2193a57ad8ce9dd5490e547c6fc238",
+    "reference_answer": "6",
+    "text": " If Justin can run 2 blocks in 1.5 minutes, then he can run 1 block in 1.5/2 = 0.75 minutes.\nIf he is 8 blocks from home, then it will take him 8*0.75 = 6 minutes to run home.\n#### 6",
+    "parsed": "6",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 68
+  },
+  {
+    "id": 584,
+    "question_sha256": "994ec75b655e0847c27559275630f512d84c460d7f1a7e373e73c787194212b7",
+    "reference_answer": "12",
+    "text": " Robin ate 4 cupcakes with chocolate sauce and twice as many with buttercream frosting, so she ate 4*2 = 8 buttercream cupcakes.\nIn total, Robin ate 4+8 = 12 cupcakes.\n#### 12",
+    "parsed": "12",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 50
+  },
+  {
+    "id": 3220,
+    "question_sha256": "c5b858f3ebc5e9a2997262ba0c74cc9fef34b81181007f245d1f084cd669ac1f",
+    "reference_answer": "1530",
+    "text": " He goes to the doctor 12/6=2 times a year\nSo he pays 2*400=$800 a year for doctor visits\nHe takes 2 pills a day, so he takes 2*365=730 pills a year\nThe medication costs $5 a pill, but insurance covers 80% of that, so he pays 5*.2=$1 per pill\nSo he pays 1*730=$730 a year for medication\nSo he pays 800+730=$1530 a year for everything\n#### 1530",
+    "parsed": "1530",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 135
+  },
+  {
+    "id": 3901,
+    "question_sha256": "a7b44dbd459fcf5cbb2370dc78e214f7de320840cf06cbf56a09ded539f72e68",
+    "reference_answer": "3",
+    "text": " Steven has 4 apples * 6 seeds = 24 seeds from apples.\nHe has 3 pears * 2 seeds = 6 seeds from pears.\nHe has 9 grapes * 3 seeds = 27 seeds from grapes.\nIn total, Steven has 24 + 6 + 27 = 57 seeds.\nHe needs 60 seeds - 57 seeds = 3 more seeds.\n#### 3",
+    "parsed": "3",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 93
+  },
+  {
+    "id": 5140,
+    "question_sha256": "bd5ae07e2697a2ff7de5ce998e47b883476de6866bec18031898567099438c87",
+    "reference_answer": "12",
+    "text": " The number of students who entered the bus at the intermediate stop is 58-28=30 students.\n40% of the number of students who entered the bus at the intermediate stop is 40/100*30=12 students.\n#### 12",
+    "parsed": "12",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 60
+  },
+  {
+    "id": 5306,
+    "question_sha256": "1d1018dd20fb5560036fc97ba4673cdfdec87791db41faf3ef9320480e363fce",
+    "reference_answer": "10",
+    "text": " There were 45/3=15 adults at the reunion.\nOne third of the adults wore blue, so 15/3=5 adults wore blue.\nThere were 15-5=10 adults who did not wear blue.\n#### 10",
+    "parsed": "10",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 56
+  },
+  {
+    "id": 5723,
+    "question_sha256": "ef03bac3ffb33f60dfac5d0da4188056b2752c5b18e8d60097c948393e0f9ed5",
+    "reference_answer": "270",
+    "text": " Tucker bought 160*3=480 tissues.\nTucker used 210 tissues, so he has 480-210=270 tissues left.\n#### 270",
+    "parsed": "270",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 46
+  },
+  {
+    "id": 577,
+    "question_sha256": "16df157ad2815e47786155de234348dae5d8b576928d4ffc212e4d3724bed037",
+    "reference_answer": "240",
+    "text": " There are 4 teams * 10 members = 40 members.\nEach member needs 2 pairs of roller skates, so there are 40 members * 2 pairs = 80 pairs of roller skates.\nEach pair of roller skates has 3 sets of laces, so there are 80 pairs * 3 sets = 240 sets of laces.\n#### 240",
+    "parsed": "240",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 88
+  },
+  {
+    "id": 2009,
+    "question_sha256": "0455cdb2daf011b87c11c6d96784a25cbd5831313fe3ebde3ccbfef92341e237",
+    "reference_answer": "10",
+    "text": " Let x be the number of brass players.\nThere are 2x woodwinds, and 4*2x=8x percussion players.\nx+2x+8x=110\n11x=110\nx=10\nThere are 10 brass players.\n#### 10",
+    "parsed": "10",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 67
+  },
+  {
+    "id": 5458,
+    "question_sha256": "8224f5f50e5945898f74fa04b07454b9905c7952138da692014bc757384b300f",
+    "reference_answer": "172",
+    "text": " Twice as much as a large cask is 2*20=40 gallons\nBarrels store 3 gallons more than twice as much as a large cask, so they store 40+3=43 gallons\nHe has 4 barrels and each stores 43 gallons, so he can store 4*43=172 gallons\n#### 172",
+    "parsed": "172",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 82
+  },
+  {
+    "id": 7190,
+    "question_sha256": "ff0032e31a2568cdf131bcb99365780cc8f6db3c381f6d8c8ef03f1ca3a9f90c",
+    "reference_answer": "208",
+    "text": " The theater can hold 50 people and they sold 24 tickets so they lost 50-24 = 26 tickets\nThey charge $8.00 a ticket and they lost 26 tickets so they lost 8*26 = $208.00\n#### 208",
+    "parsed": "208",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 68
+  },
+  {
+    "id": 2872,
+    "question_sha256": "85a7ac6090b14301818fcbd5fe56b379bb49ba54ce2da0a7e868168dfaef255d",
+    "reference_answer": "8",
+    "text": " Giorgio plans to make 2 cookies per student and there are 40 students so he will make 2*40 = 80 cookies\n10% of his classmates want oatmeal raisin cookies and there are 40 students so 10/100*40 = 4 students want oatmeal raisin cookies\nGiorgio will make 4 oatmeal raisin cookies\n#### 4",
+    "parsed": "4",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 90
+  },
+  {
+    "id": 96,
+    "question_sha256": "d2c11df4b5b0d5bd718eace816e4ae73c56deecc2eb2348937c81e9adac2e851",
+    "reference_answer": "126",
+    "text": " On Monday, James collected 4*15=60 gallons of water.\nOn Tuesday, he collected 3*15=45 gallons of water.\nIn total, he collected 60+45=105 gallons of water.\nHe can sell water for $1.2 per gallon, so he made 105*1.2=$126 from selling all the water.\n#### 126",
+    "parsed": "126",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 91
+  },
+  {
+    "id": 2023,
+    "question_sha256": "69122ae929f31ab42f82c0cf95de09941f834b4611feed8efa89881ee6d92a98",
+    "reference_answer": "8",
+    "text": " Beth's sister is 5 years old, so twice her sister's age is 2*5 = 10 years.\nBeth is 18 years old, so in x years, Beth will be 18+x years old and her sister will be 5+x years old.\nWe want Beth to be twice her sister's age, so we can set up the equation 18+x = 2(5+x).\nSimplifying the equation, we get 18+x = 10+2x.\nSubtracting x from both sides, we get 18 = 10+x.\nSubtracting 10 from both sides, we get 8 = x.\nSo, in 8 years, Beth would be twice her sister's age.\n#### 8",
+    "parsed": "8",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 163
+  },
+  {
+    "id": 6832,
+    "question_sha256": "b7c933fdf8dd318f01bf0a93ebf360a5e968151a26fd90f18c2cc4d023217564",
+    "reference_answer": "250",
+    "text": " If Juan takes 4 hours to move from his office to grab lunch, then the time he takes to read a book is 4*2=8 hours.\nIf the book has 4000 pages, then Juan reads 4000/8=500 pages in an hour.\n#### 500",
+    "parsed": "500",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 68
+  },
+  {
+    "id": 1433,
+    "question_sha256": "96c86d3b4c027cd539cf804bdf7c1e9b288ff943b8b57e2a3992a434eb83f26f",
+    "reference_answer": "465",
+    "text": " Twice the number of home runs that Dave Winfield hit is 755+175=930\nDave Winfield hit 930/2=465 home runs in his career\n#### 465",
+    "parsed": "465",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 50
+  },
+  {
+    "id": 6209,
+    "question_sha256": "63627a07c39f707167907571ea841d98ba325a1464d6d5f17eed880d6540efbc",
+    "reference_answer": "5",
+    "text": " Gilbert planted 3 + 1 + 2 = 6 herb plants.\nGilbert had 6 + 1 = 7 herb plants when spring ended.\nGilbert had 7 - 2 = 5 herb plants when spring ended.\n#### 5",
+    "parsed": "5",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 53
+  },
+  {
+    "id": 5004,
+    "question_sha256": "49f2a3e3a0848b26a80269e5b18b933b5cb60603b002d8c3a54dc8e090ece4e5",
+    "reference_answer": "400",
+    "text": " Miss Adamson has 4 classes with 20 students each so she has 4*20 = 80 students\nShe uses 5 sheets of paper per student and has 80 students so she will use 5*80 = 400 sheets of paper\n#### 400",
+    "parsed": "400",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 65
+  },
+  {
+    "id": 4628,
+    "question_sha256": "8bd57d7c50fda6507f5d8fdec8e975635f4df89046efc08d599ac5d9cde20200",
+    "reference_answer": "270",
+    "text": " If Greta's brother received 40 letters, and Greta received 10 more letters than her brother, then Greta received 40+10 = 50 letters.\nThe total number of letters Greta and her brother received is 50+40 = 90 letters.\nIf Greta's mother received twice the total number of letters Greta and her brother received, then she received 2*90 = 180 letters.\nThe total number of letters the three received is 180+90 = 270 letters.\n#### 270",
+    "parsed": "270",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 126
+  },
+  {
+    "id": 5712,
+    "question_sha256": "ee34eab4cd543cf153a097aef604e8ec6b7bb2abb12ebb87d4822c9249bb125b",
+    "reference_answer": "1400",
+    "text": " There are 20 x 7 = 140 seats in each airplane.\nSo, each airplane can accommodate 140 x 2 = 280 passengers.\nTherefore, the airline company can accommodate 5 x 280 = 1400 passengers each day.\n#### 1400",
+    "parsed": "1400",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 68
+  },
+  {
+    "id": 6813,
+    "question_sha256": "391986fc8c46e4166be851e7e9d5693d5188a17effebf2e8bf901f6b6e20ebb0",
+    "reference_answer": "180",
+    "text": " The second building is 100/2=50 feet tall\nThe third building is 50/2=25 feet tall\nThe fourth building is 25/5=5 feet tall\nAll 4 buildings put together are 100+50+25+5=180 feet tall\n#### 180",
+    "parsed": "180",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 76
+  },
+  {
+    "id": 6860,
+    "question_sha256": "3e2e55cf5614b9c8795bb6552e92a3874e9d6b09c00c116c2ccb448154ff7f72",
+    "reference_answer": "154",
+    "text": " Calvin lost 8 pounds every month for 12 months, so he lost a total of 8 * 12 = 96 pounds.\nIf he started at 250 pounds and lost 96 pounds, his weight after one year would be 250 - 96 = 154 pounds.\n#### 154",
+    "parsed": "154",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 74
+  },
+  {
+    "id": 5253,
+    "question_sha256": "94079dc655f4ef39022370dc32d615f05834876431416b5e341a112dcef2f8b5",
+    "reference_answer": "9",
+    "text": " First find the amount of Cary's raise: $10/hour * 20% = $2/hour\nThen add that amount to her original pay to find her pay after the first year: $10/hour + $2/hour = $12/hour\nThen find 75% of $12/hour: $12/hour * 75% = $9/hour\n#### 9",
+    "parsed": "9",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 91
+  },
+  {
+    "id": 2055,
+    "question_sha256": "12479e851376e64fc8cb6b8cc7bcda1ab83ebbf24adcdd2eeee9f80158db8148",
+    "reference_answer": "288",
+    "text": " Sarah makes 5 * $7.20 = $36 per hour.\nSo she makes $36 * 8 = $288 in an 8-hour day.\n#### 288",
+    "parsed": "288",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 43
+  },
+  {
+    "id": 5781,
+    "question_sha256": "b975c9c40224ed9b6dda6e3b934ca7706089e7042787589f04bccce67aa3a14a",
+    "reference_answer": "78",
+    "text": " She buys 2 loaves of white bread for $3.50 each so that\u2019s 2*3.50 = $7.00\nShe buys 2 loaves of sourdough bread for $4.50 each so that\u2019s 2*4.50 = $9.00\nShe spends $7.00 on white bread, $1.50 on a baguette, $9.00 on sourdough bread and $2.00 on a croissant for a total of 7+1.50+9+2 = $20.50\nShe spends $20.50 a week at the bakery and she goes 4 weeks so that\u2019s 20.50*4 = $82.00\n#### 82",
+    "parsed": "82",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 175
+  },
+  {
+    "id": 3737,
+    "question_sha256": "755ec09bf6ddf62a43d0885ccfbfe80710f9b6f0f853ed66a488255e40c58dbc",
+    "reference_answer": "8",
+    "text": " First find the total volume of all the barrels: 7 gallons/barrel * 4 barrels = 28 gallons\nThen divide the total volume by the flow rate to find the time it takes to fill all the barrels: 28 gallons / 3.5 gallons/minute = 8 minutes\n#### 8",
+    "parsed": "8",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 66
+  },
+  {
+    "id": 5250,
+    "question_sha256": "cf37b0fe292c436cf92eca7be068ce04572f1cc7c5fe92ecc581f721dadc4c5f",
+    "reference_answer": "5",
+    "text": " There are 40 - 7 = 33 people wearing vertical stripes and horizontal stripes.\nThere are 4 * 7 = 28 people wearing horizontal stripes.\nThere are 33 - 28 = 5 people wearing vertical stripes.\n#### 5",
+    "parsed": "5",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 56
+  },
+  {
+    "id": 4730,
+    "question_sha256": "114979cbebe7c569ff2af8c92395cd3bda8a97cadf3ac08e89fdef8739d4440f",
+    "reference_answer": "161",
+    "text": " If there are 184 cows at the farm, and there are twice as many cows as dogs, then there are 184/2 = 92 dogs at the farm.\nIf the farm owner decides to sell 1/4 of the cows, then 1/4*184 = 46 cows will be sold.\nIf the farm owner decides to sell 3/4 of the dogs, then 3/4*92 = 69 dogs will be sold.\nThe total number of cows remaining on the farm is 184-46 = 138 cows.\nThe total number of dogs remaining on the farm is 92-69 = 23 dogs.\nThe total number of animals remaining on the farm is 138+23 = 161 animals.\n#### 161",
+    "parsed": "161",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 180
+  },
+  {
+    "id": 3126,
+    "question_sha256": "c9cee6b3d6a180a7d575980a9e31b012e7717e713ec42399b6dac7c955d21a49",
+    "reference_answer": "140",
+    "text": " First find the total cost of dinner for all the kids: $36 / kid * 2 kids = $72\nThen divide that amount by the cost per dinner to find how many bags of seeds each kid used: $72 / $36/bag = 2 bags\nThen divide the number of rows each kid planted by the number of ears per row to find the number of rows each kid planted: 70 ears/row / 70 ears/row = 1 row\nThen multiply that number by the number of kids to find the total number of rows planted: 1 row/kid * 4 kids = 4 rows\nThen multiply the number of rows by the number of seeds per row to find the total number of seeds planted: 4 rows * 48 seeds/row = 192 seeds\nThen divide the total number of seeds planted by the number of seeds per bag to find the number of bags used: 192 seeds / 48 seeds/bag = 4 bags\n#### 4",
+    "parsed": "4",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 218
+  },
+  {
+    "id": 4989,
+    "question_sha256": "0a51169d6af57c983bcb2917edf848fcb3025f0a71478b62b0176a3101386c9e",
+    "reference_answer": "15",
+    "text": " Edmund uses 18 inches of gift wrapper per gift box, so in 3 days, he will be able to wrap 18 x 3 = 54 gift boxes.\n#### 54",
+    "parsed": "54",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 42
+  },
+  {
+    "id": 6674,
+    "question_sha256": "446e0c3d33078020ca226858a67a8bf95d3bbb8d8cf54f283cb4c4dbb4259666",
+    "reference_answer": "12",
+    "text": " First find the total time William spent traveling: 12 hours - 7 hours = 5 hours\nThen add the time of each stop to find the total time spent: 5 hours + 25 minutes + 10 minutes + 25 minutes = 5 hours + 60 minutes = 5 hours + 1 hour = 6 hours\n#### 6",
+    "parsed": "6",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 79
+  },
+  {
+    "id": 6776,
+    "question_sha256": "6955349f36305ff25781198d59a5478e1c15f0a4c19b71bd1560185a9812c2bc",
+    "reference_answer": "2500",
+    "text": " She sold her car for 30,000*.8=$24,000\nShe needs $4,000 more to buy the new car, so she originally paid 24,000+4,000=$28,000\nHer new car is $30,000-$28,000=$2,000 cheaper\n#### 2,000",
+    "parsed": "2000",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 95
+  },
+  {
+    "id": 3661,
+    "question_sha256": "8fbf10ace45528cf3bb630f86606c67bef08d16b67d68f6d1c5a374669f92126",
+    "reference_answer": "53",
+    "text": " Gabby got 12 + 12 = 24 peaches.\nShe got 12 x 3 = 36 plums.\nSo, Gabby got 1 + 24 + 36 = 61 pieces of fruit.\n#### 61",
+    "parsed": "61",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 59
+  },
+  {
+    "id": 1923,
+    "question_sha256": "6168a02183ccdea925f9f9e9568e1ddca356bf5460066f9a770cb9dcc2fe51d2",
+    "reference_answer": "125",
+    "text": " She signed up 5 friends and each friend received $5.00 so 5*5 = $25.00\nShe signed up 7 more friends and each friend received $5.00 so 7*5 = $35.00\nShe signed up 12 friends in total and received $25.00 from them and $35.00 from them so 25+35 = $60.00\nShe also received $5.00 for each friend she signed up so 5*5 = $25.00\nShe and her friends made $60.00 from the friends and $25.00 from signing up so 60+25 = $85.00\n#### 85",
+    "parsed": "85",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 170
+  },
+  {
+    "id": 2138,
+    "question_sha256": "3ff42d9fbf2d7871393284e2af9208eb72ed94790bbc4105b58d5453094f1fbf",
+    "reference_answer": "17",
+    "text": " The carpenter made 10 - 3 = 7 tables last month.\nIn total, the carpenter made 10 + 7 = 17 tables.\n#### 17",
+    "parsed": "17",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 40
+  },
+  {
+    "id": 3414,
+    "question_sha256": "04508c407e747108f6547bfe3a5e815538d1ef3723a11e73ff62f642015311d2",
+    "reference_answer": "72",
+    "text": " He collects 3*4=12 crabs per week\nSo he collects 12*2=24 crabs\nThat means he makes 24*3=$72\n#### 72",
+    "parsed": "72",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 45
+  },
+  {
+    "id": 2614,
+    "question_sha256": "da379d66cc63bdd5b372e7ce7f8300e8ff1685885449ac85daf1653f45b6bd5f",
+    "reference_answer": "3",
+    "text": " Megan bought 12 eggs + 12 eggs = 24 eggs.\nShe used 2 eggs + 4 eggs = 6 eggs.\nShe had 24 eggs - 6 eggs = 18 eggs left.\nShe gave 18 eggs / 2 = 9 eggs to her aunt.\nShe had 18 eggs - 9 eggs = 9 eggs left.\nShe plans to divide the 9 eggs equally for 3 meals, so she will have 9 eggs / 3 meals = 3 eggs per meal.\n#### 3",
+    "parsed": "3",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 116
+  },
+  {
+    "id": 2854,
+    "question_sha256": "9abdca50bea5a886b9cb1a7b8c9311bcc768d68efda93961f0c04af496fc33dc",
+    "reference_answer": "620",
+    "text": " Javier exercised for 50 minutes every day for one week, so he exercised for 50 minutes x 7 days = 350 minutes.\nSanda exercised for 90 minutes on each of three days, so she exercised for 90 minutes x 3 days = 270 minutes.\nTogether, Javier and Sanda exercised for 350 minutes + 270 minutes = 620 minutes.\n#### 620",
+    "parsed": "620",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 96
+  },
+  {
+    "id": 3360,
+    "question_sha256": "be95ef03a3047fafce297e7d62e7748e6edd70cc5da802bb839d87bdcc3f2480",
+    "reference_answer": "54",
+    "text": " If there are 5 different types of animals, seeing each animal type takes around 6 minutes. So, it would take 5 * 6 = 30 minutes to see all the animal types.\nIf the zoo decides to import 4 new species, it would take an additional 4 * 6 = 24 minutes to see the new animal types.\nTherefore, it would take a total of 30 + 24 = 54 minutes to see all the animal types.\n#### 54",
+    "parsed": "54",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 106
+  },
+  {
+    "id": 5175,
+    "question_sha256": "ed8d5c30a5531f8d2797085223637a6a9ae37f72f3f5d49c7045d2a6b56567af",
+    "reference_answer": "12",
+    "text": " Kaydence's mother is 60 - 2 = 58 years old.\nKaydence's brother is 1/2 * 60 = 30 years old.\nThe total age of Kaydence's father, mother, brother, and sister is 60 + 58 + 30 + 40 = 188 years.\nThe total age of the people in Kaydence's family is 200 years, so Kaydence is 200 - 188 = 12 years old.\n#### 12",
+    "parsed": "12",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 123
+  },
+  {
+    "id": 3022,
+    "question_sha256": "0a890b8c78e1742bd3af780894c0632d87023b5133058bc0ed02f0b06c3b1098",
+    "reference_answer": "100000",
+    "text": " Let x be the price Tommy bought his first house for.\n25% of x is 0.25x, so the house is worth 1.25x.\nHe sells it for 1.25x and buys a new house for 1.25x + 0.75x = 2x.\nSo 2x = $500,000, so x = $250,000.\n#### 250,000",
+    "parsed": "250000",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 106
+  },
+  {
+    "id": 427,
+    "question_sha256": "61412531ea60f7f9d0eea283d6ce8bff3d6ca9ea4128ed88ba1e6c0672c00ebc",
+    "reference_answer": "23248",
+    "text": " Sheila will save $276 x 12 = $3,312 per year.\nSo, in 4 years, she will save $3,312 x 4 = $13,248.\nTherefore, at the end of 4 years, the total amount of money in Sheila\u2019s piggy bank will be $13,248 + $7,000 + $3,000 = $23,248.\n#### 23,248",
+    "parsed": "23248",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 110
+  },
+  {
+    "id": 4503,
+    "question_sha256": "53e9cf041f54bf9ce08fd55bdd50fa95b2bd04d8376a01b6a38cde0d978734d6",
+    "reference_answer": "32",
+    "text": " Each cake calls for 8 egg whites so 2 cakes will need 8*2 = 16 egg whites\n16 egg whites are equivalent to 16*2 = 32 tablespoons of aquafaba\n#### 32",
+    "parsed": "32",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 51
+  },
+  {
+    "id": 1576,
+    "question_sha256": "379d73bd5739b58aeb0fe476bff172f666b9ea5bfeef1b566b5f677793f42e86",
+    "reference_answer": "27000",
+    "text": " Pogo leaves 4 footprints every meter, so if he travels 6000 meters, he will leave 4*6000 = 24000 footprints.\nGrimzi leaves 3 footprints every 6 meters, so if he travels 6000 meters, he will leave 3*6000/6 = 3000 footprints.\nThe combined total number of footprints the two creatures will leave is 24000+3000 = 27000 footprints.\n#### 27000",
+    "parsed": "27000",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 127
+  },
+  {
+    "id": 3882,
+    "question_sha256": "c99cb25355a35963056a43d31584cdca02c5bc9497909a57c4cfdbcfbb083ed1",
+    "reference_answer": "21",
+    "text": " Three-quarters of 12cm is 12cm * 3/4 = 9cm\nSo, Roland needs 12cm + 9cm = 21cm\n#### 21",
+    "parsed": "21",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 44
+  },
+  {
+    "id": 3497,
+    "question_sha256": "2453cdf22ac56cd8c9ce7d8efac35838b2290b2a06ffa7094d118f46502c6514",
+    "reference_answer": "60",
+    "text": " If Emma can run all-around two arenas in 20 hours, then Fernando takes 2*20 = 40 hours to run his course.\nThe total time it takes both of them to run all around the two arenas is 40+20 = 60 hours\n#### 60",
+    "parsed": "60",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 64
+  },
+  {
+    "id": 3822,
+    "question_sha256": "543001fd5abb3472e6904e9d3e7e04bd6cb6d08d4945a66ae887b24cdce69f9d",
+    "reference_answer": "5",
+    "text": " Alec has 60 * 3/4 = 45 votes from people who will vote for him.\nHe has 60 * 1/2 = 30 people who have already said they will vote for him.\nSo Alec has 30 + 5 = 35 votes.\nAlec has 60 * 1/5 = 12 people who are thinking about voting for him.\nSo Alec has 35 + 12 = 47 votes.\nAlec needs 47 - 45 = 2 more votes to reach his goal.\n#### 2",
+    "parsed": "2",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 126
+  },
+  {
+    "id": 2756,
+    "question_sha256": "cde0de220c37d642303c320102a9ee0aabbb1db9c0b2a7a48d42757da646afb1",
+    "reference_answer": "30",
+    "text": " In 2019, Super Soup opened 5 new stores and closed 2, so they had 23 + 5 - 2 = 26 stores.\nIn 2020, Super Soup opened 10 new stores and closed 6, so they had 26 + 10 - 6 = 30 stores.\n#### 30",
+    "parsed": "30",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 80
+  },
+  {
+    "id": 4198,
+    "question_sha256": "9fef6217e4f46c7ba3521de3ac4f1d72d201a3e099873f9fc638bfe1b2e6617a",
+    "reference_answer": "480",
+    "text": " There are 5 boxes x 8 bags/box = 40 bags of balloons.\nThere are 40 bags x 12 balloons/bag = 480 balloons.\n#### 480",
+    "parsed": "480",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 44
+  },
+  {
+    "id": 3672,
+    "question_sha256": "56e00ae64550b80d2f34da7641e9548eac03414ba11fb913eb36f863ef305f14",
+    "reference_answer": "1600",
+    "text": " The total number of lines in the poem is 20 stanzas * 10 lines = 200 lines.\nThe total number of words in the poem is 200 lines * 8 words = 1600 words.\n#### 1600",
+    "parsed": "1600",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 59
+  },
+  {
+    "id": 6613,
+    "question_sha256": "4b3bb81762d27937a2783bae5b4c1e5887becf9daea334b52b7b77edbe2d3df3",
+    "reference_answer": "277",
+    "text": " There are 325 - 28 = 297 hens on the farm.\nThere are 297 - 20 = 277 egg-laying hens on the farm.\n#### 277",
+    "parsed": "277",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 50
+  },
+  {
+    "id": 5099,
+    "question_sha256": "79b03f57da19060316bddb5cdf9192fdb5ce59c2a0fb56f98486800b73de8c6f",
+    "reference_answer": "40",
+    "text": " Let's say the number of dogs is D.\nThe number of cats is D+20.\nD+D+20=60\n2D=40\nD=20\nThe number of cats is 20+20=40\n#### 40",
+    "parsed": "40",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 60
+  },
+  {
+    "id": 2315,
+    "question_sha256": "642b7cf024f3761c15885074b05ec8042b07aedc14ee25235c94f01397006c48",
+    "reference_answer": "20",
+    "text": " If in five years Hania will be 45 years old, she is currently 45-5 = 40 years old.\nTen years ago, Hania was 40-10 = 30 years old.\nSamir just turned half the age Hania was 10 years ago, meaning he is 30/2 = 15 years old.\nIn five years, Samir will be 15+5 = 20 years old.\n#### 20",
+    "parsed": "20",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 104
+  },
+  {
+    "id": 1310,
+    "question_sha256": "98b38d3f5ac46af980f5e0fb78624e6de9f0c469e482b089a6d345ba3491ba61",
+    "reference_answer": "6",
+    "text": " Let's say the number of true/false questions is x.\nThen the number of free response questions is x+7.\nAnd the number of multiple choice questions is 2(x+7)=2x+14.\nThe total number of questions is x+(x+7)+2x+14=4x+21.\nWe know that 4x+21=45, so 4x=24 and x=6.\n#### 6",
+    "parsed": "6",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 96
+  },
+  {
+    "id": 5401,
+    "question_sha256": "b7b66cbfd53fb825142efa88d830eb14384c7aa8f9a3d9a55edc3b610c2fefd2",
+    "reference_answer": "15",
+    "text": " The remaining amount that Lyka needs to save is $160 - $40 = $120.\nThere are 4 weeks in a month, so there are 2 months x 4 weeks/month = 8 weeks in two months.\nLyka needs to save $120 / 8 weeks = $15 per week.\n#### 15",
+    "parsed": "15",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 76
+  },
+  {
+    "id": 4062,
+    "question_sha256": "2bb4378fc309848d71502112de53761de28e29074acd0b33f33011986b126949",
+    "reference_answer": "10",
+    "text": " The concert ticket costs $181.\nThe five drink tickets cost 5 * $7 = $35.\nThe total cost of the outing is $181 + $35 = $216.\nJenna earns $18 an hour and works 30 hours a week, so she earns $18 * 30 = $540 a week.\nThere are 4 weeks in a month, so Jenna earns $540 * 4 = $2160 a month.\nTo find the percentage, we divide the cost of the outing by the monthly salary and multiply by 100: ($216 / $2160) * 100 = 10%\n#### 10",
+    "parsed": "10",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 157
+  },
+  {
+    "id": 5905,
+    "question_sha256": "2be0ec0c78126c25ce5570b8b9431d488ded8d3617b043c905828274edbefed9",
+    "reference_answer": "4",
+    "text": " There are 10 - 2 - 2 = 6 dishes that have only one kind of protein.\nThere are 6/3 = 2 dishes with only seitan.\nThere are 2 * 2 = 4 dishes with only beans.\nThere are 6 - 2 - 4 = 0 dishes with only lentils.\nThere are 2 + 4 = 6 dishes with beans and seitan.\nThere are 2 + 6 = 8 dishes with beans and lentils.\nThere are 2 + 6 + 8 = 16 dishes with beans.\nThere are 10 - 16 = 4 dishes with only lentils.\nThere are 2 + 4 + 8 + 4 = 18 dishes that include lentils.\n#### 18",
+    "parsed": "18",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 169
+  },
+  {
+    "id": 7417,
+    "question_sha256": "59787eb09cd8abd78b3d916096193f090fdb7f8a4ac9e8d761aa8bbd918053cf",
+    "reference_answer": "170",
+    "text": " Max fills up water balloons for 30 minutes at a rate of 2 water balloons every minute, so he fills up 30 * 2 = 60 water balloons.\nZach fills up water balloons for 40 minutes at a rate of 3 water balloons every minute, so he fills up 40 * 3 = 120 water balloons.\nTogether, Max and Zach fill up 60 + 120 = 180 water balloons.\nHowever, 10 of the water balloons pop on the ground, so they have 180 - 10 = 170 filled water balloons in total.\n#### 170",
+    "parsed": "170",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 142
+  },
+  {
+    "id": 2054,
+    "question_sha256": "dc57a281a19afce1c2830b91a5f4936adfd72477f86f9e6aba75eac9a8407d79",
+    "reference_answer": "69",
+    "text": " On Thursday, the book sold 15 x 3 = 45 copies.\nOn Friday, the book sold 45 / 5 = 9 copies.\nIn total, the bookstore sold 15 + 45 + 9 = 69 copies of the book by Friday.\n#### 69",
+    "parsed": "69",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 66
+  },
+  {
+    "id": 3110,
+    "question_sha256": "9aa4c78c82f90b911866c7115f64d0964110d079af54bc8ab384855348fb60cb",
+    "reference_answer": "64",
+    "text": " Mrs. Lopez needs to buy 1 adult ticket, 1 senior citizen ticket, and 3 children\u2019s tickets.\nThe cost of the adult ticket is $11.\nThe cost of the senior citizen ticket is $9.\nThe cost of each children\u2019s ticket is $8.\nMrs. Lopez needs to buy 3 children\u2019s tickets, so the total cost of the children\u2019s tickets is 3 * $8 = $24.\nThe total cost of all the tickets is $11 + $9 + $24 = $44.\n#### 44",
+    "parsed": "44",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 116
+  },
+  {
+    "id": 1857,
+    "question_sha256": "6096d95fe9d62b0843995272a22eae916f7127a16a145f08ea23ecc0b3258d38",
+    "reference_answer": "750",
+    "text": " There were 100 + 50 = 150 female adults.\nThe total number of adults was 100 + 150 = 250.\nThe number of children was 2 * 250 = 500.\nThe total number of people who attended the family reunion was 500 + 250 = 750.\n#### 750",
+    "parsed": "750",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 88
+  },
+  {
+    "id": 5599,
+    "question_sha256": "1eaf009f26fddb12b162d5e528d8d0e8d20586675f82cced14b324657e558f17",
+    "reference_answer": "184",
+    "text": " Mairead jogged for 3/5*40 = 24 miles.\nShe walked for 5*24 = 120 miles.\nThe total distance she covered while doing her exercises is 40+120+24 = 184 miles.\n#### 184",
+    "parsed": "184",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 66
+  },
+  {
+    "id": 6080,
+    "question_sha256": "48f35fb5a59de22bc56b746587ba007fb67e11ea404e8d2b68702add15c56497",
+    "reference_answer": "9",
+    "text": " Bob ate half of a pizza, which is 12/2 = 6 slices.\nTom ate one-third of a pizza, which is 12/3 = 4 slices.\nSally ate one-sixth of a pizza, which is 12/6 = 2 slices.\nJerry ate a quarter of a pizza, which is 12/4 = 3 slices.\nIn total, they ate 6 + 4 + 2 + 3 = 15 slices.\nSince they had 2 pizzas, there were 2 * 12 = 24 slices in total.\nTherefore, there were 24 - 15 = 9 slices left over.\n#### 9",
+    "parsed": "9",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 147
+  },
+  {
+    "id": 6392,
+    "question_sha256": "34069260bbe4464f8107eba7dbe669ba8ff1c4b40f7ddf98d02ba5fac67ca8b4",
+    "reference_answer": "1234",
+    "text": " The first bill is 2 * $200 = $400 late.\nThe first bill is $400 + ($400 * .10) = $440 late.\nThe second bill is $130 + ($50 * 6) = $290 late.\nThe third bill is $444 + ($40 + 2 * $40) = $484 late.\nAriana owes $440 + $290 + $484 = $1214 in total.\n#### 1214",
+    "parsed": "1214",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 126
+  },
+  {
+    "id": 836,
+    "question_sha256": "8e0c7cfdd1f80424d766211d689c3ee23a16f0c4397f8c22a355c553402ddd0f",
+    "reference_answer": "81",
+    "text": " The solver got 211 - 65 = 146 tails.\nHe got 146 - 65 = 81 more tails than heads.\n#### 81",
+    "parsed": "81",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 41
+  },
+  {
+    "id": 4873,
+    "question_sha256": "55e16707e4092ab4df52b4cbfb53fabd587b96cf849a33230f1b5468988fee3b",
+    "reference_answer": "4",
+    "text": " The dog runs 24-15=9 miles per hour faster than the rabbit.\nSo it will take the dog 0.6/9=0.06666666666666667 hours to catch up to the rabbit.\nSo it will take 0.06666666666666667*60=4 minutes for the dog to catch up to the rabbit.\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 102
+  },
+  {
+    "id": 353,
+    "question_sha256": "40ccd08f754b1208c7bfd6340c80d394a20f4f92692f6dbc0b4c0c3530684cc2",
+    "reference_answer": "600",
+    "text": " The total cost of the furniture is 150 * $134 = $19,800.\nThe company will reimburse Remy $20,700 - $19,800 = $900.\n#### 900",
+    "parsed": "900",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 57
+  },
+  {
+    "id": 3670,
+    "question_sha256": "4bd9127a877e963a332f759099a8d251ff7d76accfb03800f0fd84f2c98191ca",
+    "reference_answer": "11",
+    "text": " There are 3 friends joining them, so there are now 1 + 3 + 3 = 7 people drawing with chalk.\nErika and her siblings originally had 7 - 3 = 4 pieces of chalk.\nErika and her siblings originally had 4 + 12 = 16 pieces of chalk.\n#### 16",
+    "parsed": "16",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 72
+  },
+  {
+    "id": 5727,
+    "question_sha256": "589f045aeb6d058659cd74ba05156c69480b88fae11439f2b604a93aab74465f",
+    "reference_answer": "273",
+    "text": " There are 9 * 6 = 54 pink daisies.\nThere are 4 * 54 - 3 = 213 red daisies.\nThere are 6 + 54 + 213 = 273 daisies total.\n#### 273",
+    "parsed": "273",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 65
+  },
+  {
+    "id": 5605,
+    "question_sha256": "26756aae9616412b1520564ebe396a8e566daf023b9560e3940b327ad6317c33",
+    "reference_answer": "48",
+    "text": " Tom is 30 - 5 = 25 years old now.\nJared was twice as old as Tom two years ago, so Jared was 25 * 2 = 50 years old two years ago.\nJared is now 50 + 2 = 52 years old.\n#### 52",
+    "parsed": "52",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 68
+  },
+  {
+    "id": 5498,
+    "question_sha256": "eedce859313951ce6ca85ac3551719eb58aec4e829cca45ca00b9454fcf406c0",
+    "reference_answer": "43",
+    "text": " Karen took out 48 x 1/6 = 8 cards.\nSo, there were 48 - 8 = 40 cards in the box after Sasha added her cards.\nTherefore, there were 83 - 40 = 43 cards originally in the box.\n#### 43",
+    "parsed": "43",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 65
+  },
+  {
+    "id": 4368,
+    "question_sha256": "3903078fdb8f7fe9d484e0ac17e3961fd41599cde99edc1a6fa7be8b4e4fc9db",
+    "reference_answer": "90",
+    "text": " The perimeter of the field is 20 + 60 + 20 + 60 = 160 feet.\nJoy will have 250 - 160 = 90 feet of tape left over.\n#### 90",
+    "parsed": "90",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 54
+  },
+  {
+    "id": 6981,
+    "question_sha256": "958268efd590e44d651a195ac5b9e53811d5e8f4c8c71ad302f58b016d0c67dd",
+    "reference_answer": "20",
+    "text": " Boris has 100 - 8 = 92 pieces of candy left.\nHe separates the candy into 4 bowls, so each bowl has 92 / 4 = 23 pieces of candy.\nHe takes away 3 pieces of candy from each bowl, so each bowl has 23 - 3 = 20 pieces of candy.\n#### 20",
+    "parsed": "20",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 79
+  },
+  {
+    "id": 2172,
+    "question_sha256": "0cca0a27cce2d2f52b04e17a7d44c0329ef65869c13505e016b2496506bb2a71",
+    "reference_answer": "50",
+    "text": " The number of candles in the living room is 20/2=10 candles.\nThe total number of candles in the house is 20+10+20=50 candles.\n#### 50",
+    "parsed": "50",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 46
+  },
+  {
+    "id": 2062,
+    "question_sha256": "edb97f919ef1e01563e53f321558b1f9b5089cb743600905009d06cb99876ff3",
+    "reference_answer": "27",
+    "text": " Joan spends 30 + 25 + 38 = 93 minutes on the piano, writing music, and reading about the history of the piano.\nThere are 60 minutes in an hour, so 2 hours is 2 x 60 = 120 minutes.\nJoan has 120 - 93 = 27 minutes left to use the finger exerciser.\n#### 27",
+    "parsed": "27",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 90
+  },
+  {
+    "id": 3974,
+    "question_sha256": "ff87d2870548ce241ec406e47f177e1a8ae1e9f51b1fbcc1b765c80996f6c3c5",
+    "reference_answer": "4",
+    "text": " He reads 2*50=100 pages a day\nSo it will take him 2800/100=28 days\nSo it will take him 28/7=4 weeks\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 51
+  },
+  {
+    "id": 2242,
+    "question_sha256": "f41f3221c8f3e3c753e438aa370ee613ba4b69736025d0fe76fcf60a08042560",
+    "reference_answer": "7",
+    "text": " Katie runs 84/3=28 miles.\nCole runs 28/4=7 miles.\n#### 7",
+    "parsed": "7",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 26
+  },
+  {
+    "id": 4023,
+    "question_sha256": "fdb0d9b9d576ea4d592296b252354b7341dc626d95db4743c3860d59f8c126b1",
+    "reference_answer": "4",
+    "text": " 5 yogurts x 8 slices of banana = 40 slices of banana\n40 slices of banana / 10 slices of banana per banana = 4 bananas\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 41
+  },
+  {
+    "id": 2972,
+    "question_sha256": "eb69714926b3298df5501d72b1903cc0d6259846285c8941a0fb0eea998f28b6",
+    "reference_answer": "300",
+    "text": " Let the price of the chair be x.\nThe price of the table is 3x.\nThe price of the couch is 5*3x = 15x.\nThe total price of all items is x + 3x + 15x = 19x.\nWe know that 19x = $380.\nSo, x = $380/19 = $20.\nThe price of the couch is 15x = 15*$20 = $300.\n#### 300",
+    "parsed": "300",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 116
+  },
+  {
+    "id": 5143,
+    "question_sha256": "e824f7414e66b6a967b5721d893cdd0296bd5fbb6e979e531f3be08d22145279",
+    "reference_answer": "12",
+    "text": " If Billy is 4 years old, and I'm 4 times older than Billy, then I'm 4*4 = 16 years old.\nIf Billy is 4 years old, then when he was born, I was 16-4 = 12 years old.\n#### 12",
+    "parsed": "12",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 64
+  },
+  {
+    "id": 612,
+    "question_sha256": "cf3a1f8819431347626615202583b4abdf884e6e8f6d943fef3e1f83c9f357b2",
+    "reference_answer": "60",
+    "text": " He has 75 green caps because 125 - 50 = 75\nHe has 60% green caps because 75 / 125 x 100 = 60\n#### 60",
+    "parsed": "60",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 52
+  },
+  {
+    "id": 4512,
+    "question_sha256": "c3277c0d281edae66dc6f6443932e39d51ef5bb99e103f9c980e8c8357fbbd33",
+    "reference_answer": "180",
+    "text": " The cost of each literature book is $4/2 = $2.\nHe earns $4 x 5 = $20 from selling five fantasy books.\nHe earns $2 x 8 = $16 from selling eight literature books.\nSo, he earns a total of $20 + $16 = $36 per day.\nTherefore, he will earn $36 x 5 = $180 after five days.\n#### 180",
+    "parsed": "180",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 95
+  },
+  {
+    "id": 6484,
+    "question_sha256": "760686a8257c19d46696e426c32eb91a9231c5654918af1ef97248fa5f96caed",
+    "reference_answer": "10",
+    "text": " Let x be Frank's age.\nGabriel is 3 years younger than Frank, so Gabriel's age is x - 3.\nThe total of their ages is 17, so x + (x - 3) = 17.\nCombining like terms, 2x - 3 = 17.\nAdding 3 to both sides, 2x = 20.\nDividing both sides by 2, x = 10.\nFrank is 10 years old.\n#### 10",
+    "parsed": "10",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 108
+  },
+  {
+    "id": 4606,
+    "question_sha256": "ff3c5ac0d9fae0395468926393e29cc2995cdd8f3f9e3c72681fb01bc4b38707",
+    "reference_answer": "320",
+    "text": " Nate has read 400 x 20/100 = 80 pages of the book.\nSo, he needs to read 400 - 80 = 320 pages to finish the book.\n#### 320",
+    "parsed": "320",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 54
+  },
+  {
+    "id": 2873,
+    "question_sha256": "4cd2d3d95df6ef9e535e3f84c86cf267e9df3178fc6c8ad0c07b5564bb682fcb",
+    "reference_answer": "4",
+    "text": " The number of teenagers is 6 * 5 = 30 teenagers.\nThe total number of toddlers and teenagers is 30 + 6 = 36 toddlers and teenagers.\nThe number of newborns is 40 - 36 = 4 newborns.\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 60
+  },
+  {
+    "id": 4968,
+    "question_sha256": "deb90f4a4fec2b73134d0e3787c126d20b495e98240f735845fe2882b52c92a8",
+    "reference_answer": "85",
+    "text": " Tom eats 2*1=2 pounds of broccoli.\nCarrots have 51 calories per pound, so Tom eats 51*1=51 calories from carrots.\nBroccoli has 1/3*51=17 calories per pound.\nTom eats 17*2=34 calories from broccoli.\nIn total, Tom eats 51+34=85 calories.\n#### 85",
+    "parsed": "85",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 88
+  },
+  {
+    "id": 1512,
+    "question_sha256": "95928ff359859665d5412f2d9a0a392b52c72146811d30a17fb62a91c41e2a1b",
+    "reference_answer": "16",
+    "text": " Tom served 10 x 8 = 80 customers.\nSo, Tom earned 80 x 20/100 = 16 bonus points.\n#### 16",
+    "parsed": "16",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 40
+  },
+  {
+    "id": 618,
+    "question_sha256": "3a69dd0d860b2ddd5b5cc545943a157ae28e8fbe95999ee2c32eeb317f567d63",
+    "reference_answer": "15",
+    "text": " The chance of getting bitten by a mosquito infected with malaria is 40%.\nThe chance of getting bitten by a mosquito infected with Zika virus is 20%.\nThe chance of getting infected with either virus after getting bitten by an infected mosquito is 50%.\nThe chance of getting infected with malaria after getting bitten by a mosquito infected with malaria is 50% - 50% * 50% = 25%.\nThe chance of getting infected with Zika virus after getting bitten by a mosquito infected with Zika virus is 50% * 50% = 25%.\nThe chance of getting infected with either virus after getting bitten by a mosquito infected with either virus is 25% + 25% = 50%.\nThe chance of getting bitten by a mosquito infected with either virus is 40% + 20% = 60%.\nThe chance of getting infected with either virus is 50% * 60% = 30%.\n#### 30",
+    "parsed": "30",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 217
+  },
+  {
+    "id": 7108,
+    "question_sha256": "b26c462951e12b76caf897e1a0967764ce33e0084ed2434e5406abbf53de7b11",
+    "reference_answer": "30",
+    "text": " Bobby can jump 30 times per minute as a child and 1 jump per second as an adult, so he can jump 30*60=1800 times per minute now that he is an adult.\nBobby can jump 1800-30=1770 more jumps than when he was a child.\n#### 1770",
+    "parsed": "1770",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 79
+  },
+  {
+    "id": 5083,
+    "question_sha256": "0ab77d6956c26f6b1d607bd5fba43ae5ec6076f27b0175941a7ff8f69f680e2e",
+    "reference_answer": "5",
+    "text": " The desk was raised from $15 to $65, so the price was raised 65-15 = $50.\nThe price was raised by $5 every time someone bid, so there were 50/5 = 10 bids.\nSince two people were bidding, each person bid 10/2 = 5 times.\n#### 5",
+    "parsed": "5",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 77
+  },
+  {
+    "id": 4079,
+    "question_sha256": "a12551bb4e6419a3cf276dce837d158d2337002177e5c5cd800c7492c20d1a6a",
+    "reference_answer": "35",
+    "text": " Clare spent 4 x $2 = $8 on loaves of bread.\nClare spent 2 x $2 = $4 on cartons of milk.\nClare spent a total of $8 + $4 = $12.\nClare has $47 - $12 = $35 left.\n#### 35",
+    "parsed": "35",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 69
+  },
+  {
+    "id": 3658,
+    "question_sha256": "83c7a9de766fcc71d8cb3e5de520883588c2f6b74e46edc3d55c329330dfd4b6",
+    "reference_answer": "2900",
+    "text": " Twenty people pre-bought tickets at $155 each so they paid 20*155 = $3100\nThirty people bought their tickets at the gate and paid $200 each so they paid 30*200 = $6000\nThe people at the gate paid $6000-$3100 = $2900 more than those that pre-bought their tickets.\n#### 2900",
+    "parsed": "2900",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 99
+  },
+  {
+    "id": 6312,
+    "question_sha256": "31613bcdc2bf2baa6865df2d899b4ba2d8398ac2f9d84e9fa4066c5a69c7cd9e",
+    "reference_answer": "18",
+    "text": " Ben has 40 + 8 = 48 apples.\nTom has 3/8 * 48 = 18 apples.\n#### 18",
+    "parsed": "18",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 34
+  },
+  {
+    "id": 4871,
+    "question_sha256": "5549ca5ce52ea1a31d3518a154a3277ea6f72d83f46879d8008fc15e4e575416",
+    "reference_answer": "35",
+    "text": " There are 80 * 1/4 = 20 roosters.\nThere are 80 - 20 = 60 hens.\nThere are 60 * 3/4 = 45 hens that lay eggs.\nThere are 60 - 45 = 15 hens that do not lay eggs.\nThere are 20 + 15 = 35 chickens that do not lay eggs.\n#### 35",
+    "parsed": "35",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 99
+  },
+  {
+    "id": 736,
+    "question_sha256": "5890b053407174acc546c4cbffab993510dcd26787c2d9f8c287ccef745c8b01",
+    "reference_answer": "25",
+    "text": " The samosas cost 3 x $2 = $6.\nThe pakoras cost 4 x $3 = $12.\nThe total cost of the food is $6 + $12 + $2 = $20.\nThe tip was 25% of $20, which is 25/100 x $20 = $5.\nThe total cost of the meal, including the tip, is $20 + $5 = $25.\n#### 25",
+    "parsed": "25",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 104
+  },
+  {
+    "id": 1804,
+    "question_sha256": "8f5bd3b0fd1e778dabd2f51d564b8ed3855d57285a2d19b82e7beab1d0e8ece5",
+    "reference_answer": "48",
+    "text": " Tom and Tim brought 4+4=8 dice to school.\nEach dice has 6 sides, so there are 8*6=48 sides in total.\n#### 48",
+    "parsed": "48",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 39
+  },
+  {
+    "id": 4929,
+    "question_sha256": "e565f4e3edacf59ac5a39fb3093395fb81f97d07c3eefa71ccaefea7b97d1229",
+    "reference_answer": "16",
+    "text": " 3 years ago, John was 39-3=36 years old.\nIn 6 years, James will be 36/2=18 years old.\nJames is now 18-6=12 years old.\nJames' older brother is 12+4=16 years old.\n#### 16",
+    "parsed": "16",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 71
+  },
+  {
+    "id": 154,
+    "question_sha256": "5b038b16b592928decdfe1122209a9502062067e5ba1a11a9a95a92dbc21e114",
+    "reference_answer": "720",
+    "text": " Ariella has $400 + $200 = $600 in her son's savings account.\nAfter two years, Ariella will have $600 + ($600 x 10/100 x 2) = $600 + $120 = $720.\n#### 720",
+    "parsed": "720",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 74
+  },
+  {
+    "id": 6559,
+    "question_sha256": "3d0cd393f552d31a6e99b7a373d14cb4166ede9d1b4ab223aee7ed592b20625e",
+    "reference_answer": "7",
+    "text": " There are 3 yellow tiles and 3+1=4 blue tiles.\nThere are 6 purple tiles and 4+6=10 tiles are yellow, blue, or purple.\nThere are 20-10=10 white tiles.\n#### 10",
+    "parsed": "10",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 57
+  },
+  {
+    "id": 2826,
+    "question_sha256": "1a2adeacddb0e5d40398293bd66b57eddfb545f1223448031d32e77f14e80cbe",
+    "reference_answer": "46000",
+    "text": " She will be paying $600.00 a month for 5 years, which is 5*12=60 months.\nHer total payments will be $600.00/month * 60 months = $36,000.00\nHer loan was for $36,000.00 + $10,000.00 = $46,000.00\n#### 46,000",
+    "parsed": "46000",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 105
+  },
+  {
+    "id": 6686,
+    "question_sha256": "a8282af6f288f9624d3093a2f80a26c77e3aafe3cdbcfb58128d9417dc6fe600",
+    "reference_answer": "40",
+    "text": " She needs 240 servings because 120 x 2 = 240\nShe needs 40 bottles of champagne because 240 / 6 = 40\n#### 40",
+    "parsed": "40",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 46
+  },
+  {
+    "id": 6196,
+    "question_sha256": "c37b225fabb8d12179dadd7c12bffb9f0c81f4a88a1574c99def9ae7cd0e1609",
+    "reference_answer": "4",
+    "text": " If each large order needs 200g of packing peanuts, then 3 large orders will need 3*200 = 600g of packing peanuts.\nIf Lisa has used a total of 800g of packing peanuts, then the remaining 800-600 = 200g of packing peanuts were used for small orders.\nIf each small order needs 50g of packing peanuts, then Lisa has sent 200/50 = 4 small orders.\n#### 4",
+    "parsed": "4",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 112
+  },
+  {
+    "id": 1320,
+    "question_sha256": "878945f47bbcb7d0f5cb54358186155b27d9eecd6c72640b347129dbee2f9280",
+    "reference_answer": "221",
+    "text": " Shaniqua would make 8 * 12 = $96 from haircuts.\nShe would make 5 * 25 = $125 from styles.\nShe would make a total of 96 + 125 = $221.\n#### 221",
+    "parsed": "221",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 61
+  },
+  {
+    "id": 143,
+    "question_sha256": "0edda5a6d59daefae64b75ea88a41ab18ef8ea1b594d16bcd0511da60b67534a",
+    "reference_answer": "45",
+    "text": " If 25% of the goldfish are at the surface, then 100% - 25% = 75% are below the surface.\nIf 75% of the goldfish is equal to 15 goldfish, then 1% is equal to 15/75 = 0.2 goldfish.\nIf 1% is equal to 0.2 goldfish, then 100% is equal to 0.2 x 100 = 20 goldfish.\nTherefore, there are 20 goldfish below the surface.\n#### 20",
+    "parsed": "20",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 130
+  },
+  {
+    "id": 2391,
+    "question_sha256": "8154fbf0558028e9c8d5786ed352b5946c63687a3d072dcebcd1690da0063676",
+    "reference_answer": "28",
+    "text": " Lucas made 40 / 4 = 10 pieces of chocolate candy for each of his 10 students.\nLucas will make 10 - 3 = 7 pieces of chocolate candy for his class on the upcoming Monday.\n#### 7",
+    "parsed": "7",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 53
+  },
+  {
+    "id": 51,
+    "question_sha256": "0d821abd5ff6387beebe8e03e8b65d7d60b768da13413eead9e6040c9f308df5",
+    "reference_answer": "160",
+    "text": " The living room curtain is 4*6=24 square feet.\nThe bedroom curtain is 2*4=8 square feet.\nThe total area cut is 24+8=32 square feet.\nThe bolt of fabric is 16*12=192 square feet.\nSo there are 192-32=160 square feet of fabric left.\n#### 160",
+    "parsed": "160",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 87
+  },
+  {
+    "id": 376,
+    "question_sha256": "a7507877b45e3454af2cecb51fe783cf10a611cdc20187b7406dbd2bc87dd0f4",
+    "reference_answer": "7",
+    "text": " Caleb picked 20 - 5 = 15 apples.\nSuraya picked 12 + 15 = 27 apples.\nSo Suraya picked 27 - 20 = 7 apples more than Kayla.\n#### 7",
+    "parsed": "7",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 53
+  },
+  {
+    "id": 3294,
+    "question_sha256": "3659286361406e7beacf98d3157c8c2cdacda12dd197e535a6667166f75eae6d",
+    "reference_answer": "450",
+    "text": " Every year, the number of cows increases by half the number of cows living on the ranch, so the number of cows increases by 200/2 = 100 cows.\nIn one year, the rancher will own 200 + 100 = 300 cows.\nIn two years, the rancher will own 300 + 100 = 400 cows.\n#### 400",
+    "parsed": "400",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 94
+  },
+  {
+    "id": 2126,
+    "question_sha256": "0052676c78284fec42309b2d7070ac3c27e371c3585ba7732a325f15ac9368c1",
+    "reference_answer": "490",
+    "text": " In the first year, Adam teaches 40 students.\nIn the next 9 years, he teaches 50 students each year.\nSo in 10 years, he will teach 40 + (50 * 9) = 40 + 450 = 490 students.\n#### 490",
+    "parsed": "490",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 70
+  },
+  {
+    "id": 6085,
+    "question_sha256": "ddd13d79f44772416ea331b79f362d900db738331782041e87689721e29b8f9e",
+    "reference_answer": "34",
+    "text": " In the first hour, the pool fills with 8 gallons of water.\nIn the next two hours, the pool fills with 10 gallons of water per hour, so 10*2 = 20 gallons of water.\nIn the fourth hour, the pool fills with 14 gallons of water.\nIn the fifth hour, the pool loses 8 gallons of water due to the leak.\nSo, the total amount of water in the pool after five hours is 8+20+14-8 = 34 gallons.\n#### 34",
+    "parsed": "34",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 116
+  },
+  {
+    "id": 157,
+    "question_sha256": "2ef55d795db181bf2c51d83805406a790bbaf089b575b772c2fe358a7d0fcb15",
+    "reference_answer": "10",
+    "text": " The total number of beads is 23 + 16 = 39 beads.\nShe divided the beads into 3 equal parts, so each part had 39 / 3 = 13 beads.\nShe removed 13 - 6 = 7 beads from each part.\n#### 7",
+    "parsed": "7",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 64
+  },
+  {
+    "id": 3227,
+    "question_sha256": "75aca026bf532f3cd59650fbc9fe3b5d01a7adaf13dafcf3bc700111687b331f",
+    "reference_answer": "265",
+    "text": " The area of the 4 bedrooms is 4 bedrooms x 11 x 11 feet = 484 square feet.\nThe area of the 2 bathrooms is 2 bathrooms x 6 x 8 feet = 96 square feet.\nThe total area of the bedrooms and bathrooms is 484 + 96 = 580 square feet.\nThe area of the kitchen and living area is 1,110 square feet - 580 square feet = 530 square feet.\nSince the kitchen and living area have the same sized area, the area of the kitchen is 530 square feet / 2 = 265 square feet.\n#### 265",
+    "parsed": "265",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 150
+  },
+  {
+    "id": 820,
+    "question_sha256": "4ccc5573534c713cf1ba6f192b2eda18c4139cfa4a1d5cb5abaabf5655308630",
+    "reference_answer": "21",
+    "text": " The total bill is $16 + $14 = $30.\nHis friend pays half the bill, so he pays $30/2 = $15.\nThe tip is 20% of the bill, so it is $30 * 20% = $6.\nJames pays his half of the bill and the tip, so he pays $15 + $6 = $21.\n#### 21",
+    "parsed": "21",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 91
+  },
+  {
+    "id": 30,
+    "question_sha256": "54641b315d08f6ef56f7445c5c5abc5cee8bbdea39a60249c63455e04a9d934f",
+    "reference_answer": "6",
+    "text": " Bill and Dale each eat 2 pieces (50% of 4 pieces), so they eat a total of 2*2 = 4 pieces.\nAnn and Cate each eat 3 pieces (75% of 4 pieces), so they eat a total of 3*2 = 6 pieces.\nIn total, they eat 4+6 = 10 pieces.\nThere are 4 pizzas, so there are 4*4 = 16 pieces in total.\nThere are 16-10 = 6 pieces left uneaten.\n#### 6",
+    "parsed": "6",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 120
+  },
+  {
+    "id": 459,
+    "question_sha256": "e13df91499fe40beb639785c9fb7114c60059b9b794fe0e9c272546a73e17edc",
+    "reference_answer": "10080",
+    "text": " The cost of buying a lawnmower now is $1800 x 5/3 = $3000.\nThe total cost of buying 4 lawnmowers a year ago is $1800 x 4 = $7200.\nThe total cost of buying 4 lawnmowers now is $3000 x 4 = $12000.\nTherefore, the total cost of buying 4 lawnmowers is $12000 - $7200 = $4800.\n#### 4800",
+    "parsed": "4800",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 122
+  },
+  {
+    "id": 1385,
+    "question_sha256": "2f6320f45ce3b65c5a35521a35eabc31761d2075b93f9c5f7a3efad403541f7b",
+    "reference_answer": "72",
+    "text": " The total cost of the fence is 3 * (9 + 18) = $108.\nThe neighbor behind him will pay for half of the back fence, so he will pay 1/2 * 18 = 9 feet of the fence.\nThe neighbor on his left will pay for a third of the side fence, so he will pay 1/3 * 9 = 3 feet of the fence.\nThe total cost of the fence is 108 - 9 - 3 = $96.\n#### 96",
+    "parsed": "96",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 116
+  },
+  {
+    "id": 5412,
+    "question_sha256": "84d780975c26839f87611f2c030b4736c382b314e170cf7e4f8b768de29e75e9",
+    "reference_answer": "1750",
+    "text": " The coach pours 200ml x 30 players = 6000ml of water.\nThere was 8 liters of water = 8000ml of water.\nSo, 6000ml + 250ml = 6250ml of water was used.\nTherefore, 8000ml - 6250ml = 1750ml of water was left over.\n#### 1750",
+    "parsed": "1750",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 100
+  },
+  {
+    "id": 1450,
+    "question_sha256": "c91904069c3c2f3c64db4c241e7256f66de130f0d667620382a0a8c79c8c46b4",
+    "reference_answer": "25",
+    "text": " Caroline has 40/2 = 20 pairs of socks remaining after losing 4 pairs.\nShe donates 20/3 = 6.666667 pairs of socks.\nAfter donating, she has 20 - 6.666667 = 13.333333 pairs of socks.\nShe then has 13.333333 + 10 = 23.333333 pairs of socks after purchasing new ones.\nShe receives 3 more pairs of socks, so she has 23.333333 + 3 = 26.333333 pairs of socks.\n#### 26",
+    "parsed": "26",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 156
+  },
+  {
+    "id": 6453,
+    "question_sha256": "b15b960fc9b046803132dfbda64f4e4a09a1a7461837d52387c2dc6a9e549439",
+    "reference_answer": "28",
+    "text": " Allie needs to make 42/6 = 7 batches of guacamole.\nShe needs 7*4 = 28 avocados.\n#### 28",
+    "parsed": "28",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 37
+  },
+  {
+    "id": 4516,
+    "question_sha256": "c7d4860a802d83c5347598ff5ef785b6ab82d021a88b5be4954bfae92a71885e",
+    "reference_answer": "35",
+    "text": " The can of tomatoes cost $2.20 - $0.99 = $1.21 more than the original can.\nThe lettuce cost $1.75 - $1.00 = $0.75 more than the original lettuce.\nThe celery cost $2.00 - $1.96 = $0.04 more than the original celery.\nThe total cost of the food substitutes is $1.21 + $0.75 + $0.04 = $2.00\nThe total cost of the groceries is $25 + $2.00 = $27.00\nThe total cost of the groceries and delivery is $27.00 + $8.00 = $35.00\n#### 35",
+    "parsed": "35",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 169
+  },
+  {
+    "id": 669,
+    "question_sha256": "e8d5da7770dac5e8a9c0a7b69d801902e0845413ea5d277aad12f20cd65d21b1",
+    "reference_answer": "140",
+    "text": " If Bella currently has 60 marbles, she has 60/2 = 30 frisbees.\nShe also has 30-20 = 10 deck cards.\nIf she buys 2/5 times more of each item, she will have 60+2/5*60 = 60+24 = 84 marbles.\nShe will also have 10+2/5*10 = 10+4 = 14 frisbees.\nAnd she will have 30+2/5*30 = 30+12 = 42 deck cards.\nThe total number of items she will have is 84+14+42 = 140\n#### 140",
+    "parsed": "140",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 168
+  },
+  {
+    "id": 3156,
+    "question_sha256": "3d05a5b0e60698bc800aa1772ccbd7910037608908bee8d1c517d8244a69725e",
+    "reference_answer": "18",
+    "text": " Kendra made 3 batches of cookies, and each batch contains 12 cookies, so she made 3*12 = 36 cookies.\nIf each cookie contains 2 chocolate chips, then there are 36*2 = 72 chocolate chips in total.\nThere are 4 people in the family, so each person will eat 72/4 = 18 chocolate chips.\n#### 18",
+    "parsed": "18",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 88
+  },
+  {
+    "id": 5339,
+    "question_sha256": "47b1c50c2e9e95a7481edffa56a8c13941612acd43504cb24dfc6b32a17a0985",
+    "reference_answer": "6",
+    "text": " The 8oz package of store butter costs $4.\nThe two 4oz packages normally cost $2 each, so normally they would cost 2*2 = $4.\nWith the 50% discount, each 4oz package costs 2*2*0.5 = $2.\nSo the two 4oz packages cost 2*2 = $4.\nSo the total cost of the butter is 4+4 = $8.\n#### 8",
+    "parsed": "8",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 98
+  },
+  {
+    "id": 6071,
+    "question_sha256": "975f08b4b2292900d3a1de92c87abf381890a089b14e309b958668de79c95daa",
+    "reference_answer": "1200",
+    "text": " He ate 8/2=4 slices\nSo he ate 4*300=1200 calories\n#### 1200",
+    "parsed": "1200",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 32
+  },
+  {
+    "id": 6768,
+    "question_sha256": "c849c343e9184c4e225b729c9b72a9ecf80fe5a190712847feea8adbf33cd1ce",
+    "reference_answer": "7",
+    "text": " Emily\u2019s hair is 20+6=26 inches.\nSo, Kate\u2019s hair is 26/2=13 inches.\n#### 13",
+    "parsed": "13",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 34
+  },
+  {
+    "id": 3499,
+    "question_sha256": "6d58a69e967df420547dbec6c77d511ac096c8e953f84beb7816b8895099d343",
+    "reference_answer": "51",
+    "text": " If in 18 months she will be 10 years old, that means she is 10*12=120 months old.\nSince she is twice as old as Antonio, that means Antonio is 120/2=60 months old.\nSince there are 12 months in a year, that means Antonio is 60/12=5 years old.\n#### 5",
+    "parsed": "5",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 86
+  },
+  {
+    "id": 2930,
+    "question_sha256": "16113c1081eeba6079cf1325433e80e286158f32f83fcf96dc9cdaacf2295778",
+    "reference_answer": "240",
+    "text": " The group of 10 people pays $12 x 10 = $120 for admission.\nThe group of 10 people pays $6 x 10 = $60 for the tour.\nThe group of 10 people pays a total of $120 + $60 = $180.\nThe group of 5 people pays $12 x 5 = $60 for admission.\nThe aqua park earns a total of $180 + $60 = $240.\n#### 240",
+    "parsed": "240",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 117
+  },
+  {
+    "id": 6891,
+    "question_sha256": "c243dd68b3cafbbbb50ade1ceaabb3eed179aaf4966b79f6bc0b9c2c71a7739b",
+    "reference_answer": "24",
+    "text": " Ben and his family caught 4 + 1 + 3 + 2 + 5 = 15 fish.\nThey threw back 3, so they kept 15 - 3 = 12 fish.\nEach fish gives 2 filets, so they will have 12 * 2 = 24 fish filets.\n#### 24",
+    "parsed": "24",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 76
+  },
+  {
+    "id": 7413,
+    "question_sha256": "e5b66806414dd28fdbeedb0f9b1deb91652db5ee1fcf01897b065631cf074459",
+    "reference_answer": "90000",
+    "text": " Company B gets 40% of the profits, which is $60000, so 1% of the profits is $60000/40 = $1500\nCompany A gets 60% of the profits, which is 60/100*$1500 = $9000\n#### 9000",
+    "parsed": "9000",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 82
+  },
+  {
+    "id": 7364,
+    "question_sha256": "40c1a60c6ce4f6795ac04f8ed46ab87452bd1f18b5e039db92d5754e56aebe29",
+    "reference_answer": "4",
+    "text": " They will spend 3 hours * 2 chapters = 6 hours on the textbook.\nThey will spend 1.5 hours * 4 worksheets = 6 hours on the worksheets.\nThey will spend 6 hours on the textbook + 6 hours on the worksheets = 12 hours total.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1 hour = 10 minutes of breaks each hour.\nThey will take 10 minutes * 1",
+    "parsed": null,
+    "correct": false,
+    "truncated": true,
+    "generated_tokens": 512
+  },
+  {
+    "id": 3500,
+    "question_sha256": "b037b8445b61ffc5867a1b78f15bace97f1ab6a2c9442c94ab47e28c079dab62",
+    "reference_answer": "8",
+    "text": " First find the total number of minutes in 90 minutes: 90 minutes / 60 minutes/1 hour = 1.5 hours\nThen divide the total number of miles by the total number of hours: 12 miles / 1.5 hours = 8 miles/hour\n#### 8",
+    "parsed": "8",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 66
+  },
+  {
+    "id": 2484,
+    "question_sha256": "0e16c2f7251efd5257b49f61959b3475263c5e0990ac15cc144407af56132135",
+    "reference_answer": "54",
+    "text": " There are 24 - 3 = 21 people left in the first row.\nThere are 20 - 5 = 15 people left in the second row.\nThere are 18 - 0 = 18 people in the third row.\nIn total, there are 21 + 15 + 18 = 54 people left relaxing on the beach.\n#### 54",
+    "parsed": "54",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 87
+  },
+  {
+    "id": 5700,
+    "question_sha256": "10122f04ea7c456bed78ac8b02e77b5a7f2ca359cf8b9df1bf3e894cad020a8a",
+    "reference_answer": "20",
+    "text": " 100 people had a snack, and then 20 new outsiders joined, so 100 + 20 = 120 people had a snack.\nHalf of these snack eaters got full and left, so 120 / 2 = 60 people left.\n10 new outsiders came to have snacks, so now there are 60 + 10 = 70 people having snacks.\n30 more snack eaters got their fill and left, so 70 - 30 = 40 people are still having snacks.\nThen half of the remaining snack eaters left, so 40 / 2 = 20 people left.\nSo, there are 20 snack eaters left.\n#### 20",
+    "parsed": "20",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 161
+  },
+  {
+    "id": 2125,
+    "question_sha256": "dfa7b7a0526c00b2f0a49ab201649496ad25389d82bb0979efc2d85b422b2d9c",
+    "reference_answer": "18",
+    "text": " When Max is 3, his dog is 3*7=21 years old.\nSo Max's dog is 21-3=18 years older than Max.\n#### 18",
+    "parsed": "18",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 41
+  },
+  {
+    "id": 7419,
+    "question_sha256": "32c690915f468a2d0731ba49e537f2b05a85f8d077b3375c493c01c13ee56387",
+    "reference_answer": "29",
+    "text": " Let x be the number of candies Corey has.\nTapanga has x + 8 candies.\nx + x + 8 = 66\n2x = 58\nx = 29\nCorey has 29 candies.\n#### 29",
+    "parsed": "29",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 55
+  },
+  {
+    "id": 4288,
+    "question_sha256": "da719bd4cbe677dfd8af863b906e5ed2ae398c0e8629c7a45a7dcd8c81a4da1a",
+    "reference_answer": "12",
+    "text": " The cost of the hamburgers is 2 x $5 = $10.\nThe cost of the cola is 3 x $2 = $6.\nThe total cost is $10 + $6 = $16.\nWilson pays $16 - $4 = $12 in total.\n#### 12",
+    "parsed": "12",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 66
+  },
+  {
+    "id": 4955,
+    "question_sha256": "c41871cda79ad0fa07ca91b2e96ffd17e6505c0f33db710115431443b0aba1d5",
+    "reference_answer": "16",
+    "text": " The daily salary of the 2 managers is $5 x 2 = $10.\nThe daily salary of the 3 clerks is $2 x 3 = $6.\nThe total daily salary of all the employees of the grocery store is $10 + $6 = $16.\n#### 16",
+    "parsed": "16",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 66
+  },
+  {
+    "id": 2082,
+    "question_sha256": "7878562cfb10688860c1dc4c781daa0e835cb5d7ac91a854f982a2aaa4c70374",
+    "reference_answer": "40",
+    "text": " The total amount spent by Mildred and Candice is $25 + $35 = $60.\nThe amount left with them after spending is $100 - $60 = $40.\n#### 40",
+    "parsed": "40",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 48
+  },
+  {
+    "id": 1866,
+    "question_sha256": "28121cc4953f791662f65622eee2546d49639bd466dbb8435bbe534efe4a6f5d",
+    "reference_answer": "1085",
+    "text": " First find the total number of stitches Carolyn needs to embroider the 3 unicorns: 3 unicorns * 180 stitches/unicorn = 540 stitches\nThen find the total number of stitches Carolyn needs to embroider the 50 flowers: 50 flowers * 60 stitches/flower = 3000 stitches\nThen add the number of stitches for the unicorns and flowers to find the total number of stitches: 3000 stitches + 540 stitches = 3540 stitches\nThen divide the total number of stitches by the number of stitches Carolyn can sew per minute to find the total number of minutes she needs to embroider: 3540 stitches / 4 stitches/minute = 885 minutes\n#### 885",
+    "parsed": "885",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 168
+  },
+  {
+    "id": 3323,
+    "question_sha256": "744d2cf7a1eca52412d09aafa9448dcdd94d49bc9a71e23bcf88c17871c58c47",
+    "reference_answer": "2",
+    "text": " For the first 3 miles, it took 3 miles / 6 miles per hour = 0.5 hours.\nFor the next 3 miles, it took 3 miles / 3 miles per hour = 1 hour.\nFor the last 4 miles, it took 4 miles / 8 miles per hour = 0.5 hours.\nIn total, it took 0.5 hours + 1 hour + 0.5 hours = 2 hours.\n#### 2",
+    "parsed": "2",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 101
+  },
+  {
+    "id": 1741,
+    "question_sha256": "12b247750d1e2ac68bf7eaeb2a7cc5500cbbfbfc6eecff3e1b1448e2788185b8",
+    "reference_answer": "1350",
+    "text": " Each truck uses 3 tanks with a capacity of 150 liters, so each truck can carry 3 * 150 = 450 liters of water.\nThe farmer has 3 trucks, so in total, he can carry 3 * 450 = 1350 liters of water.\n#### 1350",
+    "parsed": "1350",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 74
+  },
+  {
+    "id": 2670,
+    "question_sha256": "054544bd7c88d2f1393c275b90d1d377a31653b0cb762ad35f5c4f7c672d6117",
+    "reference_answer": "1500",
+    "text": " The number of people counted on the first day was 2*500=1000 people.\nThe total number of people counted on the two days was 1000+500=1500 people.\n#### 1500",
+    "parsed": "1500",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 56
+  },
+  {
+    "id": 2377,
+    "question_sha256": "98101422a34c2595c80b098bcc814b4523b2aa172a3332b6dbf0cf3d57df0473",
+    "reference_answer": "216",
+    "text": " The total amount of money from the students is 20*6=120 dollars. The total amount of money from the adults is 12*8=96 dollars. Therefore, the total amount of money collected from ticket sales is 120+96=216 dollars. The answer is 216.",
+    "parsed": null,
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 72
+  },
+  {
+    "id": 1619,
+    "question_sha256": "7da83175e48157784186e3366d6f0f33dfa6955cae2ed3f12af19ccbcd3417d1",
+    "reference_answer": "30",
+    "text": " Ragnar gets 3 blocks of wood for every tree he cuts, so if he cuts 2 trees every day, he gets 3*2 = 6 blocks of wood every day.\nAfter 5 days, Ragnar will have gotten 6*5 = 30 blocks of wood.\n#### 30",
+    "parsed": "30",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 63
+  },
+  {
+    "id": 3061,
+    "question_sha256": "0b53aa3270df5361e0bf2115d695ccea599c30617d3369ee65d92452d2a48bc5",
+    "reference_answer": "150",
+    "text": " Mikaela earned $10 x 35 = $350 for the first month.\nShe tutored 35 + 5 = 40 hours in the second month.\nSo, she earned $10 x 40 = $400 for the second month.\nHer total earnings for the two months are $350 + $400 = $750.\nShe spent 4/5 x $750 = $600 on her personal needs.\nTherefore, she saved $750 - $600 = $150.\n#### 150",
+    "parsed": "150",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 129
+  },
+  {
+    "id": 6323,
+    "question_sha256": "a5197a8883d930cf611d1cc47e0c9e77c33cb7347707dd510b85f461f2a99ffc",
+    "reference_answer": "72",
+    "text": " Samantha and Shelby took 24 + 12 = 36 jellybeans out of the jar.\nShannon refilled the jar with 36/2 = 18 jellybeans.\nThere are 90 - 36 + 18 = 72 jellybeans in the jar now.\n#### 72",
+    "parsed": "72",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 69
+  },
+  {
+    "id": 5176,
+    "question_sha256": "8bf8860e74a2b5dcdc59e2887945f4ea620c2079d64d60481447c2b86d5271bd",
+    "reference_answer": "88",
+    "text": " The cans of soda weigh 12*6=72 ounces\nThe empty cans weigh 2*2=4 ounces\nSo the total weight is 72+4=76 ounces\n#### 76",
+    "parsed": "76",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 46
+  },
+  {
+    "id": 3738,
+    "question_sha256": "87256adc607d1a0b206dd6b8a50a5721ba937d22425a70be2b1f86a5e3fa4a20",
+    "reference_answer": "109",
+    "text": " The price of the backpack was $50 + $5 = $55.\nThe price of each ring-binder was $20 - $2 = $18.\nThe total cost of the three ring-binders was $18 x 3 = $54.\nTherefore, the total amount of money Julieta spent at the store was $55 + $54 = $109.\n#### 109",
+    "parsed": "109",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 89
+  },
+  {
+    "id": 6315,
+    "question_sha256": "b7f96a4676979c749cd26c648302e9f74430809604eb5436d1f064ec2cdfa02d",
+    "reference_answer": "1450",
+    "text": " Jack slashed 3 tires, so he will have to pay 3 * $250 = $750 for the tires.\nHe also smashed the window, so he will have to pay $700 for the window.\nIn total, Jack will have to pay $750 + $700 = $1450 for the damages.\n#### 1450",
+    "parsed": "1450",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 81
+  },
+  {
+    "id": 3304,
+    "question_sha256": "1d711c0edab6cdf927dec4aa694c1ee0e49cc7d8e895e7665c205e3666ced621",
+    "reference_answer": "50",
+    "text": " If there are four times as many apples as oranges in the basket, there are 15/4 = 3.75 oranges in the basket.\nThe total number of fruits in the basket is 15+3.75 = 18.75\nIf Emiliano eats 2/3 of each fruit's quantity in the basket, he would have consumed 2/3*18.75 = 12.5 fruits.\n#### 12.5",
+    "parsed": "25/2",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 102
+  },
+  {
+    "id": 3002,
+    "question_sha256": "ff88cfda62be18103157b991702646d61811e140a4b79a47372d460373ca9db5",
+    "reference_answer": "14",
+    "text": " Each tray of banana pudding needs 80 cookies and she needs to make 3 trays so that\u2019s 80*3 = 240 cookies\nEach box of cookies has 60 cookies and she needs 240 cookies so that\u2019s 240/60 = 4 boxes of cookies\nEach box of cookies costs $3.50 and she needs 4 boxes so that\u2019s 3.50*4 = $14.00\n#### 14",
+    "parsed": "14",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 105
+  },
+  {
+    "id": 5979,
+    "question_sha256": "d678f1c8dac5e288c10400a8035ec6c4c8167bfb891f09340d4d5cffd3783ddc",
+    "reference_answer": "93",
+    "text": " The 7th graders average GPA is 93+2=95\nThe total GPA for the 6th graders is 93*600=55800\nThe total GPA for the 7th graders is 95*600=57000\nThe total GPA for the 8th graders is 91*600=54600\nThe total GPA for the school is 55800+57000+54600=167400\nThe average GPA for the school is 167400/600=279\n#### 279",
+    "parsed": "279",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 154
+  },
+  {
+    "id": 1090,
+    "question_sha256": "d0788637cb170ccea80286c87559d173c3d35750a8ef308c7f2e1fe2690e6f4f",
+    "reference_answer": "165",
+    "text": " Beth had 150 students in her 10th-grade class.\nThe following year, 30 more students joined, so she had 150+30 = 180 students.\nIn her final year, 15 students left, so she had 180-15 = 165 students.\n#### 165",
+    "parsed": "165",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 77
+  },
+  {
+    "id": 6089,
+    "question_sha256": "88104f3166d684daa982fe1e6e346eba69cf6cdf77faa54de0b327345c730473",
+    "reference_answer": "15",
+    "text": " Javier ate 5 meat ravioli * 1.5 ounces = 7.5 ounces of meat ravioli.\nJavier ate 2 pumpkin ravioli * 1.25 ounces = 2.5 ounces of pumpkin ravioli.\nJavier ate 4 cheese ravioli * 1 ounce = 4 ounces of cheese ravioli.\nJavier ate 7.5 ounces + 2.5 ounces + 4 ounces = 14 ounces of ravioli.\nJavier's brother ate 12 pumpkin ravioli * 1.25 ounces = 15 ounces of pumpkin ravioli.\nJavier's brother ate 15 ounces of pumpkin ravioli.\nJavier ate 14 ounces of ravioli and his brother ate 15 ounces of ravioli.\nThe winner ate 15 ounces of ravioli.\n#### 15",
+    "parsed": "15",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 190
+  },
+  {
+    "id": 1390,
+    "question_sha256": "79469ce00d3f9697a8e998083e354867bde7c8cef39158b7c87418961fa17a97",
+    "reference_answer": "110",
+    "text": " She buys 2 coffees a day, so 2*2 = 4 coffees a week\nShe spends $3.00 on a double espresso, so 20*$3.00 = $60.00 on double espressos\nShe spends $2.50 on an iced coffee, so 20*$2.50 = $50.00 on iced coffees\nShe spends $60.00+$50.00 = $110.00 on coffee\n#### 110",
+    "parsed": "110",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 121
+  },
+  {
+    "id": 3474,
+    "question_sha256": "3c7a042d72f0225c68430fa69a39f89b32d491139ae2ddcf38d6ce7042c4d5fe",
+    "reference_answer": "18",
+    "text": " First find how many cents $10 is: $10 * 100 cents = 1000 cents\nThen divide that amount by the number of cents she earns per weed to find how many weeds she picks in an hour: 1000 cents / 5 cents/weed = 200 weeds\nThen divide that number by the number of hours in a day to find how many weeds she picks per second: 200 weeds / 24 hours = 8.333333333333334 weeds/hour\nThen divide that number by the number of seconds in an hour to find how many seconds she takes per weed: 8.333333333333334 weeds/hour / 3600 seconds/hour = 0.0023095238095238094 seconds/weed\n#### 0.0023",
+    "parsed": "23/10000",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 212
+  },
+  {
+    "id": 7207,
+    "question_sha256": "744c897756cc14814f376a375d97afe8724b3699bdf35ce6776ea6f2fe6cd03b",
+    "reference_answer": "95",
+    "text": " The anniversary will be 200+5=205 years from now.\nSo it will be 205-100=105 years in the future.\n#### 105",
+    "parsed": "105",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 44
+  },
+  {
+    "id": 6533,
+    "question_sha256": "5de91eb4ea8412c25838e8c08a8af30a65eb8791d9d10c7adfc5395d3ff67ff3",
+    "reference_answer": "50",
+    "text": " Let x be the amount of water Tony drank two days ago.\nx - 0.04x = 48\n0.96x = 48\nx = 50\n#### 50",
+    "parsed": "50",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 46
+  },
+  {
+    "id": 5819,
+    "question_sha256": "1cf29716299df4b51bddec219727ba8b23272ba0334107f6d0b5da029e777fb8",
+    "reference_answer": "25",
+    "text": " Casey has 4 rows of 15 corn plants each, so she has a total of 4 * 15 = 60 corn plants.\nEach corn plant needs half a gallon of water, so the corn plants need a total of 60 * 0.5 = 30 gallons of water.\nCasey also has 10 pigs, and each pig needs 4 gallons of water, so the pigs need a total of 10 * 4 = 40 gallons of water.\nCasey also has 20 ducks, and each duck needs a quarter of a gallon of water, so the ducks need a total of 20 * 0.25 = 5 gallons of water.\nIn total, Casey needs to pump 30 + 40 + 5 = 75 gallons of water.\nCasey can pump 3 gallons a minute, so she needs to spend 75 / 3 = 25 minutes pumping water.\n#### 25",
+    "parsed": "25",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 208
+  },
+  {
+    "id": 3226,
+    "question_sha256": "192d0fea50472a0e0214833d54d75f2021dd34787c3c5793e7b7d923d944e719",
+    "reference_answer": "296",
+    "text": " On Saturday, he served 28*3=84 customers\nHe made 2*84=168 dollars in tips on Saturday\nHe made 2*28=56 dollars in tips on Friday\nHe made 56+168+36=250 dollars in tips\n#### 250",
+    "parsed": "250",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 73
+  },
+  {
+    "id": 4859,
+    "question_sha256": "c1c6f8dda780763eb2e3cf908d6450b43ee0f5715d972419aa2d33651bce94d3",
+    "reference_answer": "26",
+    "text": " He has 16 decks x 52 cards = 832 cards.\nThere are 832 cards / 32 layers = 26 cards per layer.\n#### 26",
+    "parsed": "26",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 42
+  },
+  {
+    "id": 4262,
+    "question_sha256": "e1ee6e730a1838d97c422bea4b7e7f4e294152c433ed1f485d9ac5c2b92e4aa4",
+    "reference_answer": "115",
+    "text": " On the first day, they traveled 5*7=35 miles.\nOn the second day, they traveled 6*6=36 miles.\nThey also traveled 6*3/2=9 miles.\nIn total, they traveled 35+36+9=80 miles.\n#### 80",
+    "parsed": "80",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 67
+  },
+  {
+    "id": 6710,
+    "question_sha256": "6aaf94daeedd470f67facbe4e3092e302826a875c4496d0e8f4f39b5d3c6b025",
+    "reference_answer": "1500",
+    "text": " He uses 10 charms to make each necklace so he makes 30/10 = 3 necklaces\nEach necklace sells for $200 and he uses 10 charms so each charm costs $200/10 = $20\nHe sells 30 necklaces and each charm costs $20 so he spends 30*20 = $600\nHe sells 30 necklaces for $200 each so he makes 30*200 = $6000\nHe spends $600 on charms and makes $6000 so he makes a profit of 6000-600 = $5400\n#### 5400",
+    "parsed": "5400",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 158
+  },
+  {
+    "id": 4956,
+    "question_sha256": "bbe2184c009e3f77428e4b2a51fe0332506c80c5a0f0c2a5408ac7cf189caf37",
+    "reference_answer": "236",
+    "text": " The two long sides of the box have an area of 8 inches x 6 inches = 48 square inches each.\nSo the two long sides have a total area of 48 square inches x 2 = 96 square inches.\nThe two short sides of the box have an area of 5 inches x 6 inches = 30 square inches each.\nSo the two short sides have a total area of 30 square inches x 2 = 60 square inches.\nThe top and bottom of the box have an area of 40 square inches each.\nSo the top and bottom have a total area of 40 square inches x 2 = 80 square inches.\nIn total, Nathan needs 96 square inches + 60 square inches + 80 square inches = 236 square inches of velvet.\n#### 236",
+    "parsed": "236",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 182
+  },
+  {
+    "id": 194,
+    "question_sha256": "1d534a49949e8e366f510b850780dbbc6ffd92f043171025d9d8af93520753bc",
+    "reference_answer": "322",
+    "text": " The cost of the polo shirts is 3 * $26 = $78.\nThe cost of the necklaces is 2 * $83 = $166.\nThe total cost of the gifts before the rebate is $78 + $166 + $90 = $334.\nThe total cost of the gifts after the rebate is $334 - $12 = $322.\n#### 322",
+    "parsed": "322",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 94
+  },
+  {
+    "id": 2917,
+    "question_sha256": "b98d2be3577a7eaf733584e1e6787c4ce225c1a324b9429e181a404101cda1c4",
+    "reference_answer": "80",
+    "text": " Let's say the smaller pile has x toys.\nThe larger pile has 2x toys.\nThe total number of toys is x + 2x = 120\nCombining like terms, we get 3x = 120\nDividing both sides by 3, we get x = 40\nSo the larger pile has 2x = 2*40 = 80 toys.\n#### 80",
+    "parsed": "80",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 92
+  },
+  {
+    "id": 4699,
+    "question_sha256": "acc02f704dc24f64c0f20fffbe74042c64747ea259dcf9a494753854ee84cfd9",
+    "reference_answer": "42",
+    "text": " Carlos read 28 books in July and 30 books in August, so he read a total of 28 + 30 = 58 books in those two months.\nHe needed to read 100 books during his summer vacation, so he read 100 - 58 = 42 books in June.\n#### 42",
+    "parsed": "42",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 76
+  },
+  {
+    "id": 6591,
+    "question_sha256": "92ae9d064aac493727f8ab6a74b03ec930d6aae963c39a6eb3c44c9a7c34c0a4",
+    "reference_answer": "5",
+    "text": " The total length of Gabe\u2019s playlist is 3 + 2 + 3 = 8 minutes.\nGabe can listen to his playlist 40 / 8 = 5 times.\n#### 5",
+    "parsed": "5",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 43
+  },
+  {
+    "id": 3628,
+    "question_sha256": "fa37c271cc67eecebe3cb1850aaafe6cc8f36e11ac068c14e350468973ca69a8",
+    "reference_answer": "64",
+    "text": " He does 4 chores a day for 14 days so he does 4*14 = 56 chores\nHe does 56 chores a week and he has been doing them for 2 weeks so he has done 56*2 = 112 chores\nHe has to do 12 chores a week and he has done 112 so he has done 112-12 = 100 extra chores\nHe earns $2 for every extra chore he does so he earns 100*2 = $200\n#### 200",
+    "parsed": "200",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 127
+  },
+  {
+    "id": 7450,
+    "question_sha256": "00c2063546360b2be659f07709342521142b1fee4f26c2a1f5c5a78a1b30af9a",
+    "reference_answer": "56",
+    "text": " There are 96*2/3=64 boys at camp.\nThere are 96-64=32 girls at camp.\n64*50/100=32 boys want to toast marshmallows.\n32*75/100=24 girls want to toast marshmallows.\nThey need 32+24=56 marshmallows.\n#### 56",
+    "parsed": "56",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 90
+  },
+  {
+    "id": 5578,
+    "question_sha256": "2246c10b7fb0ed768e8178951fe48bded634ec15ce1a3d64cbd5d9c7ffe5d790",
+    "reference_answer": "30",
+    "text": " The TV series has 3 seasons x 20 episodes = 60 episodes.\nIf Willy watches 2 episodes a day, it will take him 60 episodes / 2 episodes/day = 30 days to finish the entire series.\n#### 30",
+    "parsed": "30",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 56
+  },
+  {
+    "id": 5660,
+    "question_sha256": "04db079bc4c492b16f5a331f26395d2eb548b54bf02860c5919c9f5527170b6d",
+    "reference_answer": "4",
+    "text": " He worked for 3/4 + 1/2 + 2/3 + 5/6 + 75 minutes = 1 1/12 hours\n#### 1",
+    "parsed": "1",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 40
+  },
+  {
+    "id": 3905,
+    "question_sha256": "85a589eeb376e7ca0fc928e8b4e7b1345d06b8e512a1659fb04de4e1b33a704f",
+    "reference_answer": "300",
+    "text": " Jasmine swims 12 laps every day, Monday through Friday, so she swims 12 x 5 = 60 laps in a week.\nIn five weeks, she swims 60 x 5 = 300 laps.\n#### 300",
+    "parsed": "300",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 55
+  },
+  {
+    "id": 2702,
+    "question_sha256": "0b66fa580c28cd21a5b8c2d51427127ae436d9e573c5856a38f9c287489fb893",
+    "reference_answer": "9",
+    "text": " Stephen ate 25% of the pizza, so he ate 2 * 12 = 24 slices.\nThere were 2 * 12 = 24 slices in total.\nAfter Stephen ate, there were 24 - 24 = 0 slices left.\nPete then ate 50% of the remaining pizza, so he ate 0 * 50% = 0 slices.\nSince Pete ate 0 slices, there are still 0 slices left over.\n#### 0",
+    "parsed": "0",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 107
+  },
+  {
+    "id": 2090,
+    "question_sha256": "15cc2e29639c01b069680bb317be5abf355e750744ded0fe32b202e98ac3a47d",
+    "reference_answer": "42",
+    "text": " The combined weight of the bags is 16 kg + 30 kg = 46 kg.\nAfter removing 4 kg, the bags now weigh 46 kg - 4 kg = 42 kg.\n#### 42",
+    "parsed": "42",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 50
+  },
+  {
+    "id": 6133,
+    "question_sha256": "e48ae39d87d03c2d5865f078a5ef7a2ab455f8c64699e8bbaa928b5ae6cf5cd4",
+    "reference_answer": "83",
+    "text": " Gabriel has twice as many toys as Jaxon, so he has 2*15 = 30 toys\nJaxson has 15 toys, Gabriel has 30, and Jerry has 8 more toys than Gabriel, so he has 30+8 = 38 toys\nThe total number of toys they all have is 15+30+38 = 83 toys\n#### 83",
+    "parsed": "83",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 91
+  },
+  {
+    "id": 4643,
+    "question_sha256": "a000faf79bb99185e791a3757d074850ca2fd7dd3f7947d67aefd77f7fde1361",
+    "reference_answer": "110",
+    "text": " The 10% increase of $100 is $100 * 10/100 = $10.\nSo, you will give your friend $100 + $10 = $110.\n#### 110",
+    "parsed": "110",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 55
+  },
+  {
+    "id": 1432,
+    "question_sha256": "b7f5a8cc570d60fb800c5db0847f9dcde6d67d41b8187d9ba20e32e2be7f55f5",
+    "reference_answer": "37500",
+    "text": " If the used car cost $15000, then the original price was 15000/0.4 = $37500\n#### 37500",
+    "parsed": "37500",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 42
+  },
+  {
+    "id": 4813,
+    "question_sha256": "7eda04f3bdc3ed0e8e55aba0677b5076c26dc3d57a36a21ad4024e7c8bb5625e",
+    "reference_answer": "300",
+    "text": " She needs 3 sets of sheers and 3 sets of drapes so 3*40 = $120.00\nShe needs 3 sets of drapes and 3 sets of sheers so 3*60 = $180.00\nThe window treatments will cost her 120+180 = $300.00\n#### 300",
+    "parsed": "300",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 88
+  },
+  {
+    "id": 3350,
+    "question_sha256": "88b8e59de5b675dec404df493b1f952c6bc9bc389c65b359aea6af7fcf850bc4",
+    "reference_answer": "3",
+    "text": " He cuts 48/2=24 sodas in half the next week.\nHe cuts 24/2=12 sodas in half the next week.\nHe cuts 12/2=6 sodas in half the next week.\nIt will take him 4 weeks to cut down to 6 sodas a week.\n#### 4",
+    "parsed": "4",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 74
+  },
+  {
+    "id": 424,
+    "question_sha256": "bbdcf3c639c6292b7dfedc1433785f7d1a2c8fd0672bfb0accdaf445fba962f8",
+    "reference_answer": "750",
+    "text": " Rose cooked 9/10 x 10 = 9 kilograms of rice in the morning.\nShe had 10 - 9 = 1 kilogram of rice left.\nShe cooked 1/4 x 1 = 1/4 kilogram of rice in the evening.\nRose had 1 - 1/4 = 3/4 kilogram of rice left.\n3/4 kilogram is equal to 3/4 x 1000 = 750 grams.\n#### 750",
+    "parsed": "750",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 110
+  },
+  {
+    "id": 2539,
+    "question_sha256": "27993c3cace11f4dd36ceefb0a76d2a62f244a8693f2a5ddaa89e62404e23fd1",
+    "reference_answer": "40",
+    "text": " The oranges would've cost $1.5 x 4 = $6.\nThey saved $6 - $1.5 = $4.5.\nThey saved $4.5 / $15 = 0.3 or 30% of the money they planned to spend.\n#### 30",
+    "parsed": "30",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 63
+  },
+  {
+    "id": 6775,
+    "question_sha256": "8bd918a279f1b9d23c41fd3a3bc3622d4f20899d829373c985a1b233fe666ac2",
+    "reference_answer": "23",
+    "text": " Iris has 3 uncles and 4 aunts who have a son and daughter each, so that\u2019s 3 + 4 = 7 people.\nIris also has 2 parents, so that\u2019s 2 people.\nIris has 7 + 2 = 9 people in her family.\n#### 9",
+    "parsed": "9",
+    "correct": false,
+    "truncated": false,
+    "generated_tokens": 66
+  },
+  {
+    "id": 6770,
+    "question_sha256": "097f252dbac010df8634fd838fbf5818aff57d773e0204a28790283d4bca88d9",
+    "reference_answer": "1000",
+    "text": " Five years ago, there were 500 old books in the library.\nTwo years ago, the librarian bought 300 books, so the total number of books became 500 + 300 = 800.\nLast year, the librarian bought 100 more books than she had bought the previous year, so she bought 300 + 100 = 400 books.\nThe total number of books in the library became 800 + 400 = 1200.\nThis year, the librarian donated 200 of the library's old books, so the total number of books in the library now is 1200 - 200 = 1000.\n#### 1000",
+    "parsed": "1000",
+    "correct": true,
+    "truncated": false,
+    "generated_tokens": 166
+  }
+]
