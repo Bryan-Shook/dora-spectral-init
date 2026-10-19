@@ -101,8 +101,8 @@ if evaluation alone cannot finish within that limit.
   --wall-hours 16 --job-seconds 3600
 ```
 
-- [ ] `screen`: finish 96 one-epoch candidates, scoring 256 development questions (`search/`).
-- [ ] `promote`: continue up to 24 finalists to three epochs and score all 500 (`promotions.json`).
+- [x] `screen`: finish 96 one-epoch candidates, scoring 256 development questions (`search/`).
+- [x] `promote`: continue up to 24 finalists to three epochs and score all 500 (`promotions.json`).
 
 Retain numerical failures; require a usable finalist for every condition.
 
@@ -114,7 +114,7 @@ Retain numerical failures; require a usable finalist for every condition.
   --wall-hours 16 --job-seconds 3600
 ```
 
-- [ ] `select`: lock eight winning configurations (`selection.json`, `selection-lock.json`).
+- [x] `select`: lock eight winning configurations (`selection.json`, `selection-lock.json`).
 - [ ] `confirm`: finish 24 full runs on seeds 101/202/303, with development checks each epoch (`confirmation/`).
 
 ## 10. Evaluate the official test
