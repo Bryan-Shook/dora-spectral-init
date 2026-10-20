@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-10-20T02:43:55.417637+00:00",
+  "status": "complete",
+  "environment": {
+    "user": "mchoi345",
+    "python": "3.11.15 (main, Mar 10 2026, 18:16:52) [Clang 21.1.4 ]",
+    "executable": "/storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/.venv/bin/python",
+    "platform": "Linux-5.14.0-687.49.1.el9_8.x86_64-x86_64-with-glibc2.34",
+    "hostname": "atl1-1-03-012-23-0.pace.gatech.edu",
+    "git_commit": "49ded501fcd07701d073472d35cf80642eb7beab",
+    "git_tracked_changes": null,
+    "packages": {
+      "torch": "2.6.0+cu126",
+      "transformers": "4.57.6",
+      "peft": "0.18.1",
+      "datasets": "3.6.0"
+    },
+    "gpus": "NVIDIA H100 80GB HBM3, GPU-66ac7dfc-8ae3-d218-4e72-988df06711d0, 81559, 615.71.09"
+  },
+  "split": "test",
+  "phase_seconds": {
+    "model_loading": 1.039534745970741,
+    "initialization_and_checkpoint_loading": 2.6153464650269598,
+    "answer_nll": 18.699066865025088,
+    "generation": 1852.1889302590862
+  },
+  "seconds": 1912.9375808639452,
+  "finished_at": "2026-10-20T03:15:48.355209+00:00"
+}

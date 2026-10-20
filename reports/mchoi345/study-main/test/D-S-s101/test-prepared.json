@@ -1,0 +1,10 @@
+{
+  "revisions": {
+    "model": "Qwen/Qwen2.5-1.5B",
+    "model_revision": "8faed761d45a263340a0528343f099c05c9a4323",
+    "dataset": "openai/gsm8k",
+    "dataset_revision": "740312add88f781978c0658806c59bc2815b9866"
+  },
+  "count": 1319,
+  "sha256": "0cab84102e985313927a3a4a7335f19fee5b38c856948c18f10ddbb056bd7b2d"
+}

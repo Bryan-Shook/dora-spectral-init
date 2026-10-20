@@ -1,0 +1,59 @@
+{
+  "backend": "peft-controlled-v1",
+  "config": {
+    "model": "Qwen/Qwen2.5-1.5B",
+    "model_revision": "8faed761d45a263340a0528343f099c05c9a4323",
+    "dataset": "openai/gsm8k",
+    "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+    "rank": 16,
+    "epochs": 3,
+    "max_length": 1024,
+    "max_new_tokens": 512,
+    "batch_size": 32,
+    "microbatch_size": 4,
+    "evaluation_batch_size": 4,
+    "validation_examples": 500,
+    "warmup_fraction": 0.03,
+    "gradient_checkpointing": false,
+    "attention_backend": "sdpa",
+    "diagnostics": true,
+    "diagnostic_steps": [
+      0,
+      1,
+      10,
+      50,
+      100
+    ],
+    "learning_rate": 8.657522562166114e-05,
+    "gamma": 1.0,
+    "counterfactuals": false
+  },
+  "condition": "L0",
+  "seed": 303,
+  "random_streams": {
+    "version": "dora-streams-v1",
+    "data_order_seed": 17689191225823889645
+  },
+  "data_sha256": "5d19160f955a48581dc3a3a988c9e37bd764bdae5ccf7b996d3d37f87f499097",
+  "source_sha256": {
+    "__init__.py": "50c9f5110e9865018ccb22179aa30fa0bc5661c294e37ef28129570e9649d23f",
+    "analysis.py": "6a9460c22aacdb8798211b221d49c53f9b8a010cc40596eb1775cfa468608711",
+    "data.py": "705ab1e037c04c468364274915a0a5ad0a7d73777db710adc7ab8c1d3cd4df93",
+    "diagnostics.py": "ae74168a3ff97fe1812729657ad5a7d1cc50234493d7ba800033bc3135a975a4",
+    "experiment.py": "84e597db74c5d85ca60de16be4a687263c76a36f989c69141fabbb6145bb6810",
+    "initialization.py": "9f102774d4a4990aa66d7c62450ee7c314b6e9d84e72aed7e790d448cf9ba56b",
+    "model.py": "3eaccc00e017f4e61e7c5f831f7061fc404ba42263ab03586b9f5cb420d96619",
+    "numerics.py": "4155ad86d519a804ded0cb591c3b5b239190019dc7ce0ec6b076cdd419bafd4c",
+    "reporting.py": "6209822119c5af0bb204b80c335588c7255eb97c4c972651ffe9c2a9ecb67d08",
+    "streams.py": "e5a71dd8a475e9ea3b2031f2b5e646352f9974a82185d05802158beac1e7b4e7",
+    "study.py": "99088f61dc8949f81ae6ddcdd135101bbec77aa9df8c1822fe0c2a2e9c72d3e0",
+    "training.py": "9cdbf72335c4b39af7f5a20c9114669cfb672b1639e570a1bea4f1e90498c482",
+    "validation.py": "e70417c8c0b68661d59c8ec64b6c42abeef9726d9f2c8d14682d25342a50db26"
+  },
+  "versions": {
+    "torch": "2.6.0+cu126",
+    "transformers": "4.57.6",
+    "peft": "0.18.1",
+    "datasets": "3.6.0"
+  }
+}

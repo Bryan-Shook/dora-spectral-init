@@ -1,0 +1,813 @@
+[evaluation] A-S-s101: evaluation will generate 128 answers after training.
+`torch_dtype` is deprecated! Use `dtype` instead!
+A-S-s101: step 1/203, NLL 0.9114
+A-S-s101: step 2/203, NLL 0.9116
+A-S-s101: step 3/203, NLL 0.8485
+A-S-s101: step 4/203, NLL 0.8064
+A-S-s101: step 5/203, NLL 0.7415
+A-S-s101: step 6/203, NLL 0.8106
+A-S-s101: step 7/203, NLL 0.7347
+A-S-s101: step 8/203, NLL 0.7297
+A-S-s101: step 9/203, NLL 0.6552
+A-S-s101: step 10/203, NLL 0.6597
+A-S-s101: step 11/203, NLL 0.5126
+A-S-s101: step 12/203, NLL 0.5848
+A-S-s101: step 13/203, NLL 0.5027
+A-S-s101: step 14/203, NLL 0.4621
+A-S-s101: step 15/203, NLL 0.5394
+A-S-s101: step 16/203, NLL 0.4842
+A-S-s101: step 17/203, NLL 0.6062
+A-S-s101: step 18/203, NLL 0.5159
+A-S-s101: step 19/203, NLL 0.5414
+A-S-s101: step 20/203, NLL 0.4737
+A-S-s101: step 21/203, NLL 0.4491
+A-S-s101: step 22/203, NLL 0.5530
+A-S-s101: step 23/203, NLL 0.4492
+A-S-s101: step 24/203, NLL 0.4510
+A-S-s101: step 25/203, NLL 0.4594
+A-S-s101: step 26/203, NLL 0.4833
+A-S-s101: step 27/203, NLL 0.4530
+A-S-s101: step 28/203, NLL 0.5004
+A-S-s101: step 29/203, NLL 0.4028
+A-S-s101: step 30/203, NLL 0.4731
+A-S-s101: step 31/203, NLL 0.4822
+A-S-s101: step 32/203, NLL 0.4869
+A-S-s101: step 33/203, NLL 0.4236
+A-S-s101: step 34/203, NLL 0.4800
+A-S-s101: step 35/203, NLL 0.4645
+A-S-s101: step 36/203, NLL 0.5070
+A-S-s101: step 37/203, NLL 0.3770
+A-S-s101: step 38/203, NLL 0.4160
+A-S-s101: step 39/203, NLL 0.4662
+A-S-s101: step 40/203, NLL 0.3717
+A-S-s101: step 41/203, NLL 0.4307
+A-S-s101: step 42/203, NLL 0.4442
+A-S-s101: step 43/203, NLL 0.3634
+A-S-s101: step 44/203, NLL 0.3964
+A-S-s101: step 45/203, NLL 0.5244
+A-S-s101: step 46/203, NLL 0.4572
+A-S-s101: step 47/203, NLL 0.4823
+A-S-s101: step 48/203, NLL 0.3674
+A-S-s101: step 49/203, NLL 0.5055
+A-S-s101: step 50/203, NLL 0.4246
+A-S-s101: step 51/203, NLL 0.4580
+A-S-s101: step 52/203, NLL 0.4629
+A-S-s101: step 53/203, NLL 0.3384
+A-S-s101: step 54/203, NLL 0.4380
+A-S-s101: step 55/203, NLL 0.4531
+A-S-s101: step 56/203, NLL 0.5078
+A-S-s101: step 57/203, NLL 0.4426
+A-S-s101: step 58/203, NLL 0.3869
+A-S-s101: step 59/203, NLL 0.4640
+A-S-s101: step 60/203, NLL 0.3991
+A-S-s101: step 61/203, NLL 0.4307
+A-S-s101: step 62/203, NLL 0.4923
+A-S-s101: step 63/203, NLL 0.5086
+A-S-s101: step 64/203, NLL 0.4446
+A-S-s101: step 65/203, NLL 0.4351
+A-S-s101: step 66/203, NLL 0.4330
+A-S-s101: step 67/203, NLL 0.4476
+A-S-s101: step 68/203, NLL 0.4810
+A-S-s101: step 69/203, NLL 0.3602
+A-S-s101: step 70/203, NLL 0.4933
+A-S-s101: step 71/203, NLL 0.3899
+A-S-s101: step 72/203, NLL 0.5006
+A-S-s101: step 73/203, NLL 0.3909
+A-S-s101: step 74/203, NLL 0.4241
+A-S-s101: step 75/203, NLL 0.4305
+A-S-s101: step 76/203, NLL 0.4207
+A-S-s101: step 77/203, NLL 0.3997
+A-S-s101: step 78/203, NLL 0.4984
+A-S-s101: step 79/203, NLL 0.4649
+A-S-s101: step 80/203, NLL 0.4449
+A-S-s101: step 81/203, NLL 0.4143
+A-S-s101: step 82/203, NLL 0.4358
+A-S-s101: step 83/203, NLL 0.4681
+A-S-s101: step 84/203, NLL 0.3673
+A-S-s101: step 85/203, NLL 0.4586
+A-S-s101: step 86/203, NLL 0.4059
+A-S-s101: step 87/203, NLL 0.4214
+A-S-s101: step 88/203, NLL 0.3940
+A-S-s101: step 89/203, NLL 0.4808
+A-S-s101: step 90/203, NLL 0.4698
+A-S-s101: step 91/203, NLL 0.3853
+A-S-s101: step 92/203, NLL 0.3995
+A-S-s101: step 93/203, NLL 0.3777
+A-S-s101: step 94/203, NLL 0.3871
+A-S-s101: step 95/203, NLL 0.4032
+A-S-s101: step 96/203, NLL 0.4145
+A-S-s101: step 97/203, NLL 0.4011
+A-S-s101: step 98/203, NLL 0.4376
+A-S-s101: step 99/203, NLL 0.4615
+A-S-s101: step 100/203, NLL 0.4522
+A-S-s101: step 101/203, NLL 0.4986
+A-S-s101: step 102/203, NLL 0.3887
+A-S-s101: step 103/203, NLL 0.4492
+A-S-s101: step 104/203, NLL 0.4682
+A-S-s101: step 105/203, NLL 0.4288
+A-S-s101: step 106/203, NLL 0.4290
+A-S-s101: step 107/203, NLL 0.4611
+A-S-s101: step 108/203, NLL 0.4099
+A-S-s101: step 109/203, NLL 0.4962
+A-S-s101: step 110/203, NLL 0.5342
+A-S-s101: step 111/203, NLL 0.4170
+A-S-s101: step 112/203, NLL 0.4468
+A-S-s101: step 113/203, NLL 0.4761
+A-S-s101: step 114/203, NLL 0.4321
+A-S-s101: step 115/203, NLL 0.3947
+A-S-s101: step 116/203, NLL 0.3873
+A-S-s101: step 117/203, NLL 0.4238
+A-S-s101: step 118/203, NLL 0.4001
+A-S-s101: step 119/203, NLL 0.4627
+A-S-s101: step 120/203, NLL 0.4058
+A-S-s101: step 121/203, NLL 0.4229
+A-S-s101: step 122/203, NLL 0.3325
+A-S-s101: step 123/203, NLL 0.4477
+A-S-s101: step 124/203, NLL 0.4466
+A-S-s101: step 125/203, NLL 0.4834
+A-S-s101: step 126/203, NLL 0.4580
+A-S-s101: step 127/203, NLL 0.4883
+A-S-s101: step 128/203, NLL 0.5064
+A-S-s101: step 129/203, NLL 0.4118
+A-S-s101: step 130/203, NLL 0.4360
+A-S-s101: step 131/203, NLL 0.4801
+A-S-s101: step 132/203, NLL 0.4074
+A-S-s101: step 133/203, NLL 0.4407
+A-S-s101: step 134/203, NLL 0.4172
+A-S-s101: step 135/203, NLL 0.4243
+A-S-s101: step 136/203, NLL 0.4367
+A-S-s101: step 137/203, NLL 0.4571
+A-S-s101: step 138/203, NLL 0.4225
+A-S-s101: step 139/203, NLL 0.3753
+A-S-s101: step 140/203, NLL 0.4737
+A-S-s101: step 141/203, NLL 0.4377
+A-S-s101: step 142/203, NLL 0.4621
+A-S-s101: step 143/203, NLL 0.4066
+A-S-s101: step 144/203, NLL 0.4153
+A-S-s101: step 145/203, NLL 0.4422
+A-S-s101: step 146/203, NLL 0.4236
+A-S-s101: step 147/203, NLL 0.4432
+A-S-s101: step 148/203, NLL 0.4956
+A-S-s101: step 149/203, NLL 0.4150
+A-S-s101: step 150/203, NLL 0.3824
+A-S-s101: step 151/203, NLL 0.3964
+A-S-s101: step 152/203, NLL 0.4312
+A-S-s101: step 153/203, NLL 0.4188
+A-S-s101: step 154/203, NLL 0.4166
+A-S-s101: step 155/203, NLL 0.4327
+A-S-s101: step 156/203, NLL 0.4928
+A-S-s101: step 157/203, NLL 0.4091
+A-S-s101: step 158/203, NLL 0.4832
+A-S-s101: step 159/203, NLL 0.4411
+A-S-s101: step 160/203, NLL 0.4604
+A-S-s101: step 161/203, NLL 0.3707
+A-S-s101: step 162/203, NLL 0.3781
+A-S-s101: step 163/203, NLL 0.5031
+A-S-s101: step 164/203, NLL 0.4223
+A-S-s101: step 165/203, NLL 0.3966
+A-S-s101: step 166/203, NLL 0.4958
+A-S-s101: step 167/203, NLL 0.4703
+A-S-s101: step 168/203, NLL 0.4432
+A-S-s101: step 169/203, NLL 0.4855
+A-S-s101: step 170/203, NLL 0.4355
+A-S-s101: step 171/203, NLL 0.3949
+A-S-s101: step 172/203, NLL 0.3929
+A-S-s101: step 173/203, NLL 0.4846
+A-S-s101: step 174/203, NLL 0.4703
+A-S-s101: step 175/203, NLL 0.4498
+A-S-s101: step 176/203, NLL 0.4337
+A-S-s101: step 177/203, NLL 0.4643
+A-S-s101: step 178/203, NLL 0.4275
+A-S-s101: step 179/203, NLL 0.3744
+A-S-s101: step 180/203, NLL 0.4860
+A-S-s101: step 181/203, NLL 0.4481
+A-S-s101: step 182/203, NLL 0.3515
+A-S-s101: step 183/203, NLL 0.4254
+A-S-s101: step 184/203, NLL 0.5233
+A-S-s101: step 185/203, NLL 0.4249
+A-S-s101: step 186/203, NLL 0.3818
+A-S-s101: step 187/203, NLL 0.4193
+A-S-s101: step 188/203, NLL 0.3685
+A-S-s101: step 189/203, NLL 0.5121
+A-S-s101: step 190/203, NLL 0.3949
+A-S-s101: step 191/203, NLL 0.4633
+A-S-s101: step 192/203, NLL 0.3884
+A-S-s101: step 193/203, NLL 0.4374
+A-S-s101: step 194/203, NLL 0.4637
+A-S-s101: step 195/203, NLL 0.3909
+A-S-s101: step 196/203, NLL 0.4271
+A-S-s101: step 197/203, NLL 0.4222
+A-S-s101: step 198/203, NLL 0.4260
+A-S-s101: step 199/203, NLL 0.4054
+A-S-s101: step 200/203, NLL 0.4403
+A-S-s101: step 201/203, NLL 0.3954
+A-S-s101: step 202/203, NLL 0.4037
+A-S-s101: step 203/203, NLL 0.3508
+[evaluation] A-S-s101: training/checkpoint saved; evaluating answer NLL, then generating answers.
+[evaluation] A-S-s101: generated 4/128 answers (3.1%).
+[evaluation] A-S-s101: generated 8/128 answers (6.2%).
+[evaluation] A-S-s101: generated 12/128 answers (9.4%).
+[evaluation] A-S-s101: generated 16/128 answers (12.5%).
+[evaluation] A-S-s101: generated 20/128 answers (15.6%).
+[evaluation] A-S-s101: generated 24/128 answers (18.8%).
+[evaluation] A-S-s101: generated 28/128 answers (21.9%).
+[evaluation] A-S-s101: generated 32/128 answers (25.0%).
+[evaluation] A-S-s101: generated 36/128 answers (28.1%).
+[evaluation] A-S-s101: generated 40/128 answers (31.2%).
+[evaluation] A-S-s101: generated 44/128 answers (34.4%).
+[evaluation] A-S-s101: generated 48/128 answers (37.5%).
+[evaluation] A-S-s101: generated 52/128 answers (40.6%).
+[evaluation] A-S-s101: generated 56/128 answers (43.8%).
+[evaluation] A-S-s101: generated 60/128 answers (46.9%).
+[evaluation] A-S-s101: generated 64/128 answers (50.0%).
+[evaluation] A-S-s101: generated 68/128 answers (53.1%).
+[evaluation] A-S-s101: generated 72/128 answers (56.2%).
+[evaluation] A-S-s101: generated 76/128 answers (59.4%).
+[evaluation] A-S-s101: generated 80/128 answers (62.5%).
+[evaluation] A-S-s101: generated 84/128 answers (65.6%).
+[evaluation] A-S-s101: generated 88/128 answers (68.8%).
+[evaluation] A-S-s101: generated 92/128 answers (71.9%).
+[evaluation] A-S-s101: generated 96/128 answers (75.0%).
+[evaluation] A-S-s101: generated 100/128 answers (78.1%).
+[evaluation] A-S-s101: generated 104/128 answers (81.2%).
+[evaluation] A-S-s101: generated 108/128 answers (84.4%).
+[evaluation] A-S-s101: generated 112/128 answers (87.5%).
+[evaluation] A-S-s101: generated 116/128 answers (90.6%).
+[evaluation] A-S-s101: generated 120/128 answers (93.8%).
+[evaluation] A-S-s101: generated 124/128 answers (96.9%).
+[evaluation] A-S-s101: generated 128/128 answers (100.0%).
+Experiment evidence: /storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/reports/mchoi345/study-main/confirmation/A-S-s101
+[evaluation] A-S-s101: evaluation saved; exporting evidence...
+[evaluation] A-S-s101: evaluation will generate 128 answers after training.
+`torch_dtype` is deprecated! Use `dtype` instead!
+A-S-s101: step 204/406, NLL 0.4172
+A-S-s101: step 205/406, NLL 0.2976
+A-S-s101: step 206/406, NLL 0.4101
+A-S-s101: step 207/406, NLL 0.5398
+A-S-s101: step 208/406, NLL 0.5037
+A-S-s101: step 209/406, NLL 0.3792
+A-S-s101: step 210/406, NLL 0.4299
+A-S-s101: step 211/406, NLL 0.4410
+A-S-s101: step 212/406, NLL 0.4410
+A-S-s101: step 213/406, NLL 0.4047
+A-S-s101: step 214/406, NLL 0.3600
+A-S-s101: step 215/406, NLL 0.3788
+A-S-s101: step 216/406, NLL 0.3803
+A-S-s101: step 217/406, NLL 0.4581
+A-S-s101: step 218/406, NLL 0.3831
+A-S-s101: step 219/406, NLL 0.4023
+A-S-s101: step 220/406, NLL 0.4004
+A-S-s101: step 221/406, NLL 0.4109
+A-S-s101: step 222/406, NLL 0.4029
+A-S-s101: step 223/406, NLL 0.3649
+A-S-s101: step 224/406, NLL 0.4124
+A-S-s101: step 225/406, NLL 0.4813
+A-S-s101: step 226/406, NLL 0.4722
+A-S-s101: step 227/406, NLL 0.4654
+A-S-s101: step 228/406, NLL 0.4182
+A-S-s101: step 229/406, NLL 0.3973
+A-S-s101: step 230/406, NLL 0.3641
+A-S-s101: step 231/406, NLL 0.4239
+A-S-s101: step 232/406, NLL 0.3825
+A-S-s101: step 233/406, NLL 0.3404
+A-S-s101: step 234/406, NLL 0.3836
+A-S-s101: step 235/406, NLL 0.4578
+A-S-s101: step 236/406, NLL 0.4256
+A-S-s101: step 237/406, NLL 0.4326
+A-S-s101: step 238/406, NLL 0.4441
+A-S-s101: step 239/406, NLL 0.4178
+A-S-s101: step 240/406, NLL 0.5153
+A-S-s101: step 241/406, NLL 0.3976
+A-S-s101: step 242/406, NLL 0.3543
+A-S-s101: step 243/406, NLL 0.3675
+A-S-s101: step 244/406, NLL 0.4591
+A-S-s101: step 245/406, NLL 0.4207
+A-S-s101: step 246/406, NLL 0.3839
+A-S-s101: step 247/406, NLL 0.4237
+A-S-s101: step 248/406, NLL 0.4356
+A-S-s101: step 249/406, NLL 0.4102
+A-S-s101: step 250/406, NLL 0.3779
+A-S-s101: step 251/406, NLL 0.3901
+A-S-s101: step 252/406, NLL 0.3498
+A-S-s101: step 253/406, NLL 0.4100
+A-S-s101: step 254/406, NLL 0.3805
+A-S-s101: step 255/406, NLL 0.4683
+A-S-s101: step 256/406, NLL 0.4538
+A-S-s101: step 257/406, NLL 0.3966
+A-S-s101: step 258/406, NLL 0.3956
+A-S-s101: step 259/406, NLL 0.3942
+A-S-s101: step 260/406, NLL 0.4438
+A-S-s101: step 261/406, NLL 0.3617
+A-S-s101: step 262/406, NLL 0.4021
+A-S-s101: step 263/406, NLL 0.3611
+A-S-s101: step 264/406, NLL 0.4383
+A-S-s101: step 265/406, NLL 0.4126
+A-S-s101: step 266/406, NLL 0.4385
+A-S-s101: step 267/406, NLL 0.3990
+A-S-s101: step 268/406, NLL 0.3950
+A-S-s101: step 269/406, NLL 0.3910
+A-S-s101: step 270/406, NLL 0.4492
+A-S-s101: step 271/406, NLL 0.3974
+A-S-s101: step 272/406, NLL 0.3745
+A-S-s101: step 273/406, NLL 0.4601
+A-S-s101: step 274/406, NLL 0.4077
+A-S-s101: step 275/406, NLL 0.4329
+A-S-s101: step 276/406, NLL 0.3381
+A-S-s101: step 277/406, NLL 0.4366
+A-S-s101: step 278/406, NLL 0.3917
+A-S-s101: step 279/406, NLL 0.4876
+A-S-s101: step 280/406, NLL 0.4735
+A-S-s101: step 281/406, NLL 0.3708
+A-S-s101: step 282/406, NLL 0.4010
+A-S-s101: step 283/406, NLL 0.3865
+A-S-s101: step 284/406, NLL 0.4875
+A-S-s101: step 285/406, NLL 0.4269
+A-S-s101: step 286/406, NLL 0.4280
+A-S-s101: step 287/406, NLL 0.4084
+A-S-s101: step 288/406, NLL 0.4551
+A-S-s101: step 289/406, NLL 0.4139
+A-S-s101: step 290/406, NLL 0.4854
+A-S-s101: step 291/406, NLL 0.4676
+A-S-s101: step 292/406, NLL 0.4119
+A-S-s101: step 293/406, NLL 0.4018
+A-S-s101: step 294/406, NLL 0.3991
+A-S-s101: step 295/406, NLL 0.3942
+A-S-s101: step 296/406, NLL 0.4440
+A-S-s101: step 297/406, NLL 0.4396
+A-S-s101: step 298/406, NLL 0.3642
+A-S-s101: step 299/406, NLL 0.4050
+A-S-s101: step 300/406, NLL 0.4571
+A-S-s101: step 301/406, NLL 0.4548
+A-S-s101: step 302/406, NLL 0.4098
+A-S-s101: step 303/406, NLL 0.4333
+A-S-s101: step 304/406, NLL 0.4049
+A-S-s101: step 305/406, NLL 0.4080
+A-S-s101: step 306/406, NLL 0.4521
+A-S-s101: step 307/406, NLL 0.4277
+A-S-s101: step 308/406, NLL 0.4310
+A-S-s101: step 309/406, NLL 0.3456
+A-S-s101: step 310/406, NLL 0.4723
+A-S-s101: step 311/406, NLL 0.4346
+A-S-s101: step 312/406, NLL 0.4714
+A-S-s101: step 313/406, NLL 0.4565
+A-S-s101: step 314/406, NLL 0.3848
+A-S-s101: step 315/406, NLL 0.3970
+A-S-s101: step 316/406, NLL 0.3741
+A-S-s101: step 317/406, NLL 0.3889
+A-S-s101: step 318/406, NLL 0.4265
+A-S-s101: step 319/406, NLL 0.3982
+A-S-s101: step 320/406, NLL 0.4080
+A-S-s101: step 321/406, NLL 0.4187
+A-S-s101: step 322/406, NLL 0.3676
+A-S-s101: step 323/406, NLL 0.4504
+A-S-s101: step 324/406, NLL 0.4215
+A-S-s101: step 325/406, NLL 0.3776
+A-S-s101: step 326/406, NLL 0.3687
+A-S-s101: step 327/406, NLL 0.3688
+A-S-s101: step 328/406, NLL 0.4431
+A-S-s101: step 329/406, NLL 0.4595
+A-S-s101: step 330/406, NLL 0.3911
+A-S-s101: step 331/406, NLL 0.4007
+A-S-s101: step 332/406, NLL 0.4265
+A-S-s101: step 333/406, NLL 0.4251
+A-S-s101: step 334/406, NLL 0.4607
+A-S-s101: step 335/406, NLL 0.3564
+A-S-s101: step 336/406, NLL 0.3346
+A-S-s101: step 337/406, NLL 0.4065
+A-S-s101: step 338/406, NLL 0.4731
+A-S-s101: step 339/406, NLL 0.4417
+A-S-s101: step 340/406, NLL 0.4474
+A-S-s101: step 341/406, NLL 0.4484
+A-S-s101: step 342/406, NLL 0.4114
+A-S-s101: step 343/406, NLL 0.3852
+A-S-s101: step 344/406, NLL 0.4328
+A-S-s101: step 345/406, NLL 0.4194
+A-S-s101: step 346/406, NLL 0.3706
+A-S-s101: step 347/406, NLL 0.3999
+A-S-s101: step 348/406, NLL 0.3832
+A-S-s101: step 349/406, NLL 0.4644
+A-S-s101: step 350/406, NLL 0.4072
+A-S-s101: step 351/406, NLL 0.4280
+A-S-s101: step 352/406, NLL 0.3466
+A-S-s101: step 353/406, NLL 0.4831
+A-S-s101: step 354/406, NLL 0.3823
+A-S-s101: step 355/406, NLL 0.3908
+A-S-s101: step 356/406, NLL 0.4663
+A-S-s101: step 357/406, NLL 0.3331
+A-S-s101: step 358/406, NLL 0.4066
+A-S-s101: step 359/406, NLL 0.3867
+A-S-s101: step 360/406, NLL 0.4847
+A-S-s101: step 361/406, NLL 0.3839
+A-S-s101: step 362/406, NLL 0.3490
+A-S-s101: step 363/406, NLL 0.4170
+A-S-s101: step 364/406, NLL 0.4497
+A-S-s101: step 365/406, NLL 0.4029
+A-S-s101: step 366/406, NLL 0.4426
+A-S-s101: step 367/406, NLL 0.3844
+A-S-s101: step 368/406, NLL 0.3494
+A-S-s101: step 369/406, NLL 0.4089
+A-S-s101: step 370/406, NLL 0.4111
+A-S-s101: step 371/406, NLL 0.4116
+A-S-s101: step 372/406, NLL 0.3825
+A-S-s101: step 373/406, NLL 0.3853
+A-S-s101: step 374/406, NLL 0.4515
+A-S-s101: step 375/406, NLL 0.4088
+A-S-s101: step 376/406, NLL 0.4532
+A-S-s101: step 377/406, NLL 0.4417
+A-S-s101: step 378/406, NLL 0.4593
+A-S-s101: step 379/406, NLL 0.3722
+A-S-s101: step 380/406, NLL 0.3724
+A-S-s101: step 381/406, NLL 0.4409
+A-S-s101: step 382/406, NLL 0.4450
+A-S-s101: step 383/406, NLL 0.4791
+A-S-s101: step 384/406, NLL 0.3810
+A-S-s101: step 385/406, NLL 0.4313
+A-S-s101: step 386/406, NLL 0.4266
+A-S-s101: step 387/406, NLL 0.4506
+A-S-s101: step 388/406, NLL 0.3916
+A-S-s101: step 389/406, NLL 0.4080
+A-S-s101: step 390/406, NLL 0.3723
+A-S-s101: step 391/406, NLL 0.4057
+A-S-s101: step 392/406, NLL 0.3556
+A-S-s101: step 393/406, NLL 0.3529
+A-S-s101: step 394/406, NLL 0.4163
+A-S-s101: step 395/406, NLL 0.4474
+A-S-s101: step 396/406, NLL 0.4269
+A-S-s101: step 397/406, NLL 0.3707
+A-S-s101: step 398/406, NLL 0.3997
+A-S-s101: step 399/406, NLL 0.4074
+A-S-s101: step 400/406, NLL 0.4102
+A-S-s101: step 401/406, NLL 0.4201
+A-S-s101: step 402/406, NLL 0.4170
+A-S-s101: step 403/406, NLL 0.4167
+A-S-s101: step 404/406, NLL 0.3752
+A-S-s101: step 405/406, NLL 0.4125
+A-S-s101: step 406/406, NLL 0.3315
+[evaluation] A-S-s101: training/checkpoint saved; evaluating answer NLL, then generating answers.
+[evaluation] A-S-s101: generated 4/128 answers (3.1%).
+[evaluation] A-S-s101: generated 8/128 answers (6.2%).
+[evaluation] A-S-s101: generated 12/128 answers (9.4%).
+[evaluation] A-S-s101: generated 16/128 answers (12.5%).
+[evaluation] A-S-s101: generated 20/128 answers (15.6%).
+[evaluation] A-S-s101: generated 24/128 answers (18.8%).
+[evaluation] A-S-s101: generated 28/128 answers (21.9%).
+[evaluation] A-S-s101: generated 32/128 answers (25.0%).
+[evaluation] A-S-s101: generated 36/128 answers (28.1%).
+[evaluation] A-S-s101: generated 40/128 answers (31.2%).
+[evaluation] A-S-s101: generated 44/128 answers (34.4%).
+[evaluation] A-S-s101: generated 48/128 answers (37.5%).
+[evaluation] A-S-s101: generated 52/128 answers (40.6%).
+[evaluation] A-S-s101: generated 56/128 answers (43.8%).
+[evaluation] A-S-s101: generated 60/128 answers (46.9%).
+[evaluation] A-S-s101: generated 64/128 answers (50.0%).
+[evaluation] A-S-s101: generated 68/128 answers (53.1%).
+[evaluation] A-S-s101: generated 72/128 answers (56.2%).
+[evaluation] A-S-s101: generated 76/128 answers (59.4%).
+[evaluation] A-S-s101: generated 80/128 answers (62.5%).
+[evaluation] A-S-s101: generated 84/128 answers (65.6%).
+[evaluation] A-S-s101: generated 88/128 answers (68.8%).
+[evaluation] A-S-s101: generated 92/128 answers (71.9%).
+[evaluation] A-S-s101: generated 96/128 answers (75.0%).
+[evaluation] A-S-s101: generated 100/128 answers (78.1%).
+[evaluation] A-S-s101: generated 104/128 answers (81.2%).
+[evaluation] A-S-s101: generated 108/128 answers (84.4%).
+[evaluation] A-S-s101: generated 112/128 answers (87.5%).
+[evaluation] A-S-s101: generated 116/128 answers (90.6%).
+[evaluation] A-S-s101: generated 120/128 answers (93.8%).
+[evaluation] A-S-s101: generated 124/128 answers (96.9%).
+Experiment evidence: /storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/reports/mchoi345/study-main/confirmation/A-S-s101
+[evaluation] A-S-s101: generated 128/128 answers (100.0%).
+[evaluation] A-S-s101: evaluation saved; exporting evidence...
+[evaluation] A-S-s101: evaluation will generate 500 answers after training.
+`torch_dtype` is deprecated! Use `dtype` instead!
+A-S-s101: step 407/609, NLL 0.3970
+A-S-s101: step 408/609, NLL 0.3663
+A-S-s101: step 409/609, NLL 0.3385
+A-S-s101: step 410/609, NLL 0.5135
+A-S-s101: step 411/609, NLL 0.4490
+A-S-s101: step 412/609, NLL 0.4060
+A-S-s101: step 413/609, NLL 0.3896
+A-S-s101: step 414/609, NLL 0.3455
+A-S-s101: step 415/609, NLL 0.3757
+A-S-s101: step 416/609, NLL 0.3989
+A-S-s101: step 417/609, NLL 0.4545
+A-S-s101: step 418/609, NLL 0.4460
+A-S-s101: step 419/609, NLL 0.4181
+A-S-s101: step 420/609, NLL 0.4467
+A-S-s101: step 421/609, NLL 0.4669
+A-S-s101: step 422/609, NLL 0.4111
+A-S-s101: step 423/609, NLL 0.3319
+A-S-s101: step 424/609, NLL 0.4567
+A-S-s101: step 425/609, NLL 0.4541
+A-S-s101: step 426/609, NLL 0.3175
+A-S-s101: step 427/609, NLL 0.4326
+A-S-s101: step 428/609, NLL 0.3484
+A-S-s101: step 429/609, NLL 0.4461
+A-S-s101: step 430/609, NLL 0.4065
+A-S-s101: step 431/609, NLL 0.4582
+A-S-s101: step 432/609, NLL 0.3961
+A-S-s101: step 433/609, NLL 0.3495
+A-S-s101: step 434/609, NLL 0.3685
+A-S-s101: step 435/609, NLL 0.3549
+A-S-s101: step 436/609, NLL 0.4299
+A-S-s101: step 437/609, NLL 0.3677
+A-S-s101: step 438/609, NLL 0.4242
+A-S-s101: step 439/609, NLL 0.4214
+A-S-s101: step 440/609, NLL 0.4289
+A-S-s101: step 441/609, NLL 0.4363
+A-S-s101: step 442/609, NLL 0.4705
+A-S-s101: step 443/609, NLL 0.4570
+A-S-s101: step 444/609, NLL 0.4332
+A-S-s101: step 445/609, NLL 0.4436
+A-S-s101: step 446/609, NLL 0.3473
+A-S-s101: step 447/609, NLL 0.3813
+A-S-s101: step 448/609, NLL 0.3922
+A-S-s101: step 449/609, NLL 0.3395
+A-S-s101: step 450/609, NLL 0.4136
+A-S-s101: step 451/609, NLL 0.3834
+A-S-s101: step 452/609, NLL 0.3569
+A-S-s101: step 453/609, NLL 0.3957
+A-S-s101: step 454/609, NLL 0.4426
+A-S-s101: step 455/609, NLL 0.3210
+A-S-s101: step 456/609, NLL 0.3870
+A-S-s101: step 457/609, NLL 0.4454
+A-S-s101: step 458/609, NLL 0.4199
+A-S-s101: step 459/609, NLL 0.3951
+A-S-s101: step 460/609, NLL 0.3955
+A-S-s101: step 461/609, NLL 0.3879
+A-S-s101: step 462/609, NLL 0.3975
+A-S-s101: step 463/609, NLL 0.4351
+A-S-s101: step 464/609, NLL 0.3467
+A-S-s101: step 465/609, NLL 0.4000
+A-S-s101: step 466/609, NLL 0.3389
+A-S-s101: step 467/609, NLL 0.3883
+A-S-s101: step 468/609, NLL 0.4090
+A-S-s101: step 469/609, NLL 0.4318
+A-S-s101: step 470/609, NLL 0.3662
+A-S-s101: step 471/609, NLL 0.4590
+A-S-s101: step 472/609, NLL 0.3300
+A-S-s101: step 473/609, NLL 0.3980
+A-S-s101: step 474/609, NLL 0.4094
+A-S-s101: step 475/609, NLL 0.4138
+A-S-s101: step 476/609, NLL 0.3765
+A-S-s101: step 477/609, NLL 0.4192
+A-S-s101: step 478/609, NLL 0.4401
+A-S-s101: step 479/609, NLL 0.4221
+A-S-s101: step 480/609, NLL 0.3726
+A-S-s101: step 481/609, NLL 0.3726
+A-S-s101: step 482/609, NLL 0.4420
+A-S-s101: step 483/609, NLL 0.4061
+A-S-s101: step 484/609, NLL 0.4216
+A-S-s101: step 485/609, NLL 0.4037
+A-S-s101: step 486/609, NLL 0.3624
+A-S-s101: step 487/609, NLL 0.3954
+A-S-s101: step 488/609, NLL 0.3673
+A-S-s101: step 489/609, NLL 0.4575
+A-S-s101: step 490/609, NLL 0.3583
+A-S-s101: step 491/609, NLL 0.4166
+A-S-s101: step 492/609, NLL 0.3867
+A-S-s101: step 493/609, NLL 0.3973
+A-S-s101: step 494/609, NLL 0.3653
+A-S-s101: step 495/609, NLL 0.4398
+A-S-s101: step 496/609, NLL 0.3785
+A-S-s101: step 497/609, NLL 0.3757
+A-S-s101: step 498/609, NLL 0.3825
+A-S-s101: step 499/609, NLL 0.3970
+A-S-s101: step 500/609, NLL 0.3967
+A-S-s101: step 501/609, NLL 0.4298
+A-S-s101: step 502/609, NLL 0.4362
+A-S-s101: step 503/609, NLL 0.4164
+A-S-s101: step 504/609, NLL 0.3855
+A-S-s101: step 505/609, NLL 0.4022
+A-S-s101: step 506/609, NLL 0.4126
+A-S-s101: step 507/609, NLL 0.3460
+A-S-s101: step 508/609, NLL 0.3988
+A-S-s101: step 509/609, NLL 0.3979
+A-S-s101: step 510/609, NLL 0.3462
+A-S-s101: step 511/609, NLL 0.4489
+A-S-s101: step 512/609, NLL 0.3979
+A-S-s101: step 513/609, NLL 0.3857
+A-S-s101: step 514/609, NLL 0.3925
+A-S-s101: step 515/609, NLL 0.3734
+A-S-s101: step 516/609, NLL 0.3633
+A-S-s101: step 517/609, NLL 0.4347
+A-S-s101: step 518/609, NLL 0.3710
+A-S-s101: step 519/609, NLL 0.3780
+A-S-s101: step 520/609, NLL 0.4081
+A-S-s101: step 521/609, NLL 0.3884
+A-S-s101: step 522/609, NLL 0.4097
+A-S-s101: step 523/609, NLL 0.3700
+A-S-s101: step 524/609, NLL 0.4742
+A-S-s101: step 525/609, NLL 0.4129
+A-S-s101: step 526/609, NLL 0.3669
+A-S-s101: step 527/609, NLL 0.3644
+A-S-s101: step 528/609, NLL 0.3281
+A-S-s101: step 529/609, NLL 0.4112
+A-S-s101: step 530/609, NLL 0.3876
+A-S-s101: step 531/609, NLL 0.5052
+A-S-s101: step 532/609, NLL 0.3916
+A-S-s101: step 533/609, NLL 0.3878
+A-S-s101: step 534/609, NLL 0.4213
+A-S-s101: step 535/609, NLL 0.3979
+A-S-s101: step 536/609, NLL 0.4107
+A-S-s101: step 537/609, NLL 0.3666
+A-S-s101: step 538/609, NLL 0.3836
+A-S-s101: step 539/609, NLL 0.4140
+A-S-s101: step 540/609, NLL 0.4031
+A-S-s101: step 541/609, NLL 0.3257
+A-S-s101: step 542/609, NLL 0.4207
+A-S-s101: step 543/609, NLL 0.4269
+A-S-s101: step 544/609, NLL 0.4121
+A-S-s101: step 545/609, NLL 0.4448
+A-S-s101: step 546/609, NLL 0.3366
+A-S-s101: step 547/609, NLL 0.4242
+A-S-s101: step 548/609, NLL 0.3337
+A-S-s101: step 549/609, NLL 0.3421
+A-S-s101: step 550/609, NLL 0.3174
+A-S-s101: step 551/609, NLL 0.3581
+A-S-s101: step 552/609, NLL 0.3913
+A-S-s101: step 553/609, NLL 0.3972
+A-S-s101: step 554/609, NLL 0.3704
+A-S-s101: step 555/609, NLL 0.3476
+A-S-s101: step 556/609, NLL 0.3651
+A-S-s101: step 557/609, NLL 0.4493
+A-S-s101: step 558/609, NLL 0.4103
+A-S-s101: step 559/609, NLL 0.4793
+A-S-s101: step 560/609, NLL 0.3987
+A-S-s101: step 561/609, NLL 0.3868
+A-S-s101: step 562/609, NLL 0.4274
+A-S-s101: step 563/609, NLL 0.4418
+A-S-s101: step 564/609, NLL 0.4040
+A-S-s101: step 565/609, NLL 0.4049
+A-S-s101: step 566/609, NLL 0.4488
+A-S-s101: step 567/609, NLL 0.4672
+A-S-s101: step 568/609, NLL 0.3472
+A-S-s101: step 569/609, NLL 0.3904
+A-S-s101: step 570/609, NLL 0.4268
+A-S-s101: step 571/609, NLL 0.3930
+A-S-s101: step 572/609, NLL 0.3912
+A-S-s101: step 573/609, NLL 0.4217
+A-S-s101: step 574/609, NLL 0.3818
+A-S-s101: step 575/609, NLL 0.4322
+A-S-s101: step 576/609, NLL 0.3180
+A-S-s101: step 577/609, NLL 0.4284
+A-S-s101: step 578/609, NLL 0.4333
+A-S-s101: step 579/609, NLL 0.3738
+A-S-s101: step 580/609, NLL 0.3121
+A-S-s101: step 581/609, NLL 0.3779
+A-S-s101: step 582/609, NLL 0.4091
+A-S-s101: step 583/609, NLL 0.4223
+A-S-s101: step 584/609, NLL 0.3685
+A-S-s101: step 585/609, NLL 0.4338
+A-S-s101: step 586/609, NLL 0.4162
+A-S-s101: step 587/609, NLL 0.4159
+A-S-s101: step 588/609, NLL 0.3932
+A-S-s101: step 589/609, NLL 0.3933
+A-S-s101: step 590/609, NLL 0.4519
+A-S-s101: step 591/609, NLL 0.4075
+A-S-s101: step 592/609, NLL 0.4068
+A-S-s101: step 593/609, NLL 0.3786
+A-S-s101: step 594/609, NLL 0.3821
+A-S-s101: step 595/609, NLL 0.4630
+A-S-s101: step 596/609, NLL 0.3358
+A-S-s101: step 597/609, NLL 0.3496
+A-S-s101: step 598/609, NLL 0.3821
+A-S-s101: step 599/609, NLL 0.4328
+A-S-s101: step 600/609, NLL 0.4073
+A-S-s101: step 601/609, NLL 0.4186
+A-S-s101: step 602/609, NLL 0.4025
+A-S-s101: step 603/609, NLL 0.4077
+A-S-s101: step 604/609, NLL 0.3784
+A-S-s101: step 605/609, NLL 0.3704
+A-S-s101: step 606/609, NLL 0.3794
+A-S-s101: step 607/609, NLL 0.4484
+A-S-s101: step 608/609, NLL 0.2980
+A-S-s101: step 609/609, NLL 0.5015
+[evaluation] A-S-s101: training/checkpoint saved; evaluating answer NLL, then generating answers.
+[evaluation] A-S-s101: generated 4/500 answers (0.8%).
+[evaluation] A-S-s101: generated 8/500 answers (1.6%).
+[evaluation] A-S-s101: generated 12/500 answers (2.4%).
+[evaluation] A-S-s101: generated 16/500 answers (3.2%).
+[evaluation] A-S-s101: generated 20/500 answers (4.0%).
+[evaluation] A-S-s101: generated 24/500 answers (4.8%).
+[evaluation] A-S-s101: generated 28/500 answers (5.6%).
+[evaluation] A-S-s101: generated 32/500 answers (6.4%).
+[evaluation] A-S-s101: generated 36/500 answers (7.2%).
+[evaluation] A-S-s101: generated 40/500 answers (8.0%).
+[evaluation] A-S-s101: generated 44/500 answers (8.8%).
+[evaluation] A-S-s101: generated 48/500 answers (9.6%).
+[evaluation] A-S-s101: generated 52/500 answers (10.4%).
+[evaluation] A-S-s101: generated 56/500 answers (11.2%).
+[evaluation] A-S-s101: generated 60/500 answers (12.0%).
+[evaluation] A-S-s101: generated 64/500 answers (12.8%).
+[evaluation] A-S-s101: generated 68/500 answers (13.6%).
+[evaluation] A-S-s101: generated 72/500 answers (14.4%).
+[evaluation] A-S-s101: generated 76/500 answers (15.2%).
+[evaluation] A-S-s101: generated 80/500 answers (16.0%).
+[evaluation] A-S-s101: generated 84/500 answers (16.8%).
+[evaluation] A-S-s101: generated 88/500 answers (17.6%).
+[evaluation] A-S-s101: generated 92/500 answers (18.4%).
+[evaluation] A-S-s101: generated 96/500 answers (19.2%).
+[evaluation] A-S-s101: generated 100/500 answers (20.0%).
+[evaluation] A-S-s101: generated 104/500 answers (20.8%).
+[evaluation] A-S-s101: generated 108/500 answers (21.6%).
+[evaluation] A-S-s101: generated 112/500 answers (22.4%).
+[evaluation] A-S-s101: generated 116/500 answers (23.2%).
+[evaluation] A-S-s101: generated 120/500 answers (24.0%).
+[evaluation] A-S-s101: generated 124/500 answers (24.8%).
+[evaluation] A-S-s101: generated 128/500 answers (25.6%).
+[evaluation] A-S-s101: generated 132/500 answers (26.4%).
+[evaluation] A-S-s101: generated 136/500 answers (27.2%).
+[evaluation] A-S-s101: generated 140/500 answers (28.0%).
+[evaluation] A-S-s101: generated 144/500 answers (28.8%).
+[evaluation] A-S-s101: generated 148/500 answers (29.6%).
+[evaluation] A-S-s101: generated 152/500 answers (30.4%).
+[evaluation] A-S-s101: generated 156/500 answers (31.2%).
+[evaluation] A-S-s101: generated 160/500 answers (32.0%).
+[evaluation] A-S-s101: generated 164/500 answers (32.8%).
+[evaluation] A-S-s101: generated 168/500 answers (33.6%).
+[evaluation] A-S-s101: generated 172/500 answers (34.4%).
+[evaluation] A-S-s101: generated 176/500 answers (35.2%).
+[evaluation] A-S-s101: generated 180/500 answers (36.0%).
+[evaluation] A-S-s101: generated 184/500 answers (36.8%).
+[evaluation] A-S-s101: generated 188/500 answers (37.6%).
+[evaluation] A-S-s101: generated 192/500 answers (38.4%).
+[evaluation] A-S-s101: generated 196/500 answers (39.2%).
+[evaluation] A-S-s101: generated 200/500 answers (40.0%).
+[evaluation] A-S-s101: generated 204/500 answers (40.8%).
+[evaluation] A-S-s101: generated 208/500 answers (41.6%).
+[evaluation] A-S-s101: generated 212/500 answers (42.4%).
+[evaluation] A-S-s101: generated 216/500 answers (43.2%).
+[evaluation] A-S-s101: generated 220/500 answers (44.0%).
+[evaluation] A-S-s101: generated 224/500 answers (44.8%).
+[evaluation] A-S-s101: generated 228/500 answers (45.6%).
+[evaluation] A-S-s101: generated 232/500 answers (46.4%).
+[evaluation] A-S-s101: generated 236/500 answers (47.2%).
+[evaluation] A-S-s101: generated 240/500 answers (48.0%).
+[evaluation] A-S-s101: generated 244/500 answers (48.8%).
+[evaluation] A-S-s101: generated 248/500 answers (49.6%).
+[evaluation] A-S-s101: generated 252/500 answers (50.4%).
+[evaluation] A-S-s101: generated 256/500 answers (51.2%).
+[evaluation] A-S-s101: generated 260/500 answers (52.0%).
+[evaluation] A-S-s101: generated 264/500 answers (52.8%).
+[evaluation] A-S-s101: generated 268/500 answers (53.6%).
+[evaluation] A-S-s101: generated 272/500 answers (54.4%).
+[evaluation] A-S-s101: generated 276/500 answers (55.2%).
+[evaluation] A-S-s101: generated 280/500 answers (56.0%).
+[evaluation] A-S-s101: generated 284/500 answers (56.8%).
+[evaluation] A-S-s101: generated 288/500 answers (57.6%).
+[evaluation] A-S-s101: generated 292/500 answers (58.4%).
+[evaluation] A-S-s101: generated 296/500 answers (59.2%).
+[evaluation] A-S-s101: generated 300/500 answers (60.0%).
+[evaluation] A-S-s101: generated 304/500 answers (60.8%).
+[evaluation] A-S-s101: generated 308/500 answers (61.6%).
+[evaluation] A-S-s101: generated 312/500 answers (62.4%).
+[evaluation] A-S-s101: generated 316/500 answers (63.2%).
+[evaluation] A-S-s101: generated 320/500 answers (64.0%).
+[evaluation] A-S-s101: generated 324/500 answers (64.8%).
+[evaluation] A-S-s101: generated 328/500 answers (65.6%).
+[evaluation] A-S-s101: generated 332/500 answers (66.4%).
+[evaluation] A-S-s101: generated 336/500 answers (67.2%).
+[evaluation] A-S-s101: generated 340/500 answers (68.0%).
+[evaluation] A-S-s101: generated 344/500 answers (68.8%).
+[evaluation] A-S-s101: generated 348/500 answers (69.6%).
+[evaluation] A-S-s101: generated 352/500 answers (70.4%).
+[evaluation] A-S-s101: generated 356/500 answers (71.2%).
+[evaluation] A-S-s101: generated 360/500 answers (72.0%).
+[evaluation] A-S-s101: generated 364/500 answers (72.8%).
+[evaluation] A-S-s101: generated 368/500 answers (73.6%).
+[evaluation] A-S-s101: generated 372/500 answers (74.4%).
+[evaluation] A-S-s101: generated 376/500 answers (75.2%).
+[evaluation] A-S-s101: generated 380/500 answers (76.0%).
+[evaluation] A-S-s101: generated 384/500 answers (76.8%).
+[evaluation] A-S-s101: generated 388/500 answers (77.6%).
+[evaluation] A-S-s101: generated 392/500 answers (78.4%).
+[evaluation] A-S-s101: generated 396/500 answers (79.2%).
+[evaluation] A-S-s101: generated 400/500 answers (80.0%).
+[evaluation] A-S-s101: generated 404/500 answers (80.8%).
+[evaluation] A-S-s101: generated 408/500 answers (81.6%).
+[evaluation] A-S-s101: generated 412/500 answers (82.4%).
+[evaluation] A-S-s101: generated 416/500 answers (83.2%).
+[evaluation] A-S-s101: generated 420/500 answers (84.0%).
+[evaluation] A-S-s101: generated 424/500 answers (84.8%).
+[evaluation] A-S-s101: generated 428/500 answers (85.6%).
+[evaluation] A-S-s101: generated 432/500 answers (86.4%).
+[evaluation] A-S-s101: generated 436/500 answers (87.2%).
+[evaluation] A-S-s101: generated 440/500 answers (88.0%).
+[evaluation] A-S-s101: generated 444/500 answers (88.8%).
+[evaluation] A-S-s101: generated 448/500 answers (89.6%).
+[evaluation] A-S-s101: generated 452/500 answers (90.4%).
+[evaluation] A-S-s101: generated 456/500 answers (91.2%).
+[evaluation] A-S-s101: generated 460/500 answers (92.0%).
+[evaluation] A-S-s101: generated 464/500 answers (92.8%).
+[evaluation] A-S-s101: generated 468/500 answers (93.6%).
+[evaluation] A-S-s101: generated 472/500 answers (94.4%).
+[evaluation] A-S-s101: generated 476/500 answers (95.2%).
+[evaluation] A-S-s101: generated 480/500 answers (96.0%).
+[evaluation] A-S-s101: generated 484/500 answers (96.8%).
+[evaluation] A-S-s101: generated 488/500 answers (97.6%).
+[evaluation] A-S-s101: generated 492/500 answers (98.4%).
+[evaluation] A-S-s101: generated 496/500 answers (99.2%).
+Experiment evidence: /storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/reports/mchoi345/study-main/confirmation/A-S-s101
+[evaluation] A-S-s101: generated 500/500 answers (100.0%).
+[evaluation] A-S-s101: evaluation saved; exporting evidence...

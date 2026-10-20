@@ -1,0 +1,899 @@
+[evaluation] L0-s303: evaluation will generate 128 answers after training.
+`torch_dtype` is deprecated! Use `dtype` instead!
+L0-s303: step 1/203, NLL 0.7844
+L0-s303: step 2/203, NLL 0.8766
+L0-s303: step 3/203, NLL 0.9049
+L0-s303: step 4/203, NLL 0.9005
+L0-s303: step 5/203, NLL 0.8459
+L0-s303: step 6/203, NLL 0.8001
+L0-s303: step 7/203, NLL 0.8214
+L0-s303: step 8/203, NLL 0.8519
+L0-s303: step 9/203, NLL 0.9114
+L0-s303: step 10/203, NLL 0.8854
+L0-s303: step 11/203, NLL 0.9121
+L0-s303: step 12/203, NLL 0.8423
+L0-s303: step 13/203, NLL 0.7784
+L0-s303: step 14/203, NLL 0.7440
+L0-s303: step 15/203, NLL 0.7966
+L0-s303: step 16/203, NLL 0.7932
+L0-s303: step 17/203, NLL 0.6591
+L0-s303: step 18/203, NLL 0.6852
+L0-s303: step 19/203, NLL 0.8231
+L0-s303: step 20/203, NLL 0.6850
+L0-s303: step 21/203, NLL 0.5819
+L0-s303: step 22/203, NLL 0.6214
+L0-s303: step 23/203, NLL 0.5332
+L0-s303: step 24/203, NLL 0.5390
+L0-s303: step 25/203, NLL 0.5144
+L0-s303: step 26/203, NLL 0.5558
+L0-s303: step 27/203, NLL 0.5177
+L0-s303: step 28/203, NLL 0.5220
+L0-s303: step 29/203, NLL 0.5246
+L0-s303: step 30/203, NLL 0.6214
+L0-s303: step 31/203, NLL 0.4517
+L0-s303: step 32/203, NLL 0.4928
+L0-s303: step 33/203, NLL 0.4235
+L0-s303: step 34/203, NLL 0.5194
+L0-s303: step 35/203, NLL 0.5671
+L0-s303: step 36/203, NLL 0.4830
+L0-s303: step 37/203, NLL 0.5435
+L0-s303: step 38/203, NLL 0.4486
+L0-s303: step 39/203, NLL 0.4806
+L0-s303: step 40/203, NLL 0.4885
+L0-s303: step 41/203, NLL 0.4752
+L0-s303: step 42/203, NLL 0.4495
+L0-s303: step 43/203, NLL 0.5049
+L0-s303: step 44/203, NLL 0.4956
+L0-s303: step 45/203, NLL 0.4390
+L0-s303: step 46/203, NLL 0.3849
+L0-s303: step 47/203, NLL 0.4825
+L0-s303: step 48/203, NLL 0.4793
+L0-s303: step 49/203, NLL 0.4037
+L0-s303: step 50/203, NLL 0.4222
+L0-s303: step 51/203, NLL 0.4520
+L0-s303: step 52/203, NLL 0.4916
+L0-s303: step 53/203, NLL 0.4057
+L0-s303: step 54/203, NLL 0.5036
+L0-s303: step 55/203, NLL 0.4114
+L0-s303: step 56/203, NLL 0.4157
+L0-s303: step 57/203, NLL 0.4545
+L0-s303: step 58/203, NLL 0.4356
+L0-s303: step 59/203, NLL 0.3914
+L0-s303: step 60/203, NLL 0.4190
+L0-s303: step 61/203, NLL 0.4421
+L0-s303: step 62/203, NLL 0.5030
+L0-s303: step 63/203, NLL 0.3857
+L0-s303: step 64/203, NLL 0.5179
+L0-s303: step 65/203, NLL 0.4027
+L0-s303: step 66/203, NLL 0.4189
+L0-s303: step 67/203, NLL 0.4139
+L0-s303: step 68/203, NLL 0.3878
+L0-s303: step 69/203, NLL 0.4111
+L0-s303: step 70/203, NLL 0.4162
+L0-s303: step 71/203, NLL 0.4397
+L0-s303: step 72/203, NLL 0.4805
+L0-s303: step 73/203, NLL 0.4620
+L0-s303: step 74/203, NLL 0.4092
+L0-s303: step 75/203, NLL 0.4507
+L0-s303: step 76/203, NLL 0.4628
+L0-s303: step 77/203, NLL 0.4828
+L0-s303: step 78/203, NLL 0.4206
+L0-s303: step 79/203, NLL 0.3995
+L0-s303: step 80/203, NLL 0.4425
+L0-s303: step 81/203, NLL 0.3907
+L0-s303: step 82/203, NLL 0.5472
+L0-s303: step 83/203, NLL 0.4035
+L0-s303: step 84/203, NLL 0.4865
+L0-s303: step 85/203, NLL 0.3742
+L0-s303: step 86/203, NLL 0.4554
+L0-s303: step 87/203, NLL 0.4863
+L0-s303: step 88/203, NLL 0.4516
+L0-s303: step 89/203, NLL 0.4355
+L0-s303: step 90/203, NLL 0.4240
+L0-s303: step 91/203, NLL 0.3918
+L0-s303: step 92/203, NLL 0.4495
+L0-s303: step 93/203, NLL 0.4639
+L0-s303: step 94/203, NLL 0.4041
+L0-s303: step 95/203, NLL 0.4474
+L0-s303: step 96/203, NLL 0.3552
+L0-s303: step 97/203, NLL 0.5219
+L0-s303: step 98/203, NLL 0.4640
+L0-s303: step 99/203, NLL 0.5152
+L0-s303: step 100/203, NLL 0.5071
+L0-s303: step 101/203, NLL 0.4051
+L0-s303: step 102/203, NLL 0.4901
+L0-s303: step 103/203, NLL 0.4736
+L0-s303: step 104/203, NLL 0.4079
+L0-s303: step 105/203, NLL 0.5450
+L0-s303: step 106/203, NLL 0.4190
+L0-s303: step 107/203, NLL 0.4672
+L0-s303: step 108/203, NLL 0.3979
+L0-s303: step 109/203, NLL 0.4775
+L0-s303: step 110/203, NLL 0.4597
+L0-s303: step 111/203, NLL 0.4628
+L0-s303: step 112/203, NLL 0.3522
+L0-s303: step 113/203, NLL 0.4761
+L0-s303: step 114/203, NLL 0.4049
+L0-s303: step 115/203, NLL 0.4914
+L0-s303: step 116/203, NLL 0.4948
+L0-s303: step 117/203, NLL 0.4436
+L0-s303: step 118/203, NLL 0.3851
+L0-s303: step 119/203, NLL 0.4869
+L0-s303: step 120/203, NLL 0.3705
+L0-s303: step 121/203, NLL 0.4786
+L0-s303: step 122/203, NLL 0.4052
+L0-s303: step 123/203, NLL 0.4558
+L0-s303: step 124/203, NLL 0.4082
+L0-s303: step 125/203, NLL 0.4007
+L0-s303: step 126/203, NLL 0.4526
+L0-s303: step 127/203, NLL 0.4633
+L0-s303: step 128/203, NLL 0.4957
+L0-s303: step 129/203, NLL 0.4628
+L0-s303: step 130/203, NLL 0.4732
+L0-s303: step 131/203, NLL 0.4277
+L0-s303: step 132/203, NLL 0.4499
+L0-s303: step 133/203, NLL 0.4282
+L0-s303: step 134/203, NLL 0.5326
+L0-s303: step 135/203, NLL 0.4866
+L0-s303: step 136/203, NLL 0.3892
+L0-s303: step 137/203, NLL 0.3988
+L0-s303: step 138/203, NLL 0.4090
+L0-s303: step 139/203, NLL 0.3951
+L0-s303: step 140/203, NLL 0.3920
+L0-s303: step 141/203, NLL 0.4284
+L0-s303: step 142/203, NLL 0.4384
+L0-s303: step 143/203, NLL 0.4051
+L0-s303: step 144/203, NLL 0.3901
+L0-s303: step 145/203, NLL 0.3998
+L0-s303: step 146/203, NLL 0.5161
+L0-s303: step 147/203, NLL 0.4771
+L0-s303: step 148/203, NLL 0.4367
+L0-s303: step 149/203, NLL 0.4816
+L0-s303: step 150/203, NLL 0.4032
+L0-s303: step 151/203, NLL 0.4410
+L0-s303: step 152/203, NLL 0.5337
+L0-s303: step 153/203, NLL 0.4459
+L0-s303: step 154/203, NLL 0.4364
+L0-s303: step 155/203, NLL 0.3995
+L0-s303: step 156/203, NLL 0.5090
+L0-s303: step 157/203, NLL 0.4312
+L0-s303: step 158/203, NLL 0.4808
+L0-s303: step 159/203, NLL 0.4211
+L0-s303: step 160/203, NLL 0.3559
+L0-s303: step 161/203, NLL 0.3908
+L0-s303: step 162/203, NLL 0.4540
+L0-s303: step 163/203, NLL 0.4322
+L0-s303: step 164/203, NLL 0.5093
+L0-s303: step 165/203, NLL 0.4121
+L0-s303: step 166/203, NLL 0.4523
+L0-s303: step 167/203, NLL 0.4060
+L0-s303: step 168/203, NLL 0.4892
+L0-s303: step 169/203, NLL 0.3927
+L0-s303: step 170/203, NLL 0.4312
+L0-s303: step 171/203, NLL 0.4135
+L0-s303: step 172/203, NLL 0.4613
+L0-s303: step 173/203, NLL 0.4204
+L0-s303: step 174/203, NLL 0.3698
+L0-s303: step 175/203, NLL 0.4258
+L0-s303: step 176/203, NLL 0.4266
+L0-s303: step 177/203, NLL 0.4701
+L0-s303: step 178/203, NLL 0.4041
+L0-s303: step 179/203, NLL 0.3980
+L0-s303: step 180/203, NLL 0.4500
+L0-s303: step 181/203, NLL 0.4594
+L0-s303: step 182/203, NLL 0.4261
+L0-s303: step 183/203, NLL 0.4391
+L0-s303: step 184/203, NLL 0.4865
+L0-s303: step 185/203, NLL 0.4871
+L0-s303: step 186/203, NLL 0.4305
+L0-s303: step 187/203, NLL 0.4645
+L0-s303: step 188/203, NLL 0.4550
+L0-s303: step 189/203, NLL 0.4414
+L0-s303: step 190/203, NLL 0.4235
+L0-s303: step 191/203, NLL 0.5245
+L0-s303: step 192/203, NLL 0.4372
+L0-s303: step 193/203, NLL 0.4393
+L0-s303: step 194/203, NLL 0.4457
+L0-s303: step 195/203, NLL 0.4758
+L0-s303: step 196/203, NLL 0.4177
+L0-s303: step 197/203, NLL 0.4958
+L0-s303: step 198/203, NLL 0.3752
+L0-s303: step 199/203, NLL 0.4777
+L0-s303: step 200/203, NLL 0.3890
+L0-s303: step 201/203, NLL 0.4747
+L0-s303: step 202/203, NLL 0.4294
+L0-s303: step 203/203, NLL 0.4282
+[evaluation] L0-s303: training/checkpoint saved; evaluating answer NLL, then generating answers.
+[evaluation] L0-s303: generated 4/128 answers (3.1%).
+[evaluation] L0-s303: generated 8/128 answers (6.2%).
+[evaluation] L0-s303: generated 12/128 answers (9.4%).
+[evaluation] L0-s303: generated 16/128 answers (12.5%).
+[evaluation] L0-s303: generated 20/128 answers (15.6%).
+[evaluation] L0-s303: generated 24/128 answers (18.8%).
+[evaluation] L0-s303: generated 28/128 answers (21.9%).
+[evaluation] L0-s303: generated 32/128 answers (25.0%).
+[evaluation] L0-s303: generated 36/128 answers (28.1%).
+[evaluation] L0-s303: generated 40/128 answers (31.2%).
+[evaluation] L0-s303: generated 44/128 answers (34.4%).
+[evaluation] L0-s303: generated 48/128 answers (37.5%).
+[evaluation] L0-s303: generated 52/128 answers (40.6%).
+[evaluation] L0-s303: generated 56/128 answers (43.8%).
+[evaluation] L0-s303: generated 60/128 answers (46.9%).
+[evaluation] L0-s303: generated 64/128 answers (50.0%).
+[evaluation] L0-s303: generated 68/128 answers (53.1%).
+[evaluation] L0-s303: generated 72/128 answers (56.2%).
+[evaluation] L0-s303: generated 76/128 answers (59.4%).
+[evaluation] L0-s303: generated 80/128 answers (62.5%).
+[evaluation] L0-s303: generated 84/128 answers (65.6%).
+[evaluation] L0-s303: generated 88/128 answers (68.8%).
+[evaluation] L0-s303: generated 92/128 answers (71.9%).
+[evaluation] L0-s303: generated 96/128 answers (75.0%).
+[evaluation] L0-s303: generated 100/128 answers (78.1%).
+[evaluation] L0-s303: generated 104/128 answers (81.2%).
+[evaluation] L0-s303: generated 108/128 answers (84.4%).
+[evaluation] L0-s303: generated 112/128 answers (87.5%).
+[evaluation] L0-s303: generated 116/128 answers (90.6%).
+[evaluation] L0-s303: generated 120/128 answers (93.8%).
+[evaluation] L0-s303: generated 124/128 answers (96.9%).
+Experiment evidence: /storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/reports/mchoi345/study-main/confirmation/L0-s303
+[evaluation] L0-s303: generated 128/128 answers (100.0%).
+[evaluation] L0-s303: evaluation saved; exporting evidence...
+[evaluation] L0-s303: evaluation will generate 128 answers after training.
+`torch_dtype` is deprecated! Use `dtype` instead!
+L0-s303: step 204/406, NLL 0.4410
+L0-s303: step 205/406, NLL 0.4356
+L0-s303: step 206/406, NLL 0.4458
+L0-s303: step 207/406, NLL 0.4224
+L0-s303: step 208/406, NLL 0.4640
+L0-s303: step 209/406, NLL 0.4169
+L0-s303: step 210/406, NLL 0.4406
+L0-s303: step 211/406, NLL 0.4146
+L0-s303: step 212/406, NLL 0.4255
+L0-s303: step 213/406, NLL 0.4335
+L0-s303: step 214/406, NLL 0.4533
+L0-s303: step 215/406, NLL 0.4601
+L0-s303: step 216/406, NLL 0.3971
+L0-s303: step 217/406, NLL 0.4131
+L0-s303: step 218/406, NLL 0.4208
+L0-s303: step 219/406, NLL 0.4796
+L0-s303: step 220/406, NLL 0.3963
+L0-s303: step 221/406, NLL 0.4106
+L0-s303: step 222/406, NLL 0.4112
+L0-s303: step 223/406, NLL 0.4294
+L0-s303: step 224/406, NLL 0.4537
+L0-s303: step 225/406, NLL 0.4098
+L0-s303: step 226/406, NLL 0.4323
+L0-s303: step 227/406, NLL 0.5156
+L0-s303: step 228/406, NLL 0.4504
+L0-s303: step 229/406, NLL 0.4341
+L0-s303: step 230/406, NLL 0.4294
+L0-s303: step 231/406, NLL 0.4358
+L0-s303: step 232/406, NLL 0.3690
+L0-s303: step 233/406, NLL 0.4778
+L0-s303: step 234/406, NLL 0.4059
+L0-s303: step 235/406, NLL 0.4244
+L0-s303: step 236/406, NLL 0.4523
+L0-s303: step 237/406, NLL 0.4263
+L0-s303: step 238/406, NLL 0.4523
+L0-s303: step 239/406, NLL 0.4146
+L0-s303: step 240/406, NLL 0.4528
+L0-s303: step 241/406, NLL 0.4699
+L0-s303: step 242/406, NLL 0.4119
+L0-s303: step 243/406, NLL 0.4398
+L0-s303: step 244/406, NLL 0.3931
+L0-s303: step 245/406, NLL 0.4837
+L0-s303: step 246/406, NLL 0.4874
+L0-s303: step 247/406, NLL 0.4521
+L0-s303: step 248/406, NLL 0.4349
+L0-s303: step 249/406, NLL 0.4071
+L0-s303: step 250/406, NLL 0.3774
+L0-s303: step 251/406, NLL 0.4577
+L0-s303: step 252/406, NLL 0.5202
+L0-s303: step 253/406, NLL 0.4253
+L0-s303: step 254/406, NLL 0.4916
+L0-s303: step 255/406, NLL 0.4117
+L0-s303: step 256/406, NLL 0.4256
+L0-s303: step 257/406, NLL 0.5222
+L0-s303: step 258/406, NLL 0.4262
+L0-s303: step 259/406, NLL 0.4192
+L0-s303: step 260/406, NLL 0.4716
+L0-s303: step 261/406, NLL 0.5289
+L0-s303: step 262/406, NLL 0.4488
+L0-s303: step 263/406, NLL 0.4021
+L0-s303: step 264/406, NLL 0.3839
+L0-s303: step 265/406, NLL 0.4048
+L0-s303: step 266/406, NLL 0.3913
+L0-s303: step 267/406, NLL 0.3709
+L0-s303: step 268/406, NLL 0.4198
+L0-s303: step 269/406, NLL 0.4592
+L0-s303: step 270/406, NLL 0.4487
+L0-s303: step 271/406, NLL 0.4041
+L0-s303: step 272/406, NLL 0.3879
+L0-s303: step 273/406, NLL 0.4398
+L0-s303: step 274/406, NLL 0.4171
+L0-s303: step 275/406, NLL 0.4292
+L0-s303: step 276/406, NLL 0.4190
+L0-s303: step 277/406, NLL 0.4102
+L0-s303: step 278/406, NLL 0.4182
+L0-s303: step 279/406, NLL 0.4120
+L0-s303: step 280/406, NLL 0.4226
+L0-s303: step 281/406, NLL 0.4387
+L0-s303: step 282/406, NLL 0.4652
+L0-s303: step 283/406, NLL 0.3611
+L0-s303: step 284/406, NLL 0.4377
+L0-s303: step 285/406, NLL 0.4161
+L0-s303: step 286/406, NLL 0.4247
+L0-s303: step 287/406, NLL 0.4508
+L0-s303: step 288/406, NLL 0.4882
+L0-s303: step 289/406, NLL 0.3802
+L0-s303: step 290/406, NLL 0.4884
+L0-s303: step 291/406, NLL 0.4619
+L0-s303: step 292/406, NLL 0.4079
+L0-s303: step 293/406, NLL 0.4218
+L0-s303: step 294/406, NLL 0.4522
+L0-s303: step 295/406, NLL 0.3418
+L0-s303: step 296/406, NLL 0.3959
+L0-s303: step 297/406, NLL 0.4518
+L0-s303: step 298/406, NLL 0.4024
+L0-s303: step 299/406, NLL 0.3974
+L0-s303: step 300/406, NLL 0.4198
+L0-s303: step 301/406, NLL 0.4173
+L0-s303: step 302/406, NLL 0.3819
+L0-s303: step 303/406, NLL 0.3664
+L0-s303: step 304/406, NLL 0.4005
+L0-s303: step 305/406, NLL 0.4754
+L0-s303: step 306/406, NLL 0.4410
+L0-s303: step 307/406, NLL 0.4417
+L0-s303: step 308/406, NLL 0.4055
+L0-s303: step 309/406, NLL 0.4272
+L0-s303: step 310/406, NLL 0.4285
+L0-s303: step 311/406, NLL 0.4486
+L0-s303: step 312/406, NLL 0.3794
+L0-s303: step 313/406, NLL 0.4206
+L0-s303: step 314/406, NLL 0.4570
+L0-s303: step 315/406, NLL 0.5093
+L0-s303: step 316/406, NLL 0.3819
+L0-s303: step 317/406, NLL 0.4743
+L0-s303: step 318/406, NLL 0.4423
+L0-s303: step 319/406, NLL 0.4033
+L0-s303: step 320/406, NLL 0.4522
+L0-s303: step 321/406, NLL 0.4331
+L0-s303: step 322/406, NLL 0.3933
+L0-s303: step 323/406, NLL 0.3758
+L0-s303: step 324/406, NLL 0.5005
+L0-s303: step 325/406, NLL 0.4093
+L0-s303: step 326/406, NLL 0.4065
+L0-s303: step 327/406, NLL 0.4910
+L0-s303: step 328/406, NLL 0.4481
+L0-s303: step 329/406, NLL 0.4437
+L0-s303: step 330/406, NLL 0.4506
+L0-s303: step 331/406, NLL 0.4155
+L0-s303: step 332/406, NLL 0.4535
+L0-s303: step 333/406, NLL 0.4476
+L0-s303: step 334/406, NLL 0.4134
+L0-s303: step 335/406, NLL 0.4800
+L0-s303: step 336/406, NLL 0.4209
+L0-s303: step 337/406, NLL 0.4139
+L0-s303: step 338/406, NLL 0.3761
+L0-s303: step 339/406, NLL 0.5020
+L0-s303: step 340/406, NLL 0.4090
+L0-s303: step 341/406, NLL 0.4547
+L0-s303: step 342/406, NLL 0.4429
+L0-s303: step 343/406, NLL 0.4369
+L0-s303: step 344/406, NLL 0.4189
+L0-s303: step 345/406, NLL 0.4408
+L0-s303: step 346/406, NLL 0.4459
+L0-s303: step 347/406, NLL 0.4614
+L0-s303: step 348/406, NLL 0.4557
+L0-s303: step 349/406, NLL 0.4813
+L0-s303: step 350/406, NLL 0.4833
+L0-s303: step 351/406, NLL 0.4531
+L0-s303: step 352/406, NLL 0.4265
+L0-s303: step 353/406, NLL 0.4300
+L0-s303: step 354/406, NLL 0.4062
+L0-s303: step 355/406, NLL 0.3949
+L0-s303: step 356/406, NLL 0.4002
+L0-s303: step 357/406, NLL 0.4267
+L0-s303: step 358/406, NLL 0.4015
+L0-s303: step 359/406, NLL 0.4380
+L0-s303: step 360/406, NLL 0.3885
+L0-s303: step 361/406, NLL 0.4298
+L0-s303: step 362/406, NLL 0.3635
+L0-s303: step 363/406, NLL 0.4598
+L0-s303: step 364/406, NLL 0.3799
+L0-s303: step 365/406, NLL 0.4976
+L0-s303: step 366/406, NLL 0.4730
+L0-s303: step 367/406, NLL 0.4546
+L0-s303: step 368/406, NLL 0.4180
+L0-s303: step 369/406, NLL 0.4408
+L0-s303: step 370/406, NLL 0.4127
+L0-s303: step 371/406, NLL 0.4523
+L0-s303: step 372/406, NLL 0.4794
+L0-s303: step 373/406, NLL 0.3750
+L0-s303: step 374/406, NLL 0.3768
+L0-s303: step 375/406, NLL 0.4479
+L0-s303: step 376/406, NLL 0.4105
+L0-s303: step 377/406, NLL 0.4519
+L0-s303: step 378/406, NLL 0.4872
+L0-s303: step 379/406, NLL 0.4331
+L0-s303: step 380/406, NLL 0.4176
+L0-s303: step 381/406, NLL 0.4811
+L0-s303: step 382/406, NLL 0.4617
+L0-s303: step 383/406, NLL 0.4531
+L0-s303: step 384/406, NLL 0.5608
+L0-s303: step 385/406, NLL 0.3786
+L0-s303: step 386/406, NLL 0.3600
+L0-s303: step 387/406, NLL 0.3611
+L0-s303: step 388/406, NLL 0.4264
+L0-s303: step 389/406, NLL 0.3653
+L0-s303: step 390/406, NLL 0.4651
+L0-s303: step 391/406, NLL 0.4224
+L0-s303: step 392/406, NLL 0.3652
+L0-s303: step 393/406, NLL 0.4804
+L0-s303: step 394/406, NLL 0.4177
+L0-s303: step 395/406, NLL 0.4526
+L0-s303: step 396/406, NLL 0.3996
+L0-s303: step 397/406, NLL 0.4552
+L0-s303: step 398/406, NLL 0.4456
+L0-s303: step 399/406, NLL 0.4747
+L0-s303: step 400/406, NLL 0.4279
+L0-s303: step 401/406, NLL 0.4442
+L0-s303: step 402/406, NLL 0.3834
+L0-s303: step 403/406, NLL 0.3953
+L0-s303: step 404/406, NLL 0.4389
+L0-s303: step 405/406, NLL 0.4202
+L0-s303: step 406/406, NLL 0.3701
+[evaluation] L0-s303: training/checkpoint saved; evaluating answer NLL, then generating answers.
+[evaluation] L0-s303: generated 4/128 answers (3.1%).
+[evaluation] L0-s303: generated 8/128 answers (6.2%).
+[evaluation] L0-s303: generated 12/128 answers (9.4%).
+[evaluation] L0-s303: generated 16/128 answers (12.5%).
+[evaluation] L0-s303: generated 20/128 answers (15.6%).
+[evaluation] L0-s303: generated 24/128 answers (18.8%).
+[evaluation] L0-s303: generated 28/128 answers (21.9%).
+[evaluation] L0-s303: generated 32/128 answers (25.0%).
+[evaluation] L0-s303: generated 36/128 answers (28.1%).
+[evaluation] L0-s303: generated 40/128 answers (31.2%).
+[evaluation] L0-s303: generated 44/128 answers (34.4%).
+[evaluation] L0-s303: generated 48/128 answers (37.5%).
+[evaluation] L0-s303: generated 52/128 answers (40.6%).
+[evaluation] L0-s303: generated 56/128 answers (43.8%).
+[evaluation] L0-s303: generated 60/128 answers (46.9%).
+[evaluation] L0-s303: generated 64/128 answers (50.0%).
+[evaluation] L0-s303: generated 68/128 answers (53.1%).
+[evaluation] L0-s303: generated 72/128 answers (56.2%).
+[evaluation] L0-s303: generated 76/128 answers (59.4%).
+[evaluation] L0-s303: generated 80/128 answers (62.5%).
+[evaluation] L0-s303: generated 84/128 answers (65.6%).
+[evaluation] L0-s303: generated 88/128 answers (68.8%).
+[evaluation] L0-s303: generated 92/128 answers (71.9%).
+[evaluation] L0-s303: generated 96/128 answers (75.0%).
+[evaluation] L0-s303: generated 100/128 answers (78.1%).
+[evaluation] L0-s303: generated 104/128 answers (81.2%).
+[evaluation] L0-s303: generated 108/128 answers (84.4%).
+[evaluation] L0-s303: generated 112/128 answers (87.5%).
+[evaluation] L0-s303: generated 116/128 answers (90.6%).
+[evaluation] L0-s303: generated 120/128 answers (93.8%).
+[evaluation] L0-s303: generated 124/128 answers (96.9%).
+[evaluation] L0-s303: generated 128/128 answers (100.0%).
+[evaluation] L0-s303: evaluation saved; exporting evidence...
+Experiment evidence: /storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/reports/mchoi345/study-main/confirmation/L0-s303
+[evaluation] L0-s303: evaluation will generate 500 answers after training.
+`torch_dtype` is deprecated! Use `dtype` instead!
+L0-s303: step 407/609, NLL 0.4790
+L0-s303: step 408/609, NLL 0.4175
+L0-s303: step 409/609, NLL 0.3770
+L0-s303: step 410/609, NLL 0.4499
+L0-s303: step 411/609, NLL 0.4689
+L0-s303: step 412/609, NLL 0.4276
+L0-s303: step 413/609, NLL 0.4051
+L0-s303: step 414/609, NLL 0.4373
+L0-s303: step 415/609, NLL 0.4240
+L0-s303: step 416/609, NLL 0.3839
+L0-s303: step 417/609, NLL 0.4275
+L0-s303: step 418/609, NLL 0.4232
+L0-s303: step 419/609, NLL 0.4059
+L0-s303: step 420/609, NLL 0.4110
+L0-s303: step 421/609, NLL 0.4498
+L0-s303: step 422/609, NLL 0.4238
+L0-s303: step 423/609, NLL 0.3924
+L0-s303: step 424/609, NLL 0.4253
+L0-s303: step 425/609, NLL 0.3783
+L0-s303: step 426/609, NLL 0.4457
+L0-s303: step 427/609, NLL 0.4021
+L0-s303: step 428/609, NLL 0.4271
+L0-s303: step 429/609, NLL 0.3993
+L0-s303: step 430/609, NLL 0.4905
+L0-s303: step 431/609, NLL 0.4379
+L0-s303: step 432/609, NLL 0.4049
+L0-s303: step 433/609, NLL 0.4898
+L0-s303: step 434/609, NLL 0.4838
+L0-s303: step 435/609, NLL 0.3918
+L0-s303: step 436/609, NLL 0.4432
+L0-s303: step 437/609, NLL 0.4854
+L0-s303: step 438/609, NLL 0.3760
+L0-s303: step 439/609, NLL 0.4084
+L0-s303: step 440/609, NLL 0.4342
+L0-s303: step 441/609, NLL 0.3791
+L0-s303: step 442/609, NLL 0.4777
+L0-s303: step 443/609, NLL 0.4070
+L0-s303: step 444/609, NLL 0.4111
+L0-s303: step 445/609, NLL 0.4133
+L0-s303: step 446/609, NLL 0.4056
+L0-s303: step 447/609, NLL 0.4280
+L0-s303: step 448/609, NLL 0.3482
+L0-s303: step 449/609, NLL 0.3559
+L0-s303: step 450/609, NLL 0.4252
+L0-s303: step 451/609, NLL 0.3272
+L0-s303: step 452/609, NLL 0.3965
+L0-s303: step 453/609, NLL 0.4079
+L0-s303: step 454/609, NLL 0.4155
+L0-s303: step 455/609, NLL 0.4216
+L0-s303: step 456/609, NLL 0.4254
+L0-s303: step 457/609, NLL 0.3784
+L0-s303: step 458/609, NLL 0.4096
+L0-s303: step 459/609, NLL 0.4373
+L0-s303: step 460/609, NLL 0.4345
+L0-s303: step 461/609, NLL 0.4374
+L0-s303: step 462/609, NLL 0.4617
+L0-s303: step 463/609, NLL 0.4292
+L0-s303: step 464/609, NLL 0.4666
+L0-s303: step 465/609, NLL 0.4946
+L0-s303: step 466/609, NLL 0.5156
+L0-s303: step 467/609, NLL 0.4472
+L0-s303: step 468/609, NLL 0.4688
+L0-s303: step 469/609, NLL 0.3414
+L0-s303: step 470/609, NLL 0.4327
+L0-s303: step 471/609, NLL 0.3982
+L0-s303: step 472/609, NLL 0.4496
+L0-s303: step 473/609, NLL 0.3883
+L0-s303: step 474/609, NLL 0.4216
+L0-s303: step 475/609, NLL 0.4642
+L0-s303: step 476/609, NLL 0.4275
+L0-s303: step 477/609, NLL 0.3961
+L0-s303: step 478/609, NLL 0.4203
+L0-s303: step 479/609, NLL 0.4791
+L0-s303: step 480/609, NLL 0.3989
+L0-s303: step 481/609, NLL 0.3797
+L0-s303: step 482/609, NLL 0.4248
+L0-s303: step 483/609, NLL 0.4642
+L0-s303: step 484/609, NLL 0.3964
+L0-s303: step 485/609, NLL 0.4294
+L0-s303: step 486/609, NLL 0.4384
+L0-s303: step 487/609, NLL 0.4080
+L0-s303: step 488/609, NLL 0.5305
+L0-s303: step 489/609, NLL 0.3832
+L0-s303: step 490/609, NLL 0.4365
+L0-s303: step 491/609, NLL 0.3888
+L0-s303: step 492/609, NLL 0.3743
+L0-s303: step 493/609, NLL 0.3459
+L0-s303: step 494/609, NLL 0.4776
+L0-s303: step 495/609, NLL 0.3785
+L0-s303: step 496/609, NLL 0.3894
+L0-s303: step 497/609, NLL 0.4504
+L0-s303: step 498/609, NLL 0.3880
+L0-s303: step 499/609, NLL 0.4362
+L0-s303: step 500/609, NLL 0.4272
+L0-s303: step 501/609, NLL 0.4847
+L0-s303: step 502/609, NLL 0.4564
+L0-s303: step 503/609, NLL 0.3700
+L0-s303: step 504/609, NLL 0.4624
+L0-s303: step 505/609, NLL 0.4076
+L0-s303: step 506/609, NLL 0.4063
+L0-s303: step 507/609, NLL 0.4022
+L0-s303: step 508/609, NLL 0.4912
+L0-s303: step 509/609, NLL 0.3596
+L0-s303: step 510/609, NLL 0.4333
+L0-s303: step 511/609, NLL 0.4427
+L0-s303: step 512/609, NLL 0.4550
+L0-s303: step 513/609, NLL 0.3915
+L0-s303: step 514/609, NLL 0.5219
+L0-s303: step 515/609, NLL 0.4272
+L0-s303: step 516/609, NLL 0.4811
+L0-s303: step 517/609, NLL 0.3881
+L0-s303: step 518/609, NLL 0.4138
+L0-s303: step 519/609, NLL 0.4692
+L0-s303: step 520/609, NLL 0.4414
+L0-s303: step 521/609, NLL 0.4580
+L0-s303: step 522/609, NLL 0.4192
+L0-s303: step 523/609, NLL 0.4766
+L0-s303: step 524/609, NLL 0.4214
+L0-s303: step 525/609, NLL 0.5364
+L0-s303: step 526/609, NLL 0.4256
+L0-s303: step 527/609, NLL 0.4781
+L0-s303: step 528/609, NLL 0.4324
+L0-s303: step 529/609, NLL 0.4528
+L0-s303: step 530/609, NLL 0.4382
+L0-s303: step 531/609, NLL 0.4475
+L0-s303: step 532/609, NLL 0.4814
+L0-s303: step 533/609, NLL 0.4238
+L0-s303: step 534/609, NLL 0.4628
+L0-s303: step 535/609, NLL 0.4801
+L0-s303: step 536/609, NLL 0.3899
+L0-s303: step 537/609, NLL 0.4284
+L0-s303: step 538/609, NLL 0.4568
+L0-s303: step 539/609, NLL 0.4300
+L0-s303: step 540/609, NLL 0.4302
+L0-s303: step 541/609, NLL 0.4386
+L0-s303: step 542/609, NLL 0.3572
+L0-s303: step 543/609, NLL 0.3951
+L0-s303: step 544/609, NLL 0.4108
+L0-s303: step 545/609, NLL 0.4418
+L0-s303: step 546/609, NLL 0.4285
+L0-s303: step 547/609, NLL 0.3966
+L0-s303: step 548/609, NLL 0.3827
+L0-s303: step 549/609, NLL 0.5200
+L0-s303: step 550/609, NLL 0.4361
+L0-s303: step 551/609, NLL 0.3941
+L0-s303: step 552/609, NLL 0.4238
+L0-s303: step 553/609, NLL 0.3954
+L0-s303: step 554/609, NLL 0.4588
+L0-s303: step 555/609, NLL 0.4245
+L0-s303: step 556/609, NLL 0.4754
+L0-s303: step 557/609, NLL 0.3230
+L0-s303: step 558/609, NLL 0.4030
+L0-s303: step 559/609, NLL 0.4270
+L0-s303: step 560/609, NLL 0.4667
+L0-s303: step 561/609, NLL 0.4792
+L0-s303: step 562/609, NLL 0.3568
+L0-s303: step 563/609, NLL 0.4479
+L0-s303: step 564/609, NLL 0.4047
+L0-s303: step 565/609, NLL 0.3953
+L0-s303: step 566/609, NLL 0.4150
+L0-s303: step 567/609, NLL 0.4570
+L0-s303: step 568/609, NLL 0.4324
+L0-s303: step 569/609, NLL 0.4325
+L0-s303: step 570/609, NLL 0.4865
+L0-s303: step 571/609, NLL 0.3959
+L0-s303: step 572/609, NLL 0.4049
+L0-s303: step 573/609, NLL 0.4299
+L0-s303: step 574/609, NLL 0.4581
+L0-s303: step 575/609, NLL 0.4514
+L0-s303: step 576/609, NLL 0.4382
+L0-s303: step 577/609, NLL 0.4765
+L0-s303: step 578/609, NLL 0.4051
+L0-s303: step 579/609, NLL 0.4081
+L0-s303: step 580/609, NLL 0.4382
+L0-s303: step 581/609, NLL 0.4775
+L0-s303: step 582/609, NLL 0.4051
+L0-s303: step 583/609, NLL 0.4384
+L0-s303: step 584/609, NLL 0.4815
+L0-s303: step 585/609, NLL 0.3452
+L0-s303: step 586/609, NLL 0.4410
+L0-s303: step 587/609, NLL 0.4610
+L0-s303: step 588/609, NLL 0.4773
+L0-s303: step 589/609, NLL 0.4588
+L0-s303: step 590/609, NLL 0.4373
+L0-s303: step 591/609, NLL 0.4274
+L0-s303: step 592/609, NLL 0.3965
+L0-s303: step 593/609, NLL 0.3664
+L0-s303: step 594/609, NLL 0.3141
+L0-s303: step 595/609, NLL 0.3939
+L0-s303: step 596/609, NLL 0.4851
+L0-s303: step 597/609, NLL 0.3972
+L0-s303: step 598/609, NLL 0.4457
+L0-s303: step 599/609, NLL 0.4585
+L0-s303: step 600/609, NLL 0.4516
+L0-s303: step 601/609, NLL 0.4278
+L0-s303: step 602/609, NLL 0.4477
+L0-s303: step 603/609, NLL 0.4825
+L0-s303: step 604/609, NLL 0.3473
+L0-s303: step 605/609, NLL 0.4456
+L0-s303: step 606/609, NLL 0.3691
+L0-s303: step 607/609, NLL 0.3896
+L0-s303: step 608/609, NLL 0.4712
+L0-s303: step 609/609, NLL 0.4178
+[evaluation] L0-s303: training/checkpoint saved; evaluating answer NLL, then generating answers.
+[evaluation] L0-s303: generated 4/500 answers (0.8%).
+[evaluation] L0-s303: generated 8/500 answers (1.6%).
+[evaluation] L0-s303: generated 12/500 answers (2.4%).
+[evaluation] L0-s303: generated 16/500 answers (3.2%).
+[evaluation] L0-s303: generated 20/500 answers (4.0%).
+[evaluation] L0-s303: generated 24/500 answers (4.8%).
+[evaluation] L0-s303: generated 28/500 answers (5.6%).
+[evaluation] L0-s303: generated 32/500 answers (6.4%).
+[evaluation] L0-s303: generated 36/500 answers (7.2%).
+[evaluation] L0-s303: generated 40/500 answers (8.0%).
+[evaluation] L0-s303: generated 44/500 answers (8.8%).
+[evaluation] L0-s303: generated 48/500 answers (9.6%).
+[evaluation] L0-s303: generated 52/500 answers (10.4%).
+[evaluation] L0-s303: generated 56/500 answers (11.2%).
+[evaluation] L0-s303: generated 60/500 answers (12.0%).
+[evaluation] L0-s303: generated 64/500 answers (12.8%).
+[evaluation] L0-s303: generated 68/500 answers (13.6%).
+[evaluation] L0-s303: generated 72/500 answers (14.4%).
+[evaluation] L0-s303: generated 76/500 answers (15.2%).
+[evaluation] L0-s303: generated 80/500 answers (16.0%).
+[evaluation] L0-s303: generated 84/500 answers (16.8%).
+[evaluation] L0-s303: generated 88/500 answers (17.6%).
+[evaluation] L0-s303: generated 92/500 answers (18.4%).
+[evaluation] L0-s303: generated 96/500 answers (19.2%).
+[evaluation] L0-s303: generated 100/500 answers (20.0%).
+[evaluation] L0-s303: generated 104/500 answers (20.8%).
+[evaluation] L0-s303: generated 108/500 answers (21.6%).
+[evaluation] L0-s303: generated 112/500 answers (22.4%).
+[evaluation] L0-s303: generated 116/500 answers (23.2%).
+[evaluation] L0-s303: generated 120/500 answers (24.0%).
+[evaluation] L0-s303: generated 124/500 answers (24.8%).
+[evaluation] L0-s303: generated 128/500 answers (25.6%).
+[evaluation] L0-s303: generated 132/500 answers (26.4%).
+[evaluation] L0-s303: generated 136/500 answers (27.2%).
+[evaluation] L0-s303: generated 140/500 answers (28.0%).
+[evaluation] L0-s303: generated 144/500 answers (28.8%).
+[evaluation] L0-s303: generated 148/500 answers (29.6%).
+[evaluation] L0-s303: generated 152/500 answers (30.4%).
+[evaluation] L0-s303: generated 156/500 answers (31.2%).
+[evaluation] L0-s303: generated 160/500 answers (32.0%).
+[evaluation] L0-s303: generated 164/500 answers (32.8%).
+[evaluation] L0-s303: generated 168/500 answers (33.6%).
+[evaluation] L0-s303: generated 172/500 answers (34.4%).
+[evaluation] L0-s303: generated 176/500 answers (35.2%).
+[evaluation] L0-s303: generated 180/500 answers (36.0%).
+[evaluation] L0-s303: generated 184/500 answers (36.8%).
+[evaluation] L0-s303: generated 188/500 answers (37.6%).
+[evaluation] L0-s303: generated 192/500 answers (38.4%).
+[evaluation] L0-s303: generated 196/500 answers (39.2%).
+[evaluation] L0-s303: generated 200/500 answers (40.0%).
+[evaluation] L0-s303: generated 204/500 answers (40.8%).
+[evaluation] L0-s303: generated 208/500 answers (41.6%).
+[evaluation] L0-s303: generated 212/500 answers (42.4%).
+[evaluation] L0-s303: generated 216/500 answers (43.2%).
+[evaluation] L0-s303: generated 220/500 answers (44.0%).
+[evaluation] L0-s303: generated 224/500 answers (44.8%).
+[evaluation] L0-s303: generated 228/500 answers (45.6%).
+[evaluation] L0-s303: generated 232/500 answers (46.4%).
+[evaluation] L0-s303: generated 236/500 answers (47.2%).
+[evaluation] L0-s303: generated 240/500 answers (48.0%).
+[evaluation] L0-s303: generated 244/500 answers (48.8%).
+[evaluation] L0-s303: generated 248/500 answers (49.6%).
+[evaluation] L0-s303: generated 252/500 answers (50.4%).
+[evaluation] L0-s303: generated 256/500 answers (51.2%).
+[evaluation] L0-s303: generated 260/500 answers (52.0%).
+[evaluation] L0-s303: generated 264/500 answers (52.8%).
+[evaluation] L0-s303: generated 268/500 answers (53.6%).
+[evaluation] L0-s303: generated 272/500 answers (54.4%).
+[evaluation] L0-s303: generated 276/500 answers (55.2%).
+[evaluation] L0-s303: generated 280/500 answers (56.0%).
+[evaluation] L0-s303: generated 284/500 answers (56.8%).
+[evaluation] L0-s303: generated 288/500 answers (57.6%).
+[evaluation] L0-s303: generated 292/500 answers (58.4%).
+[evaluation] L0-s303: generated 296/500 answers (59.2%).
+[evaluation] L0-s303: generated 300/500 answers (60.0%).
+[evaluation] L0-s303: generated 304/500 answers (60.8%).
+[evaluation] L0-s303: generated 308/500 answers (61.6%).
+[evaluation] L0-s303: generated 312/500 answers (62.4%).
+[evaluation] L0-s303: generated 316/500 answers (63.2%).
+[evaluation] L0-s303: generated 320/500 answers (64.0%).
+[evaluation] L0-s303: generated 324/500 answers (64.8%).
+[evaluation] L0-s303: generated 328/500 answers (65.6%).
+[evaluation] L0-s303: generated 332/500 answers (66.4%).
+[evaluation] L0-s303: evaluation will generate 500 answers after training.
+`torch_dtype` is deprecated! Use `dtype` instead!
+[evaluation] L0-s303: training/checkpoint saved; evaluating answer NLL, then generating answers.
+[evaluation] L0-s303: generated 4/500 answers (0.8%).
+[evaluation] L0-s303: generated 8/500 answers (1.6%).
+[evaluation] L0-s303: generated 12/500 answers (2.4%).
+[evaluation] L0-s303: generated 16/500 answers (3.2%).
+[evaluation] L0-s303: generated 20/500 answers (4.0%).
+[evaluation] L0-s303: generated 24/500 answers (4.8%).
+[evaluation] L0-s303: generated 28/500 answers (5.6%).
+[evaluation] L0-s303: generated 32/500 answers (6.4%).
+[evaluation] L0-s303: generated 36/500 answers (7.2%).
+[evaluation] L0-s303: generated 40/500 answers (8.0%).
+[evaluation] L0-s303: generated 44/500 answers (8.8%).
+[evaluation] L0-s303: generated 48/500 answers (9.6%).
+[evaluation] L0-s303: generated 52/500 answers (10.4%).
+[evaluation] L0-s303: generated 56/500 answers (11.2%).
+[evaluation] L0-s303: generated 60/500 answers (12.0%).
+[evaluation] L0-s303: generated 64/500 answers (12.8%).
+[evaluation] L0-s303: generated 68/500 answers (13.6%).
+[evaluation] L0-s303: generated 72/500 answers (14.4%).
+[evaluation] L0-s303: generated 76/500 answers (15.2%).
+[evaluation] L0-s303: generated 80/500 answers (16.0%).
+[evaluation] L0-s303: generated 84/500 answers (16.8%).
+[evaluation] L0-s303: generated 88/500 answers (17.6%).
+[evaluation] L0-s303: generated 92/500 answers (18.4%).
+[evaluation] L0-s303: generated 96/500 answers (19.2%).
+[evaluation] L0-s303: generated 100/500 answers (20.0%).
+[evaluation] L0-s303: generated 104/500 answers (20.8%).
+[evaluation] L0-s303: generated 108/500 answers (21.6%).
+[evaluation] L0-s303: generated 112/500 answers (22.4%).
+[evaluation] L0-s303: generated 116/500 answers (23.2%).
+[evaluation] L0-s303: generated 120/500 answers (24.0%).
+[evaluation] L0-s303: generated 124/500 answers (24.8%).
+[evaluation] L0-s303: generated 128/500 answers (25.6%).
+[evaluation] L0-s303: generated 132/500 answers (26.4%).
+[evaluation] L0-s303: generated 136/500 answers (27.2%).
+[evaluation] L0-s303: generated 140/500 answers (28.0%).
+[evaluation] L0-s303: generated 144/500 answers (28.8%).
+[evaluation] L0-s303: generated 148/500 answers (29.6%).
+[evaluation] L0-s303: generated 152/500 answers (30.4%).
+[evaluation] L0-s303: generated 156/500 answers (31.2%).
+[evaluation] L0-s303: generated 160/500 answers (32.0%).
+[evaluation] L0-s303: generated 164/500 answers (32.8%).
+[evaluation] L0-s303: generated 168/500 answers (33.6%).
+[evaluation] L0-s303: generated 172/500 answers (34.4%).
+[evaluation] L0-s303: generated 176/500 answers (35.2%).
+[evaluation] L0-s303: generated 180/500 answers (36.0%).
+[evaluation] L0-s303: generated 184/500 answers (36.8%).
+[evaluation] L0-s303: generated 188/500 answers (37.6%).
+[evaluation] L0-s303: generated 192/500 answers (38.4%).
+[evaluation] L0-s303: generated 196/500 answers (39.2%).
+[evaluation] L0-s303: generated 200/500 answers (40.0%).
+[evaluation] L0-s303: generated 204/500 answers (40.8%).
+[evaluation] L0-s303: generated 208/500 answers (41.6%).
+[evaluation] L0-s303: generated 212/500 answers (42.4%).
+[evaluation] L0-s303: generated 216/500 answers (43.2%).
+[evaluation] L0-s303: generated 220/500 answers (44.0%).
+[evaluation] L0-s303: generated 224/500 answers (44.8%).
+[evaluation] L0-s303: generated 228/500 answers (45.6%).
+[evaluation] L0-s303: generated 232/500 answers (46.4%).
+[evaluation] L0-s303: generated 236/500 answers (47.2%).
+[evaluation] L0-s303: generated 240/500 answers (48.0%).
+[evaluation] L0-s303: generated 244/500 answers (48.8%).
+[evaluation] L0-s303: generated 248/500 answers (49.6%).
+[evaluation] L0-s303: generated 252/500 answers (50.4%).
+[evaluation] L0-s303: generated 256/500 answers (51.2%).
+[evaluation] L0-s303: generated 260/500 answers (52.0%).
+[evaluation] L0-s303: generated 264/500 answers (52.8%).
+[evaluation] L0-s303: generated 268/500 answers (53.6%).
+[evaluation] L0-s303: generated 272/500 answers (54.4%).
+[evaluation] L0-s303: generated 276/500 answers (55.2%).
+[evaluation] L0-s303: generated 280/500 answers (56.0%).
+[evaluation] L0-s303: generated 284/500 answers (56.8%).
+[evaluation] L0-s303: generated 288/500 answers (57.6%).
+[evaluation] L0-s303: generated 292/500 answers (58.4%).
+[evaluation] L0-s303: generated 296/500 answers (59.2%).
+[evaluation] L0-s303: generated 300/500 answers (60.0%).
+[evaluation] L0-s303: generated 304/500 answers (60.8%).
+[evaluation] L0-s303: generated 308/500 answers (61.6%).
+[evaluation] L0-s303: generated 312/500 answers (62.4%).
+[evaluation] L0-s303: generated 316/500 answers (63.2%).
+[evaluation] L0-s303: generated 320/500 answers (64.0%).
+[evaluation] L0-s303: generated 324/500 answers (64.8%).
+[evaluation] L0-s303: generated 328/500 answers (65.6%).
+[evaluation] L0-s303: generated 332/500 answers (66.4%).
+[evaluation] L0-s303: generated 336/500 answers (67.2%).
+[evaluation] L0-s303: generated 340/500 answers (68.0%).
+[evaluation] L0-s303: generated 344/500 answers (68.8%).
+[evaluation] L0-s303: generated 348/500 answers (69.6%).
+[evaluation] L0-s303: generated 352/500 answers (70.4%).
+[evaluation] L0-s303: generated 356/500 answers (71.2%).
+[evaluation] L0-s303: generated 360/500 answers (72.0%).
+[evaluation] L0-s303: generated 364/500 answers (72.8%).
+[evaluation] L0-s303: generated 368/500 answers (73.6%).
+[evaluation] L0-s303: generated 372/500 answers (74.4%).
+[evaluation] L0-s303: generated 376/500 answers (75.2%).
+[evaluation] L0-s303: generated 380/500 answers (76.0%).
+[evaluation] L0-s303: generated 384/500 answers (76.8%).
+[evaluation] L0-s303: generated 388/500 answers (77.6%).
+[evaluation] L0-s303: generated 392/500 answers (78.4%).
+[evaluation] L0-s303: generated 396/500 answers (79.2%).
+[evaluation] L0-s303: generated 400/500 answers (80.0%).
+[evaluation] L0-s303: generated 404/500 answers (80.8%).
+[evaluation] L0-s303: generated 408/500 answers (81.6%).
+[evaluation] L0-s303: generated 412/500 answers (82.4%).
+[evaluation] L0-s303: generated 416/500 answers (83.2%).
+[evaluation] L0-s303: generated 420/500 answers (84.0%).
+[evaluation] L0-s303: generated 424/500 answers (84.8%).
+[evaluation] L0-s303: generated 428/500 answers (85.6%).
+[evaluation] L0-s303: generated 432/500 answers (86.4%).
+[evaluation] L0-s303: generated 436/500 answers (87.2%).
+[evaluation] L0-s303: generated 440/500 answers (88.0%).
+[evaluation] L0-s303: generated 444/500 answers (88.8%).
+[evaluation] L0-s303: generated 448/500 answers (89.6%).
+[evaluation] L0-s303: generated 452/500 answers (90.4%).
+[evaluation] L0-s303: generated 456/500 answers (91.2%).
+[evaluation] L0-s303: generated 460/500 answers (92.0%).
+[evaluation] L0-s303: generated 464/500 answers (92.8%).
+[evaluation] L0-s303: generated 468/500 answers (93.6%).
+[evaluation] L0-s303: generated 472/500 answers (94.4%).
+[evaluation] L0-s303: generated 476/500 answers (95.2%).
+[evaluation] L0-s303: generated 480/500 answers (96.0%).
+[evaluation] L0-s303: generated 484/500 answers (96.8%).
+[evaluation] L0-s303: generated 488/500 answers (97.6%).
+[evaluation] L0-s303: generated 492/500 answers (98.4%).
+[evaluation] L0-s303: generated 496/500 answers (99.2%).
+Experiment evidence: /storage/ice1/1/3/mchoi345/cs6222-SMR/dora-spectral-init/reports/mchoi345/study-main/confirmation/L0-s303
+[evaluation] L0-s303: generated 500/500 answers (100.0%).
+[evaluation] L0-s303: evaluation saved; exporting evidence...
