@@ -1,0 +1,7 @@
+component,seconds
+model_loading,235.73312954069115
+initialization,409.76162422960624
+training_and_checkpoint_io,33087.26062775962
+answer_nll,1368.672529178788
+generation,110998.75122508011
+initialization_and_checkpoint_loading,165.7098336047493
