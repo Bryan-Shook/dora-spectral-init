@@ -208,7 +208,7 @@ checkpoint selection, or retuning.
   --wall-hours 16 --job-seconds 3600
 ```
 
-- [ ] After all confirmations finish, score the base and final replicas on all 1,319 questions (`test/`).
+- [x] After all confirmations finish, score the base and final replicas on all 1,319 questions (`test/`).
 
 Verify all locked confirmation results, then evaluate **25 models**: the unadapted base once
 and all 24 final confirmation checkpoints. Use the shared greedy/512-token/strict-answer
@@ -224,7 +224,7 @@ Keep settings, scoring rules, and seeds unchanged after opening the test.
   --resamples 10000 --two-way
 ```
 
-- [ ] Verify paired predictions and inspect statistics, CSV tables, and PNG figures (`analysis/` in the report folder).
+- [x] Verify paired predictions and inspect statistics, CSV tables, and PNG figures (`analysis/` in the report folder).
 
 Recompute strict correctness and verify identical question IDs/references across all models.
 Compute spectral-minus-random accuracy gaps `ΔA`, `ΔD`, and `ΔE`; the primary interaction is
