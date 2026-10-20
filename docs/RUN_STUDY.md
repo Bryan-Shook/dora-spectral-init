@@ -15,6 +15,31 @@ Runtime is recorded automatically. Unknown allocated GPU-hours and idle time are
 GPU stages use `scripts/run_study.py` to show evaluation counts and evidence-copy progress.
 It calls the existing runner unchanged, preserving study/checkpoint compatibility.
 
+### Shared settings and condition names
+
+These are the current [configuration](../configs/experiment.yaml) and [runner](../src/dora_spectral/study.py) defaults;
+an existing study uses its saved `config.yaml` and `study.json`.
+
+| Setting | Used throughout, unless a step says otherwise |
+| --- | --- |
+| Model/data | Revision-pinned Qwen2.5-1.5B **base** and GSM8K `main` |
+| Adapters | Rank 16 on every `q_proj`/`v_proj`; alpha = 16 (multiplier 1); backbone frozen |
+| Training | Three epochs; batch 32, microbatch 4 (eight accumulation chunks per full batch); answer/EOS-token loss only |
+| Optimizer | AdamW: betas `(0.9, 0.999)`, epsilon `1e-8`, weight decay 0; global gradient clipping 1.0; one LR for factors and DoRA magnitudes |
+| Schedule | 3% warmup, then cosine decay over the **full three-epoch horizon**, including during short runs |
+| Numerics | BF16 backbone computation; FP32 adapters/norms; dropout off; SDPA; gradient checkpointing off |
+| Lengths/scoring | Training limit 1,024 tokens; greedy generation, at most 512 new tokens, evaluation batch 4; exact numeric answer after the last `####`; malformed/truncated outputs count as wrong |
+
+`A-S/A-R` = additive adapters; `E-S/E-R` = DoRA with exact denominator gradients;
+`D-S/D-R` = DoRA with the denominator detached. `S` uses principal SVD directions;
+`R` uses random orthonormal directions with matching singular values. In these six controlled
+arms, gamma scales the initial factor product (each factor scales by √gamma), and the frozen
+initial product is subtracted so every arm starts at the base model's effective weights.
+`L0/D0` are ordinary LoRA/detached DoRA with Kaiming-uniform A and zero B.
+
+Evaluation counts below refer to generated answers. Pilot/development answer NLL
+(negative log-likelihood) always uses the full corresponding 500-example split.
+
 ## 1. Install and check
 
 ```bash
@@ -24,6 +49,10 @@ bash scripts/setup_pace.sh cuda
 
 - [x] Install locked dependencies, pass CPU tests, and save their JUnit results.
 
+Install Python 3.11 dependencies with the PyTorch 2.6.0 CUDA 12.6 build and PEFT 0.18.1.
+CPU tests check adapter initialization/gradients, data and scoring, training/resume,
+diagnostics, study locks, reporting, and launcher behavior. No hyperparameters are tuned here.
+
 ## 2. Prepare data
 
 ```bash
@@ -32,7 +61,11 @@ bash scripts/setup_pace.sh cuda
 
 - [x] Create or verify the pinned training/pilot/development splits (`prepared.json`).
 
-Official-test data stays unopened.
+Hash-sort GSM8K's 7,473 training examples into 500 pilot, 500 development, and 6,473 training
+examples before length filtering; keep normalized-question duplicate groups together.
+Remove calculator annotations, mask prompt/padding tokens, and append EOS. Exclude training
+examples exceeding 1,024 tokens and record their IDs; retain every pilot/development example.
+Save split IDs, lengths, revisions, and checksums. Official-test data stays unopened.
 
 ## 3. Validate on H100
 
@@ -42,6 +75,14 @@ Official-test data stays unopened.
 ```
 
 - [x] Pass initialization, gradient, overfit, memory, and resume gates (`validation.json`: `passed: true`).
+
+Use LR `1e-4`, gamma `1`, seed `0`, and the shared settings:
+
+- Check base-weight/logit equality for all eight conditions and cache rank-16 SVDs. Verify additive/exact/detached gradients against independent dense references, plus an FP64 exact-DoRA gradcheck.
+- Overfit `E-S` on the same 32 training examples for 100 updates (schedule horizon 100); require final answer NLL < `0.1` and < 20% of its initial value, with backbone weights unchanged.
+- Run one update on the 32 longest retained training examples; require ≥10% GPU memory headroom.
+- Compare `E-R` trained uninterrupted for six updates with a three-update checkpoint resumed to six; require matching adapter states.
+- Record base NLL on all 500 pilot examples and generation on the first 16 for later feasibility/timing comparisons.
 
 Reuse a passed validation only when its runtime code, configuration, data, and package versions match.
 Orchestration/analysis-only edits do not require another GPU validation.
@@ -55,7 +96,13 @@ Otherwise validate in a fresh directory; compatible prepared data/SVD caches can
   --target-hours 100
 ```
 
-- [x] Save the configuration, grid, runtime estimate, and seeds in a fresh study directory (`study.json`).
+- [x] Save the configuration, grid, planning target, and seeds in a fresh study directory (`study.json`).
+
+Register all eight conditions, the search grid in step 8, tuning seed `10`, confirmation seeds
+`101/202/303`, and a practical interaction margin of **2 percentage points** (`--margin 2`).
+Compute steps per epoch as `ceil(retained_training_count / 32)` and the full horizon as three
+times that count: normally **203/609 updates**. Bind the study to validation, source, package,
+and data hashes; this step launches no training.
 
 Point `--validation` to the validation directory that passed for this study.
 100 hours is a planning estimate, not a limit: exceeding it never blocks jobs or shortens training.
@@ -70,7 +117,14 @@ Each option uses the specified epochs; per-job/allocation time limits allow chec
 
 - [x] Finish short profiles and the slowest condition's three-epoch pilot (`pilot.json`: `passed: true`).
 
-Require improved NLL, usable accuracy, and ≤1% truncation.
+All pilot jobs use LR `1e-4`, gamma `1`:
+
+- Run `D-S/D-R/E-S/E-R` for 100 updates each on seeds `0/1/2` (12 profiles).
+- Run `A-S/A-R/L0/D0` for 20 updates each on seed `0` (four profiles).
+- Generate answers for the first 16 pilot questions per profile. Choose the condition with
+  the highest mean training seconds/update, resume its seed-0 run to three epochs, and score all 500 pilot questions.
+
+The full pilot must beat base-model pilot NLL, achieve **5–90% accuracy**, and have ≤1% truncation.
 `--wall-hours` caps this stage invocation; `--job-seconds` caps each child attempt, including evaluation.
 Training resumes from checkpoints; unfinished evaluation restarts. Increase `--job-seconds`
 if evaluation alone cannot finish within that limit.
@@ -83,6 +137,10 @@ if evaluation alone cannot finish within that limit.
 
 - [x] Pass the pilot, save a runtime forecast, and freeze the protocol (`frozen.json`).
 
+Verify validation/pilot success and lock the study manifest. Forecast remaining search,
+confirmation, diagnostic, and test cost using the slowest measured training/evaluation rates
+and measured overhead. No training or hyperparameter selection occurs here.
+
 ## 7. Run mechanism diagnostics
 
 ```bash
@@ -91,6 +149,13 @@ if evaluation alone cannot finish within that limit.
 ```
 
 - [x] Finish four DoRA runs comparing exact/detached updates at steps 0/50/100 (`counterfactuals.jsonl`).
+
+Train `E-S/E-R/D-S/D-R` for 100 updates with **seed `40`, LR `1e-4`, gamma `1`**;
+generate answers for the first 16 pilot questions afterward. At updates 0/50/100, use the
+same two training examples and saved model/AdamW state to try both exact and detached,
+clipped updates, then restore the state. Compare effective-weight step norms/directions,
+answer-NLL changes, and token KL, including local probes scaled to 0.1× the smaller step norm.
+These probes explain local update behavior; they do not select settings.
 
 ## 8. Screen, then promote
 
@@ -104,6 +169,18 @@ if evaluation alone cannot finish within that limit.
 - [x] `screen`: finish 96 one-epoch candidates, scoring 256 development questions (`search/`).
 - [x] `promote`: continue up to 24 finalists to three epochs and score all 500 (`promotions.json`).
 
+| Conditions | Settings screened per condition, all on seed `10` |
+| --- | --- |
+| Six controlled arms (`A-S/A-R/D-S/D-R/E-S/E-R`) | Gamma `{0.1, 0.3, 1}` × LR `{2e-5, 1e-4, 5e-4, 2e-3}` = 12 candidates each |
+| Ordinary baselines (`L0/D0`) | 12 log-spaced LRs from `2e-6` to `2e-3` inclusive (`2e-6 × 1000^(i/11)`, `i=0…11`); gamma fixed at 1 and unused by zero-B initialization |
+
+Screen for one epoch (normally 203 updates), using the first 256 saved development IDs for
+accuracy. Rank by higher accuracy, then lower full-development NLL, lower LR, and lower gamma.
+For each controlled arm promote the best LR **at each gamma**; for each baseline promote its
+top three LRs. Resume those checkpoints/optimizer states to three total epochs (normally 609
+updates), then rerank using all 500 development questions. Initialization and data order are
+paired across conditions/settings within each seed; their random streams are separate.
+
 Retain numerical failures; require a usable finalist for every condition.
 
 ## 9. Select, then confirm
@@ -115,7 +192,14 @@ Retain numerical failures; require a usable finalist for every condition.
 ```
 
 - [x] `select`: lock eight winning configurations (`selection.json`, `selection-lock.json`).
-- [ ] `confirm`: finish 24 full runs on seeds 101/202/303, with development checks each epoch (`confirmation/`).
+- [x] `confirm`: finish 24 full runs on seeds 101/202/303, with development checks each epoch (`confirmation/`).
+
+Select one three-epoch finalist per condition by the same accuracy/NLL/LR/gamma ranking;
+record whether its LR/gamma lies at a grid boundary. Freeze each winner's LR and gamma.
+Train **eight conditions × three fresh paired seeds** from initialization for three epochs;
+score the first 128 development questions after epochs 1 and 2 and all 500 after epoch 3.
+Use the final checkpoint for every run. Intermediate checks do not trigger early stopping,
+checkpoint selection, or retuning.
 
 ## 10. Evaluate the official test
 
@@ -125,6 +209,11 @@ Retain numerical failures; require a usable finalist for every condition.
 ```
 
 - [ ] After all confirmations finish, score the base and final replicas on all 1,319 questions (`test/`).
+
+Verify all locked confirmation results, then evaluate **25 models**: the unadapted base once
+and all 24 final confirmation checkpoints. Use the shared greedy/512-token/strict-answer
+rules and compute answer NLL on all 1,319 examples. Save per-question predictions, correctness,
+truncation, and provenance for paired analysis.
 
 Keep settings, scoring rules, and seeds unchanged after opening the test.
 
@@ -136,6 +225,15 @@ Keep settings, scoring rules, and seeds unchanged after opening the test.
 ```
 
 - [ ] Verify paired predictions and inspect statistics, CSV tables, and PNG figures (`analysis/` in the report folder).
+
+Recompute strict correctness and verify identical question IDs/references across all models.
+Compute spectral-minus-random accuracy gaps `ΔA`, `ΔD`, and `ΔE`; the primary interaction is
+`J = ΔD − ΔA`, and the secondary detachment interaction is `I = ΔE − ΔD`.
+Report paired-seed Student-t 95% intervals against the frozen ±2-point margin, 10,000 paired-question
+bootstrap resamples (seed `722`), and, with `--two-way`, joint seed/question bootstrap intervals.
+Seed intervals condition on this test set and selected settings; question bootstrap intervals
+condition on the trained models. Export accuracy/seed variability, search boundaries, failures,
+mechanism measurements, runtime/memory tables, and figures; no further model tuning occurs.
 
 <details>
 <summary>Analyze copied results on your laptop instead</summary>
